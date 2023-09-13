@@ -1,7 +1,89 @@
+<div id="slider_box">
+  <ul id="slider">
+      <li class="slide_clip">
+          <div class="noren">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
+              <g>
+                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
+              </g>
+          </svg>
+          </div><a href="#"><img src="img/banner.jpg" alt=""></a>
+      </li>
+      <li class="slide_clip">
+          <div class="noren">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
+              <g>
+                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
+              </g>
+          </svg>
+          </div><a href="#"><img src="img/banner.jpg" alt=""></a>
+      </li>
+      <li class="slide_clip">
+          <div class="noren">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
+              <g>
+                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
+              </g>
+          </svg>
+          </div><a href="#"><img src="img/banner.jpg" alt=""></a>
+      </li>
+      <li class="slide_clip">
+          <div class="noren">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
+              <g>
+                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
+              </g>
+          </svg>
+          </div><a href="#"><img src="img/banner.jpg" alt=""></a>
+      </li>
+      <li class="slide_clip">
+          <div class="noren">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
+              <g>
+                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
+              </g>
+          </svg>
+          </div><a href="#"><img src="img/banner.jpg" alt=""></a>
+      </li>
+  </ul>
+</div>
+<!--//スライダー-->
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "index_slider",
+    "settings": [],
+    "blocks": [
+    {
+      "type": "image",
+      "name": "スライド画像",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "リンク先"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SlickSlideshow",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
   }
 {% endschema %}
 
