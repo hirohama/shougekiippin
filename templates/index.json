@@ -5,6 +5,29 @@
       "settings": {
       }
     },
+    "316d22bc-b962-4cd4-bea0-6469d7777d48": {
+      "type": "index_slider",
+      "blocks": {
+        "template--21057494450492__316d22bc-b962-4cd4-bea0-6469d7777d48-image-1": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--21057494450492__316d22bc-b962-4cd4-bea0-6469d7777d48-image-2": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21057494450492__316d22bc-b962-4cd4-bea0-6469d7777d48-image-1",
+        "template--21057494450492__316d22bc-b962-4cd4-bea0-6469d7777d48-image-2"
+      ],
+      "settings": {
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -219,6 +242,7 @@
   },
   "order": [
     "86224ffa-08b1-4ddd-9828-15339987ac89",
+    "316d22bc-b962-4cd4-bea0-6469d7777d48",
     "image_banner",
     "rich_text",
     "featured_collection",
