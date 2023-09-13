@@ -11,7 +11,7 @@
           </svg>
           </div>
          
-            <a href="#"><img src="{{ block.settings.image_box | img_url }}" alt=""></a>
+            <a href="#"><img src="{{ block.settings.image_box | img_url: 'original' }}" alt=""></a>
 
       </li>
                   {% endif %}
@@ -55,7 +55,7 @@
   </ul>
 </div>
 <!--//スライダー-->
-    <div>
+    <!--div>
      bbbbb
     {% for block in section.blocks limit: section.blocks.size %}
       {% if block.settings.image_box != blank %}
@@ -63,7 +63,7 @@
           {{ block.settings.image_box | img_url | img_tag }}
       {% endif %}
     {% endfor %}
-    </div>
+                  </div-->
 
 
 {% schema %}
