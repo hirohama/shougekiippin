@@ -1,29 +1,30 @@
 {% if template == 'index' %} 
-  <header id="menu_index" class="absolute">
+<header id="menu_index" class="absolute">
 {% else %}
-  <header id="menu" class="absolute">
+<header id="menu" class="absolute">
 {% endif %}
 
-  <div id="logo_box">
-    <a href="{{ routes.root_url }}"><div id="menu_logo"><img src="{{ '_img_logo_sub.svg' | asset_url }}"></div></a>
-  </div>
-    <menu>
-      <ul>
-        <li class="foJ_Mid"><a href="{{ routes.root_url }}">TOP</a></li>
-        <li class="foJ_Mid"><a href="#">「衝撃一品」とは？</a></li>
-        <li class="foJ_Mid"><a href="#">よくあるご質問</a></li>
-        <li class="foJ_Mid"><a href="#">お買い物ガイド</a></li>
-        <li class="foJ_Mid"><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">マイページ</a></li>
-        <li>
-          <a href="{{ routes.cart_url }}" class="menu_cart_btn">
-            <span class="info foJ_Mid">カートをみる
-            </span>
-            <div class="icon cart"></div>
-          </a>
-        </li>
-      </ul>
-    </menu>
-  </header>
+<div id="logo_box">
+  <a href="{{ routes.root_url }}"><div id="menu_logo"><img src="{{ '_img_logo_sub.svg' | asset_url }}"></div></a>
+</div>
+  <menu>
+    <ul>
+      <li class="foJ_Mid"><a href="{{ routes.root_url }}">TOP</a></li>
+      <li class="foJ_Mid"><a href="#">「衝撃一品」とは？</a></li>
+      <li class="foJ_Mid"><a href="#">よくあるご質問</a></li>
+      <li class="foJ_Mid"><a href="#">お買い物ガイド</a></li>
+      <li class="foJ_Mid"><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">マイページ</a></li>
+      <li>
+        <a href="{{ routes.cart_url }}" class="menu_cart_btn">
+          <span class="info foJ_Mid">カートをみる
+          </span>
+          <div class="icon cart"></div>
+        </a>
+      </li>
+    </ul>
+  </menu>
+</header>
+<div id="wrap">
 
 {% comment %}
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
