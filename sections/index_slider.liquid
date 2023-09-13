@@ -44,13 +44,14 @@
               </g>
           </svg>
           </div><a href="#"><img src="{{ '_img_banner.jpg' | asset_url }}" alt=""></a>
-  </li-->
+  </li>
   </ul>
-</div>
+</div-->
 <!--//スライダー-->
     <div>
     {% for block in section.blocks limit: section.blocks.size %}
       {% if block.settings.image_picker != blank %}
+        aaaaa
           {{ block.settings.image_picker | img_url | img_tag }}
       {% endif %}
     {% endfor %}
