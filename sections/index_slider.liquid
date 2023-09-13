@@ -1,4 +1,4 @@
-<div id="slider_box">
+<!--div id="slider_box">
   <ul id="slider">
       <li class="slide_clip">
           <div class="noren">
@@ -44,10 +44,18 @@
               </g>
           </svg>
           </div><a href="#"><img src="{{ '_img_banner.jpg' | asset_url }}" alt=""></a>
-      </li>
+  </li-->
   </ul>
 </div>
 <!--//スライダー-->
+    <div>
+    {% for block in section.blocks limit: section.blocks.size %}
+      {% if block.settings.image_picker != blank %}
+          {{ block.settings.image_picker | img_url | img_tag }}
+      {% endif %}
+    {% endfor %}
+    </div>
+
 
 {% schema %}
   {
@@ -60,12 +68,12 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "image1",
+          "id": "image",
           "label": "image"
         },
         {
           "type": "url",
-          "id": "link1",
+          "id": "link",
           "label": "リンク先"
         }
       ]
