@@ -1,70 +1,21 @@
 <div id="slider_box">
   <ul id="slider">
-     {% for block in section.blocks limit: section.blocks.size %}
-            {% if block.settings.image_box != blank %}
-      <li class="slide_clip">
-          <div class="noren">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
-              <g>
-                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
-              </g>
-          </svg>
-          </div>
-         
-            <a href="#"><img src="{{ block.settings.image_box | img_url: 'original' }}" alt=""></a>
-
-      </li>
-                  {% endif %}
-          {% endfor %}
-      <!--li class="slide_clip">
-          <div class="noren">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
-              <g>
-                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
-              </g>
-          </svg>
-          </div><a href="#"><img src="{{ '_img_banner.jpg' | asset_url }}" alt=""></a>
-      </li>
-      <li class="slide_clip">
-          <div class="noren">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
-              <g>
-                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
-              </g>
-          </svg>
-          </div><a href="#"><img src="{{ '_img_banner.jpg' | asset_url }}" alt=""></a>
-      </li>
-      <li class="slide_clip">
-          <div class="noren">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
-              <g>
-                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
-              </g>
-          </svg>
-          </div><a href="#"><img src="{{ '_img_banner.jpg' | asset_url }}" alt=""></a>
-      </li>
-      <li class="slide_clip">
-          <div class="noren">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
-              <g>
-                  <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
-              </g>
-          </svg>
-          </div><a href="#"><img src="{{ '_img_banner.jpg' | asset_url }}" alt=""></a>
-                  </li-->
+  {% for block in section.blocks limit: section.blocks.size %}
+  {% if block.settings.image_box != blank %}
+    <li class="slide_clip">
+      <div class="noren">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.1 289.9"><defs><style>.pNoren{fill:#fff;}</style></defs>
+          <g>
+            <path class="pNoren" d="M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0" />
+          </g>
+        </svg>
+      </div>
+      <a href="{{ block.settings.link }}"><img src="{{ block.settings.image_box | img_url: 'original' }}" alt=""></a>
+    </li>
+  {% endif %}
+  {% endfor %}
   </ul>
 </div>
-<!--//スライダー-->
-    <!--div>
-     bbbbb
-    {% for block in section.blocks limit: section.blocks.size %}
-      {% if block.settings.image_box != blank %}
-        aaaaa
-          {{ block.settings.image_box | img_url | img_tag }}
-      {% endif %}
-    {% endfor %}
-                  </div-->
-
 
 {% schema %}
 {
