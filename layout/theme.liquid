@@ -369,10 +369,12 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
+    {% comment %}
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+
+    
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
@@ -392,7 +394,11 @@
         onload="this.media='all'"
       >
     {%- endif -%}
-
+    {% endcomment %}
+    <link href="{{ '_css_reset.css' | asset_url }}" rel="stylesheet" type="text/css">
+    <link href="{{ '_css_main_d.css' | asset_url }}" rel="stylesheet" type="text/css">
+    <link href="{{ '_css_slick.css' | asset_url }}" rel="stylesheet" type="text/css">
+    <link href="{{ '_css_slick-theme.css' | asset_url }}" rel="stylesheet" type="text/css">
     <!--script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
       if (Shopify.designMode) {
@@ -400,18 +406,18 @@
       }
     </script-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="{{ '_js_slick.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ '_js_main.js' | asset_url }}" defer="defer"></script>
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-      {{ 'accessibility.skip_to_text' | t }}
-    </a>
+ <body>
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
+    {% section 'header' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
@@ -468,6 +474,5 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    てすと
   </body>
 </html>
