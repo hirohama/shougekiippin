@@ -399,20 +399,12 @@
     <link href="{{ '_css_main_d.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ '_css_slick.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ '_css_slick-theme.css' | asset_url }}" rel="stylesheet" type="text/css">
-    <!--script>
-      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-      if (Shopify.designMode) {
-        document.documentElement.classList.add('shopify-design-mode');
-      }
-    </script-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" crossorigin="anonymous"></script>
     <script src="{{ '_js_slick.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ '_js_main.js' | asset_url }}" defer="defer"></script>
   </head>
-
- <body>
-
+  <body>
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
@@ -423,7 +415,7 @@
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    {% section 'footer' %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
