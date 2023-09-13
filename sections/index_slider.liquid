@@ -51,9 +51,9 @@
     <div>
      bbbbb
     {% for block in section.blocks limit: section.blocks.size %}
-      {% if block.settings.image_picker != blank %}
+      {% if block.settings.image_box != blank %}
         aaaaa
-          {{ block.settings.image_picker | img_url | img_tag }}
+          {{ block.settings.image_box | img_url | img_tag }}
       {% endif %}
     {% endfor %}
     </div>
