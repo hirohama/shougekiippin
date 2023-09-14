@@ -46,6 +46,16 @@
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    {%- if settings.predictive_search_enabled -%}
+      <link
+        rel="stylesheet"
+        href="{{ 'component-predictive-search.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
+      >
+    {%- endif -%}
+    {% endcomment %}
+
 <!-- add-->
 {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
@@ -244,15 +254,7 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
 <!-- /add-->
 
-    {%- if settings.predictive_search_enabled -%}
-      <link
-        rel="stylesheet"
-        href="{{ 'component-predictive-search.css' | asset_url }}"
-        media="print"
-        onload="this.media='all'"
-      >
-    {%- endif -%}
-    {% endcomment %}
+  
     <link href="{{ '_css_reset.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ '_css_main_d.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ '_css_slick.css' | asset_url }}" rel="stylesheet" type="text/css">
