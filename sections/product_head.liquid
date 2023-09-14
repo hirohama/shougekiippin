@@ -71,8 +71,8 @@
                   <span class="tax foJ_Mid">(税別)</span>
               </div>
               <div class="count foJ_Bld">
-
-<div
+<!--数量セレクタ-->
+              <div
                 id="Quantity-Form-{{ section.id }}"
                 class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                 {{ block.shopify_attributes }}
@@ -259,7 +259,7 @@
                   </volume-pricing>
                 {%- endif -%}
               </div>
-                
+<!--数量セレクタここまで-->
                   数量
                   <!--button class="minus">－</button><input type="text" name="input03" value="0" readonly class="number"><button class="plus">＋</button-->
               </div>
