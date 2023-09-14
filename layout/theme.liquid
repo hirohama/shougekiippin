@@ -214,6 +214,7 @@
         font-size: calc(var(--font-body-scale) * 62.5%);
         height: 100%;
       }
+      {% endcomment %}
 
       body {
         display: grid;
@@ -234,7 +235,6 @@
           font-size: 1.6rem;
         }
       }
-      {% endcomment %}
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
