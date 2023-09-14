@@ -74,7 +74,6 @@
         --payment-terms-background-color: rgb({{ scheme.settings.background.rgb }});
       }
       {% endfor %}
-      {% comment %}
       {{ scheme_classes | prepend: 'body' }} {
         color: rgba(var(--color-foreground), 0.75);
         background-color: rgb(var(--color-background));
@@ -208,6 +207,7 @@
       *::after {
         box-sizing: inherit;
       }
+      {% comment %}
 
       html {
         box-sizing: border-box;
