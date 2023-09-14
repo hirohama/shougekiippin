@@ -1,10 +1,10 @@
 $(function(){
     console.log("onReady");
     var headNav = $("header");
-    var scrollNum = 700;
+    var scrollNum = 500;
       //scrollだけだと読み込み時困るのでloadも追加
       $(window).on('load scroll', function () {
-        //現在の位置が500px以上かつ、クラスfixedが付与されていない時
+        //現在の位置が"scrollNum"以上かつ、クラスfixedが付与されていない時
         if($(this).scrollTop() > scrollNum && headNav.hasClass('fixed') == false) {
           headNav.css({"top": '-100px'}).removeClass('absolute').addClass('fixed').animate({"top": 0},600);
         }else if($(this).scrollTop() < scrollNum && headNav.hasClass('fixed') == true){
