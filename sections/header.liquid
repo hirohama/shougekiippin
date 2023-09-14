@@ -348,13 +348,6 @@
       <li class="foJ_Mid"><a href="#">お買い物ガイド</a></li>
       <li class="foJ_Mid"><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">マイページ</a></li>
       <li>
-        <!--a href="{{ routes.cart_url }}" class="menu_cart_btn">
-          <span class="info foJ_Mid">カートをみる
-          </span>
-          <div class="icon cart"></div>
-
-      </a-->
-
         <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
           if cart == empty
