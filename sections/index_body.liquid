@@ -8,10 +8,7 @@
       おとりよせ！
     </p>
   </div>
-{% for product in all_products %}
-  {{ product.title }}
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-{% endfor %}
+
   <ul id="ippin" class="clearfix">
  
 
@@ -319,7 +316,10 @@
   </div>
 </div>
 <!-- //content -->
-
+{% for product in all_products %}
+  {{ product.title }}
+  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+{% endfor %}
 {% schema %}
 {
   "name": "トップ コンテンツ部分",
