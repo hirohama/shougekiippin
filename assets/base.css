@@ -2533,9 +2533,10 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 .header__icon:not(.header__icon--summary),
 .header__icon span {
-  display: flex;
+  /*display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
+  display:block;
 }
 
 .header__icon {
