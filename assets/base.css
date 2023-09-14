@@ -2104,16 +2104,22 @@ product-info .loading-overlay:not(.hidden) ~ *,
   position: absolute;
   background-color: rgb(var(--color-button));
   color: rgb(var(--color-button-text));
-  height: 1.7rem;
-  width: 1.7rem;
+  /*height: 1.7rem;
+  width: 1.7rem;*/
+  height: 1.3vw;
+  width: 1.3vw;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
+  /*font-size: 0.9rem;
   bottom: 0.8rem;
   left: 2.2rem;
-  line-height: calc(1 + 0.1 / var(--font-body-scale));
+  line-height: calc(1 + 0.1 / var(--font-body-scale));*/
+  font-size: 1vw;
+  bottom: 0.2vw;
+  left: 2vw;
+  line-height: 1.2vw;
 }
 
 /* utility-bar */
