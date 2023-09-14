@@ -14,7 +14,7 @@
   {% if collection.handle == 'ippin_top_list' %}
     {% for product in collection.products %}
     <li class="store fadein">
-      <a href="#">
+      <a href="{{ product.url }}">
         <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
           <div class="ribbon_box">
             <ul class="ribbon">
@@ -33,7 +33,7 @@
           </div>
           <div class="ippin_text">
             <div class="ippin_text_rayout">
-              <span class="foJ_Thin">他とは一線を画す上品な味わい</span>
+              <span class="foJ_Thin">{{ product.description }}</span>
               <p class="foJ_Bld">{{ product.title }}</p>
             </div>
           </div>
@@ -41,9 +41,11 @@
         <div class="btn_box">
           <div class="btn">
             <span class="info foJ_Mid">
-              <span class="quantity foJ_Mid">3食入り</span>
-              <span class="price foE">1,500</span>
+              {% for variant in product.variants %}
+              <span class="quantity foJ_Mid">{{ variant.option1 }}</span>
+              <span class="price foE">{{ variant.price | money }}</span>
               <span class="tax foJ_Mid">(税別)</span>
+              {% endfor %}
             </span>
             <div class="icon cart"></div>
           </div>
