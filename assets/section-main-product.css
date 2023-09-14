@@ -179,6 +179,7 @@ variant-selects {
 
 .product-form__input .form__label {
   padding-left: 0;
+  
 }
 
 fieldset.product-form__input .form__label {
@@ -452,7 +453,8 @@ a.product__text {
 
 .product-form__quantity .form__label {
   /*margin-bottom: 0.6rem;*/
-  display:inline;
+  display: inline-block;
+  vertical-align: sub;
 }
 
 .price-per-item__label.form__label {
