@@ -316,8 +316,8 @@
   </div>
 </div>
 <!-- //content -->
-{% for product in all_products %}
-  {{ product.title }}
+{% assign collection = collections['ippin'] %}
+{% for product in collection.products %}
   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 {% endfor %}
 {% schema %}
