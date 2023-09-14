@@ -1,15 +1,3 @@
-{%- assign collection = collections[section.settings.collection] -%}
-{% for product in collection.products %}
-  {{ product.title }}
-{% else %}
-  コレクション内に商品がありません。
-{% endfor %}
-
-{% for collection in collections %}
-  {% for product in collection.products %}
-    aaaa
-  {% endfor %}
-{% endfor %}
 <div class="content" style="padding:5vw 0 0;">
   <!-- コンテンツ部分 -->
   <div class="ttl_index_01">
@@ -23,7 +11,8 @@
 
   <ul id="ippin" class="clearfix">
  
-
+{% for collection in collections %}
+  {% for product in collection.products %}
     <li class="store fadein">
       <a href="#">
         <div class="chef clear" style="background-image: url('{{ "_img_chef001.jpg" | asset_url }}')">
@@ -62,7 +51,10 @@
       </a>
     </li>
     <!-- //store -->
-    <!-- store -->
+  {% endfor %}
+{% endfor %}
+    
+    <!--
     <li class="store fadein">
       <a href="#">
         <div class="chef clear" style="background-image: url('{{ "_img_chef001.jpg" | asset_url }}')">
@@ -260,7 +252,7 @@
         </div>
       </a>
     </li>
-    <!-- //store -->
+    -->
   </ul>
   <div id="concept">
     <div id="concept_box">
