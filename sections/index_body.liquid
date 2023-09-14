@@ -8,12 +8,11 @@
       おとりよせ！
     </p>
   </div>
-  <ul id="ippin" class="clearfix">
-{% paginate collection.products by 5 %}
-  {% for product in collection.products %}
+   {% for product in collection.products %}
     {{ product.title }}
   {% endfor %}
-{% endpaginate %}
+  <ul id="ippin" class="clearfix">
+ 
 
     <li class="store fadein">
       <a href="#">
