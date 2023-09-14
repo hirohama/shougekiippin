@@ -2526,9 +2526,10 @@ product-info .loading-overlay:not(.hidden) ~ *,
 }
 
 .header__icons .shopify-app-block {
-  max-width: 4.4rem;
+  /*max-width: 4.4rem;
   max-height: 4.4rem;
-  overflow: hidden;
+  overflow: hidden;*/
+  width:auto;
 }
 
 .header__icon:not(.header__icon--summary),
@@ -2536,7 +2537,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   /*display: flex;
   align-items: center;
   justify-content: center;*/
-  display:block;
+  display:inline-block;
 }
 
 .header__icon {
