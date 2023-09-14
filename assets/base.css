@@ -2102,10 +2102,12 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 .cart-count-bubble {
   position: absolute;
-  background-color: rgb(var(--color-button));
+  /*background-color: rgb(var(--color-button));
   color: rgb(var(--color-button-text));
-  /*height: 1.7rem;
+  height: 1.7rem;
   width: 1.7rem;*/
+  background-color: #C00;
+  color: #FFF;
   height: 1.3vw;
   width: 1.3vw;
   border-radius: 100%;
