@@ -451,7 +451,7 @@ a.product__text {
 }
 
 .product-form__quantity .form__label {
-  margin-bottom: 0.6rem;
+  /*margin-bottom: 0.6rem;*/
   display:inline;
 }
 
