@@ -316,9 +316,9 @@
   </div>
 </div>
 <!-- //content -->
-{% for item in collection.products -%}
+{%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
   <br>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-{%- endfor %}
+{%- endfor -%}
 {% schema %}
 {
   "name": "トップ コンテンツ部分",
