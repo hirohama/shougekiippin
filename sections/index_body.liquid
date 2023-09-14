@@ -1,3 +1,8 @@
+{% for product in collection.products %}
+  {{ product.title }}
+{% else %}
+  コレクション内に商品がありません。
+{% endfor %}
 <div class="content" style="padding:5vw 0 0;">
   <!-- コンテンツ部分 -->
   <div class="ttl_index_01">
@@ -316,9 +321,7 @@
   </div>
 </div>
 <!-- //content -->
-{%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-  <br>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-{%- endfor -%}
+
 {% schema %}
 {
   "name": "トップ コンテンツ部分",
