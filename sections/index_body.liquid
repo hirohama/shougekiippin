@@ -9,7 +9,11 @@
     </p>
   </div>
   <ul id="ippin" class="clearfix">
-{% for product in collection.products -%}
+{% paginate collection.products by 5 %}
+  {% for product in collection.products %}
+    {{ product.title }}
+  {% endfor %}
+{% endpaginate %}
 
     <li class="store fadein">
       <a href="#">
@@ -32,7 +36,7 @@
           <div class="ippin_text">
             <div class="ippin_text_rayout">
               <span class="foJ_Thin">他とは一線を画す上品な味わい</span>
-              <p class="foJ_Bld">{{ product.title }}</p>
+              <p class="foJ_Bld">111</p>
             </div>
           </div>
         </div>
@@ -49,8 +53,6 @@
       </a>
     </li>
     <!-- //store -->
-  {{ product.title }}
-{%- endfor %}
     <!-- store -->
     <li class="store fadein">
       <a href="#">
