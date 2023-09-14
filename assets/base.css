@@ -1941,9 +1941,11 @@ input[type='checkbox'] {
 }
 
 .quantity__button {
-  width: calc(4.5rem / var(--font-body-scale));
+  /*width: calc(4.5rem / var(--font-body-scale));*/
+  width:2.5vw;
   flex-shrink: 0;
-  font-size: 1.8rem;
+  /*font-size: 1.8rem;*/
+  font-size:1vw;
   border: 0;
   background-color: transparent;
   cursor: pointer;
