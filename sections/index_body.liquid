@@ -8,20 +8,23 @@
       おとりよせ！
     </p>
   </div>
+
   <ul id="ippin" class="clearfix">
-    <!-- store -->
+{% for collection in collections %}
+  {% if collection.handle == 'ippin_top_list' %}
+    {% for product in collection.products %}
     <li class="store fadein">
       <a href="#">
-        <div class="chef clear" style="background-image: url('{{ "_img_chef001.jpg" | asset_url }}')">
+        <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
           <div class="ribbon_box">
             <ul class="ribbon">
-              <li><img src="{{ '_img_storename_001.png' | asset_url }}" alt="豊後水道ふぐ 柳井"></li>
+              <li><img src="{{ product.images[6] | img_url:'original' }}" alt="豊後水道ふぐ 柳井"></li>
             </ul>
           </div>
         </div>
         <div class="ippin">
           <div class="ippin_img">
-            <img src="{{ '_img_i001.jpg' | asset_url }}" class="mask">
+            <img src="{{ product.images[2] | img_url:'original' }}" class="mask">
             <svg version="1.1" x="0px" y="0px" viewBox="0 0 265.61 265.63" width="0" height="0">
               <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
                  <path d="M132.79,0A132.82,132.82,0,0,0,21.69,205.56c.76,10.34,0,31.88-18.26,36.92,0,0,21,10.89,48.81-4.08A132.81,132.81,0,1,0,132.79,0Z" transform="scale(0.0037,0.0037)"/>
@@ -31,7 +34,7 @@
           <div class="ippin_text">
             <div class="ippin_text_rayout">
               <span class="foJ_Thin">他とは一線を画す上品な味わい</span>
-              <p class="foJ_Bld">とらふぐラーメン</p>
+              <p class="foJ_Bld">{{ product.title }}</p>
             </div>
           </div>
         </div>
@@ -48,166 +51,10 @@
       </a>
     </li>
     <!-- //store -->
-
-    <!-- store -->
-    <li class="store fadein">
-      <a href="#">
-        <div class="chef clear" style="background-image: url('{{ "_img_chef002.jpg" | asset_url }}')">
-          <div class="ribbon_box">
-            <ul class="ribbon">
-              <li><img src="{{ '_img_storename_002.png' | asset_url }}" alt="大鳳閣"></li>
-            </ul>
-          </div>
-        </div>
-        <div class="ippin">
-          <div class="ippin_img">
-            <img src="{{ '_img_i002.jpg' | asset_url }}" class="mask">
-            <svg version="1.1" x="0px" y="0px" viewBox="0 0 265.61 265.63" width="0" height="0">
-              <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
-                 <path d="M132.79,0A132.82,132.82,0,0,0,21.69,205.56c.76,10.34,0,31.88-18.26,36.92,0,0,21,10.89,48.81-4.08A132.81,132.81,0,1,0,132.79,0Z" transform="scale(0.0037,0.0037)"/>
-              </clipPath>
-            </svg>
-          </div>
-          <div class="ippin_text">
-            <div class="ippin_text_rayout">
-              <span class="foJ_Thin">野趣溢れる舌触り</span>
-              <p class="foJ_Bld">猪肉の角煮饅頭</p>
-            </div>
-          </div>
-        </div>
-        <div class="btn_box">
-          <div class="btn">
-            <span class="info foJ_Mid">
-              <span class="quantity foJ_Mid">3食入り</span>
-              <span class="price foE">1,500</span>
-              <span class="tax foJ_Mid">(税別)</span>
-            </span>
-            <div class="icon cart"></div>
-          </div>
-        </div>
-      </a>
-    </li>
-    <!-- //store -->
-
-    <!-- store -->
-    <li class="store fadein">
-      <a href="#">
-        <div class="chef clear" style="background-image: url('{{ "_img_chef003.jpg" | asset_url }}')">
-          <div class="ribbon_box">
-            <ul class="ribbon">
-              <li><img src="{{ '_img_storename_003.png' | asset_url }}" alt="御料理 はし本"></li>
-            </ul>
-          </div>
-        </div>
-        <div class="ippin">
-          <div class="ippin_img">
-            <img src="{{ '_img_i003.jpg' | asset_url }}" class="mask">
-            <svg version="1.1" x="0px" y="0px" viewBox="0 0 265.61 265.63" width="0" height="0">
-              <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
-                 <path d="M132.79,0A132.82,132.82,0,0,0,21.69,205.56c.76,10.34,0,31.88-18.26,36.92,0,0,21,10.89,48.81-4.08A132.81,132.81,0,1,0,132.79,0Z" transform="scale(0.0037,0.0037)"/>
-              </clipPath>
-            </svg>
-          </div>
-          <div class="ippin_text">
-            <div class="ippin_text_rayout">
-              <span class="foJ_Thin">他とは一線を画す上品な味わい</span>
-              <p class="foJ_Bld">湯葉餃子</p>
-            </div>
-          </div>
-        </div>
-        <div class="btn_box">
-          <div class="btn">
-            <span class="info foJ_Mid">
-              <span class="quantity foJ_Mid">3食入り</span>
-              <span class="price foE">1,500</span>
-              <span class="tax foJ_Mid">(税別)</span>
-            </span>
-            <div class="icon cart"></div>
-          </div>
-        </div>
-      </a>
-    </li>
-    <!-- //store -->
-
-    <!-- store -->
-    <li class="store fadein">
-      <a href="#">
-        <div class="chef clear" style="background-image: url('{{ "_img_chef004.jpg" | asset_url }}')">
-          <div class="ribbon_box">
-            <ul class="ribbon">
-              <li><img src="{{ '_img_storename_004.png' | asset_url }}" alt="二八"></li>
-            </ul>
-          </div>
-        </div>
-        <div class="ippin">
-          <div class="ippin_img">
-            <img src="{{ '_img_i004.jpg' | asset_url }}" class="mask">
-            <svg version="1.1" x="0px" y="0px" viewBox="0 0 265.61 265.63" width="0" height="0">
-              <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
-                 <path d="M132.79,0A132.82,132.82,0,0,0,21.69,205.56c.76,10.34,0,31.88-18.26,36.92,0,0,21,10.89,48.81-4.08A132.81,132.81,0,1,0,132.79,0Z" transform="scale(0.0037,0.0037)"/>
-              </clipPath>
-            </svg>
-          </div>
-          <div class="ippin_text">
-            <div class="ippin_text_rayout">
-              <span class="foJ_Thin">みんなが懐かしい、この一本</span>
-              <p class="foJ_Bld">もも唐</p>
-            </div>
-          </div>
-        </div>
-        <div class="btn_box">
-          <div class="btn">
-            <span class="info foJ_Mid">
-              <span class="quantity foJ_Mid">3食入り</span>
-              <span class="price foE">1,500</span>
-              <span class="tax foJ_Mid">(税別)</span>
-            </span>
-            <div class="icon cart"></div>
-          </div>
-        </div>
-      </a>
-    </li>
-    <!-- //store -->
-
-    <!-- store -->
-    <li class="store fadein">
-      <a href="#">
-        <div class="chef clear" style="background-image: url('{{ "_img_chef005.jpg" | asset_url }}')">
-          <div class="ribbon_box">
-            <ul class="ribbon">
-              <li><img src="{{ '_img_storename_005.png' | asset_url }}g" alt="茶蔵"></li>
-            </ul>
-          </div>
-        </div>
-        <div class="ippin">
-          <div class="ippin_img">
-            <img src="{{ '_img_i001.jpg' | asset_url }}" class="mask">
-            <svg version="1.1" x="0px" y="0px" viewBox="0 0 265.61 265.63" width="0" height="0">
-              <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
-                 <path d="M132.79,0A132.82,132.82,0,0,0,21.69,205.56c.76,10.34,0,31.88-18.26,36.92,0,0,21,10.89,48.81-4.08A132.81,132.81,0,1,0,132.79,0Z" transform="scale(0.0037,0.0037)"/>
-              </clipPath>
-            </svg>
-          </div>
-          <div class="ippin_text">
-            <div class="ippin_text_rayout">
-              <span class="foJ_Thin">他とは一線を画す上品な味わい</span>
-              <p class="foJ_Bld">とらふぐラーメン</p>
-            </div>
-          </div>
-        </div>
-        <div class="btn_box">
-          <div class="btn">
-            <span class="info foJ_Mid">
-              <span class="quantity foJ_Mid">3食入り</span>
-              <span class="price foE">1,500</span>
-              <span class="tax foJ_Mid">(税別)</span>
-            </span>
-            <div class="icon cart"></div>
-          </div>
-        </div>
-      </a>
-    </li>
-    <!-- //store -->
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+  
   </ul>
   <div id="concept">
     <div id="concept_box">
