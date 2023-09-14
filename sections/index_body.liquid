@@ -4,6 +4,12 @@
 {% else %}
   コレクション内に商品がありません。
 {% endfor %}
+
+{% for collection in collections %}
+  {% for product in collection.products %}
+    aaaa
+  {% endfor %}
+{% endfor %}
 <div class="content" style="padding:5vw 0 0;">
   <!-- コンテンツ部分 -->
   <div class="ttl_index_01">
