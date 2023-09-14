@@ -9,7 +9,8 @@
     </p>
   </div>
   <ul id="ippin" class="clearfix">
-{% for product in collection.products %}
+{% for product in collection.products -%}
+
     <li class="store fadein">
       <a href="#">
         <div class="chef clear" style="background-image: url('{{ "_img_chef001.jpg" | asset_url }}')">
@@ -48,7 +49,8 @@
       </a>
     </li>
     <!-- //store -->
-{% endfor %}
+  {{ product.title }}
+{%- endfor %}
     <!-- store -->
     <li class="store fadein">
       <a href="#">
