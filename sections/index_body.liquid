@@ -12,13 +12,14 @@
   <ul id="ippin" class="clearfix">
     
   {% for collection in collections %}
+    
     {% for product in collection.products %}
     <li class="store fadein">
       <a href="#">
-        <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
+        <div class="chef clear" style="background-image: url('{{ "_img_chef001.jpg" | asset_url }}')">
           <div class="ribbon_box">
             <ul class="ribbon">
-              <li><img src="{{ product.images[6] | img_url:'original' }}" alt="豊後水道ふぐ 柳井"></li>
+              <li><img src="{{ product.images[1] | img_url:'original' }}" alt="豊後水道ふぐ 柳井"></li>
             </ul>
           </div>
         </div>
