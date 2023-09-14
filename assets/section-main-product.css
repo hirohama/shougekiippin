@@ -452,6 +452,7 @@ a.product__text {
 
 .product-form__quantity .form__label {
   margin-bottom: 0.6rem;
+  display:inline;
 }
 
 .price-per-item__label.form__label {
