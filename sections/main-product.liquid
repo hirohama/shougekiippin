@@ -76,7 +76,7 @@
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-        {% comment %}
+{% comment %}
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when '@app' -%}
@@ -548,7 +548,7 @@
               %}
           {%- endcase -%}
         {%- endfor -%}
-        {% endcomment %}
+{% endcomment %}
 <!-- 数量入力 -->
         <div
                 id="Quantity-Form-{{ section.id }}"
