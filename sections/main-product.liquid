@@ -73,9 +73,8 @@
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
         <div class="item_name">
           <h1 class="foJ_Bld">
-            とらふぐラーメンと<br>
-            とらふぐ餃子
-            <span>豊後水道ふぐ 柳井</span>
+            {{ product.title }}
+            <span>{{ product.metafields.custom.storename }}</span>
           </h1>
         </div>
         <div class="quantities">
@@ -311,7 +310,7 @@
           show_pickup_availability: true
         -%}
         <!-- カートに入れるボタンここまで -->
-          {{ product.metafields.custom.storename }}
+          
         </product-info>
       </div>
     </li>
