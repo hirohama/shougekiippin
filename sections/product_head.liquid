@@ -69,6 +69,7 @@
                       <span>豊後水道ふぐ 柳井</span>
                   </h1>
               </div>
+              {%- assign product_form_id = 'product-form-' | append: section.id -%}
               <div class="quantities">
                 {% for variant in product.variants %}
                 <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
@@ -78,7 +79,6 @@
               </div>
               <div class="count foJ_Bld">
 <!--数量セレクタ-->
-              {%- assign product_form_id = 'product-form-' | append: section.id -%}
               <div
                 id="Quantity-Form-{{ section.id }}"
                 class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
