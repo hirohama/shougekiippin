@@ -1,3 +1,28 @@
+<div class="content" style="padding-top:7vw">
+  <ul id="product_introduce_col1" class="clearfix fadein">
+    <li id="chef_photo">
+      <div class="chef_photobox" style="background-image: url('{{ product.images[1] | img_url:"original" }}');"></div>
+    </li>
+    <li id="product_outline_1" style="background-image: url('{{ product.images[3] | img_url:"original" }}');">
+      <ul id="outline_1_textbox" class="clearfix">
+        <li class="outline_1_title foJ_Mid"><h2>{{ product.metafields.custom.title_1 }}</h2></li>
+        <li class="outline_1_text foJ_Thin">{{ product.metafields.custom.text_1 }}</li>
+      </ul>
+    </li>
+  </ul>
+  <ul id="product_introduce_col2" class="clearfix fadein">
+    <li id="image_photo">
+      <div class="image_photobox" style="background-image: url('{{ product.images[4] | img_url:"original" }}');"></div>
+    </li>
+    <li id="product_outline_2">
+      <ul id="outline_2_textbox" class="clearfix">
+        <li class="outline_2_title foJ_Mid"><h2>{{ product.metafields.custom.title_2 }}</h2></li>
+        <li class="outline_2_text foJ_Thin">{{ product.metafields.custom.text_2 }}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
 {% schema %}
   {
     "name": "商品概要・アウトライン",

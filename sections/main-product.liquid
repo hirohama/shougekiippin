@@ -59,7 +59,7 @@
 
 {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-<div class="content">
+<div class="content" style="padding-top:12vw">
   <ul id="product" class="clearfix">
     <li id="product_introduce">
       
@@ -318,7 +318,7 @@
     <li id="product_photo" style="background-image: url('{{ product.images[0] | img_url:"original" }}');">
       <div class="ribbon_box">
         <ul class="ribbon foJ_Bld">
-          <li>他とは一線を画す、上品な味わい</li>
+          <li>{{ product.content }}</li>
         </ul>
       </div>
     </li>

@@ -25,7 +25,6 @@ div#wrap{
     border-right:20px solid #FC0;
     position:relative;
     width:100%;
-    padding-top: 12vw;
     height:auto;
 }
 
@@ -363,6 +362,7 @@ ul#ippin{
             border-right:1px solid #000;
             overflow:hidden;
         }
+            div.ribbon_box ul.ribbon_in_img,
             div.ribbon_box ul.ribbon{
                 width:100%;
                 background: #f5c520;
@@ -377,10 +377,16 @@ ul#ippin{
                     writing-mode: vertical-rl;
                     font-size:1.6vw;
                     line-height: 2.45vw;
+                    letter-spacing: 0.1vw;
                 }
-                    div.ribbon_box ul.ribbon li img{
+                div.ribbon_box ul.ribbon_in_img li{
+                    width:100%;
+                    min-height:10vw;
+                }
+                    div.ribbon_box ul.ribbon_in_img li img{
                         width:100%;
                     }
+            div.ribbon_box ul.ribbon_in_img::before,
             div.ribbon_box ul.ribbon::before{
                 content: "";
                 display: block;
@@ -394,6 +400,7 @@ ul#ippin{
                 transform: rotate(-45deg);
                 border-bottom:1px solid #000;
             }
+            div.ribbon_box ul.ribbon_in_img::after,
             div.ribbon_box ul.ribbon::after{
                 content: "";
                 display: block;
@@ -528,17 +535,16 @@ div#concept #concept_box {
             }
 /*------------------------------------------------
 
-store
+product,store
 
 -------------------------------------------------*/
 ul#product{
-
 }
 ul#product li#product_introduce{
     float: left;
     position: relative;
     width: calc(30vw - 31px);
-    height: 33vw;
+    height: 30vw;
 }
     li#product_introduce #infomation{
         display: inline;
@@ -564,11 +570,102 @@ ul#product li#product_introduce{
 ul#product li#product_photo{
     float: right;
     width: calc(70vw - 31px);
-    height: 33vw;
+    height: 30vw;
     background-size: 100%;
     background-position: 50% 50%;
 }
+ul#product_introduce_col1{
 
+}
+    ul#product_introduce_col1 li#chef_photo{
+        width:44vw;
+        height:49vw;
+        float:left;
+    }
+        li#chef_photo .chef_photobox{
+            width:32vw;
+            height:40vw;
+            background-size: auto 100%;
+            background-position: 50% 50%;
+            margin:auto;
+        }
+    ul#product_introduce_col1 li#product_outline_1{
+        width:calc(56vw - 80px);
+        height:49vw;
+        float:right;
+        background-size: auto 30%;
+        background-position: bottom 2vw right 2vw;
+        background-repeat: no-repeat;
+    }
+        li#product_outline_1 ul#outline_1_textbox{
+            width:42vw;
+        }
+            ul#outline_1_textbox .outline_1_title{
+                float: right;
+                text-align: right;
+                width:10vw;
+            }
+                ul#outline_1_textbox .outline_1_title h2{
+                    padding-top:4vw;
+                    display: inline-block;
+                    writing-mode: vertical-rl;
+                    -ms-writing-mode: tb-rl;
+                    text-align: left;
+                    font-size:2.2vw;
+                    line-height:2.5vw;
+                    letter-spacing: 0.04vw;
+                }
+            ul#outline_1_textbox .outline_1_text{
+                padding-top:4vw;
+                float:left;
+                width:30vw;
+                font-size:1.3vw;
+                line-height:2.2vw;
+                letter-spacing: 0.04vw;
+            }
+
+ul#product_introduce_col2{
+
+}
+    ul#product_introduce_col2 li#image_photo{
+        width:45vw;
+        float:right;
+    }
+        li#image_photo .image_photobox{
+            width:43vw;
+            height:30vw;
+            background-size: auto 100%;
+            background-position: 50% 50%;
+        }
+    ul#product_introduce_col2 li#product_outline_2{
+        width:calc(53vw - 80px);
+        height:30vw;
+        float:left;
+    }
+        li#product_outline_2 ul#outline_2_textbox{
+            width:46vw;
+        }
+            ul#outline_2_textbox .outline_2_title{
+                float: left;
+                text-align: right;
+                width:11vw;
+            }
+                ul#outline_2_textbox .outline_2_title h2{
+                    display: inline-block;
+                    writing-mode: vertical-rl;
+                    -ms-writing-mode: tb-rl;
+                    text-align: left;
+                    font-size:2.2vw;
+                    line-height:2.5vw;
+                    letter-spacing: 0.04vw;
+                }
+            ul#outline_2_textbox .outline_2_text{
+                float:right;
+                width:30vw;
+                font-size:1.3vw;
+                line-height:2.2vw;
+                letter-spacing: 0.04vw;
+            }
 /*------------------------------------------------
 
 button
