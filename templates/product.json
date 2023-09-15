@@ -5,11 +5,6 @@
       "settings": {
       }
     },
-    "main": {
-      "type": "main-product",
-      "settings": {
-      }
-    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -37,7 +32,6 @@
   },
   "order": [
     "c79a481a-6218-4098-9826-5de5aa6e069b",
-    "main",
     "related-products",
     "e1c7fa7f-2180-44bf-bbd3-de44a4187928"
   ]
