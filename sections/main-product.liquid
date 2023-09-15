@@ -59,11 +59,11 @@
 
 {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-<div class="content" style="padding-top:12vw">
+<div class="content innerpage_content">
   <ul id="product" class="clearfix">
     <li id="product_introduce">
       
-      <div id="infomation">
+      <div id="information">
         <product-info
           id="ProductInfo-{{ section.id }}"
           data-section="{{ section.id }}"

@@ -1,3 +1,33 @@
+<div class="content">
+  <ul id="product_spec">
+    <li id="to_eat">
+      <h3>商品情報</h3>
+      <img src="{{ product.images[5] | img_url:"original" }}" alt="">
+      <h4>お召し上がり方</h4>
+      <span>{{ product.metafields.custom.to_eat }}</span>
+    </li>
+    <li id="component">
+      {% for i in (1..30) %}
+        {% if product.metafields.custom.component_title.value[i] == blank %}
+          break!!{% break %}
+        {% else %}
+          {{ product.metafields.custom.component_title.value[i] }}:{{ product.metafields.custom.component_content.value[i] }}<br>
+        {% endif %}
+      {% endfor %}
+    </li>
+    <li id="store_information">
+      {{ product.metafields.custom.storename }}
+      {{ product.metafields.custom.address }}
+      {% for i in (1..30) %}
+        {% if product.metafields.custom.store_information_title.value[i] == blank %}
+            break!!{% break %}
+        {% else %}
+          {{ product.metafields.custom.store_information_title.value[i] }}:{{ product.metafields.custom.store_information_content.value[i] }}<br>
+        {% endif %}
+      {% endfor %}
+    </li>
+  </ul>
+</div>
 {% schema %}
   {
     "name": "お召し上がり方・成分表示・店舗案内",
