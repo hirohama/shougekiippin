@@ -77,19 +77,21 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="btn product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
           >
-            <span>
+
+            <span class="info foJ_Mid">
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
             </span>
-            <div class="loading-overlay__spinner hidden">
+          <div class="icon cart"></div>
+            <!--div class="loading-overlay__spinner hidden">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -99,7 +101,7 @@
               >
                 <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
               </svg>
-            </div>
+          </div-->
           </button>
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
