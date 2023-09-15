@@ -1,5 +1,10 @@
 {
   "sections": {
+    "c79a481a-6218-4098-9826-5de5aa6e069b": {
+      "type": "main-product",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-product",
       "settings": {
@@ -22,10 +27,17 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "e1c7fa7f-2180-44bf-bbd3-de44a4187928": {
+      "type": "product_introduce",
+      "settings": {
+      }
     }
   },
   "order": [
+    "c79a481a-6218-4098-9826-5de5aa6e069b",
     "main",
-    "related-products"
+    "related-products",
+    "e1c7fa7f-2180-44bf-bbd3-de44a4187928"
   ]
 }
