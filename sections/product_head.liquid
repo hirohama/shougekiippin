@@ -61,6 +61,12 @@
 
 <div class="content">
   <ul id="product" class="clearfix">
+    <product-info
+        id="ProductInfo-{{ section.id }}"
+        data-section="{{ section.id }}"
+        data-url="{{ product.url }}"
+        class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+      >
     {%- assign product_form_id = 'product-form-' | append: section.id -%}
     <li id="product_introduce">
       <div id="infomation">
@@ -306,6 +312,7 @@
         <!-- カートに入れるボタンここまで -->
       </div>
     </li>
+      </product-info>
     <li id="product_photo" style="background-image: url('{{ product.images[0] | img_url:"original" }}');">
       <div class="ribbon_box">
         <ul class="ribbon foJ_Bld">
