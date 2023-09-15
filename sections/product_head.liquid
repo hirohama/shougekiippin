@@ -61,6 +61,7 @@
   
 <div class="content">
    <ul id="product" class="clearfix">
+      {%- assign product_form_id = 'product-form-' | append: section.id -%}
       <li id="product_introduce">
           <div id="infomation">
               <div class="item_name">
@@ -69,7 +70,6 @@
                       <span>豊後水道ふぐ 柳井</span>
                   </h1>
               </div>
-              {%- assign product_form_id = 'product-form-' | append: section.id -%}
               <div class="quantities">
                 {% for variant in product.variants %}
                 <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
