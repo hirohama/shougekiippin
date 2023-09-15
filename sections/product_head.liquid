@@ -55,6 +55,10 @@
       onload="this.media='all'"
     >
   {%- endif -%}
+
+
+  {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+  
 <div class="content">
    <ul id="product" class="clearfix">
       <li id="product_introduce">
