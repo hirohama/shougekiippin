@@ -90,7 +90,7 @@
             {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
             {% # theme-check-enable %}
 
-            <label class="quantity__label form__label" for="Quantity-{{ section.id }}" style="display:inline-block">
+            <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
               {{ 'products.product.quantity.label' | t }}
               <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
                 <span class="loading-overlay hidden">
@@ -106,11 +106,9 @@
                     </svg>
                   </span>
                 </span>
-                <span
-                  >(
+                <span>(
                   {{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}}
-                  )</span
-                >
+                  )</span>
               </span>
             </label>
             <div class="price-per-item__container" style="display:inline-block;">
