@@ -1252,7 +1252,7 @@ button.shopify-payment-button__button--unbranded {
   background-color: rgba(var(--color-button), var(--alpha-button-background));
 }
 
-.button:before,
+/*.button:before,
 .shopify-challenge__button:before,
 .customer button:before,
 .shopify-payment-button__button--unbranded:before,
@@ -1270,7 +1270,7 @@ button.shopify-payment-button__button--unbranded {
     rgba(var(--color-shadow), var(--shadow-opacity));
 }
 
-/*.button:after,
+.button:after,
 .shopify-challenge__button:after,
 .customer button:after,
 .shopify-payment-button__button--unbranded:after {
