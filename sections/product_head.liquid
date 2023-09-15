@@ -61,15 +61,16 @@
 
 <div class="content">
   <ul id="product" class="clearfix">
-    <product-info
-        id="ProductInfo-{{ section.id }}"
-        data-section="{{ section.id }}"
-        data-url="{{ product.url }}"
-        class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
-      >
-    {%- assign product_form_id = 'product-form-' | append: section.id -%}
     <li id="product_introduce">
+      
       <div id="infomation">
+        <product-info
+          id="ProductInfo-{{ section.id }}"
+          data-section="{{ section.id }}"
+          data-url="{{ product.url }}"
+          class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+        >
+        {%- assign product_form_id = 'product-form-' | append: section.id -%}
         <div class="item_name">
           <h1 class="foJ_Bld">
             とらふぐラーメンと<br>
@@ -310,6 +311,7 @@
           show_pickup_availability: true
         -%}
         <!-- カートに入れるボタンここまで -->
+        </product-info>
       </div>
     </li>
       
@@ -319,7 +321,7 @@
           <li>他とは一線を画す、上品な味わい</li>
         </ul>
       </div>
-    </li></product-info>
+    </li>
   </ul>
 </div>
 <!-- //content -->
