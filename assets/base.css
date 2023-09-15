@@ -1233,24 +1233,24 @@ button.shopify-payment-button__button--unbranded {
     rgba(var(--color-shadow), var(--shadow-opacity));
 }
 
-/*.button,
+.button,
 .shopify-challenge__button,
 .customer button {
-  display: inline-flex;
+  /*display: inline-flex;
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 0 3rem;
+  padding: 0 3rem;*/
   cursor: pointer;
-  font: inherit;
+  /*font: inherit;
   font-size: 1.5rem;
   text-decoration: none;
   color: rgb(var(--color-button-text));
   transition: box-shadow var(--duration-short) ease;
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgba(var(--color-button), var(--alpha-button-background));
-}*/
+  background-color: rgba(var(--color-button), var(--alpha-button-background));*/
+}
 
 /*.button:before,
 .shopify-challenge__button:before,
