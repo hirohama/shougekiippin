@@ -585,7 +585,7 @@ ul#product_introduce_col1{
 }
     ul#product_introduce_col1 li#chef_photo{
         width:37vw;
-        height:49vw;
+        height:40vw;
         padding-left:5vw;
         float:left;
     }
@@ -623,16 +623,19 @@ ul#product_introduce_col1{
         width:calc(58vw - 80px);
         float:right;
         position:relative;
-        padding-bottom:18vw;/*div#outline_1_handjobにpadding分を足した数字*/
+        min-height: 47vw;
+        padding-bottom:7.5vw;/*div#outline_1_handjobにpadding分を足した数字*/
 
     }
         li#product_outline_1 ul#outline_1_textbox{
-            width:40vw;
+            width:38vw;
+            position: relative;
+            z-index:10;
         }
             ul#outline_1_textbox .outline_1_title{
                 float: right;
                 text-align: right;
-                width:10vw;
+                width:8vw;
             }
                 ul#outline_1_textbox .outline_1_title h2{
                     padding-top:4vw;
@@ -653,13 +656,14 @@ ul#product_introduce_col1{
                 letter-spacing: 0.04vw;
             }
         li#product_outline_1 div#outline_1_handjob{
-            width:25vw;
-            height:15vw;
-            background-size: auto 100%;
-            background-position: 50% 50%;
+            width:22vw;
+            height:13vw;
             position:absolute;
             bottom:2vw;
-            right:2vw;
+            right:0;
+            background-size: auto 100%;
+            background-position: 50% 50%;
+            z-index:9;
         }
 ul#product_introduce_col2{
     padding-bottom:7vw;
@@ -671,20 +675,21 @@ ul#product_introduce_col2{
         li#image_photo .image_photobox{
             width:43vw;
             height:30vw;
+            margin-right:2vw;
             background-size: auto 100%;
             background-position: 50% 50%;
         }
     ul#product_introduce_col2 li#product_outline_2{
-        width:calc(51vw - 80px);
+        width:calc(49vw - 80px);
         float:right;
     }
         li#product_outline_2 ul#outline_2_textbox{
-            width:49vw;
+            width:100%;
         }
             ul#outline_2_textbox .outline_2_title{
                 float: left;
                 text-align: left;
-                width:10vw;
+                width:9vw;
             }
                 ul#outline_2_textbox .outline_2_title h2{
                     display: inline-block;
