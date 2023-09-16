@@ -1,7 +1,9 @@
 <div class="content">
   <ul id="product_introduce_col1" class="clearfix fadein">
     <li id="chef_photo">
-      <div class="chef_photobox" style="background-image: url('{{ product.images[1] | img_url:"original" }}');"></div>
+      <div class="chef_photobox" style="background-image: url('{{ product.images[1] | img_url:"original" }}');">
+        <div><h5 class="foJ_Mid">{{ product.metafields.custom.storename }}</h5><h4 class="foJ_Bld">{{ product.metafields.custom.owner }}さん</h4></div>
+      </div>
     </li>
     <li id="product_outline_1" style="background-image: url('{{ product.images[3] | img_url:"original" }}');">
       <ul id="outline_1_textbox" class="clearfix">
