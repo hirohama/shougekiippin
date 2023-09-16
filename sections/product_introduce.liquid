@@ -5,11 +5,12 @@
         <div><h5 class="foJ_Mid">{{ product.metafields.custom.storename }}</h5><h4 class="foJ_Bld">{{ product.metafields.custom.owner }}さん</h4></div>
       </div>
     </li>
-    <li id="product_outline_1" style="background-image: url('{{ product.images[3] | img_url:"original" }}');">
+    <li id="product_outline_1">
       <ul id="outline_1_textbox" class="clearfix">
         <li class="outline_1_title foJ_Mid"><h2>{{ product.metafields.custom.title_1 }}</h2></li>
         <li class="outline_1_text foJ_Thin">{{ product.metafields.custom.text_1 }}</li>
       </ul>
+      <div id="outline_1_handjob" style="background-image: url('{{ product.images[3] | img_url:"original" }}');"></div>
     </li>
   </ul>
   <ul id="product_introduce_col2" class="clearfix fadein">

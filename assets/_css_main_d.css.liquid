@@ -621,11 +621,10 @@ ul#product_introduce_col1{
         }
     ul#product_introduce_col1 li#product_outline_1{
         width:calc(58vw - 80px);
-        height:49vw;
         float:right;
-        background-size: auto 30%;
-        background-position: bottom 2vw right 2vw;
-        background-repeat: no-repeat;
+        position:relative;
+        padding-bottom:18vw;/*div#outline_1_handjobにpadding分を足した数字*/
+
     }
         li#product_outline_1 ul#outline_1_textbox{
             width:40vw;
@@ -653,7 +652,15 @@ ul#product_introduce_col1{
                 line-height:2vw;
                 letter-spacing: 0.04vw;
             }
-
+        li#product_outline_1 div#outline_1_handjob{
+            width:25vw;
+            height:15vw;
+            background-size: auto 100%;
+            background-position: 50% 50%;
+            position:absolute;
+            bottom:2vw;
+            right:2vw;
+        }
 ul#product_introduce_col2{
     padding-bottom:7vw;
 }
