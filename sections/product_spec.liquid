@@ -41,16 +41,16 @@
         </table>
       </li>
     </ul>
-    <div id="product_accessmap"><h3 class="foJ_Bld">アクセスマップ</h3></div>
-      <iframe
-        width="450"
-        height="250"
-        frameborder="0" style="border:0"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/MAP_MODE?key=AIzaSyDCLuYv-53j-5LC4QVa1gJBw1nIJW5rBtg&q=柳井"
-        allowfullscreen>
-      </iframe>
+    <div id="product_accessmap">
+      <h3 class="foJ_Bld">アクセスマップ</h3>
+      <script>
+        const uri = "{{ product.metafields.custom.storename }}";
+        const encoded = encodeURI(uri);
+        document.write('<iframe width="100%" height="300px" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDCLuYv-53j-5LC4QVa1gJBw1nIJW5rBtg&q=' + encoded + '" allowfullscreen></iframe>');
+      </script>
     </div>
+  </div>
+  <!-- //product_spec_box -->
 </div>
 {% schema %}
   {
