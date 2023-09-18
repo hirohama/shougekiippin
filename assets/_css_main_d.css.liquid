@@ -36,9 +36,10 @@ div#wrap{
 
 /*-----------header-----------*/
 header{
+    position:relative;
     display:block;
     width: 100%;
-    z-index: 9999;
+    z-index: 99;
     text-align: right;
 }
 
@@ -130,10 +131,10 @@ header#menu_index.absolute/*top*/{
             border-radius: 9999px;
         }
             .menu_cart_btn .icon.cart{
-                background-image: url("{{ '_img_cart.svg' | asset_url }}");
-                background-size: 60%;
+                background-image: url("{{ '_img_cart_look.svg' | asset_url }}");
+                background-size: 90%;
                 background-repeat: no-repeat;
-                background-position: 40% 50%;
+                background-position: 50% 50%;
             }
 .fixed #menu_bg{
     position:absolute;
@@ -901,9 +902,15 @@ button
     }
         .btn .icon.cart{
             background-image: url("{{ '_img_cart.svg' | asset_url }}");
-            background-size: 60%;
+            background-size: 90%;
             background-repeat: no-repeat;
-            background-position: 40% 50%;
+            background-position: 50% 50%;
+        }
+        .btn .icon.checkout{
+            background-image: url("{{ '_img_cart_checkout.svg' | asset_url }}");
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
         }
 /*------------------------------------------------
 

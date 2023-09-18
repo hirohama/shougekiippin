@@ -3021,15 +3021,15 @@ details-disclosure > details {
 }
 
 .global-media-settings {
-  position: relative;
+  /*position: relative;
   border: var(--media-border-width) solid rgba(var(--color-foreground), var(--media-border-opacity));
   border-radius: var(--media-radius);
-  overflow: visible !important;
-  background-color: rgb(var(--color-background));
+  overflow: visible !important;*/
+  /*background-color: rgb(var(--color-background));*/
 }
 
 .global-media-settings:after {
-  content: '';
+  /*content: '';
   position: absolute;
   top: calc(var(--media-border-width) * -1);
   right: calc(var(--media-border-width) * -1);
@@ -3039,7 +3039,7 @@ details-disclosure > details {
   box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
     rgba(var(--color-shadow), var(--media-shadow-opacity));
   z-index: -1;
-  pointer-events: none;
+  pointer-events: none;*/
 }
 
 .global-media-settings--no-shadow {
