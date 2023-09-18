@@ -40,9 +40,9 @@
       "reset": "検索ワードをクリアする"
     },
     "cart": {
-      "view": "カートを見る ({{ count }})",
+      "view": "カートをみる ({{ count }})",
       "item_added": "カートにアイテムが追加されました",
-      "view_empty_cart": "カートを見る"
+      "view_empty_cart": "カートをみる"
     },
     "share": {
       "copy_to_clipboard": "リンクをコピー",
