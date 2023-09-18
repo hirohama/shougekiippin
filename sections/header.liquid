@@ -355,6 +355,11 @@
             render 'icon-cart'
           endif
         -%}
+
+        {% comment %}
+        <!--↑ヘッダのカートをみるボタン/snippets/icon-cart.liquidとicon-cart-empty.liquidを修正する-->
+        {% endcomment %}
+        
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">

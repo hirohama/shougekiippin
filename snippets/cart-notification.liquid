@@ -43,10 +43,15 @@
         >{{ 'general.cart.view_empty_cart' | t }}</a>
         <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
           <button class="button button--primary button--full-width" name="checkout">
-            {{ 'sections.cart.checkout' | t }}testB
+            <div class="btn">
+              <span class="info foJ_Mid">{{ 'sections.cart.checkout' | t }}</span>
+              <div class="icon cart_checkout"></div>
+            </div>
           </button>
         </form>
-        <button type="button" class="link button-label">{{ 'general.continue_shopping' | t }}testC</button>
+        <button type="button" class="link button-label foJ_Thin">
+          <span class="t_link"><div class="icon back"></div>{{ 'general.continue_shopping' | t }}</span>
+        </button>
       </div>
     </div>
   </div>

@@ -903,25 +903,40 @@ button
         height:calc(2.8vw - 2px);
         background: #FC0;
         border-radius: 9999px;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
     }
-        .btn .icon.cart{
-            background-image: url("{{ '_img_cart.svg' | asset_url }}");
-            background-size: 90%;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-        }
-        .btn .icon.cart_look{
-            background-image: url("{{ '_img_cart_look.svg' | asset_url }}");
-            background-size: 90%;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-        }
-        .btn .icon.checkout{
-            background-image: url("{{ '_img_cart_checkout.svg' | asset_url }}");
-            background-size: 90%;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-        }
+.t_link{
+    display:inline-block;
+    font-size:1.1vw;
+    line-height:1.5vw;
+    text-decoration: underline #000 1px;
+    text-underline-offset: 0.25vw;
+}
+    .t_link .icon{
+        width:2vw;
+        height:2vw;
+        display:inline-block;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        vertical-align:-0.55vw;
+    }
+
+
+.icon.cart{
+    background-image: url("{{ '_img_cart.svg' | asset_url }}");
+}
+.icon.cart_look{
+    background-image: url("{{ '_img_cart_look.svg' | asset_url }}");
+}
+.icon.cart_checkout{
+    background-image: url("{{ '_img_cart_checkout.svg' | asset_url }}");
+}
+.icon.back{
+    background-image: url("{{ '_img_back.svg' | asset_url }}");
+}
 /*------------------------------------------------
 
 utility
