@@ -1,18 +1,36 @@
 $(function(){
+
+    //ヘッダーのアニメーション
     console.log("onReady");
     var headNav = $("header");
+    var draw_menu_container = $('#draw_product_menu');
     var scrollNum = 500;
+    var draw_menu = false;
+    if(draw_menu_container.length){//もし#draw_product_menu_boxがあれば
+        draw_menu=true;
+    }
+    var headHeight=headNav.height();
+    console.log(headHeight);
       //scrollだけだと読み込み時困るのでloadも追加
       $(window).on('load scroll', function () {
+        headHeight=headNav.height();
+        if(draw_menu){
+            headHeight+=draw_menu_container.height();
+        }
         //現在の位置が"scrollNum"以上かつ、クラスfixedが付与されていない時
+
         if($(this).scrollTop() > scrollNum && headNav.hasClass('fixed') == false) {
-          headNav.css({"top": '-100px'}).removeClass('absolute').addClass('fixed').animate({"top": 0},600);
+          headNav.css({"top": '-'+headHeight+'px'}).removeClass('absolute').addClass('fixed').animate({"top": 0},600);
         }else if($(this).scrollTop() < scrollNum && headNav.hasClass('fixed') == true){
-          headNav.not(":animated").animate({"top": -100},150, function() {
+          headNav.not(":animated").animate({"top": '-'+headHeight},150, function() {
             headNav.removeClass('fixed').addClass('absolute').css({"top": '0'});
           })
         }
       });
+
+    $(".draw_product_btn").click(function(){
+      $("#draw_product_menu_box").toggleClass("active");
+    });
 
 
     //スライダーアニメーション

@@ -373,6 +373,16 @@
       </li>
     </ul>
   </menu>
+  {% if template == 'product' %} 
+  <div id="draw_product_menu_box">
+    <div id="draw_product_menu">
+      <div class="draw_product_content_box">
+        <div class="draw_product_content">test</div>
+      </div>
+      <div class="draw_product_btn">商品をみる</div>
+    </div>
+  </div>
+  {% endif %}
 </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
