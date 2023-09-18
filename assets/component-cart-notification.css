@@ -20,7 +20,7 @@
   border-radius: 1vw;
   background: #f4f4f4;
   width:40%;
-  height:50%;
+  min-height:50%;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, .2);
   /*position: absolute;*/
   /*right: 4rem;*/

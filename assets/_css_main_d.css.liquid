@@ -130,12 +130,13 @@ header#menu_index.absolute/*top*/{
             background: #FFF;
             border-radius: 9999px;
         }
-            .menu_cart_btn .icon.cart{
+            .menu_cart_btn .icon.cart_look{
                 background-image: url("{{ '_img_cart_look.svg' | asset_url }}");
                 background-size: 90%;
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
             }
+
 .fixed #menu_bg{
     position:absolute;
     width:100%;
@@ -890,6 +891,9 @@ button
         /*.btn span.info */span.tax_str{
             font-size:1vw;
         }
+        /*.btn span.info */span.cart_count{
+            font-size:0.8vw;
+        }
     .btn .icon{
         display:block;
         position: absolute;
@@ -902,6 +906,12 @@ button
     }
         .btn .icon.cart{
             background-image: url("{{ '_img_cart.svg' | asset_url }}");
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+        .btn .icon.cart_look{
+            background-image: url("{{ '_img_cart_look.svg' | asset_url }}");
             background-size: 90%;
             background-repeat: no-repeat;
             background-position: 50% 50%;
