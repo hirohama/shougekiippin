@@ -41,7 +41,7 @@
     },
     "cart": {
       "view": "カートをみる ({{ count }})",
-      "item_added": "カートにアイテムが追加されました",
+      "item_added": "カートに商品を追加しました",
       "view_empty_cart": "カートをみる"
     },
     "share": {
