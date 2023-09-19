@@ -1,6 +1,4 @@
-$(function(){
-
-    function submitContactForm(event) {
+ function submitContactForm(event) {
       event.preventDefault()
       const form = document.getElementById("contact_form")
       const email = document.getElementById("ContactFormEmail")
@@ -16,6 +14,9 @@ $(function(){
         form.submit()
       }
     }
+$(function(){
+    console.log();
+   
   
     //ヘッダーのアニメーション
     console.log("onReady");
