@@ -22,11 +22,33 @@
             "title": "フルネーム",
             "check": true
           }
+        },
+        "dec9e1af-cde1-4ae9-a453-bab1d152769d": {
+          "type": "email",
+          "settings": {
+            "title": "Eメール"
+          }
+        },
+        "55042a5c-3383-4923-808c-0273c3c87b84": {
+          "type": "text",
+          "settings": {
+            "title": "メール(確認用)",
+            "check": true
+          }
+        },
+        "4eb5a297-4ca7-4b0d-80a0-de4738ce3a83": {
+          "type": "body",
+          "settings": {
+            "title": "メッセージ"
+          }
         }
       },
       "block_order": [
         "d29f50f6-36c5-408b-a870-6ffe7f0fee6a",
-        "81660e97-4b32-4cd7-9ecf-124169d5cfdf"
+        "81660e97-4b32-4cd7-9ecf-124169d5cfdf",
+        "dec9e1af-cde1-4ae9-a453-bab1d152769d",
+        "55042a5c-3383-4923-808c-0273c3c87b84",
+        "4eb5a297-4ca7-4b0d-80a0-de4738ce3a83"
       ],
       "settings": {
         "heading": "",
