@@ -225,6 +225,24 @@
               <span aria-hidden="true">*</span>
             </label>
           </div>
+    
+        {%- comment -%} 郵便番号 {%- endcomment -%}
+        {% when 'postal' %}
+          <div class="field" {{ block.shopify_attributes }}>
+            <input class="field__input"
+            autocomplete="postal"
+            type="text"
+            id="ContactForm-postal"
+            required="true"
+            name="contact[{{ 'templates.contact.form.name_kana' | t }}]"
+            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.name_kana' | t }}">
+
+            <label class="field__label" for="ContactForm-name_kana">
+              {{ 'templates.contact.form.name_kana' | t }}
+              <span aria-hidden="true">*</span>
+            </label>
+          </div>
 
         {%- comment -%} 見出し {%- endcomment -%}
         {% when 'formHeading' %}
