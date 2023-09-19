@@ -19,7 +19,14 @@
         "d2ab4822-e9dc-40db-b8eb-8337d0d85d7c": {
           "type": "name",
           "settings": {
-            "title": "フルネーム"
+            "title": "おなまえ（ひらがな）"
+          }
+        },
+        "a1f80f20-f4d8-45f6-ac79-8b4761f45941": {
+          "type": "text",
+          "settings": {
+            "title": "おなまえ（カタカナ）",
+            "check": false
           }
         },
         "f5c56e82-bf5e-4e40-baf7-1f1a34c8146c": {
@@ -34,6 +41,20 @@
             "title": "Eメール（確認用）"
           }
         },
+        "41432e05-8cee-4ebc-8760-411abc600cb6": {
+          "type": "text",
+          "settings": {
+            "title": "郵便番号",
+            "check": true
+          }
+        },
+        "fbe021bf-7588-4b17-a6ba-8a7b2544a219": {
+          "type": "text",
+          "settings": {
+            "title": "住所",
+            "check": false
+          }
+        },
         "febe780c-54cc-498c-9e85-0d89a14997cd": {
           "type": "body",
           "settings": {
@@ -43,8 +64,11 @@
       },
       "block_order": [
         "d2ab4822-e9dc-40db-b8eb-8337d0d85d7c",
+        "a1f80f20-f4d8-45f6-ac79-8b4761f45941",
         "f5c56e82-bf5e-4e40-baf7-1f1a34c8146c",
         "2c886479-3d1e-44e3-bea3-f3d946ca901f",
+        "41432e05-8cee-4ebc-8760-411abc600cb6",
+        "fbe021bf-7588-4b17-a6ba-8a7b2544a219",
         "febe780c-54cc-498c-9e85-0d89a14997cd"
       ],
       "settings": {
