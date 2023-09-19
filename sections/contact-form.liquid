@@ -190,7 +190,7 @@
           </div>
 
 
-        {%- comment -%} 名前 {%- endcomment -%}
+        {%- comment -%} おなまえ {%- endcomment -%}
         {% when 'name' %}
           <div class="field" {{ block.shopify_attributes }}>
             <input class="field__input"
@@ -207,7 +207,24 @@
               <span aria-hidden="true">*</span>
             </label>
           </div>
+        
+        {%- comment -%} おなまえ（ひらがな） {%- endcomment -%}
+        {% when 'name_kana' %}
+          <div class="field" {{ block.shopify_attributes }}>
+            <input class="field__input"
+            autocomplete="name_kana"
+            type="text"
+            id="ContactForm-name"
+            required="true"
+            name="contact[{{ 'templates.contact.form.name_kana' | t }}]"
+            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.name_kana' | t }}">
 
+            <label class="field__label" for="ContactForm-name_kana">
+              {{ 'templates.contact.form.name_kana' | t }}
+              <span aria-hidden="true">*</span>
+            </label>
+          </div>
 
         {%- comment -%} 見出し {%- endcomment -%}
         {% when 'formHeading' %}
@@ -426,13 +443,13 @@
           {
             "type": "text",
             "id": "title",
-            "label": "おなまえ（）",
+            "label": "おなまえ",
             "default": "おなまえ",
             "info": "例：山田 太郎"
           }
         ]
       },
-    {
+      {
         "type": "name_kana",
         "name": "おなまえ（ひらがな）",
         "limit": 1,
@@ -440,7 +457,7 @@
           {
             "type": "text",
             "id": "title",
-            "label": "おなまえ",
+            "label": "おなまえ（ひらがな）",
             "default": "おなまえ（ひらがな）",
             "info": "例：やまだ たろう"
           }
