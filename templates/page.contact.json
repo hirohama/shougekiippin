@@ -16,17 +16,16 @@
     "13a7414c-250f-4e37-963d-b29d0c525978": {
       "type": "contact-form",
       "blocks": {
-        "d2ab4822-e9dc-40db-b8eb-8337d0d85d7c": {
+        "12827b89-14db-4e65-8bb8-9e677614afc9": {
           "type": "name",
           "settings": {
-            "title": "おなまえ（ひらがな）"
+            "title": "おなまえ"
           }
         },
-        "a1f80f20-f4d8-45f6-ac79-8b4761f45941": {
-          "type": "text",
+        "d2188982-361e-409e-9b82-3c1865c13311": {
+          "type": "name_kana",
           "settings": {
-            "title": "おなまえ（カタカナ）",
-            "check": false
+            "title": "おなまえ（ひらがな）"
           }
         },
         "f5c56e82-bf5e-4e40-baf7-1f1a34c8146c": {
@@ -63,8 +62,8 @@
         }
       },
       "block_order": [
-        "d2ab4822-e9dc-40db-b8eb-8337d0d85d7c",
-        "a1f80f20-f4d8-45f6-ac79-8b4761f45941",
+        "12827b89-14db-4e65-8bb8-9e677614afc9",
+        "d2188982-361e-409e-9b82-3c1865c13311",
         "f5c56e82-bf5e-4e40-baf7-1f1a34c8146c",
         "2c886479-3d1e-44e3-bea3-f3d946ca901f",
         "41432e05-8cee-4ebc-8760-411abc600cb6",
