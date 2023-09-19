@@ -234,12 +234,12 @@
             type="text"
             id="ContactForm-postal"
             required="true"
-            name="contact[{{ 'templates.contact.form.name_kana' | t }}]"
+            name="contact[{{ 'templates.contact.form.postal' | t }}]"
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name_kana' | t }}">
+            placeholder="{{ 'templates.contact.form.postal' | t }}">
 
-            <label class="field__label" for="ContactForm-name_kana">
-              {{ 'templates.contact.form.name_kana' | t }}
+            <label class="field__label" for="ContactForm-postal">
+              {{ 'templates.contact.form.postal' | t }}
               <span aria-hidden="true">*</span>
             </label>
           </div>
