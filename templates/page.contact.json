@@ -15,10 +15,18 @@
           "settings": {
             "title": "フルネーム"
           }
+        },
+        "81660e97-4b32-4cd7-9ecf-124169d5cfdf": {
+          "type": "text",
+          "settings": {
+            "title": "フルネーム",
+            "check": true
+          }
         }
       },
       "block_order": [
-        "d29f50f6-36c5-408b-a870-6ffe7f0fee6a"
+        "d29f50f6-36c5-408b-a870-6ffe7f0fee6a",
+        "81660e97-4b32-4cd7-9ecf-124169d5cfdf"
       ],
       "settings": {
         "heading": "",
