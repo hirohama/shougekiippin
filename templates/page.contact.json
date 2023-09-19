@@ -28,6 +28,12 @@
             "title": "Eメール"
           }
         },
+        "2c886479-3d1e-44e3-bea3-f3d946ca901f": {
+          "type": "emailvelify",
+          "settings": {
+            "title": "Eメール（確認用）"
+          }
+        },
         "dc7789ed-017e-40b8-8d1b-b9eaf9e50945": {
           "type": "text",
           "settings": {
@@ -45,6 +51,7 @@
       "block_order": [
         "d2ab4822-e9dc-40db-b8eb-8337d0d85d7c",
         "f5c56e82-bf5e-4e40-baf7-1f1a34c8146c",
+        "2c886479-3d1e-44e3-bea3-f3d946ca901f",
         "dc7789ed-017e-40b8-8d1b-b9eaf9e50945",
         "febe780c-54cc-498c-9e85-0d89a14997cd"
       ],
