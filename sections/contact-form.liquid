@@ -77,6 +77,40 @@
               </small>
             {%- endif -%}
           </div>
+    
+        {%- comment -%} Eメール確認 {%- endcomment -%}
+        {% when 'emailvalify' %}
+          <div class="field field--with-error" {{ block.shopify_attributes }}>
+            <input
+              autocomplete="email"
+              type="email"
+              id="Form-{{ section.id }}-{{ forloop.index0 }}"
+              class="field__input"
+              name="contact[emailvalify]"
+              spellcheck="false"
+              autocorrect="off"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              required="true"
+              {% if form.errors contains 'email' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-email-error"
+              {% endif %}
+              placeholder="{{ 'templates.contact.form.email' | t }}"
+            >
+
+            <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+              {{ 'templates.contact.form.email' | t }}
+              <span aria-hidden="true">*</span>
+            </label>
+
+            {%- if form.errors contains 'email' -%}
+              <small class="contact__field-error" id="ContactForm-email-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</span>
+              </small>
+            {%- endif -%}
+          </div>
 
         {%- comment -%} 本文 {%- endcomment -%}
         {% when 'body' %}
