@@ -337,9 +337,11 @@
       {%- comment -%} フォームボタン {%- endcomment -%}
       <div class="contact__button">
         <button type="submit" class="button">
+          
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
+    <input type="button" value="送信する" class="btn" onclick="submitContactForm(event)">
 
     <div class="page__contact__policy common__cart__button">
       <!--label for="ContactFormPolicy">
