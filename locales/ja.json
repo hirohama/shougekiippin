@@ -244,7 +244,8 @@
     },
     "contact": {
       "form": {
-        "name": "おなまえ（ひらがな）",
+        "name": "おなまえ",
+        "name_kana": "おなまえ（ひらがな）",
         "email": "メール",
         "phone": "電話番号",
         "comment": "本文",
