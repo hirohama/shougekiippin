@@ -16,114 +16,292 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading }}
-      </h2>
-    {%- else -%}
-      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
-    {%- endif -%}
-    {%- liquid
-      assign contact_form_class = 'isolate'
-      if settings.animations_reveal_on_scroll
-        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
-      endif
-    -%}
-    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+
+    {%- comment -%} タイトル {%- endcomment -%}
+    <h2 class="title title-wrapper--no-top-margin">{{ section.settings.heading | escape }}</h2>
+
+
+    {%- form 'contact', id: 'ContactForm', class: 'isolate custom-form' -%}
+
       {%- if form.posted_successfully? -%}
-        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-          {% render 'icon-success' %}
-          {{ 'templates.contact.form.post_success' | t }}
-        </h2>
+        {%- comment -%} 成功した時のコメント {%- endcomment -%}
+        <div class="form-status form-status-list form__message" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</div>
       {%- elsif form.errors -%}
+        {%- comment -%} エラー表示 {%- endcomment -%}
         <div class="form__message">
-          <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
-            {% render 'icon-error' %}
-            {{ 'templates.contact.form.error_heading' | t }}
-          </h2>
+          <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>{% render 'icon-error' %} {{ 'templates.contact.form.error_heading' | t }}</h2>
         </div>
         <ul class="form-status-list caption-large" role="list">
           <li>
             <a href="#ContactForm-email" class="link">
-              {{ form.errors.translated_fields.email | capitalize }}
-              {{ form.errors.messages.email }}
+              {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
             </a>
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields">
-        <div class="field">
-          <input
-            class="field__input"
+
+      {% for block in section.blocks %}
+
+      {% case block.type %}
+
+        {%- comment -%} Eメール {%- endcomment -%}
+        {% when 'email' %}
+          <div class="field field--with-error" {{ block.shopify_attributes }}>
+            <input
+              autocomplete="email"
+              type="email"
+              id="Form-{{ section.id }}-{{ forloop.index0 }}"
+              class="field__input"
+              name="contact[email]"
+              spellcheck="false"
+              autocorrect="off"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              required="true"
+              {% if form.errors contains 'email' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-email-error"
+              {% endif %}
+              placeholder="{{ 'templates.contact.form.email' | t }}"
+            >
+
+            <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+              {{ 'templates.contact.form.email' | t }}
+              <span aria-hidden="true">*</span>
+            </label>
+
+            {%- if form.errors contains 'email' -%}
+              <small class="contact__field-error" id="ContactForm-email-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</span>
+              </small>
+            {%- endif -%}
+          </div>
+
+        {%- comment -%} 本文 {%- endcomment -%}
+        {% when 'body' %}
+        <div class="field" {{ block.shopify_attributes }}>
+          <textarea
+            rows="10"
+            id="ContactForm-body"
+            class="text-area field__input"
+            required="true"
+            name="contact[{{ 'templates.contact.form.comment' | t }}]"
+            placeholder="{{ 'templates.contact.form.comment' | t }}"
+          >
+            {{- form.body -}}
+          </textarea>
+          <label class="form__label field__label" for="ContactForm-body">
+            {{ 'templates.contact.form.comment' | t }}
+            <span aria-hidden="true">*</span>
+          </label>
+        </div>
+
+
+        {%- comment -%} 1行 テキスト{%- endcomment -%}
+        {% when 'text' %}
+          <div class="field" {{ block.shopify_attributes }}>
+            <input class="field__input"
+                    type="text"
+                    id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                    name="contact[{{ block.settings.title }}]"
+                    value=""
+                    placeholder="{{ block.settings.title }}"
+                    {% if block.settings.check %} required="true" {% endif %}
+                    >
+
+            <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+              {{ block.settings.title }}
+              {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+            </label>
+          </div>
+
+
+        {%- comment -%} テキストエリア {%- endcomment -%}
+        {% when 'textarea' %}
+          <div class="field" {{ block.shopify_attributes }}>
+            <textarea
+              rows="10"
+              id="Form-{{ section.id }}-{{ forloop.index0 }}"
+              class="text-area field__input"
+              name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
+              placeholder="{{ block.settings.title }}"
+              {% if block.settings.check %} required="true" {% endif %}
+            >
+              {{- form.body -}}
+            </textarea>
+            <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+              {{ block.settings.title }}
+              {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+            </label>
+          </div>
+
+
+        {%- comment -%} 電話番号 {%- endcomment -%}
+        {% when 'telephone' %}
+          <div class="field" {{ block.shopify_attributes }}>
+            <input type="tel"
+                    id="ContactForm-phone" class="field__input"
+                    autocomplete="tel"
+                    name="contact[{{ block.settings.title }}]"
+                    pattern="[0-9\-]*"
+                    value=""
+                    placeholder="{{ block.settings.title }}"
+                    {% if block.settings.check %} required="true" {% endif %}
+                    >
+
+            <label class="field__label" for="ContactForm-phone">
+              {{ block.settings.title }}
+              {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+            </label>
+          </div>
+
+
+        {%- comment -%} 名前 {%- endcomment -%}
+        {% when 'name' %}
+          <div class="field" {{ block.shopify_attributes }}>
+            <input class="field__input"
             autocomplete="name"
             type="text"
             id="ContactForm-name"
+            required="true"
             name="contact[{{ 'templates.contact.form.name' | t }}]"
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
-          >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
-        </div>
-        <div class="field field--with-error">
-          <input
-            autocomplete="email"
-            type="email"
-            id="ContactForm-email"
-            class="field__input"
-            name="contact[email]"
-            spellcheck="false"
-            autocapitalize="off"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-            aria-required="true"
-            {% if form.errors contains 'email' %}
-              aria-invalid="true"
-              aria-describedby="ContactForm-email-error"
-            {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
-          >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                {%- render 'icon-error' -%}
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
+            placeholder="{{ 'templates.contact.form.name' | t }}">
+
+            <label class="field__label" for="ContactForm-name">
+              {{ 'templates.contact.form.name' | t }}
+              <span aria-hidden="true">*</span>
+            </label>
+          </div>
+
+
+        {%- comment -%} 見出し {%- endcomment -%}
+        {% when 'formHeading' %}
+          <div class="custom-form__block custom-form__block--heading form-item" {{ block.shopify_attributes }}>
+            <p class="strong">{{ block.settings.title }}</p>
+          </div>
+
+
+        {%- comment -%} 装飾 {%- endcomment -%}
+        {% when 'spacer' %}
+          {%- assign hr_class = 'hr--clear' -%}
+          {%- if block.settings.line -%}
+            {%- assign hr_class = '' -%}
           {%- endif -%}
-        </div>
-      </div>
-      <div class="field">
-        <input
-          type="tel"
-          id="ContactForm-phone"
-          class="field__input"
-          autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
-        >
-        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
-      </div>
-      <div class="field">
-        <textarea
-          rows="10"
-          id="ContactForm-body"
-          class="text-area field__input"
-          name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
-        >
-          {{- form.body -}}
-        </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}
-        </label>
-      </div>
+          <div class="form-item" {{ block.shopify_attributes }}>
+            <hr class="{{ hr_class }}">
+          </div>
+
+        {%- comment -%} チェックボックス {%- endcomment -%}
+        {% when 'checkbox' %}
+          <div class="field no-border" {{ block.shopify_attributes }}>
+            <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
+              <input type="checkbox"
+                      id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                      class="contactFormCheckbox"
+                      name="contact[{{ block.settings.title | handleize | default: 'checkbox' }}]"
+                      value="{{ block.settings.title }}"
+                      {% if block.settings.check %} required="true" {% endif %}
+                      >
+              {{ block.settings.title }}
+              {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+            </label>
+          </div>
+
+
+        {%- comment -%} ラジオボタン {%- endcomment -%}
+        {% when 'radio' %}
+          <div class="field no-border colum" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <legend class="custom-form__label">
+                {{ block.settings.title }}
+                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+              </legend>
+            {% endif %}
+            {% if block.settings.label-one != blank %}
+              <div>
+                <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-1" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-one }}"
+                {% if block.settings.check %} required="true" {% endif %}>
+                <label for="Form-{{ section.id }}-{{ forloop.index0 }}-1">{{ block.settings.label-one }}</label>
+              </div>
+            {% endif %}
+            {% if block.settings.label-two != blank %}
+              <div>
+                <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-2" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-two }}">
+                <label for="Form-{{ section.id }}-{{ forloop.index0 }}-2">{{ block.settings.label-two }}</label>
+              </div>
+            {% endif %}
+            {% if block.settings.label-three != blank %}
+              <div>
+                <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-3" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-three }}">
+                <label for="Form-{{ section.id }}-{{ forloop.index0 }}-3">{{ block.settings.label-three }}</label>
+              </div>
+            {% endif %}
+            {% if block.settings.label-four != blank %}
+              <div>
+                <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-4" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-four }}">
+                <label for="Form-{{ section.id }}-{{ forloop.index0 }}-4">{{ block.settings.label-four }}</label>
+              </div>
+            {% endif %}
+            {% if block.settings.label-five != blank %}
+              <div>
+                <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-5" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-five }}">
+                <label for="Form-{{ section.id }}-{{ forloop.index0 }}-5">{{ block.settings.label-five }}</label>
+              </div>
+            {% endif %}
+            {% if block.settings.label-six != blank %}
+              <div>
+                <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-6" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-six }}">
+                <label for="Form-{{ section.id }}-{{ forloop.index0 }}-6">{{ block.settings.label-six }}</label>
+              </div>
+            {% endif %}
+          </div>
+
+
+        {%- comment -%} セレクトボックス {%- endcomment -%}
+        {% when 'select' %}
+          <div class="field no-border colum" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
+                      class="custom-form__label label--block">
+                {{ block.settings.title }}
+                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+              </label>
+            {% endif %}
+
+            <select id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                    class="contactFormSelect"
+                    name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
+                    {% if block.settings.check %} required="true" {% endif %}
+                    >
+              <option value="">未選択</option>
+              {% if block.settings.label-one != blank %}
+                <option value="{{ block.settings.label-one }}">{{ block.settings.label-one }}</option>
+              {% endif %}
+              {% if block.settings.label-two != blank %}
+                <option value="{{ block.settings.label-two }}">{{ block.settings.label-two }}</option>
+              {% endif %}
+              {% if block.settings.label-three != blank %}
+                <option value="{{ block.settings.label-three }}">{{ block.settings.label-three }}</option>
+              {% endif %}
+              {% if block.settings.label-four != blank %}
+                <option value="{{ block.settings.label-four }}">{{ block.settings.label-four }}</option>
+              {% endif %}
+              {% if block.settings.label-five != blank %}
+                <option value="{{ block.settings.label-five }}">{{ block.settings.label-five }}</option>
+              {% endif %}
+              {% if block.settings.label-six != blank %}
+                <option value="{{ block.settings.label-six }}">{{ block.settings.label-six }}</option>
+              {% endif %}
+            </select>
+          </div>
+
+      {% endcase %}
+
+    {% endfor %}
+
+      {%- comment -%} フォームボタン {%- endcomment -%}
       <div class="contact__button">
         <button type="submit" class="button">
           {{ 'templates.contact.form.send' | t }}
@@ -138,41 +316,40 @@
   "name": "t:sections.contact-form.name",
   "tag": "section",
   "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
   "settings": [
     {
-      "type": "inline_richtext",
+      "type": "text",
       "id": "heading",
       "default": "Contact form",
       "label": "Heading"
     },
     {
       "type": "select",
-      "id": "heading_size",
+      "id": "color_scheme",
       "options": [
         {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
         },
         {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
         },
         {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
         }
       ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "background-1"
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
     },
     {
       "type": "header",
@@ -199,6 +376,270 @@
       "default": 36
     }
   ],
+  "blocks": [
+      {
+        "type": "name",
+        "name": "お名前",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "お名前",
+            "default": "フルネーム",
+            "info": "例：フルネーム"
+          }
+        ]
+      },
+      {
+        "type": "email",
+        "name": "Eメール",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "ラベル",
+            "default": "Eメール"
+          }
+        ]
+      },
+      {
+        "type": "body",
+        "name": "本文",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "ラベル",
+            "default": "本文"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "1行テキスト",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "ラベル",
+            "default": "フルネーム",
+            "info": "例：フルネーム"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "テキストエリア",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "ラベル",
+            "default": "メッセージを入力してください",
+            "info": "例：メッセージを入力してください"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          }
+        ]
+      },
+      {
+        "type": "telephone",
+        "name": "電話",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "ラベル",
+            "default": "電話番号",
+            "info": "例：電話番号"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          }
+        ]
+      },
+      {
+        "type": "formHeading",
+        "name": "見出し",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "見出し",
+            "default": "見出し",
+            "info": "より長いフォームを分割するために使用します"
+          }
+        ]
+      },
+      {
+        "type": "spacer",
+        "name": "装飾",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "line",
+            "label": "水平ライン",
+            "default": false
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "name": "チェックボックス",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "ラベル",
+            "default": "チェックボックスオプション",
+            "info": "例：ニュースレターを購読します"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "name": "セレクト ドロップダウン",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "選択肢一つを選択してください",
+            "info": "例：配達場所を選択します"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          },
+          {
+            "type": "header",
+            "content": "最大6つのオプションを含めます",
+            "info":  "未入力のテキストのオプションは表示されません。"
+          },
+          {
+            "type": "text",
+            "id": "label-one",
+            "default": "オプション1",
+            "label": "オプション1"
+          },
+          {
+            "type": "text",
+            "id": "label-two",
+            "default": "オプション２",
+            "label": "オプション２"
+          },
+          {
+            "type": "text",
+            "id": "label-three",
+            "default": "オプション３",
+            "label": "オプション３"
+          },
+          {
+            "type": "text",
+            "id": "label-four",
+            "default": "オプション４",
+            "label": "オプション４"
+          },
+          {
+            "type": "text",
+            "id": "label-five",
+            "default": "オプション５",
+            "label": "オプション５"
+          },
+          {
+            "type": "text",
+            "id": "label-six",
+            "default": "オプション６",
+            "label": "オプション６"
+          }
+        ]
+      },
+      {
+        "type": "radio",
+        "name": "ラジオボタン",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "タイトル",
+            "default": "オプションを選択します"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          },
+          {
+            "type": "header",
+            "content": "最大6つのオプションを含めます",
+            "info":  "除外するにはオプションテキストを未入力にします"
+          },
+          {
+            "type": "text",
+            "id": "label-one",
+            "default": "オプション１",
+            "label": "オプション１"
+          },
+          {
+            "type": "text",
+            "id": "label-two",
+            "default": "オプション２",
+            "label": "オプション２"
+          },
+          {
+            "type": "text",
+            "id": "label-three",
+            "label": "オプション3"
+          },
+          {
+            "type": "text",
+            "id": "label-four",
+            "label": "オプション4"
+          },
+          {
+            "type": "text",
+            "id": "label-five",
+            "label": "オプション5"
+          },
+          {
+            "type": "text",
+            "id": "label-six",
+            "label": "オプション6"
+          }
+        ]
+      }
+    ],
   "presets": [
     {
       "name": "t:sections.contact-form.presets.name"
