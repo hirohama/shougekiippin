@@ -9,24 +9,55 @@
     },
     "1695108953e08d8ac7": {
       "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "13a7414c-250f-4e37-963d-b29d0c525978": {
+      "type": "contact-form",
       "blocks": {
-        "9298e995-5a2d-401e-8463-23a13cf9b28c": {
-          "type": "shopify:\/\/apps\/powerful-form-builder\/blocks\/app-block\/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+        "d2ab4822-e9dc-40db-b8eb-8337d0d85d7c": {
+          "type": "name",
           "settings": {
-            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"xxxx\"><\/div>"
+            "title": "フルネーム"
+          }
+        },
+        "f5c56e82-bf5e-4e40-baf7-1f1a34c8146c": {
+          "type": "email",
+          "settings": {
+            "title": "Eメール"
+          }
+        },
+        "2c886479-3d1e-44e3-bea3-f3d946ca901f": {
+          "type": "emailvelify",
+          "settings": {
+            "title": "Eメール（確認用）"
+          }
+        },
+        "febe780c-54cc-498c-9e85-0d89a14997cd": {
+          "type": "body",
+          "settings": {
+            "title": "本文"
           }
         }
       },
       "block_order": [
-        "9298e995-5a2d-401e-8463-23a13cf9b28c"
+        "d2ab4822-e9dc-40db-b8eb-8337d0d85d7c",
+        "f5c56e82-bf5e-4e40-baf7-1f1a34c8146c",
+        "2c886479-3d1e-44e3-bea3-f3d946ca901f",
+        "febe780c-54cc-498c-9e85-0d89a14997cd"
       ],
       "settings": {
-        "include_margins": true
+        "heading": "Contact form",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "1695108953e08d8ac7"
+    "1695108953e08d8ac7",
+    "13a7414c-250f-4e37-963d-b29d0c525978"
   ]
 }

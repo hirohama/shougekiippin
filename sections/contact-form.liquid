@@ -50,7 +50,7 @@
             <input
               autocomplete="email"
               type="email"
-              id="Form-{{ section.id }}-{{ forloop.index0 }}"
+              id="ContactFormEmail"
               class="field__input"
               name="contact[email]"
               spellcheck="false"
@@ -59,6 +59,40 @@
               value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
               required="true"
               {% if form.errors contains 'email' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-email-error"
+              {% endif %}
+              placeholder="{{ 'templates.contact.form.email' | t }}"
+            >
+
+            <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+              {{ 'templates.contact.form.email' | t }}
+              <span aria-hidden="true">*</span>
+            </label>
+
+            {%- if form.errors contains 'email' -%}
+              <small class="contact__field-error" id="ContactForm-email-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</span>
+              </small>
+            {%- endif -%}
+          </div>
+    
+        {%- comment -%} Eメール確認 {%- endcomment -%}
+        {% when 'emailvelify' %}
+          <div class="field field--with-error" {{ block.shopify_attributes }}>
+            <input
+              autocomplete="email"
+              type="email"
+              id="ContactFormEmailVerify"
+              class="field__input"
+              name="contact[emailvelify]"
+              spellcheck="false"
+              autocorrect="off"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              required="true"
+              {% if form.errors contains 'emailvelify' %}
                 aria-invalid="true"
                 aria-describedby="ContactForm-email-error"
               {% endif %}
@@ -301,11 +335,19 @@
     {% endfor %}
 
       {%- comment -%} フォームボタン {%- endcomment -%}
-      <div class="contact__button">
-        <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
-        </button>
-      </div>
+          <div class="btn" onclick="submitContactForm(event)">
+            <span class="info foJ_Mid">
+              {{ 'templates.contact.form.send' | t }}
+            </span>
+            <div class="icon submit"></div>
+          </div>
+      <!--label for="ContactFormPolicy">
+        <a href="/pages/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" required="">
+        プライバシーポリシーに同意する
+    </label-->
     {%- endform -%}
   </div>
 </div>
@@ -400,6 +442,19 @@
             "id": "title",
             "label": "ラベル",
             "default": "Eメール"
+          }
+        ]
+      },
+      {
+        "type": "emailvelify",
+        "name": "Eメール（確認用）",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "ラベル",
+            "default": "Eメール（確認用）"
           }
         ]
       },
