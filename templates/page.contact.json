@@ -40,11 +40,11 @@
             "title": "Eメール（確認用）"
           }
         },
-        "41432e05-8cee-4ebc-8760-411abc600cb6": {
-          "type": "text",
+        "c8e6fa93-fc5e-4a41-98ad-23f9d129ffbc": {
+          "type": "postal",
           "settings": {
-            "title": "郵便番号",
-            "check": true
+            "title": "郵便",
+            "check": false
           }
         },
         "fbe021bf-7588-4b17-a6ba-8a7b2544a219": {
@@ -66,7 +66,7 @@
         "d2188982-361e-409e-9b82-3c1865c13311",
         "f5c56e82-bf5e-4e40-baf7-1f1a34c8146c",
         "73eff802-2f90-4c86-991a-90605604ca95",
-        "41432e05-8cee-4ebc-8760-411abc600cb6",
+        "c8e6fa93-fc5e-4a41-98ad-23f9d129ffbc",
         "fbe021bf-7588-4b17-a6ba-8a7b2544a219",
         "febe780c-54cc-498c-9e85-0d89a14997cd"
       ],
