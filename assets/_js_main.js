@@ -4,13 +4,13 @@
       const email = document.getElementById("ContactFormEmail")
       const emailVerify = document.getElementById("ContactFormEmailVerify")
       console.log("eメールテストです");
-      if (email.value !== emailVerify.value) {
+      if (email.value !== emailverify.value) {
         email.setCustomValidity("テスト")
       } else {
         email.setCustomValidity("")
       }
 
       if (form.reportValidity()) {
-        form.submit()
+       
       }
     }
