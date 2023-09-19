@@ -94,7 +94,7 @@
               required="true"
               {% if form.errors contains 'emailvelify' %}
                 aria-invalid="true"
-                aria-describedby="ContactForm-email-error"
+                aria-describedby="ContactForm-emailvelify-error"
               {% endif %}
               placeholder="{{ 'templates.contact.form.email' | t }}"
             >
@@ -420,15 +420,29 @@
   "blocks": [
       {
         "type": "name",
-        "name": "お名前",
+        "name": "おなまえ",
         "limit": 1,
         "settings": [
           {
             "type": "text",
             "id": "title",
-            "label": "お名前",
-            "default": "フルネーム",
-            "info": "例：フルネーム"
+            "label": "おなまえ（）",
+            "default": "おなまえ",
+            "info": "例：山田 太郎"
+          }
+        ]
+      },
+    {
+        "type": "name_kana",
+        "name": "おなまえ（ひらがな）",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "おなまえ",
+            "default": "おなまえ（ひらがな）",
+            "info": "例：やまだ たろう"
           }
         ]
       },
