@@ -10,8 +10,8 @@
         email.setCustomValidity("")
       }
 
-      if (form[0].reportValidity()) {
-        form[0].submit()
+      if (form.reportValidity()) {
+        form.submit()
       }
     }
 $(function(){
