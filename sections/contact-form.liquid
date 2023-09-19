@@ -306,6 +306,17 @@
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
+
+    <div class="page__contact__policy common__cart__button">
+      <!--label for="ContactFormPolicy">
+        <a href="/pages/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" required="">
+        プライバシーポリシーに同意する
+    </label-->
+      <input type="button" value="送信するぞ" class="button is-dark" onclick="submitContactForm(event)">
+    </div>
     {%- endform -%}
   </div>
 </div>
