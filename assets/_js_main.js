@@ -1,4 +1,4 @@
- function submitContactForm(event) {
+function submitContactForm(event) {
       event.preventDefault()
       const form = document.getElementById("ContactForm")
       const email = document.getElementById("ContactFormEmail")
