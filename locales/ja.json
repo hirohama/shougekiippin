@@ -247,6 +247,7 @@
         "name": "おなまえ",
         "name_kana": "おなまえ（ひらがな）",
         "email": "メール",
+        "email_verify": "メール（確認用）",
         "phone": "電話番号",
         "comment": "本文",
         "send": "送信する",
