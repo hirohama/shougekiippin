@@ -79,7 +79,7 @@
           </div>
     
         {%- comment -%} Eメール確認 {%- endcomment -%}
-        {% when 'emailvelify' %}
+        {% when 'email_verify' %}
           <div class="field field--with-error" {{ block.shopify_attributes }}>
             <input
               autocomplete="email"
@@ -90,24 +90,24 @@
               spellcheck="false"
               autocorrect="off"
               autocapitalize="off"
-              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              value="{% if form.email_verify %}{{ form.email_verify }}{% elsif customer %}{{ customer.email }}{% endif %}"
               required="true"
-              {% if form.errors contains 'emailvelify' %}
+              {% if form.errors contains 'email_verify' %}
                 aria-invalid="true"
-                aria-describedby="ContactForm-emailvelify-error"
+                aria-describedby="ContactForm-email_verify-error"
               {% endif %}
-              placeholder="{{ 'templates.contact.form.email' | t }}"
+              placeholder="{{ 'templates.contact.form.email_verify' | t }}"
             >
 
             <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-              {{ 'templates.contact.form.email' | t }}
+              {{ 'templates.contact.form.email_verify' | t }}
               <span aria-hidden="true">*</span>
             </label>
 
-            {%- if form.errors contains 'email' -%}
-              <small class="contact__field-error" id="ContactForm-email-error">
+            {%- if form.errors contains 'email_verify' -%}
+              <small class="contact__field-error" id="ContactForm-email_verify-error">
                 <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-                <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</span>
+                <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email_verify'] | capitalize }} {{ form.errors.messages['email_verify'] }}</span>
               </small>
             {%- endif -%}
           </div>
@@ -477,7 +477,7 @@
         ]
       },
       {
-        "type": "emailvelify",
+        "type": "email_verify",
         "name": "Eメール（確認用）",
         "limit": 1,
         "settings": [
