@@ -51,7 +51,7 @@
           "type": "text",
           "settings": {
             "title": "住所",
-            "check": false
+            "check": true
           }
         },
         "febe780c-54cc-498c-9e85-0d89a14997cd": {
