@@ -1,5 +1,21 @@
 $(function(){
 
+    function submitContactForm(event) {
+      event.preventDefault()
+      const form = document.getElementById("contact_form")
+      const email = document.getElementById("ContactFormEmail")
+      const emailVerify = document.getElementById("ContactFormEmailVerify")
+      if (email.value !== emailVerify.value) {
+        email.setCustomValidity("テスト")
+      } else {
+        email.setCustomValidity("")
+      }
+
+      if (form.reportValidity()) {
+        form.submit()
+      }
+    }
+
     //ヘッダーのアニメーション
     console.log("onReady");
     var headNav = $("header");
@@ -12,6 +28,7 @@ $(function(){
     if(draw_menu_container.length){//もし#draw_product_menu_boxがあれば
         draw_menu=true;
     }
+
     var headHeight=headNav.height();
     console.log(headHeight);
       //scrollだけだと読み込み時困るのでloadも追加
