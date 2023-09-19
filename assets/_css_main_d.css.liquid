@@ -146,49 +146,103 @@ header #draw_product_menu_box{/*product用の購入boxで、位置だけを参�
 }
 
 header.absolute #draw_product_menu_box{
+    display:none;
     visibility: hidden;
 }
 header.fixed #draw_product_menu_box{
+    display: block;
     visibility: visible;
 }
-    #draw_product_menu{
+    #draw_product_menu_box #draw_product_menu{
         position: absolute;
-        top:calc(1vw + 1px);left:1vw;
+        top:calc(1vw + 1px);left:3vw;
         width:22vw;
-        height:25vw;
+        /*height:4vw;*/
+        height:90vw;
         overflow: hidden;
+        /*transition : height 0.8s;*/
+        display:block;
+    }
+    #draw_product_menu_box.active #draw_product_menu{
+        height:90vw;
+        display:block;
     }
         #draw_product_menu_box .draw_product_content_box{
-            transform : translate(0, -22vw);
-            transition : all 0.8s;
+            transform : translate(0, -31vw);
+            transition : transform 0.8s;
         }
         #draw_product_menu_box.active .draw_product_content_box{
             transform : translate(0, 0vw);
         }
         #draw_product_menu_box .draw_product_content{
             opacity : 0;
-            margin:1vw;
-            width:20vw;
-            height:20vw;
-            background: #F00;
-            transition : all 0.8s;
+            margin:1vw 0 0;
+            width:22vw;
+            min-height:30vw;
+            background: #FFF;
+            border:1px solid #000;
+            border-radius:1vw;
+            padding:1vw;
+            transition : opacity 0.8s;
         }
         #draw_product_menu_box.active .draw_product_content{
             opacity : 1;
         }
-        #draw_product_menu .draw_product_btn{
-            width:20vw;
-            height:2vw;
-            text-align: center;
-            font-size:1.3vw;
-            background: #F00;
+        #draw_product_menu_box .draw_product_content .img{
+            display:block;
+            width:100%;
+            height:11.5vw;
             margin:auto;
-            transform : translate(0, -22vw);
-            transition : all 0.8s;
+            border-radius: 0.5vw;
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:100% auto;
+        }
+        #draw_product_menu_box .item_name{
+            text-align:left;
+        }
+            #draw_product_menu_box .item_name h1{
+                display: block;
+                font-size: 1.3vw;
+                line-height: 1.8vw;
+                padding:1vw 0 0 0;
+            }
+            #draw_product_menu_box .item_name span{
+                display: block;
+                font-size: 1vw;
+            }
+
+            #information .count{
+                font-size:1vw;
+                padding:0.3vw 0;
+            }
+        #draw_product_menu .draw_product_btn{
+            width:22vw;
+            height:2.5vw;
+            padding:0.5vw;
+            text-align: center;
+            font-size:1.1vw;
+            line-height: 1.5vw;
+            background: #FC0;
+            border:1px solid #000;
+            border-radius: 0.5vw;
+            margin:0.5vw 0 0 0;
+            cursor: pointer;
+
+            transform : translate(0, -31vw);
+            transition : transform 0.8s;
         }
         #draw_product_menu_box.active .draw_product_btn{
             transform : translate(0, 0vw);
         }
+            #draw_product_menu_box .draw_product_btn .down,
+            #draw_product_menu_box.active .draw_product_btn .up{
+                display:inline-block;
+            }
+            #draw_product_menu_box .draw_product_btn .up,
+            #draw_product_menu_box.active .draw_product_btn .down{
+                display:none;
+            }
 /*-----------footer-----------*/
 footer{
     color:#FFF;
@@ -259,7 +313,7 @@ ul#footer_support_menu{
         font-size: 0.8vw;
     }
 
-.count{
+#information .count{
     font-size:1vw;
     padding:1vw 0;
 }
@@ -956,14 +1010,20 @@ button
     text-decoration: underline #000 1px;
     text-underline-offset: 0.25vw;
 }
+.t_link.no_deco{
+    display:inline-block;
+    font-size:1.1vw;
+    line-height:1.5vw;
+    text-decoration: none;
+}
     .t_link .icon{
-        width:2vw;
-        height:2vw;
+        width:1.5vw;
+        height:1.5vw;
         display:inline-block;
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        vertical-align:-0.55vw;
+        vertical-align:-0.4vw;
     }
 
 
@@ -978,6 +1038,12 @@ button
 }
 .icon.back{
     background-image: url("{{ '_img_back.svg' | asset_url }}");
+}
+.icon.draw_down{
+    background-image: url("{{ '_img_draw_down.svg' | asset_url }}");
+}
+.icon.draw_up{
+    background-image: url("{{ '_img_draw_up.svg' | asset_url }}");
 }
 /*------------------------------------------------
 
@@ -1027,7 +1093,7 @@ utility
 .fadein {
   opacity : 0;
   transform : translate(0, 100px);
-  transition : all 0.8s;
+  transition : transform 0.8s;
 }
  
 .fadein.active{

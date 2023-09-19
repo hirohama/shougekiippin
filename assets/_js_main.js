@@ -4,8 +4,11 @@ $(function(){
     console.log("onReady");
     var headNav = $("header");
     var draw_menu_container = $('#draw_product_menu');
+    var draw_menu_active_box = $('#draw_product_menu_box');
+    var draw_menu_btn = $('.draw_product_btn');
     var scrollNum = 500;
     var draw_menu = false;
+    var draw_menu_active = draw_menu_active_box.hasClass("active");
     if(draw_menu_container.length){//もし#draw_product_menu_boxがあれば
         draw_menu=true;
     }
@@ -14,8 +17,12 @@ $(function(){
       //scrollだけだと読み込み時困るのでloadも追加
       $(window).on('load scroll', function () {
         headHeight=headNav.height();
-        if(draw_menu){
+        draw_menu_active = draw_menu_active_box.hasClass("active");
+        if(draw_menu&&draw_menu_active){
             headHeight+=draw_menu_container.height();
+        }else if(draw_menu&&!draw_menu_active){
+            headHeight+=draw_menu_btn.height();
+            console.log(headHeight);
         }
         //現在の位置が"scrollNum"以上かつ、クラスfixedが付与されていない時
 
@@ -28,7 +35,7 @@ $(function(){
         }
       });
 
-    $(".draw_product_btn").click(function(){
+    draw_menu_btn.click(function(){
       $("#draw_product_menu_box").toggleClass("active");
     });
 

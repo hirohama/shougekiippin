@@ -162,7 +162,7 @@
 .product-form__input {
   /*flex: 0 0 100%;*/
   padding: 0;
-  margin: 0 0 1.2rem 0;
+  /*margin: 0 0 1.2rem 0;*/
   /*max-width: 44rem;
   min-width: fit-content;*/
   border: none;
@@ -279,7 +279,7 @@ fieldset.product-form__input .form__label {
 }
 
 .product-form__submit {
-  margin-bottom: 1rem;
+  /*margin-bottom: 1rem;*/
 }
 
 .no-js .product-form__submit.button--secondary {
