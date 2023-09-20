@@ -18,7 +18,11 @@
   <div class="page-width page-width--narrow section-{{ section.id }}-padding">
     <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
   {% endcomment %}
-  <div class="innerpage_wrapper">
+  {%- if page.content != blank -%}
+    <div class="innerpage_wrapper btm">
+  {%- else -%}
+    <div class="innerpage_wrapper">
+  {%- endif -%}
     <h1 class="page_title_head foJ_Bld">
       {{ page.title | escape }}
     </h1>
