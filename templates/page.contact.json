@@ -2,7 +2,6 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
@@ -77,22 +76,11 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "edb3a701-75fd-43dd-a5e2-554644065c58": {
-      "type": "page",
-      "settings": {
-        "page": "contact",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
     "1695108953e08d8ac7",
-    "13a7414c-250f-4e37-963d-b29d0c525978",
-    "edb3a701-75fd-43dd-a5e2-554644065c58"
+    "13a7414c-250f-4e37-963d-b29d0c525978"
   ]
 }
