@@ -1819,9 +1819,9 @@ details[open] > .share-button__fallback {
 }
 
 input[type='checkbox'] {
-  display: inline-block;
+  /*display: inline-block;
   width: auto;
-  margin-right: 0.5rem;
+  margin-right: 0.5rem;*/
 }
 
 /* Form global */
