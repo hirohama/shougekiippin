@@ -13,7 +13,7 @@
     }
   }
 {%- endstyle -%}
-
+{% comment %}
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width page-width--narrow section-{{ section.id }}-padding">
     <h2 class="page-title {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -24,6 +24,28 @@
       {%- endif -%}
     </h2>
     <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {%- if section.settings.page.content != blank -%}
+        {{ section.settings.page.content }}
+      {%- else -%}
+        <div class="page-placeholder-wrapper placeholder">
+          {{ 'page' | placeholder_svg_tag: 'page-placeholder' }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{% endcomment %}
+
+<div class="content">
+  <div class="page_head_padding_inner">
+    <h2 class="page-title_head">
+      {%- if section.settings.page.title != blank -%}
+        {{ section.settings.page.title | escape }}
+      {%- else -%}
+        {{ 'sections.page.title' | t }}
+      {%- endif -%}
+    </h2>
+    <div class="editor_content">
       {%- if section.settings.page.content != blank -%}
         {{ section.settings.page.content }}
       {%- else -%}
