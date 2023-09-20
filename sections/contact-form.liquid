@@ -48,6 +48,11 @@
           {%- comment -%} Eメール {%- endcomment -%}
           {% when 'email' %}
             <div class="field field--with-error" {{ block.shopify_attributes }}>
+              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                {{ 'templates.contact.form.email' | t }}
+                <span aria-hidden="true">*</span>
+              </label>
+              
               <input
                 autocomplete="email"
                 type="email"
@@ -65,12 +70,6 @@
                 {% endif %}
                 placeholder="{{ 'templates.contact.form.email' | t }}"
               >
-  
-              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                {{ 'templates.contact.form.email' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-  
               {%- if form.errors contains 'email' -%}
                 <small class="contact__field-error" id="ContactForm-email-error">
                   <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
@@ -82,6 +81,11 @@
           {%- comment -%} Eメール確認 {%- endcomment -%}
           {% when 'email_verify' %}
             <div class="field field--with-error" {{ block.shopify_attributes }}>
+              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                {{ 'templates.contact.form.email_verify' | t }}
+                <span aria-hidden="true">*</span>
+              </label>
+              
               <input
                 autocomplete="email"
                 type="email"
@@ -100,11 +104,6 @@
                 placeholder="{{ 'templates.contact.form.email_verify' | t }}"
               >
   
-              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                {{ 'templates.contact.form.email_verify' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-  
               {%- if form.errors contains 'email_verify' -%}
                 <small class="contact__field-error" id="ContactForm-email_verify-error">
                   <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
@@ -116,6 +115,11 @@
           {%- comment -%} 本文 {%- endcomment -%}
           {% when 'body' %}
           <div class="field" {{ block.shopify_attributes }}>
+            <label class="form__label field__label" for="ContactForm-body">
+              {{ 'templates.contact.form.comment' | t }}
+              <span aria-hidden="true">*</span>
+            </label>
+            
             <textarea
               rows="10"
               id="ContactForm-body"
@@ -126,10 +130,6 @@
             >
               {{- form.body -}}
             </textarea>
-            <label class="form__label field__label" for="ContactForm-body">
-              {{ 'templates.contact.form.comment' | t }}
-              <span aria-hidden="true">*</span>
-            </label>
           </div>
   
   
