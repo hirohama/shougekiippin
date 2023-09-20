@@ -50,8 +50,8 @@
         "552aa4e7-5c89-490f-9340-17b7d5113d19": {
           "type": "checkbox",
           "settings": {
-            "title": "チェックボックスオプション",
-            "check": false
+            "title": "プライバシーポリシーに同意する",
+            "check": true
           }
         }
       },
