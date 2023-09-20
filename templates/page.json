@@ -6,9 +6,74 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "5198fd03-d34f-4002-b8b8-ed504f4311fa": {
+      "type": "contact-form",
+      "blocks": {
+        "202cfc0a-9bc0-44cb-9be2-e5ae4112bf7e": {
+          "type": "name",
+          "settings": {
+            "title": "おなまえ"
+          }
+        },
+        "21c62865-6d44-4b83-9014-e58e27d489fd": {
+          "type": "name_kana",
+          "settings": {
+            "title": "おなまえ（ひらがな）"
+          }
+        },
+        "8e0d1b25-370f-4f87-8ada-d5314316afc4": {
+          "type": "email",
+          "settings": {
+            "title": "Eメール"
+          }
+        },
+        "e37d6070-30a8-4b1b-a21b-3d0c9a192a39": {
+          "type": "email_verify",
+          "settings": {
+            "title": "Eメール（確認用）"
+          }
+        },
+        "cec5d18c-e0b7-4cbb-9bbb-08b10ce3d9e3": {
+          "type": "postal",
+          "settings": {
+            "title": "郵便番号",
+            "check": false
+          }
+        },
+        "16591905-74b7-4258-877f-77360070a767": {
+          "type": "body",
+          "settings": {
+            "title": "本文"
+          }
+        },
+        "552aa4e7-5c89-490f-9340-17b7d5113d19": {
+          "type": "checkbox",
+          "settings": {
+            "title": "チェックボックスオプション",
+            "check": false
+          }
+        }
+      },
+      "block_order": [
+        "202cfc0a-9bc0-44cb-9be2-e5ae4112bf7e",
+        "21c62865-6d44-4b83-9014-e58e27d489fd",
+        "8e0d1b25-370f-4f87-8ada-d5314316afc4",
+        "e37d6070-30a8-4b1b-a21b-3d0c9a192a39",
+        "cec5d18c-e0b7-4cbb-9bbb-08b10ce3d9e3",
+        "16591905-74b7-4258-877f-77360070a767",
+        "552aa4e7-5c89-490f-9340-17b7d5113d19"
+      ],
+      "settings": {
+        "heading": "",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "5198fd03-d34f-4002-b8b8-ed504f4311fa"
   ]
 }
