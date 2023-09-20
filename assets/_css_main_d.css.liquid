@@ -987,14 +987,16 @@ ul.mark_list{
     margin-left:1.1vw;
   }
   ul.mark_list li:before {
-    content:"・"; /*空の疑似要素を生成する*/
+    content:"・";
     display:inline-block;
     margin-left:-1.1vw;
-    width:1.1vw; /*幅指定*/
-    height:1.1vw; /*高さ指定*/
+    width:1.1vw;
+    height:1.1vw;
   }
   ul.mark_list li.no_mark:before {
-    content:""; /*空の疑似要素を生成する*/
+    content:"";
+    width:0;
+    height:0;
   }
 /*------------------------------------------------
 
