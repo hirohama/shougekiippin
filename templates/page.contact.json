@@ -7,12 +7,6 @@
         "padding_bottom": 36
       }
     },
-    "1695108953e08d8ac7": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
     "13a7414c-250f-4e37-963d-b29d0c525978": {
       "type": "contact-form",
       "blocks": {
@@ -80,7 +74,6 @@
   },
   "order": [
     "main",
-    "1695108953e08d8ac7",
     "13a7414c-250f-4e37-963d-b29d0c525978"
   ]
 }
