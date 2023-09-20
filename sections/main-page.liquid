@@ -14,12 +14,19 @@
   }
 {%- endstyle -%}
 <div class="content">
+  {% comment %}
   <div class="page-width page-width--narrow section-{{ section.id }}-padding">
     <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ page.title | escape }}test
+  {% endcomment %}
+  <div class="page_head_padding">
+    <h1 class="page_title">
+      {{ page.title | escape }}
     </h1>
+  {% comment %}
     <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      {{ page.content }}testB
+  {% endcomment %}
+    <div class="class="editor_content"">
+      {{ page.content }}
     </div>
   </div>
 </div>
