@@ -132,44 +132,6 @@
           </div>
   
   
-          {%- comment -%} 1行 テキスト{%- endcomment -%}
-          {% when 'text' %}
-            <div class="field" {{ block.shopify_attributes }}>
-              <input class="field__input foJ_Thin"
-                      type="text"
-                      id="Form-{{ section.id }}-{{ forloop.index0 }}"
-                      name="contact[{{ block.settings.title }}]"
-                      value=""
-                      placeholder="{{ block.settings.title }}"
-                      {% if block.settings.check %} required="true" {% endif %}
-                      >
-  
-              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                {{ block.settings.title }}
-                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-              </label>
-            </div>
-  
-          {%- comment -%} テキストエリア {%- endcomment -%}
-          {% when 'textarea' %}
-            <div class="field" {{ block.shopify_attributes }}>
-              <textarea
-                rows="10"
-                id="Form-{{ section.id }}-{{ forloop.index0 }}"
-                class="text-area field__input foJ_Thin"
-                name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
-                placeholder="{{ block.settings.title }}"
-                {% if block.settings.check %} required="true" {% endif %}
-              >
-                {{- form.body -}}
-              </textarea>
-              <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                {{ block.settings.title }}
-                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-              </label>
-            </div>
-  
-  
           {%- comment -%} 電話番号 {%- endcomment -%}
           {% when 'telephone' %}
             <div class="field" {{ block.shopify_attributes }}>
@@ -250,7 +212,42 @@
               <p class="strong">{{ block.settings.title }}</p>
             </div>
   
+          {%- comment -%} 1行 テキスト{%- endcomment -%}
+          {% when 'text' %}
+            <div class="field" {{ block.shopify_attributes }}>
+              <input class="field__input foJ_Thin"
+                      type="text"
+                      id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                      name="contact[{{ block.settings.title }}]"
+                      value=""
+                      placeholder="{{ block.settings.title }}"
+                      {% if block.settings.check %} required="true" {% endif %}
+                      >
   
+              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                {{ block.settings.title }}
+                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+              </label>
+            </div>
+  
+          {%- comment -%} テキストエリア {%- endcomment -%}
+          {% when 'textarea' %}
+            <div class="field" {{ block.shopify_attributes }}>
+              <textarea
+                rows="10"
+                id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                class="text-area field__input foJ_Thin"
+                name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
+                placeholder="{{ block.settings.title }}"
+                {% if block.settings.check %} required="true" {% endif %}
+              >
+                {{- form.body -}}
+              </textarea>
+              <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                {{ block.settings.title }}
+                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+              </label>
+            </div>
           {%- comment -%} 装飾 {%- endcomment -%}
           {% when 'spacer' %}
             {%- assign hr_class = 'hr--clear' -%}
@@ -385,9 +382,10 @@
           <input type="checkbox" required="">
           プライバシーポリシーに同意する
       </label-->
-      {%- endform -%}
     </div>
     <!--/#ContactForm_wrapper-->
+    {%- endform -%}
+    
     </div>
   </div>
 </div>
