@@ -414,15 +414,6 @@
                 {%- comment -%} セレクトボックス50 {%- endcomment -%}
               {% when 'select_fifty' %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
-                  {%- comment -%}
-                    {% if block.settings.title != blank %}
-                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
-                              class="custom-form__label label--block">
-                        {{ block.settings.title }}
-                        {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-                      </label>
-                    {% endif %}
-                  {%- endcomment -%}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class=" selectbox"
@@ -661,15 +652,6 @@
                 {%- comment -%} セレクトボックス20 {%- endcomment -%}
               {% when 'select_twenty' %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
-                  {%- comment -%}
-                    {% if block.settings.title != blank %}
-                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
-                              class="custom-form__label label--block">
-                        {{ block.settings.title }}
-                        {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-                      </label>
-                    {% endif %}
-                  {%- endcomment -%}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class=" selectbox"
@@ -764,15 +746,6 @@
                 {%- comment -%} セレクトボックス10 {%- endcomment -%}
               {% when 'select_ten' %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
-                  {%- comment -%}
-                    {% if block.settings.title != blank %}
-                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
-                              class="custom-form__label label--block">
-                        {{ block.settings.title }}
-                        {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-                      </label>
-                    {% endif %}
-                  {%- endcomment -%}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class=" selectbox"
@@ -832,6 +805,7 @@
             <div class="icon submit"></div>
           </div>
         <!-- /#ContactForm_wrapper -->
+        
       {%- endform -%}
     </div>
   </div>
