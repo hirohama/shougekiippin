@@ -237,7 +237,7 @@
                     id="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class="text-area field__input foJ_Thin"
                     name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
-                    placeholder="{{ block.settings.def_content }}"
+                    placeholder="{{ block.settings.placeholder }}"
                     {% if block.settings.check %}
                       required="true"
                     {% endif %}
@@ -997,14 +997,14 @@
           {
             "type": "text",
             "id": "title",
-            "label": "ラベル",
+            "label": "項目名",
             "default": "項目名",
             "info": "例：メッセージ"
           },
           {
             "type": "textarea",
-            "id": "def_content",
-            "label": "ラベル",
+            "id": "placeholder",
+            "label": "デフォルトの内容",
             "default": "メッセージを入力してください",
             "info": "例：メッセージを入力してください"
           },
