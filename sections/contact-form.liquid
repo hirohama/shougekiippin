@@ -327,6 +327,7 @@
           {%- comment -%} セレクトボックス {%- endcomment -%}
           {% when 'select' %}
             <div class="field w_3col" {{ block.shopify_attributes }}>
+          {%- comment -%} 
               {% if block.settings.title != blank %}
                 <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
                         class="custom-form__label label--block">
@@ -334,9 +335,11 @@
                   {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
                 </label>
               {% endif %}
-  
+  {%- endcomment -%} 
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
+                        class=" selectbox-002">
               <select id="Form-{{ section.id }}-{{ forloop.index0 }}"
-                      class="contactFormSelect foJ_Thin selectbox-002"
+                      class="contactFormSelect foJ_Thin"
                       name="contact[{{ block.settings.val | handleize | default: 'select' }}]"
                       {% if block.settings.check %} required="true" {% endif %}
                       >
@@ -492,6 +495,7 @@
                   <option value="{{ block.settings.label-fifty }}">{{ block.settings.label-fifty }}</option>
                 {% endif %}
               </select>
+          </label>
             </div>
   
         {% endcase %}
