@@ -171,9 +171,14 @@
                 </div>
 
                 {%- comment -%} 見出し {%- endcomment -%}
-              {% when 'formHeading' %}
+              {% when 'formHeading_p' %}
                 <div class="custom-form__block custom-form__block--heading form-item" {{ block.shopify_attributes }}>
                   <p class="strong">{{ block.settings.title }}</p>
+                </div>
+              {%- comment -%} 小見出し(複数の項目をまとめる。住所など) {%- endcomment -%}
+              {% when 'formHeading_span' %}
+                <div class="w_col1" {{ block.shopify_attributes }}>
+                  <span>{{ block.settings.title }}</span>
                 </div>
 
                 {%- comment -%} 1行 テキスト{%- endcomment -%}
@@ -1037,7 +1042,7 @@
         ]
       },
       {
-        "type": "formHeading",
+        "type": "formHeading_p",
         "name": "見出し",
         "settings": [
           {
@@ -1046,6 +1051,26 @@
             "label": "見出し",
             "default": "見出し",
             "info": "より長いフォームを分割するために使用します"
+          }
+        ]
+      },
+      {
+        "type": "formHeading_span",
+        "name": "小見出し",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "小見出し",
+            "default": "小見出し",
+            "info": "複数の項目をまとめる時に使用(住所など)"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須マーク表示",
+            "default": false,
+            "info": "チェックを入れると必須マークを表示できます。"
           }
         ]
       },
