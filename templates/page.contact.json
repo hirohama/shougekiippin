@@ -63,7 +63,7 @@
           "type": "email_verify",
           "settings": {
             "title": "Eメール（確認用）",
-            "placeholder": "Eメール（確認用）",
+            "placeholder": "ippin@shougeki.com",
             "check": false,
             "label": true,
             "newline_pc": false,
