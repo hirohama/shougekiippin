@@ -12,14 +12,17 @@
 
 .contact .field {
   /*margin-bottom: 1.5rem;*/
-  margin-bottom:0.2vw;
+  margin-bottom:2vw;
 }
 
 @media screen and (min-width: 750px) {
   .contact .field {
     display:inline-block;
     /*margin-bottom: 2rem;*/
-     margin-bottom:0.2vw
+     margin-bottom:2vw;
+  }
+  .contact .field.no-margin {
+     margin-bottom:0.2vw;
   }
   .contact .field.w_1col{
     width:97.3%;
