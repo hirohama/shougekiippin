@@ -62,11 +62,15 @@
             "title": "Eメール（確認用）"
           }
         },
-        "29669ac1-d151-4e4f-88cd-133868340661": {
-          "type": "postal",
+        "49008eff-ef95-4f6c-a053-48e10a97ca71": {
+          "type": "text",
           "settings": {
-            "title": "郵便番号",
-            "check": false
+            "title": "お郵便番号",
+            "check": true,
+            "label": true,
+            "newline_pc": false,
+            "newline_mobile": false,
+            "width_setting": "col3"
           }
         },
         "ff047d4c-50f6-4297-bf38-21713a290651": {
@@ -142,10 +146,10 @@
             "width_setting": "col1"
           }
         },
-        "e9694184-9128-4023-9407-1df46a3662fe": {
-          "type": "address",
+        "29669ac1-d151-4e4f-88cd-133868340661": {
+          "type": "postal",
           "settings": {
-            "title": "住所",
+            "title": "郵便番号",
             "check": false
           }
         },
@@ -163,10 +167,10 @@
         "1f0fec0d-b6ca-44ad-8e97-14144f4605ac",
         "68b1d328-da20-4074-967b-afc8a8f5a2ff",
         "a689a398-e112-481e-8bec-822c6572b4f9",
-        "29669ac1-d151-4e4f-88cd-133868340661",
+        "49008eff-ef95-4f6c-a053-48e10a97ca71",
         "ff047d4c-50f6-4297-bf38-21713a290651",
         "e8b044e6-e1fc-4a56-9e0b-835e77e18657",
-        "e9694184-9128-4023-9407-1df46a3662fe",
+        "29669ac1-d151-4e4f-88cd-133868340661",
         "febe780c-54cc-498c-9e85-0d89a14997cd"
       ],
       "settings": {
