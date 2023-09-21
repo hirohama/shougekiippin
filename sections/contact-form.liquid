@@ -440,7 +440,9 @@
               {% elsif block.settings.width_setting == "col3" %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
               {% endif %}
+              {% if block.settings.label %}
               <span>{{ block.settings.title }}</span>
+              {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class="selectbox"
@@ -695,6 +697,9 @@
               {% elsif block.settings.width_setting == "col3" %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
               {% endif %}
+              {% if block.settings.label %}
+              <span>{{ block.settings.title }}</span>
+              {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class=" selectbox"
@@ -804,6 +809,9 @@
                 <div class="field w_2col" {{ block.shopify_attributes }}>
               {% elsif block.settings.width_setting == "col3" %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
+              {% endif %}
+              {% if block.settings.label %}
+              <span>{{ block.settings.title }}</span>
               {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
