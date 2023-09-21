@@ -219,6 +219,9 @@
                     type="text"
                     id="Form-{{ section.id }}-{{ forloop.index0 }}"
                     name="contact[{{ block.settings.title }}]"
+                    {% unless block.settings.regex == blank %}
+                    pattern="{{ block.settings.regex }}"
+                    {% endunless %}
                     value=""
                     placeholder="{{ block.settings.title }}"
                     {% if block.settings.check %}
