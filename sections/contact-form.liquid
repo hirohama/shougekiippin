@@ -17,511 +17,773 @@
   <div class="innerpage_wrapper btm">
     <div class="contact editor_content">
       {%- comment -%} タイトル {%- endcomment -%}
-      <!--h2 class="title title-wrapper--no-top-margin">{{ section.settings.heading | escape }}</h2-->
+      <!-- h2 class="title title-wrapper--no-top-margin">{{ section.settings.heading | escape }}</h2 -->
       担当者より2〜3営業日以内にメールでご連絡させていただきます。<br>
       携帯電話のメールアドレスを設定のお客様は、｢メールの受信拒否、ドメイン指定受信、迷惑メール防止機能」などを設定している場合、受信ができない場合があります。
-  
+
       {%- form 'contact', id: 'ContactForm', class: 'isolate custom-form' -%}
         <div id="ContactForm_wrapper">
-        {%- if form.posted_successfully? -%}
-          {%- comment -%} 成功した時のコメント {%- endcomment -%}
-          <div class="form-status form-status-list form__message" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</div>
-        {%- elsif form.errors -%}
-          {%- comment -%} エラー表示 {%- endcomment -%}
-          <div class="form__message">
-            <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>{% render 'icon-error' %} {{ 'templates.contact.form.error_heading' | t }}</h2>
-          </div>
-          <ul class="form-status-list caption-large" role="list">
-            <li>
-              <a href="#ContactForm-email" class="link">
-                {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
-              </a>
-            </li>
-          </ul>
-        {%- endif -%}
-  
-        {% for block in section.blocks %}
-  
-        {% case block.type %}
-          {%- comment -%} おなまえ {%- endcomment -%}
-          {% when 'name' %}
-            <div class="field w_2col" {{ block.shopify_attributes }}>
-              <label class="field__label" for="ContactForm-name">
-                {{ 'templates.contact.form.name' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-              
-              <input class="field__input foJ_Thin"
-              autocomplete="name"
-              type="text"
-              id="ContactForm-name"
-              required="true"
-              name="contact[{{ 'templates.contact.form.name' | t }}]"
-              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              placeholder="{{ 'templates.contact.form.name' | t }}">
+          {%- if form.posted_successfully? -%}
+            {%- comment -%} 成功した時のコメント {%- endcomment -%}
+            <div class="form-status form-status-list form__message" tabindex="-1" autofocus>
+              {% render 'icon-success' %}
+              {{ 'templates.contact.form.post_success' | t }}
             </div>
-          
-          {%- comment -%} おなまえ（ひらがな） {%- endcomment -%}
-          {% when 'name_kana' %}
-            <div class="field w_2col" {{ block.shopify_attributes }}>
-              <label class="field__label" for="ContactForm-name_kana">
-                {{ 'templates.contact.form.name_kana' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-              
-              <input class="field__input foJ_Thin"
-              autocomplete="name_kana"
-              type="text"
-              id="ContactForm-name"
-              required="true"
-              name="contact[{{ 'templates.contact.form.name_kana' | t }}]"
-              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              placeholder="{{ 'templates.contact.form.name_kana' | t }}">
+          {%- elsif form.errors -%}
+            {%- comment -%} エラー表示 {%- endcomment -%}
+            <div class="form__message">
+              <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+                {% render 'icon-error' %}
+                {{ 'templates.contact.form.error_heading' | t }}
+              </h2>
             </div>
-    
-          {%- comment -%} Eメール {%- endcomment -%}
-          {% when 'email' %}
-            <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
-              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                {{ 'templates.contact.form.email' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-              
-              <input
-                autocomplete="email"
-                type="email"
-                id="ContactFormEmail"
-                class="field__input foJ_Thin"
-                name="contact[email]"
-                spellcheck="false"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                required="true"
-                {% if form.errors contains 'email' %}
-                  aria-invalid="true"
-                  aria-describedby="ContactForm-email-error"
-                {% endif %}
-                placeholder="{{ 'templates.contact.form.email' | t }}"
-              >
-              {%- if form.errors contains 'email' -%}
-                <small class="contact__field-error" id="ContactForm-email-error">
-                  <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-                  <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</span>
-                </small>
-              {%- endif -%}
-            </div>
-      
-          {%- comment -%} Eメール確認 {%- endcomment -%}
-          {% when 'email_verify' %}
-            <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
-              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                {{ 'templates.contact.form.email_verify' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-              
-              <input
-                autocomplete="email"
-                type="email"
-                id="ContactFormEmailVerify"
-                class="field__input foJ_Thin"
-                name="contact[email_velify]"
-                spellcheck="false"
-                autocorrect="off"
-                autocapitalize="off"
-                value="{% if form.email_verify %}{{ form.email_verify }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                required="true"
-                {% if form.errors contains 'email_verify' %}
-                  aria-invalid="true"
-                  aria-describedby="ContactForm-email_verify-error"
-                {% endif %}
-                placeholder="{{ 'templates.contact.form.email_verify' | t }}"
-              >
-  
-              {%- if form.errors contains 'email_verify' -%}
-                <small class="contact__field-error" id="ContactForm-email_verify-error">
-                  <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-                  <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email_verify'] | capitalize }} {{ form.errors.messages['email_verify'] }}</span>
-                </small>
-              {%- endif -%}
-            </div>
-     
-          {%- comment -%} 郵便番号 {%- endcomment -%}
-          {% when 'postal' %}
-            <div class="field w_3col" {{ block.shopify_attributes }}>
-              <label class="field__label" for="ContactForm-postal">
-                {{ 'templates.contact.form.postal' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-              
-              <input class="field__input foJ_Thin"
-              autocomplete="postal"
-              type="text"
-              id="ContactForm-postal"
-              required="true"
-              name="contact[{{ 'templates.contact.form.postal' | t }}]"
-              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              placeholder="{{ 'templates.contact.form.postal' | t }}"> 
-            </div>
-    
-          {%- comment -%} 電話番号 {%- endcomment -%}
-          {% when 'telephone' %}
-            <div class="field" {{ block.shopify_attributes }}>
-              <label class="field__label" for="ContactForm-phone">
-                {{ block.settings.title }}
-                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-              </label>
-              
-              <input type="tel"
-                      id="ContactForm-phone" class="field__input foJ_Thin"
-                      autocomplete="tel"
-                      name="contact[{{ block.settings.title }}]"
-                      pattern="[0-9\-]*"
-                      value=""
-                      placeholder="{{ block.settings.title }}"
-                      {% if block.settings.check %} required="true" {% endif %}
-                      >
-            </div>
-  
-          {%- comment -%} 本文 {%- endcomment -%}
-          {% when 'body' %}
-          <div class="field" {{ block.shopify_attributes }}>
-            <label class="form__label field__label" for="ContactForm-body">
-              {{ 'templates.contact.form.comment' | t }}
-              <span aria-hidden="true">*</span>
-            </label>
-            
-            <textarea
-              rows="10"
-              id="ContactForm-body"
-              class="text-area field__input foJ_Thin"
-              required="true"
-              name="contact[{{ 'templates.contact.form.comment' | t }}]"
-              placeholder="{{ 'templates.contact.form.comment' | t }}"
-            >
+            <ul class="form-status-list caption-large" role="list">
+              <li>
+                <a href="#ContactForm-email" class="link">
+                  {{ form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email }}
+                </a>
+              </li>
+            </ul>
+          {%- endif -%}
+
+          {% for block in section.blocks %}
+            {% case block.type %}
+                {%- comment -%} おなまえ {%- endcomment -%}
+              {% when 'name' %}
+                <div class="field w_2col" {{ block.shopify_attributes }}>
+                  <label class="field__label" for="ContactForm-name">
+                    {{ 'templates.contact.form.name' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    class="field__input foJ_Thin"
+                    autocomplete="name"
+                    type="text"
+                    id="ContactForm-name"
+                    required="true"
+                    name="contact[{{ 'templates.contact.form.name' | t }}]"
+                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                    placeholder="{{ 'templates.contact.form.name' | t }}"
+                  >
+                </div>
+
+                {%- comment -%} おなまえ（ひらがな） {%- endcomment -%}
+              {% when 'name_kana' %}
+                <div class="field w_2col" {{ block.shopify_attributes }}>
+                  <label class="field__label" for="ContactForm-name_kana">
+                    {{ 'templates.contact.form.name_kana' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    class="field__input foJ_Thin"
+                    autocomplete="name_kana"
+                    type="text"
+                    id="ContactForm-name"
+                    required="true"
+                    name="contact[{{ 'templates.contact.form.name_kana' | t }}]"
+                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                    placeholder="{{ 'templates.contact.form.name_kana' | t }}"
+                  >
+                </div>
+
+                {%- comment -%} Eメール {%- endcomment -%}
+              {% when 'email' %}
+                <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
+                  <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                    {{ 'templates.contact.form.email' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    autocomplete="email"
+                    type="email"
+                    id="ContactFormEmail"
+                    class="field__input foJ_Thin"
+                    name="contact[email]"
+                    spellcheck="false"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                    required="true"
+                    {% if form.errors contains 'email' %}
+                      aria-invalid="true"
+                      aria-describedby="ContactForm-email-error"
+                    {% endif %}
+                    placeholder="{{ 'templates.contact.form.email' | t }}"
+                  >
+                  {%- if form.errors contains 'email' -%}
+                    <small class="contact__field-error" id="ContactForm-email-error">
+                      <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                      <span class="form__message">
+                        {%- render 'icon-error' -%}
+                        {{- form.errors.translated_fields.email | capitalize }}
+                        {{ form.errors.messages.email -}}
+                      </span>
+                    </small>
+                  {%- endif -%}
+                </div>
+
+                {%- comment -%} Eメール確認 {%- endcomment -%}
+              {% when 'email_verify' %}
+                <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
+                  <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                    {{ 'templates.contact.form.email_verify' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    autocomplete="email"
+                    type="email"
+                    id="ContactFormEmailVerify"
+                    class="field__input foJ_Thin"
+                    name="contact[email_velify]"
+                    spellcheck="false"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    value="{% if form.email_verify %}{{ form.email_verify }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                    required="true"
+                    {% if form.errors contains 'email_verify' %}
+                      aria-invalid="true"
+                      aria-describedby="ContactForm-email_verify-error"
+                    {% endif %}
+                    placeholder="{{ 'templates.contact.form.email_verify' | t }}"
+                  >
+
+                  {%- if form.errors contains 'email_verify' -%}
+                    <small class="contact__field-error" id="ContactForm-email_verify-error">
+                      <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                      <span class="form__message">
+                        {%- render 'icon-error' -%}
+                        {{- form.errors.translated_fields.email_verify | capitalize }}
+                        {{ form.errors.messages.email_verify -}}
+                      </span>
+                    </small>
+                  {%- endif -%}
+                </div>
+
+                {%- comment -%} 郵便番号 {%- endcomment -%}
+              {% when 'postal' %}
+                <div class="field w_3col" {{ block.shopify_attributes }}>
+                  <label class="field__label" for="ContactForm-postal">
+                    {{ 'templates.contact.form.postal' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    class="field__input foJ_Thin"
+                    autocomplete="postal"
+                    type="text"
+                    id="ContactForm-postal"
+                    required="true"
+                    name="contact[{{ 'templates.contact.form.postal' | t }}]"
+                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                    placeholder="{{ 'templates.contact.form.postal' | t }}"
+                  >
+                </div>
+
+                {%- comment -%} 電話番号 {%- endcomment -%}
+              {% when 'telephone' %}
+                <div class="field" {{ block.shopify_attributes }}>
+                  <label class="field__label" for="ContactForm-phone">
+                    {{ block.settings.title }}
+                    {% if block.settings.check -%}
+                      <span aria-hidden="true">*</span>
+                    {%- endif %}
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="ContactForm-phone"
+                    class="field__input foJ_Thin"
+                    autocomplete="tel"
+                    name="contact[{{ block.settings.title }}]"
+                    pattern="[0-9\-]*"
+                    value=""
+                    placeholder="{{ block.settings.title }}"
+                    {% if block.settings.check %}
+                      required="true"
+                    {% endif %}
+                  >
+                </div>
+
+                {%- comment -%} 本文 {%- endcomment -%}
+              {% when 'body' %}
+                <div class="field" {{ block.shopify_attributes }}>
+                  <label class="form__label field__label" for="ContactForm-body">
+                    {{ 'templates.contact.form.comment' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <textarea
+                    rows="10"
+                    id="ContactForm-body"
+                    class="text-area field__input foJ_Thin"
+                    required="true"
+                    name="contact[{{ 'templates.contact.form.comment' | t }}]"
+                    placeholder="{{ 'templates.contact.form.comment' | t }}"
+                  >
               {{- form.body -}}
             </textarea>
-          </div>
-  
- 
-  
+                </div>
 
-          {%- comment -%} 見出し {%- endcomment -%}
-          {% when 'formHeading' %}
-            <div class="custom-form__block custom-form__block--heading form-item" {{ block.shopify_attributes }}>
-              <p class="strong">{{ block.settings.title }}</p>
-            </div>
-  
-          {%- comment -%} 1行 テキスト{%- endcomment -%}
-          {% when 'text' %}
-            <div class="field" {{ block.shopify_attributes }}>
-              <input class="field__input foJ_Thin"
-                      type="text"
-                      id="Form-{{ section.id }}-{{ forloop.index0 }}"
-                      name="contact[{{ block.settings.title }}]"
-                      value=""
-                      placeholder="{{ block.settings.title }}"
-                      {% if block.settings.check %} required="true" {% endif %}
-                      >
-  
-              <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                {{ block.settings.title }}
-                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-              </label>
-            </div>
-  
-          {%- comment -%} テキストエリア {%- endcomment -%}
-          {% when 'textarea' %}
-            <div class="field" {{ block.shopify_attributes }}>
-              <textarea
-                rows="10"
-                id="Form-{{ section.id }}-{{ forloop.index0 }}"
-                class="text-area field__input foJ_Thin"
-                name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
-                placeholder="{{ block.settings.title }}"
-                {% if block.settings.check %} required="true" {% endif %}
-              >
+                {%- comment -%} 見出し {%- endcomment -%}
+              {% when 'formHeading' %}
+                <div class="custom-form__block custom-form__block--heading form-item" {{ block.shopify_attributes }}>
+                  <p class="strong">{{ block.settings.title }}</p>
+                </div>
+
+                {%- comment -%} 1行 テキスト{%- endcomment -%}
+              {% when 'text' %}
+                <div class="field" {{ block.shopify_attributes }}>
+                  <input
+                    class="field__input foJ_Thin"
+                    type="text"
+                    id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                    name="contact[{{ block.settings.title }}]"
+                    value=""
+                    placeholder="{{ block.settings.title }}"
+                    {% if block.settings.check %}
+                      required="true"
+                    {% endif %}
+                  >
+
+                  <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                    {{ block.settings.title }}
+                    {% if block.settings.check -%}
+                      <span aria-hidden="true">*</span>
+                    {%- endif %}
+                  </label>
+                </div>
+
+                {%- comment -%} テキストエリア {%- endcomment -%}
+              {% when 'textarea' %}
+                <div class="field" {{ block.shopify_attributes }}>
+                  <textarea
+                    rows="10"
+                    id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                    class="text-area field__input foJ_Thin"
+                    name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
+                    placeholder="{{ block.settings.title }}"
+                    {% if block.settings.check %}
+                      required="true"
+                    {% endif %}
+                  >
                 {{- form.body -}}
               </textarea>
-              <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                {{ block.settings.title }}
-                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-              </label>
-            </div>
-          {%- comment -%} 装飾 {%- endcomment -%}
-          {% when 'spacer' %}
-            {%- assign hr_class = 'hr--clear' -%}
-            {%- if block.settings.line -%}
-              {%- assign hr_class = '' -%}
-            {%- endif -%}
-            <div class="form-item" {{ block.shopify_attributes }}>
-              <hr class="{{ hr_class }}">
-            </div>
-  
-          {%- comment -%} チェックボックス {%- endcomment -%}
-          {% when 'checkbox' %}
-            <div class="field no-border" {{ block.shopify_attributes }}>
-              <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                <input type="checkbox"
-                        id="Form-{{ section.id }}-{{ forloop.index0 }}"
-                        class="contactFormCheckbox"
-                        name="contact[{{ block.settings.title | handleize | default: 'checkbox' }}]"
-                        value="{{ block.settings.title }}"
-                        {% if block.settings.check %} required="true" {% endif %}
-                        >
-                {{ block.settings.title }}
-                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-              </label>
-            </div>
-  
-  
-          {%- comment -%} ラジオボタン {%- endcomment -%}
-          {% when 'radio' %}
-            <div class="field no-border colum" {{ block.shopify_attributes }}>
-              {% if block.settings.title != blank %}
-                <legend class="custom-form__label">
-                  {{ block.settings.title }}
-                  {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-                </legend>
-              {% endif %}
-              {% if block.settings.label-one != blank %}
-                <div>
-                  <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-1" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-one }}"
-                  {% if block.settings.check %} required="true" {% endif %}>
-                  <label for="Form-{{ section.id }}-{{ forloop.index0 }}-1">{{ block.settings.label-one }}</label>
+                  <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                    {{ block.settings.title }}
+                    {% if block.settings.check -%}
+                      <span aria-hidden="true">*</span>
+                    {%- endif %}
+                  </label>
                 </div>
-              {% endif %}
-              {% if block.settings.label-two != blank %}
-                <div>
-                  <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-2" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-two }}">
-                  <label for="Form-{{ section.id }}-{{ forloop.index0 }}-2">{{ block.settings.label-two }}</label>
+                {%- comment -%} 装飾 {%- endcomment -%}
+              {% when 'spacer' %}
+                {%- assign hr_class = 'hr--clear' -%}
+                {%- if block.settings.line -%}
+                  {%- assign hr_class = '' -%}
+                {%- endif -%}
+                <div class="form-item" {{ block.shopify_attributes }}>
+                  <hr class="{{ hr_class }}">
                 </div>
-              {% endif %}
-              {% if block.settings.label-three != blank %}
-                <div>
-                  <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-3" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-three }}">
-                  <label for="Form-{{ section.id }}-{{ forloop.index0 }}-3">{{ block.settings.label-three }}</label>
+
+                {%- comment -%} チェックボックス {%- endcomment -%}
+              {% when 'checkbox' %}
+                <div class="field no-border" {{ block.shopify_attributes }}>
+                  <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                    <input
+                      type="checkbox"
+                      id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                      class="contactFormCheckbox"
+                      name="contact[{{ block.settings.title | handleize | default: 'checkbox' }}]"
+                      value="{{ block.settings.title }}"
+                      {% if block.settings.check %}
+                        required="true"
+                      {% endif %}
+                    >
+                    {{ block.settings.title }}
+                    {% if block.settings.check -%}
+                      <span aria-hidden="true">*</span>
+                    {%- endif %}
+                  </label>
                 </div>
-              {% endif %}
-              {% if block.settings.label-four != blank %}
-                <div>
-                  <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-4" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-four }}">
-                  <label for="Form-{{ section.id }}-{{ forloop.index0 }}-4">{{ block.settings.label-four }}</label>
+
+                {%- comment -%} ラジオボタン {%- endcomment -%}
+              {% when 'radio' %}
+                <div class="field no-border colum" {{ block.shopify_attributes }}>
+                  {% if block.settings.title != blank %}
+                    <legend class="custom-form__label">
+                      {{ block.settings.title }}
+                      {% if block.settings.check -%}
+                        <span aria-hidden="true">*</span>
+                      {%- endif %}
+                    </legend>
+                  {% endif %}
+                  {% if block.settings['label-one'] != blank %}
+                    <div>
+                      <input
+                        type="radio"
+                        id="Form-{{ section.id }}-{{ forloop.index0 }}-1"
+                        class="contactFormRadio"
+                        name="contact[{{ block.settings.title | handleize | default: 'radio' }}]"
+                        value="{{ block.settings.label-one }}"
+                        {% if block.settings.check %}
+                          required="true"
+                        {% endif %}
+                      >
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}-1">
+                        {{- block.settings['label-one'] -}}
+                      </label>
+                    </div>
+                  {% endif %}
+                  {% if block.settings['label-two'] != blank %}
+                    <div>
+                      <input
+                        type="radio"
+                        id="Form-{{ section.id }}-{{ forloop.index0 }}-2"
+                        class="contactFormRadio"
+                        name="contact[{{ block.settings.title | handleize | default: 'radio' }}]"
+                        value="{{ block.settings.label-two }}"
+                      >
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}-2">
+                        {{- block.settings['label-two'] -}}
+                      </label>
+                    </div>
+                  {% endif %}
+                  {% if block.settings['label-three'] != blank %}
+                    <div>
+                      <input
+                        type="radio"
+                        id="Form-{{ section.id }}-{{ forloop.index0 }}-3"
+                        class="contactFormRadio"
+                        name="contact[{{ block.settings.title | handleize | default: 'radio' }}]"
+                        value="{{ block.settings.label-three }}"
+                      >
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}-3">
+                        {{- block.settings['label-three'] -}}
+                      </label>
+                    </div>
+                  {% endif %}
+                  {% if block.settings['label-four'] != blank %}
+                    <div>
+                      <input
+                        type="radio"
+                        id="Form-{{ section.id }}-{{ forloop.index0 }}-4"
+                        class="contactFormRadio"
+                        name="contact[{{ block.settings.title | handleize | default: 'radio' }}]"
+                        value="{{ block.settings.label-four }}"
+                      >
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}-4">
+                        {{- block.settings['label-four'] -}}
+                      </label>
+                    </div>
+                  {% endif %}
+                  {% if block.settings['label-five'] != blank %}
+                    <div>
+                      <input
+                        type="radio"
+                        id="Form-{{ section.id }}-{{ forloop.index0 }}-5"
+                        class="contactFormRadio"
+                        name="contact[{{ block.settings.title | handleize | default: 'radio' }}]"
+                        value="{{ block.settings.label-five }}"
+                      >
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}-5">
+                        {{- block.settings['label-five'] -}}
+                      </label>
+                    </div>
+                  {% endif %}
+                  {% if block.settings['label-six'] != blank %}
+                    <div>
+                      <input
+                        type="radio"
+                        id="Form-{{ section.id }}-{{ forloop.index0 }}-6"
+                        class="contactFormRadio"
+                        name="contact[{{ block.settings.title | handleize | default: 'radio' }}]"
+                        value="{{ block.settings.label-six }}"
+                      >
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}-6">
+                        {{- block.settings['label-six'] -}}
+                      </label>
+                    </div>
+                  {% endif %}
                 </div>
-              {% endif %}
-              {% if block.settings.label-five != blank %}
-                <div>
-                  <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-5" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-five }}">
-                  <label for="Form-{{ section.id }}-{{ forloop.index0 }}-5">{{ block.settings.label-five }}</label>
-                </div>
-              {% endif %}
-              {% if block.settings.label-six != blank %}
-                <div>
-                  <input type="radio" id="Form-{{ section.id }}-{{ forloop.index0 }}-6" class="contactFormRadio" name="contact[{{ block.settings.title | handleize | default: 'radio' }}]" value="{{ block.settings.label-six }}">
-                  <label for="Form-{{ section.id }}-{{ forloop.index0 }}-6">{{ block.settings.label-six }}</label>
-                </div>
-              {% endif %}
-            </div>
-  
-  
-          {%- comment -%} セレクトボックス50 {%- endcomment -%}
-          {% when 'select_fifty' %}
-            <div class="field w_3col" {{ block.shopify_attributes }}>
-          {%- comment -%} 
-              {% if block.settings.title != blank %}
-                <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
-                        class="custom-form__label label--block">
-                  {{ block.settings.title }}
-                  {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-                </label>
-              {% endif %}
-  {%- endcomment -%} 
-          <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
-                        class=" selectbox">
-              <select id="Form-{{ section.id }}-{{ forloop.index0 }}"
+
+                {%- comment -%} セレクトボックス50 {%- endcomment -%}
+              {% when 'select_fifty' %}
+                <div class="field w_3col" {{ block.shopify_attributes }}>
+                  {%- comment -%}
+                    {% if block.settings.title != blank %}
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
+                              class="custom-form__label label--block">
+                        {{ block.settings.title }}
+                        {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+                      </label>
+                    {% endif %}
+                  {%- endcomment -%}
+                  <label
+                    for="Form-{{ section.id }}-{{ forloop.index0 }}"
+                    class=" selectbox"
+                  >
+                    <select
+                      id="Form-{{ section.id }}-{{ forloop.index0 }}"
                       class="contactFormSelect foJ_Thin"
                       name="contact[{{ block.settings.val | handleize | default: 'select' }}]"
-                      {% if block.settings.check %} required="true" {% endif %}
-                      >
-                  <option value="{{ block.settings.label-zero }}">{{ block.settings.label-zero }}</option>
-                {% if block.settings.label-one != blank %}
-                  <option value="{{ block.settings.label-one }}">{{ block.settings.label-one }}</option>
-                {% endif %}
-                {% if block.settings.label-two != blank %}
-                  <option value="{{ block.settings.label-two }}">{{ block.settings.label-two }}</option>
-                {% endif %}
-                {% if block.settings.label-three != blank %}
-                  <option value="{{ block.settings.label-three }}">{{ block.settings.label-three }}</option>
-                {% endif %}
-                {% if block.settings.label-four != blank %}
-                  <option value="{{ block.settings.label-four }}">{{ block.settings.label-four }}</option>
-                {% endif %}
-                {% if block.settings.label-five != blank %}
-                  <option value="{{ block.settings.label-five }}">{{ block.settings.label-five }}</option>
-                {% endif %}
-                {% if block.settings.label-six != blank %}
-                  <option value="{{ block.settings.label-six }}">{{ block.settings.label-six }}</option>
-                {% endif %}
-                {% if block.settings.label-seven != blank %}
-                  <option value="{{ block.settings.label-seven }}">{{ block.settings.label-seven }}</option>
-                {% endif %}
-                {% if block.settings.label-eight != blank %}
-                  <option value="{{ block.settings.label-eight }}">{{ block.settings.label-eight }}</option>
-                {% endif %}
-                {% if block.settings.label-nine != blank %}
-                  <option value="{{ block.settings.label-nine }}">{{ block.settings.label-nine }}</option>
-                {% endif %}
-                {% if block.settings.label-ten != blank %}
-                  <option value="{{ block.settings.label-ten }}">{{ block.settings.label-ten }}</option>
-                {% endif %}
-                {% if block.settings.label-eleven != blank %}
-                  <option value="{{ block.settings.label-eleven }}">{{ block.settings.label-eleven }}</option>
-                {% endif %}
-                {% if block.settings.label-twelve != blank %}
-                  <option value="{{ block.settings.label-twelve }}">{{ block.settings.label-twelve }}</option>
-                {% endif %}
-                {% if block.settings.label-thirteen != blank %}
-                  <option value="{{ block.settings.label-thirteen }}">{{ block.settings.label-thirteen }}</option>
-                {% endif %}
-                {% if block.settings.label-fourteen != blank %}
-                  <option value="{{ block.settings.label-fourteen }}">{{ block.settings.label-fourteen }}</option>
-                {% endif %}
-                {% if block.settings.label-fifteen != blank %}
-                  <option value="{{ block.settings.label-fifteen }}">{{ block.settings.label-fifteen }}</option>
-                {% endif %}
-                {% if block.settings.label-sixteen != blank %}
-                  <option value="{{ block.settings.label-sixteen }}">{{ block.settings.label-sixteen }}</option>
-                {% endif %}
-                {% if block.settings.label-seventeen != blank %}
-                  <option value="{{ block.settings.label-seventeen }}">{{ block.settings.label-seventeen }}</option>
-                {% endif %}
-                {% if block.settings.label-eighteen != blank %}
-                  <option value="{{ block.settings.label-eighteen }}">{{ block.settings.label-eighteen }}</option>
-                {% endif %}
-                {% if block.settings.label-nineteen != blank %}
-                  <option value="{{ block.settings.label-nineteen }}">{{ block.settings.label-nineteen }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty != blank %}
-                  <option value="{{ block.settings.label-twenty }}">{{ block.settings.label-twenty }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-one != blank %}
-                  <option value="{{ block.settings.label-twenty-one }}">{{ block.settings.label-twenty-one }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-two != blank %}
-                  <option value="{{ block.settings.label-twenty-two }}">{{ block.settings.label-twenty-two }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-three != blank %}
-                  <option value="{{ block.settings.label-twenty-three }}">{{ block.settings.label-twenty-three }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-four != blank %}
-                  <option value="{{ block.settings.label-twenty-four }}">{{ block.settings.label-twenty-four }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-five != blank %}
-                  <option value="{{ block.settings.label-twenty-five }}">{{ block.settings.label-twenty-five }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-six != blank %}
-                  <option value="{{ block.settings.label-twenty-six }}">{{ block.settings.label-twenty-six }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-seven != blank %}
-                  <option value="{{ block.settings.label-twenty-seven }}">{{ block.settings.label-twenty-seven }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-eight != blank %}
-                  <option value="{{ block.settings.label-twenty-eight }}">{{ block.settings.label-twenty-eight }}</option>
-                {% endif %}
-                {% if block.settings.label-twenty-nine != blank %}
-                  <option value="{{ block.settings.label-twenty-nine }}">{{ block.settings.label-twenty-nine }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty != blank %}
-                  <option value="{{ block.settings.label-thirty }}">{{ block.settings.label-thirty }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-one != blank %}
-                  <option value="{{ block.settings.label-thirty-one }}">{{ block.settings.label-thirty-one }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-two != blank %}
-                  <option value="{{ block.settings.label-thirty-two }}">{{ block.settings.label-thirty-two }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-three != blank %}
-                  <option value="{{ block.settings.label-thirty-three }}">{{ block.settings.label-thirty-three }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-four != blank %}
-                  <option value="{{ block.settings.label-thirty-four }}">{{ block.settings.label-thirty-four }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-five != blank %}
-                  <option value="{{ block.settings.label-thirty-five }}">{{ block.settings.label-thirty-five }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-six != blank %}
-                  <option value="{{ block.settings.label-thirty-six }}">{{ block.settings.label-thirty-six }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-seven != blank %}
-                  <option value="{{ block.settings.label-thirty-seven }}">{{ block.settings.label-thirty-seven }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-eight != blank %}
-                  <option value="{{ block.settings.label-thirty-eight }}">{{ block.settings.label-thirty-eight }}</option>
-                {% endif %}
-                {% if block.settings.label-thirty-nine != blank %}
-                  <option value="{{ block.settings.label-thirty-nine }}">{{ block.settings.label-thirty-nine }}</option>
-                {% endif %}
-                {% if block.settings.label-forty != blank %}
-                  <option value="{{ block.settings.label-forty }}">{{ block.settings.label-forty }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-one != blank %}
-                  <option value="{{ block.settings.label-forty-one }}">{{ block.settings.label-forty-one }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-two != blank %}
-                  <option value="{{ block.settings.label-forty-two }}">{{ block.settings.label-forty-two }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-three != blank %}
-                  <option value="{{ block.settings.label-forty-three }}">{{ block.settings.label-forty-three }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-four != blank %}
-                  <option value="{{ block.settings.label-forty-four }}">{{ block.settings.label-forty-four }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-five != blank %}
-                  <option value="{{ block.settings.label-forty-five }}">{{ block.settings.label-forty-five }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-six != blank %}
-                  <option value="{{ block.settings.label-forty-six }}">{{ block.settings.label-forty-six }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-seven != blank %}
-                  <option value="{{ block.settings.label-forty-seven }}">{{ block.settings.label-forty-seven }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-eight != blank %}
-                  <option value="{{ block.settings.label-forty-eight }}">{{ block.settings.label-forty-eight }}</option>
-                {% endif %}
-                {% if block.settings.label-forty-nine != blank %}
-                  <option value="{{ block.settings.label-forty-nine }}">{{ block.settings.label-forty-nine }}</option>
-                {% endif %}
-                {% if block.settings.label-fifty != blank %}
-                  <option value="{{ block.settings.label-fifty }}">{{ block.settings.label-fifty }}</option>
-                {% endif %}
-              </select>
-          </label>
-            </div>
-  
-        {% endcase %}
-  
-      {% endfor %}
-      <a href="/pages/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
-      <input type="checkbox" class="checkbox_box" required="" checked>
+                      {% if block.settings.check %}
+                        required="true"
+                      {% endif %}
+                    >
+                      <option value="{{ block.settings.label-zero }}">{{ block.settings['label-zero'] }}</option>
+                      {% if block.settings['label-one'] != blank %}
+                        <option value="{{ block.settings.label-one }}">{{ block.settings['label-one'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-two'] != blank %}
+                        <option value="{{ block.settings.label-two }}">{{ block.settings['label-two'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-three'] != blank %}
+                        <option value="{{ block.settings.label-three }}">{{ block.settings['label-three'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-four'] != blank %}
+                        <option value="{{ block.settings.label-four }}">{{ block.settings['label-four'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-five'] != blank %}
+                        <option value="{{ block.settings.label-five }}">{{ block.settings['label-five'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-six'] != blank %}
+                        <option value="{{ block.settings.label-six }}">{{ block.settings['label-six'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-seven'] != blank %}
+                        <option value="{{ block.settings.label-seven }}">{{ block.settings['label-seven'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-eight'] != blank %}
+                        <option value="{{ block.settings.label-eight }}">{{ block.settings['label-eight'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-nine'] != blank %}
+                        <option value="{{ block.settings.label-nine }}">{{ block.settings['label-nine'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-ten'] != blank %}
+                        <option value="{{ block.settings.label-ten }}">{{ block.settings['label-ten'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-eleven'] != blank %}
+                        <option value="{{ block.settings.label-eleven }}">{{ block.settings['label-eleven'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-twelve'] != blank %}
+                        <option value="{{ block.settings.label-twelve }}">{{ block.settings['label-twelve'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-thirteen'] != blank %}
+                        <option value="{{ block.settings.label-thirteen }}">
+                          {{ block.settings['label-thirteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-fourteen'] != blank %}
+                        <option value="{{ block.settings.label-fourteen }}">
+                          {{ block.settings['label-fourteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-fifteen'] != blank %}
+                        <option value="{{ block.settings.label-fifteen }}">
+                          {{ block.settings['label-fifteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-sixteen'] != blank %}
+                        <option value="{{ block.settings.label-sixteen }}">
+                          {{ block.settings['label-sixteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-seventeen'] != blank %}
+                        <option value="{{ block.settings.label-seventeen }}">
+                          {{ block.settings['label-seventeen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-eighteen'] != blank %}
+                        <option value="{{ block.settings.label-eighteen }}">
+                          {{ block.settings['label-eighteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-nineteen'] != blank %}
+                        <option value="{{ block.settings.label-nineteen }}">
+                          {{ block.settings['label-nineteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty'] != blank %}
+                        <option value="{{ block.settings.label-twenty }}">{{ block.settings['label-twenty'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-one'] != blank %}
+                        <option value="{{ block.settings.label-twenty-one }}">
+                          {{ block.settings['label-twenty-one'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-two'] != blank %}
+                        <option value="{{ block.settings.label-twenty-two }}">
+                          {{ block.settings['label-twenty-two'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-three'] != blank %}
+                        <option value="{{ block.settings.label-twenty-three }}">
+                          {{ block.settings['label-twenty-three'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-four'] != blank %}
+                        <option value="{{ block.settings.label-twenty-four }}">
+                          {{ block.settings['label-twenty-four'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-five'] != blank %}
+                        <option value="{{ block.settings.label-twenty-five }}">
+                          {{ block.settings['label-twenty-five'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-six'] != blank %}
+                        <option value="{{ block.settings.label-twenty-six }}">
+                          {{ block.settings['label-twenty-six'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-seven'] != blank %}
+                        <option value="{{ block.settings.label-twenty-seven }}">
+                          {{ block.settings['label-twenty-seven'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-eight'] != blank %}
+                        <option value="{{ block.settings.label-twenty-eight }}">
+                          {{ block.settings['label-twenty-eight'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty-nine'] != blank %}
+                        <option value="{{ block.settings.label-twenty-nine }}">
+                          {{ block.settings['label-twenty-nine'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty'] != blank %}
+                        <option value="{{ block.settings.label-thirty }}">{{ block.settings['label-thirty'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-one'] != blank %}
+                        <option value="{{ block.settings.label-thirty-one }}">
+                          {{ block.settings['label-thirty-one'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-two'] != blank %}
+                        <option value="{{ block.settings.label-thirty-two }}">
+                          {{ block.settings['label-thirty-two'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-three'] != blank %}
+                        <option value="{{ block.settings.label-thirty-three }}">
+                          {{ block.settings['label-thirty-three'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-four'] != blank %}
+                        <option value="{{ block.settings.label-thirty-four }}">
+                          {{ block.settings['label-thirty-four'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-five'] != blank %}
+                        <option value="{{ block.settings.label-thirty-five }}">
+                          {{ block.settings['label-thirty-five'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-six'] != blank %}
+                        <option value="{{ block.settings.label-thirty-six }}">
+                          {{ block.settings['label-thirty-six'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-seven'] != blank %}
+                        <option value="{{ block.settings.label-thirty-seven }}">
+                          {{ block.settings['label-thirty-seven'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-eight'] != blank %}
+                        <option value="{{ block.settings.label-thirty-eight }}">
+                          {{ block.settings['label-thirty-eight'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-thirty-nine'] != blank %}
+                        <option value="{{ block.settings.label-thirty-nine }}">
+                          {{ block.settings['label-thirty-nine'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty'] != blank %}
+                        <option value="{{ block.settings.label-forty }}">{{ block.settings['label-forty'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-forty-one'] != blank %}
+                        <option value="{{ block.settings.label-forty-one }}">
+                          {{ block.settings['label-forty-one'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty-two'] != blank %}
+                        <option value="{{ block.settings.label-forty-two }}">
+                          {{ block.settings['label-forty-two'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty-three'] != blank %}
+                        <option value="{{ block.settings.label-forty-three }}">
+                          {{ block.settings['label-forty-three'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty-four'] != blank %}
+                        <option value="{{ block.settings.label-forty-four }}">
+                          {{ block.settings['label-forty-four'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty-five'] != blank %}
+                        <option value="{{ block.settings.label-forty-five }}">
+                          {{ block.settings['label-forty-five'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty-six'] != blank %}
+                        <option value="{{ block.settings.label-forty-six }}">
+                          {{ block.settings['label-forty-six'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty-seven'] != blank %}
+                        <option value="{{ block.settings.label-forty-seven }}">
+                          {{ block.settings['label-forty-seven'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty-eight'] != blank %}
+                        <option value="{{ block.settings.label-forty-eight }}">
+                          {{ block.settings['label-forty-eight'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-forty-nine'] != blank %}
+                        <option value="{{ block.settings.label-forty-nine }}">
+                          {{ block.settings['label-forty-nine'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-fifty'] != blank %}
+                        <option value="{{ block.settings.label-fifty }}">{{ block.settings['label-fifty'] }}</option>
+                      {% endif %}
+                    </select>
+                  </label>
+                </div>
+
+                {%- comment -%} セレクトボックス20 {%- endcomment -%}
+              {% when 'select_twenty' %}
+                <div class="field w_3col" {{ block.shopify_attributes }}>
+                  {%- comment -%}
+                    {% if block.settings.title != blank %}
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
+                              class="custom-form__label label--block">
+                        {{ block.settings.title }}
+                        {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+                      </label>
+                    {% endif %}
+                  {%- endcomment -%}
+                  <label
+                    for="Form-{{ section.id }}-{{ forloop.index0 }}"
+                    class=" selectbox"
+                  >
+                    <select
+                      id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                      class="contactFormSelect foJ_Thin"
+                      name="contact[{{ block.settings.val | handleize | default: 'select' }}]"
+                      {% if block.settings.check %}
+                        required="true"
+                      {% endif %}
+                    >
+                      <option value="{{ block.settings.label-zero }}">{{ block.settings['label-zero'] }}</option>
+                      {% if block.settings['label-one'] != blank %}
+                        <option value="{{ block.settings.label-one }}">{{ block.settings['label-one'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-two'] != blank %}
+                        <option value="{{ block.settings.label-two }}">{{ block.settings['label-two'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-three'] != blank %}
+                        <option value="{{ block.settings.label-three }}">{{ block.settings['label-three'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-four'] != blank %}
+                        <option value="{{ block.settings.label-four }}">{{ block.settings['label-four'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-five'] != blank %}
+                        <option value="{{ block.settings.label-five }}">{{ block.settings['label-five'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-six'] != blank %}
+                        <option value="{{ block.settings.label-six }}">{{ block.settings['label-six'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-seven'] != blank %}
+                        <option value="{{ block.settings.label-seven }}">{{ block.settings['label-seven'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-eight'] != blank %}
+                        <option value="{{ block.settings.label-eight }}">{{ block.settings['label-eight'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-nine'] != blank %}
+                        <option value="{{ block.settings.label-nine }}">{{ block.settings['label-nine'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-ten'] != blank %}
+                        <option value="{{ block.settings.label-ten }}">{{ block.settings['label-ten'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-eleven'] != blank %}
+                        <option value="{{ block.settings.label-eleven }}">{{ block.settings['label-eleven'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-twelve'] != blank %}
+                        <option value="{{ block.settings.label-twelve }}">{{ block.settings['label-twelve'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-thirteen'] != blank %}
+                        <option value="{{ block.settings.label-thirteen }}">
+                          {{ block.settings['label-thirteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-fourteen'] != blank %}
+                        <option value="{{ block.settings.label-fourteen }}">
+                          {{ block.settings['label-fourteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-fifteen'] != blank %}
+                        <option value="{{ block.settings.label-fifteen }}">
+                          {{ block.settings['label-fifteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-sixteen'] != blank %}
+                        <option value="{{ block.settings.label-sixteen }}">
+                          {{ block.settings['label-sixteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-seventeen'] != blank %}
+                        <option value="{{ block.settings.label-seventeen }}">
+                          {{ block.settings['label-seventeen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-eighteen'] != blank %}
+                        <option value="{{ block.settings.label-eighteen }}">
+                          {{ block.settings['label-eighteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-nineteen'] != blank %}
+                        <option value="{{ block.settings.label-nineteen }}">
+                          {{ block.settings['label-nineteen'] }}
+                        </option>
+                      {% endif %}
+                      {% if block.settings['label-twenty'] != blank %}
+                        <option value="{{ block.settings.label-twenty }}">{{ block.settings['label-twenty'] }}</option>
+                      {% endif %}
+                    </select>
+                  </label>
+                </div>
+            {% endcase %}
+          {% endfor %}
+          <a href="/pages/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
+          <input type="checkbox" class="checkbox_box" required="" checked>
           プライバシーポリシーに同意する
-        {%- comment -%} フォームボタン {%- endcomment -%}
-            <div class="btn" onclick="submitContactForm(event)">
-              <span class="info foJ_Mid">
-                {{ 'templates.contact.form.send' | t }}
-              </span>
-              <div class="icon submit"></div>
-            </div>
-        <!--label for="ContactFormPolicy">
-          <a href="/pages/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" required="">
-          プライバシーポリシーに同意する
-      </label-->
-    </div>
-    <!--/#ContactForm_wrapper-->
-    {%- endform -%}
-    
+          {%- comment -%} フォームボタン {%- endcomment -%}
+          <div class="btn" onclick="submitContactForm(event)">
+            <span class="info foJ_Mid">
+              {{ 'templates.contact.form.send' | t }}
+            </span>
+            <div class="icon submit"></div>
+          </div>
+          <!--
+            label for="ContactFormPolicy">
+                <a href="/pages/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" required="">
+                プライバシーポリシーに同意する
+            </label
+          -->
+        </div>
+        <!-- /#ContactForm_wrapper -->
+      {%- endform -%}
     </div>
   </div>
 </div>
@@ -780,6 +1042,163 @@
             "label": "必須にする",
             "default": false,
             "info": "チェックを入れると必須項目にできます。"
+          }
+        ]
+      },
+      {
+        "type": "select_twenty",
+        "name": "セレクト ドロップダウン（20項目）",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "選択肢一つを選択してください",
+            "info": "例：配達場所を選択します"
+          },
+          {
+            "type": "text",
+            "id": "val",
+            "label": "変数名",
+            "default": "変数名を入力"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          },
+          {
+            "type": "header",
+            "content": "最大50のオプションを含めます",
+            "info":  "未入力のテキストのオプションは表示されません。"
+          },
+          {
+            "type": "text",
+            "id": "label-zero",
+            "default": "初期値",
+            "label": "オプション０"
+          },
+          {
+            "type": "text",
+            "id": "label-one",
+            "default": "オプション1",
+            "label": "オプション1"
+          },
+          {
+            "type": "text",
+            "id": "label-two",
+            "default": "オプション２",
+            "label": "オプション２"
+          },
+          {
+            "type": "text",
+            "id": "label-three",
+            "default": "オプション３",
+            "label": "オプション３"
+          },
+          {
+            "type": "text",
+            "id": "label-four",
+            "default": "オプション４",
+            "label": "オプション４"
+          },
+          {
+            "type": "text",
+            "id": "label-five",
+            "default": "オプション５",
+            "label": "オプション５"
+          },
+          {
+            "type": "text",
+            "id": "label-six",
+            "default": "オプション６",
+            "label": "オプション６"
+          },
+          {
+            "type": "text",
+            "id": "label-seven",
+            "default": "オプション７",
+            "label": "オプション７"
+          },
+          {
+            "type": "text",
+            "id": "label-eight",
+            "default": "オプション８",
+            "label": "オプション８"
+          },
+          {
+            "type": "text",
+            "id": "label-nine",
+            "default": "オプション９",
+            "label": "オプション９"
+          },
+          {
+            "type": "text",
+            "id": "label-ten",
+            "default": "オプション１０",
+            "label": "オプション１０"
+          },
+          {
+            "type": "text",
+            "id": "label-eleven",
+            "default": "オプション１１",
+            "label": "オプション１１"
+          },
+          {
+            "type": "text",
+            "id": "label-twelve",
+            "default": "オプション１２",
+            "label": "オプション１２"
+          },
+          {
+            "type": "text",
+            "id": "label-thirteen",
+            "default": "オプション１３",
+            "label": "オプション１３"
+          },
+          {
+            "type": "text",
+            "id": "label-fourteen",
+            "default": "オプション１４",
+            "label": "オプション１４"
+          },
+          {
+            "type": "text",
+            "id": "label-fifteen",
+            "default": "オプション１５",
+            "label": "オプション１５"
+          },
+          {
+            "type": "text",
+            "id": "label-sixteen",
+            "default": "オプション１６",
+            "label": "オプション１６"
+          },
+          {
+            "type": "text",
+            "id": "label-seventeen",
+            "default": "オプション１７",
+            "label": "オプション１７"
+          },
+          {
+            "type": "text",
+            "id": "label-eighteen",
+            "default": "オプション１８",
+            "label": "オプション１８"
+          },
+          {
+            "type": "text",
+            "id": "label-nineteen",
+            "default": "オプション１９",
+            "label": "オプション１９"
+          },
+          {
+            "type": "text",
+            "id": "label-twenty",
+            "default": "オプション２０",
+            "label": "オプション２０"
           }
         ]
       },
