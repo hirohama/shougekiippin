@@ -784,13 +784,15 @@
                     </select>
                   </label>
                 </div>
-              {% if block.settings.newline_pc and block.settings.newline_mobile %}
-                <br>
-              {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
-                <br class="pc_br">
-              {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
-                <br class="mobile_br">
-              {% endif %}
+              {% unless block.settings.width_setting == "col1" %}
+                {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                  <br>
+                {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                  <br class="pc_br">
+                {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                  <br class="mobile_br">
+                {% endif %}
+              {% endunless %}
 
           
                 {%- comment -%} セレクトボックス10 {%- endcomment -%}
@@ -848,13 +850,15 @@
                     </select>
                   </label>
                 </div>
-              {% if block.settings.newline_pc and block.settings.newline_mobile %}
-                <br>
-              {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
-                <br class="pc_br">
-              {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
-                <br class="mobile_br">
-              {% endif %}
+              {% unless block.settings.width_setting == "col1" %}
+                {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                  <br>
+                {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                  <br class="pc_br">
+                {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                  <br class="mobile_br">
+                {% endif %}
+              {% endunless %}
             {% endcase %}
           {% endfor %}
           <a href="/pages/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
