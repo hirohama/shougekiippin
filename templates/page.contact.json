@@ -47,7 +47,7 @@
             "title": "選択肢一つを選択してください",
             "check": true,
             "newline_pc": true,
-            "newline_mobile": false,
+            "newline_mobile": true,
             "label-zero": "初期値",
             "label-one": "オプション1",
             "label-two": "オプション２",
