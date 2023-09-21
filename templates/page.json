@@ -41,12 +41,6 @@
             "check": false
           }
         },
-        "16591905-74b7-4258-877f-77360070a767": {
-          "type": "body",
-          "settings": {
-            "title": "本文"
-          }
-        },
         "ffd6f66d-e48e-498a-98fd-21a370cd6d8e": {
           "type": "select",
           "settings": {
@@ -105,6 +99,12 @@
             "label-forty-nine": "オプション４９",
             "label-fifty": "オプション５０"
           }
+        },
+        "16591905-74b7-4258-877f-77360070a767": {
+          "type": "body",
+          "settings": {
+            "title": "本文"
+          }
         }
       },
       "block_order": [
@@ -113,8 +113,8 @@
         "8e0d1b25-370f-4f87-8ada-d5314316afc4",
         "e37d6070-30a8-4b1b-a21b-3d0c9a192a39",
         "cec5d18c-e0b7-4cbb-9bbb-08b10ce3d9e3",
-        "16591905-74b7-4258-877f-77360070a767",
-        "ffd6f66d-e48e-498a-98fd-21a370cd6d8e"
+        "ffd6f66d-e48e-498a-98fd-21a370cd6d8e",
+        "16591905-74b7-4258-877f-77360070a767"
       ],
       "settings": {
         "heading": "",
