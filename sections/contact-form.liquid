@@ -324,8 +324,8 @@
             </div>
   
   
-          {%- comment -%} セレクトボックス {%- endcomment -%}
-          {% when 'select' %}
+          {%- comment -%} セレクトボックス50 {%- endcomment -%}
+          {% when 'select_fifty' %}
             <div class="field w_3col" {{ block.shopify_attributes }}>
           {%- comment -%} 
               {% if block.settings.title != blank %}
@@ -784,8 +784,8 @@
         ]
       },
       {
-        "type": "select",
-        "name": "セレクト ドロップダウン",
+        "type": "select_fifty",
+        "name": "セレクト ドロップダウン（50項目）",
         "settings": [
           {
             "type": "text",
