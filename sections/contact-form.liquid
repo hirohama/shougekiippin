@@ -87,13 +87,16 @@
                   {%- endif -%}
                 </div>
 
-                {%- comment -%} Eメール確認 {%- endcomment -%}
+                {%- comment -%} Eメール（確認用） {%- endcomment -%}
               {% when 'email_verify' %}
                 <div class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}" {{ block.shopify_attributes }}>
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                    {{ 'block.settings.title' | t }}
-                    <span aria-hidden="true">*</span>
-                  </label>
+                  {% if block.settings.label %}
+                    <span>{{ block.settings.title }}</span>
+                      {% if block.settings.check -%}
+                        <span aria-hidden="true">*</span>
+                      {%- endif %}
+                    {% endif %}
 
                   <input
                     autocomplete="email"
