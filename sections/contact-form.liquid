@@ -179,7 +179,7 @@
                     id="ContactForm-postal"
                     required="true"
                     name="contact[{{ 'templates.contact.form.postal' | t }}]"
-                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              pattern="^[+-]?([1-9][0-9]*|0)$"
                     placeholder="{{ 'templates.contact.form.postal' | t }}"
                   >
                 </div>
@@ -993,6 +993,26 @@
             "label": "ラベル",
             "default": "メッセージを入力してください",
             "info": "例：メッセージを入力してください"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          }
+        ]
+      },
+      {
+        "type": "address",
+        "name": "住所",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "ラベル",
+            "default": "住所",
+            "info": "例：住所"
           },
           {
             "type": "checkbox",
