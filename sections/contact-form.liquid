@@ -184,6 +184,25 @@
                   >
                 </div>
 
+                {%- comment -%} 住所 {%- endcomment -%}
+              {% when 'address' %}
+                <div class="field w_1col" {{ block.shopify_attributes }}>
+                  <label class="field__label" for="ContactForm-address">
+                    {{ 'templates.contact.form.address' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    class="field__input foJ_Thin"
+                    autocomplete="address"
+                    id="ContactForm-address"
+                    required="true"
+                    name="contact[{{ 'templates.contact.form.address' | t }}]"
+                    placeholder="{{ 'templates.contact.form.address' | t }}"
+                  >
+                </div>
+          
                 {%- comment -%} 電話番号 {%- endcomment -%}
               {% when 'telephone' %}
                 <div class="field" {{ block.shopify_attributes }}>
