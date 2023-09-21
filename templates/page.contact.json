@@ -48,13 +48,29 @@
         "68b1d328-da20-4074-967b-afc8a8f5a2ff": {
           "type": "email",
           "settings": {
-            "title": "Eメール"
+            "title": "Eメール",
+            "placeholder": "",
+            "check": false,
+            "label": true,
+            "newline_pc": false,
+            "newline_mobile": false,
+            "width_setting": "col1",
+            "margin-bottom": false,
+            "regex": ""
           }
         },
         "a689a398-e112-481e-8bec-822c6572b4f9": {
           "type": "email_verify",
           "settings": {
-            "title": "Eメール（確認用）"
+            "title": "Eメール（確認用）",
+            "placeholder": "Eメール（確認用）",
+            "check": false,
+            "label": true,
+            "newline_pc": false,
+            "newline_mobile": false,
+            "width_setting": "col3",
+            "margin-bottom": false,
+            "regex": ""
           }
         },
         "4bee1af1-9c7a-4939-b714-cc3538600563": {
