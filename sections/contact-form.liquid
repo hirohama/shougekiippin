@@ -440,6 +440,7 @@
               {% elsif block.settings.width_setting == "col3" %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
               {% endif %}
+              <span>{{ block.settings.title }}</span>
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class="selectbox"
