@@ -14,6 +14,7 @@
           "type": "text",
           "settings": {
             "title": "おなまえ",
+            "placeholder": "山田　太郎",
             "check": true,
             "label": true,
             "newline_pc": false,
@@ -27,6 +28,7 @@
           "type": "text",
           "settings": {
             "title": "お名前（ひらがな）",
+            "placeholder": "やまだ　たろう",
             "check": true,
             "label": true,
             "newline_pc": true,
@@ -66,6 +68,7 @@
           "type": "text",
           "settings": {
             "title": "郵便番号",
+            "placeholder": "1231234",
             "check": true,
             "label": false,
             "newline_pc": false,
@@ -142,6 +145,7 @@
           "type": "text",
           "settings": {
             "title": "都道府県後に続く住所",
+            "placeholder": "〇〇市〇〇町〇〇番地",
             "check": true,
             "label": false,
             "newline_pc": false,
@@ -155,7 +159,10 @@
           "type": "textarea",
           "settings": {
             "title": "お問い合わせ内容",
-            "check": true
+            "placeholder": "お問い合わせの内容を入力してください",
+            "check": true,
+            "width_setting": "col1",
+            "margin-bottom": false
           }
         }
       },
