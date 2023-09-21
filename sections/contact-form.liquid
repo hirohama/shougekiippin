@@ -188,13 +188,12 @@
 
                 {%- comment -%} 1行 テキスト{%- endcomment -%}
               {% when 'text' %}
-              {% if block.settings.width_setting == "col1" %}
-                <div class="field w_1col" {{ block.shopify_attributes }}>
-              {% elsif block.settings.width_setting == "col2" %}
-                <div class="field w_2col" {{ block.shopify_attributes }}>
-              {% elsif block.settings.width_setting == "col3" %}
-                <div class="field w_3col" {{ block.shopify_attributes }}>
-              {% endif %}
+                <div class="field
+                  {% if block.settings.width_setting == "col1" %} w_1col{% endif %}
+                  {% if block.settings.width_setting == "col2" %} w_2col{% endif %}
+                  {% if block.settings.width_setting == "col3" %} w_3col{% endif %}
+                    " {{ block.shopify_attributes }}>
+              
               
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
                     {% if block.settings.label %}
