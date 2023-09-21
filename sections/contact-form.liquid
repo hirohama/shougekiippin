@@ -674,13 +674,15 @@
                     </select>
                   </label>
                 </div>
-              {% if block.settings.newline_pc and block.settings.newline_mobile %}
-                <br>
-              {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
-                <br class="pc_br">
-              {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
-                <br class="mobile_br">
-              {% endif %}
+              {% unless block.settings.width_setting == "col1" %}
+                {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                  <br>
+                {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                  <br class="pc_br">
+                {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                  <br class="mobile_br">
+                {% endif %}
+              {% endunless %}
 
           
                 {%- comment -%} セレクトボックス20 {%- endcomment -%}
