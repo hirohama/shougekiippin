@@ -441,7 +441,7 @@
                     <select
                       id="Form-{{ section.id }}-{{ forloop.index0 }}"
                       class="contactFormSelect foJ_Thin"
-                      name="contact[{{ block.settings.val | handleize | default: 'select' }}]"
+                      name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                       {% if block.settings.check %}
                         required="true"
                       {% endif %}
@@ -668,7 +668,15 @@
                     </select>
                   </label>
                 </div>
+              {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                <br>
+              {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                <br class="pc_br">
+              {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                <br class="mobile_br">
+              {% endif %}
 
+          
                 {%- comment -%} セレクトボックス20 {%- endcomment -%}
               {% when 'select_twenty' %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
@@ -679,7 +687,7 @@
                     <select
                       id="Form-{{ section.id }}-{{ forloop.index0 }}"
                       class="contactFormSelect foJ_Thin"
-                      name="contact[{{ block.settings.val | handleize | default: 'select' }}]"
+                      name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                       {% if block.settings.check %}
                         required="true"
                       {% endif %}
@@ -762,7 +770,15 @@
                     </select>
                   </label>
                 </div>
+              {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                <br>
+              {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                <br class="pc_br">
+              {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                <br class="mobile_br">
+              {% endif %}
 
+          
                 {%- comment -%} セレクトボックス10 {%- endcomment -%}
               {% when 'select_ten' %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
@@ -1232,17 +1248,25 @@
             "info": "例：配達場所を選択します"
           },
           {
-            "type": "text",
-            "id": "val",
-            "label": "変数名",
-            "default": "変数名を入力"
-          },
-          {
             "type": "checkbox",
             "id": "check",
             "label": "必須にする",
             "default": false,
             "info": "チェックを入れると必須項目にできます。"
+          },
+          {
+            "type": "checkbox",
+            "id": "newline_pc",
+            "label": "要素後に改行(モバイルサイト)",
+            "default": false,
+            "info": "チェックを入れると要素後に改行します。(モバイルサイト)"
+          },
+          {
+            "type": "checkbox",
+            "id": "newline_mobile",
+            "label": "要素後に改行(PCサイト)",
+            "default": false,
+            "info": "チェックを入れると要素後に改行します。(PCサイト)"
           },
           {
             "type": "header",
@@ -1389,17 +1413,25 @@
             "info": "例：配達場所を選択します"
           },
           {
-            "type": "text",
-            "id": "val",
-            "label": "変数名",
-            "default": "変数名を入力"
-          },
-          {
             "type": "checkbox",
             "id": "check",
             "label": "必須にする",
             "default": false,
             "info": "チェックを入れると必須項目にできます。"
+          },
+          {
+            "type": "checkbox",
+            "id": "newline_pc",
+            "label": "要素後に改行(モバイルサイト)",
+            "default": false,
+            "info": "チェックを入れると要素後に改行します。(モバイルサイト)"
+          },
+          {
+            "type": "checkbox",
+            "id": "newline_mobile",
+            "label": "要素後に改行(PCサイト)",
+            "default": false,
+            "info": "チェックを入れると要素後に改行します。(PCサイト)"
           },
           {
             "type": "header",
