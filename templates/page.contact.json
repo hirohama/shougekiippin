@@ -74,7 +74,7 @@
             "newline_pc": false,
             "newline_mobile": false,
             "width_setting": "col3",
-            "regex": "^[+-]?([1-9][0-9]*|0)$"
+            "regex": "^[0-9A-Za-z]+$"
           }
         },
         "ff047d4c-50f6-4297-bf38-21713a290651": {
@@ -84,7 +84,7 @@
             "check": true,
             "label": false,
             "newline_pc": false,
-            "newline_mobile": false,
+            "newline_mobile": true,
             "width_setting": "col3",
             "label-zero": "都道府県選択",
             "label-one": "北海道",
