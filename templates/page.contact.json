@@ -71,7 +71,7 @@
             "newline_pc": false,
             "newline_mobile": false,
             "width_setting": "col3",
-            "margin-bottom": false,
+            "margin-bottom": true,
             "regex": "\/^[0-9]+$\/"
           }
         },
@@ -84,6 +84,7 @@
             "newline_pc": false,
             "newline_mobile": true,
             "width_setting": "col3",
+            "margin-bottom": true,
             "label-zero": "都道府県選択",
             "label-one": "北海道",
             "label-two": "青森県",
