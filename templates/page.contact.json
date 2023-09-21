@@ -91,7 +91,7 @@
             "newline_mobile": false,
             "width_setting": "col3",
             "margin-bottom": true,
-            "regex": "\/^[0-9]+$\/"
+            "regex": "^[0-9]{3}-?[0-9]{4}$"
           }
         },
         "ff047d4c-50f6-4297-bf38-21713a290651": {
