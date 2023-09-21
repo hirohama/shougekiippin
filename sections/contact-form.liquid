@@ -43,7 +43,42 @@
         {% for block in section.blocks %}
   
         {% case block.type %}
-  
+          {%- comment -%} おなまえ {%- endcomment -%}
+          {% when 'name' %}
+            <div class="field w_2col" {{ block.shopify_attributes }}>
+              <label class="field__label" for="ContactForm-name">
+                {{ 'templates.contact.form.name' | t }}
+                <span aria-hidden="true">*</span>
+              </label>
+              
+              <input class="field__input foJ_Thin"
+              autocomplete="name"
+              type="text"
+              id="ContactForm-name"
+              required="true"
+              name="contact[{{ 'templates.contact.form.name' | t }}]"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.name' | t }}">
+            </div>
+          
+          {%- comment -%} おなまえ（ひらがな） {%- endcomment -%}
+          {% when 'name_kana' %}
+            <div class="field w_2col" {{ block.shopify_attributes }}>
+              <label class="field__label" for="ContactForm-name_kana">
+                {{ 'templates.contact.form.name_kana' | t }}
+                <span aria-hidden="true">*</span>
+              </label>
+              
+              <input class="field__input foJ_Thin"
+              autocomplete="name_kana"
+              type="text"
+              id="ContactForm-name"
+              required="true"
+              name="contact[{{ 'templates.contact.form.name_kana' | t }}]"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.name_kana' | t }}">
+            </div>
+    
           {%- comment -%} Eメール {%- endcomment -%}
           {% when 'email' %}
             <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
@@ -110,6 +145,43 @@
                 </small>
               {%- endif -%}
             </div>
+     
+          {%- comment -%} 郵便番号 {%- endcomment -%}
+          {% when 'postal' %}
+            <div class="field w_3col" {{ block.shopify_attributes }}>
+              <label class="field__label" for="ContactForm-postal">
+                {{ 'templates.contact.form.postal' | t }}
+                <span aria-hidden="true">*</span>
+              </label>
+              
+              <input class="field__input foJ_Thin"
+              autocomplete="postal"
+              type="text"
+              id="ContactForm-postal"
+              required="true"
+              name="contact[{{ 'templates.contact.form.postal' | t }}]"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.postal' | t }}"> 
+            </div>
+    
+          {%- comment -%} 電話番号 {%- endcomment -%}
+          {% when 'telephone' %}
+            <div class="field" {{ block.shopify_attributes }}>
+              <label class="field__label" for="ContactForm-phone">
+                {{ block.settings.title }}
+                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+              </label>
+              
+              <input type="tel"
+                      id="ContactForm-phone" class="field__input foJ_Thin"
+                      autocomplete="tel"
+                      name="contact[{{ block.settings.title }}]"
+                      pattern="[0-9\-]*"
+                      value=""
+                      placeholder="{{ block.settings.title }}"
+                      {% if block.settings.check %} required="true" {% endif %}
+                      >
+            </div>
   
           {%- comment -%} 本文 {%- endcomment -%}
           {% when 'body' %}
@@ -131,81 +203,9 @@
             </textarea>
           </div>
   
+ 
   
-          {%- comment -%} 電話番号 {%- endcomment -%}
-          {% when 'telephone' %}
-            <div class="field" {{ block.shopify_attributes }}>
-              <label class="field__label" for="ContactForm-phone">
-                {{ block.settings.title }}
-                {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
-              </label>
-              
-              <input type="tel"
-                      id="ContactForm-phone" class="field__input foJ_Thin"
-                      autocomplete="tel"
-                      name="contact[{{ block.settings.title }}]"
-                      pattern="[0-9\-]*"
-                      value=""
-                      placeholder="{{ block.settings.title }}"
-                      {% if block.settings.check %} required="true" {% endif %}
-                      >
-            </div>
-  
-  
-          {%- comment -%} おなまえ {%- endcomment -%}
-          {% when 'name' %}
-            <div class="field w_2col" {{ block.shopify_attributes }}>
-              <label class="field__label" for="ContactForm-name">
-                {{ 'templates.contact.form.name' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-              
-              <input class="field__input foJ_Thin"
-              autocomplete="name"
-              type="text"
-              id="ContactForm-name"
-              required="true"
-              name="contact[{{ 'templates.contact.form.name' | t }}]"
-              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              placeholder="{{ 'templates.contact.form.name' | t }}">
-            </div>
-          
-          {%- comment -%} おなまえ（ひらがな） {%- endcomment -%}
-          {% when 'name_kana' %}
-            <div class="field w_2col" {{ block.shopify_attributes }}>
-              <label class="field__label" for="ContactForm-name_kana">
-                {{ 'templates.contact.form.name_kana' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-              
-              <input class="field__input foJ_Thin"
-              autocomplete="name_kana"
-              type="text"
-              id="ContactForm-name"
-              required="true"
-              name="contact[{{ 'templates.contact.form.name_kana' | t }}]"
-              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              placeholder="{{ 'templates.contact.form.name_kana' | t }}">
-            </div>
-      
-          {%- comment -%} 郵便番号 {%- endcomment -%}
-          {% when 'postal' %}
-            <div class="field w_3col" {{ block.shopify_attributes }}>
-              <label class="field__label" for="ContactForm-postal">
-                {{ 'templates.contact.form.postal' | t }}
-                <span aria-hidden="true">*</span>
-              </label>
-              
-              <input class="field__input foJ_Thin"
-              autocomplete="postal"
-              type="text"
-              id="ContactForm-postal"
-              required="true"
-              name="contact[{{ 'templates.contact.form.postal' | t }}]"
-              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-              placeholder="{{ 'templates.contact.form.postal' | t }}"> 
-            </div>
-  
+
           {%- comment -%} 見出し {%- endcomment -%}
           {% when 'formHeading' %}
             <div class="custom-form__block custom-form__block--heading form-item" {{ block.shopify_attributes }}>
