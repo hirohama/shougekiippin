@@ -299,6 +299,7 @@
                     {%- endif %}
                   </label>
                 </div>
+          
                 {%- comment -%} 装飾 {%- endcomment -%}
               {% when 'spacer' %}
                 {%- assign hr_class = 'hr--clear' -%}
@@ -811,6 +812,9 @@
                     </select>
                   </label>
                 </div>
+              {% if block.settings.newline %}
+              <br>
+              {% endif %}
             {% endcase %}
           {% endfor %}
           <a href="/pages/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
@@ -1119,17 +1123,18 @@
             "info": "例：配達場所を選択します"
           },
           {
-            "type": "text",
-            "id": "val",
-            "label": "変数名",
-            "default": "変数名を入力"
-          },
-          {
             "type": "checkbox",
             "id": "check",
             "label": "必須にする",
             "default": false,
             "info": "チェックを入れると必須項目にできます。"
+          },
+          {
+            "type": "checkbox",
+            "id": "newline",
+            "label": "要素後に改行",
+            "default": false,
+            "info": "チェックを入れると要素後に改行します。(PCサイトのみ)"
           },
           {
             "type": "header",
