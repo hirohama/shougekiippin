@@ -11,7 +11,8 @@
 }
 
 .contact .field {
-  margin-bottom: 1.5rem;
+  /*margin-bottom: 1.5rem;*/
+  margin-bottom:0.2vw;
 }
 
 @media screen and (min-width: 750px) {
