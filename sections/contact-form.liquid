@@ -79,7 +79,10 @@
                       aria-invalid="true"
                       aria-describedby="ContactForm-email-error"
                     {% endif %}
-                    placeholder="{{ 'templates.contact.form.email' | t }}"
+                    {% if block.settings.regex != blank %}
+                      pattern="{{ block.settings.regex }}"
+                    {% endif %}
+                    placeholder="{{ block.settings.placeholder }}"
                   >
                   {%- if form.errors contains 'email' -%}
                     <small class="contact__field-error" id="ContactForm-email-error">
