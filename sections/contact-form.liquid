@@ -51,10 +51,17 @@
             {% case block.type %}
                 {%- comment -%} Eメール {%- endcomment -%}
               {% when 'email' %}
-                <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
+                <div
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                    {{ 'templates.contact.form.email' | t }}
-                    <span aria-hidden="true">*</span>
+                    {% if block.settings.label %}
+                      <span>{{ block.settings.title }}</span>
+                      {% if block.settings.check -%}
+                        <span aria-hidden="true">*</span>
+                      {%- endif %}
+                    {% endif %}
                   </label>
 
                   <input
@@ -62,7 +69,7 @@
                     type="email"
                     id="ContactFormEmail"
                     class="field__input foJ_Thin"
-                    name="contact[email]"
+                    name="contact[Eメール]"
                     spellcheck="false"
                     autocorrect="off"
                     autocapitalize="off"
@@ -72,7 +79,10 @@
                       aria-invalid="true"
                       aria-describedby="ContactForm-email-error"
                     {% endif %}
-                    placeholder="{{ 'templates.contact.form.email' | t }}"
+                    {% if block.settings.regex != blank %}
+                      pattern="{{ block.settings.regex }}"
+                    {% endif %}
+                    placeholder="{{ block.settings.placeholder }}"
                   >
                   {%- if form.errors contains 'email' -%}
                     <small class="contact__field-error" id="ContactForm-email-error">
@@ -105,7 +115,7 @@
                     type="email"
                     id="ContactFormEmailVerify"
                     class="field__input foJ_Thin"
-                    name="contact[email_velify]"
+                    name="contact[Eメール（確認用）]"
                     spellcheck="false"
                     autocorrect="off"
                     autocapitalize="off"
