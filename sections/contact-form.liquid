@@ -178,7 +178,11 @@
               {%- comment -%} 小見出し(複数の項目をまとめる。住所など) {%- endcomment -%}
               {% when 'formHeading_span' %}
                 <div class="w_col1" {{ block.shopify_attributes }}>
-                  <span>{{ block.settings.title }}</span>
+                  <span>{{ block.settings.title }}
+                  {% if block.settings.check %}
+                    <span aria-hidden="true">*</span>
+                  {% endif %}
+                  </span>
                 </div>
 
                 {%- comment -%} 1行 テキスト{%- endcomment -%}
