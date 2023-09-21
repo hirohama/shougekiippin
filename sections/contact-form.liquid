@@ -781,7 +781,13 @@
           
                 {%- comment -%} セレクトボックス10 {%- endcomment -%}
               {% when 'select_ten' %}
+              {% if block.settings.width_setting == "col1" %}
+                <div class="field w_1col" {{ block.shopify_attributes }}>
+              {% elsif block.settings.width_setting == "col2" %}
+                <div class="field w_2col" {{ block.shopify_attributes }}>
+              {% elsif block.settings.width_setting == "col3" %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
+              {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class=" selectbox"
@@ -1164,6 +1170,26 @@
             "info": "チェックを入れると要素後に改行します。(PCサイト)"
           },
           {
+            "type": "radio",
+            "id": "width_setting",
+            "label": "大きさt",
+            "options": [
+              {
+                "value": "col1",
+                "label": "約100%(1カラム)"
+              },
+              {
+                "value": "col2",
+                "label": "約50%(2カラム)"
+              },
+              {
+                "value": "col3",
+                "label": "約33%(3カラム)"
+              }
+            ],
+            "default": "col1"
+          },
+          {
             "type": "header",
             "content": "最大10のオプションを含めます",
             "info":  "未入力のテキストのオプションは表示されません。"
@@ -1267,6 +1293,26 @@
             "label": "要素後に改行(PCサイト)",
             "default": false,
             "info": "チェックを入れると要素後に改行します。(PCサイト)"
+          },
+          {
+            "type": "radio",
+            "id": "width_setting",
+            "label": "大きさt",
+            "options": [
+              {
+                "value": "col1",
+                "label": "約100%(1カラム)"
+              },
+              {
+                "value": "col2",
+                "label": "約50%(2カラム)"
+              },
+              {
+                "value": "col3",
+                "label": "約33%(3カラム)"
+              }
+            ],
+            "default": "col1"
           },
           {
             "type": "header",
