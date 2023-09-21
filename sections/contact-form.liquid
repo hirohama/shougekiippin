@@ -140,7 +140,7 @@
                     id="ContactForm-postal"
                     required="true"
                     name="contact[{{ 'templates.contact.form.postal' | t }}]"
-              pattern="^[+-]?([1-9][0-9]*|0)$"
+                    pattern="^[+-]?([1-9][0-9]*|0)$"
                     placeholder="{{ 'templates.contact.form.postal' | t }}"
                   >
                 </div>
@@ -1026,6 +1026,10 @@
               }
             ],
             "default": "col1"
+          },{
+            "type": "text",
+            "id": "regix",
+            "label": "正規表現"
           }
         ]
       },
