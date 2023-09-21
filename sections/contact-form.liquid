@@ -442,12 +442,11 @@
               {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
-                    class=""
-                  >{{ block.settings.title }}
-                  </label>
+                    class="selectbox"
+                  >
                     <select
                       id="Form-{{ section.id }}-{{ forloop.index0 }}"
-                      class="contactFormSelect foJ_Thin selectbox"
+                      class="contactFormSelect foJ_Thin"
                       name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                       {% if block.settings.check %}
                         required="true"
@@ -673,6 +672,7 @@
                         <option value="{{ block.settings.label-fifty }}">{{ block.settings['label-fifty'] }}</option>
                       {% endif %}
                     </select>
+                  </label>
                 </div>
               {% unless block.settings.width_setting == "col1" %}
                 {% if block.settings.newline_pc and block.settings.newline_mobile %}
