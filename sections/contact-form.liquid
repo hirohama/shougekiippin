@@ -340,7 +340,7 @@
                       name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                       {% if block.settings.check %} required="true" {% endif %}
                       >
-                <option value="">未選択</option>
+                  <option value="{{ block.settings.label-zero }}">{{ block.settings.label-zero }}</option>
                 {% if block.settings.label-one != blank %}
                   <option value="{{ block.settings.label-one }}">{{ block.settings.label-one }}</option>
                 {% endif %}
@@ -801,6 +801,12 @@
             "type": "header",
             "content": "最大50のオプションを含めます",
             "info":  "未入力のテキストのオプションは表示されません。"
+          },
+          {
+            "type": "text",
+            "id": "label-zero",
+            "default": "選択してください",
+            "label": "オプション０"
           },
           {
             "type": "text",
