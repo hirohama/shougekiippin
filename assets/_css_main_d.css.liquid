@@ -1054,13 +1054,12 @@ form#ContactForm input[type=checkbox]{
 }
 
 .selectbox::before {
-    right: 0;
     display: inline-block;
-    width: 3vw;
-    height: 3vw;
+    right: 0;
+    width: 2.8em;
+    height: 2.8em;
     border-radius: 0 3px 3px 0;
     background-color: #2589d0;
-    content: '';
 }
 
 .selectbox::after {
@@ -1070,25 +1069,25 @@ form#ContactForm input[type=checkbox]{
     transform: translate(50%, -50%) rotate(45deg);
     width: 6px;
     height: 6px;
-    content: '';
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
 }
 
 .selectbox select {
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     min-width: 230px;
     height: 2.8em;
     padding: .4em 3.6em .4em .8em;
-    border: 2px solid #2589d0;
+    border: none;
     border-radius: 3px;
-    color: #333333;
+    background-color: #e6edf3;
+    color: #333;
     font-size: 1em;
     cursor: pointer;
 }
 
 .selectbox select:focus {
-    outline: 1px solid #2589d0;
+    outline: 2px solid #2589d0;
 }
 /*------------------------------------------------
 
