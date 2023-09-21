@@ -433,7 +433,13 @@
 
                 {%- comment -%} セレクトボックス50 {%- endcomment -%}
               {% when 'select_fifty' %}
+              {% if block.settings.width_setting == "col1" %}
+                <div class="field w_1col" {{ block.shopify_attributes }}>
+              {% elsif block.settings.width_setting == "col2" %}
+                <div class="field w_2col" {{ block.shopify_attributes }}>
+              {% elsif block.settings.width_setting == "col3" %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
+              {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class=" selectbox"
@@ -679,7 +685,13 @@
           
                 {%- comment -%} セレクトボックス20 {%- endcomment -%}
               {% when 'select_twenty' %}
+              {% if block.settings.width_setting == "col1" %}
+                <div class="field w_1col" {{ block.shopify_attributes }}>
+              {% elsif block.settings.width_setting == "col2" %}
+                <div class="field w_2col" {{ block.shopify_attributes }}>
+              {% elsif block.settings.width_setting == "col3" %}
                 <div class="field w_3col" {{ block.shopify_attributes }}>
+              {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class=" selectbox"
