@@ -814,6 +814,8 @@
                 </div>
               {% if block.settings.newline_pc and block.settings.newline_mobile %}
               <br>
+                {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                <br class="pc_br">
               {% endif %}
             {% endcase %}
           {% endfor %}
