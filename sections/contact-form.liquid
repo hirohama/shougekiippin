@@ -257,6 +257,12 @@
                 {%- comment -%} 1行 テキスト{%- endcomment -%}
               {% when 'text' %}
                 <div class="field" {{ block.shopify_attributes }}>
+                  <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                    {{ block.settings.title }}
+                    {% if block.settings.check -%}
+                      <span aria-hidden="true">*</span>
+                    {%- endif %}
+                  </label>
                   <input
                     class="field__input foJ_Thin"
                     type="text"
@@ -268,13 +274,6 @@
                       required="true"
                     {% endif %}
                   >
-
-                  <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                    {{ block.settings.title }}
-                    {% if block.settings.check -%}
-                      <span aria-hidden="true">*</span>
-                    {%- endif %}
-                  </label>
                 </div>
 
                 {%- comment -%} テキストエリア {%- endcomment -%}
