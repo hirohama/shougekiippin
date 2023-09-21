@@ -139,6 +139,13 @@
           "settings": {
             "title": "本文"
           }
+        },
+        "a53056ee-7815-466c-84bc-4659a09c6af2": {
+          "type": "text",
+          "settings": {
+            "title": "おなまえ",
+            "check": false
+          }
         }
       },
       "block_order": [
@@ -151,7 +158,8 @@
         "29669ac1-d151-4e4f-88cd-133868340661",
         "ff047d4c-50f6-4297-bf38-21713a290651",
         "e9694184-9128-4023-9407-1df46a3662fe",
-        "febe780c-54cc-498c-9e85-0d89a14997cd"
+        "febe780c-54cc-498c-9e85-0d89a14997cd",
+        "a53056ee-7815-466c-84bc-4659a09c6af2"
       ],
       "settings": {
         "heading": "Contact form",
