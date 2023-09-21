@@ -68,9 +68,9 @@
             "label": true,
             "newline_pc": false,
             "newline_mobile": false,
-            "width_setting": "col3",
+            "width_setting": "col1",
             "margin-bottom": false,
-            "regex": ""
+            "regex": "[\\w\\-._]+@[\\w\\-._]+\\.[A-Za-z]+"
           }
         },
         "4bee1af1-9c7a-4939-b714-cc3538600563": {
