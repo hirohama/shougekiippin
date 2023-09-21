@@ -51,10 +51,17 @@
             {% case block.type %}
                 {%- comment -%} Eメール {%- endcomment -%}
               {% when 'email' %}
-                <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
+                <div
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                    {{ 'templates.contact.form.email' | t }}
-                    <span aria-hidden="true">*</span>
+                    {% if block.settings.label %}
+                      <span>{{ block.settings.title }}</span>
+                      {% if block.settings.check -%}
+                        <span aria-hidden="true">*</span>
+                      {%- endif %}
+                    {% endif %}
                   </label>
 
                   <input
@@ -62,7 +69,7 @@
                     type="email"
                     id="ContactFormEmail"
                     class="field__input foJ_Thin"
-                    name="contact[Eメール]"
+                    name="contact[email]"
                     spellcheck="false"
                     autocorrect="off"
                     autocapitalize="off"
