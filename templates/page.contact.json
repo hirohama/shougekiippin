@@ -18,7 +18,8 @@
             "label": true,
             "newline_pc": false,
             "newline_mobile": false,
-            "width_setting": "col2"
+            "width_setting": "col2",
+            "regex": ""
           }
         },
         "8f28fb84-20a0-4473-b08d-b4228699cc1a": {
@@ -29,7 +30,8 @@
             "label": true,
             "newline_pc": true,
             "newline_mobile": true,
-            "width_setting": "col2"
+            "width_setting": "col2",
+            "regex": ""
           }
         },
         "54224ced-141e-4617-87aa-1cefb2ab768e": {
@@ -40,7 +42,8 @@
             "label": true,
             "newline_pc": false,
             "newline_mobile": true,
-            "width_setting": "col2"
+            "width_setting": "col2",
+            "regex": ""
           }
         },
         "1f0fec0d-b6ca-44ad-8e97-14144f4605ac": {
@@ -70,7 +73,8 @@
             "label": true,
             "newline_pc": false,
             "newline_mobile": false,
-            "width_setting": "col3"
+            "width_setting": "col3",
+            "regex": "^[+-]?([1-9][0-9]*|0)$"
           }
         },
         "ff047d4c-50f6-4297-bf38-21713a290651": {
@@ -143,7 +147,8 @@
             "label": false,
             "newline_pc": false,
             "newline_mobile": false,
-            "width_setting": "col1"
+            "width_setting": "col1",
+            "regex": ""
           }
         },
         "29669ac1-d151-4e4f-88cd-133868340661": {
