@@ -113,6 +113,9 @@
                       aria-invalid="true"
                       aria-describedby="ContactForm-email_verify-error"
                     {% endif %}
+                    {% if block.settings.regex != blank %}
+                    pattern="{{ block.settings.regex }}"
+                    {% endif %}
                     placeholder="{{ block.settings.placeholder }}"
                   >
 
