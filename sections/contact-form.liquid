@@ -173,8 +173,9 @@
                 {%- comment -%} 見出し {%- endcomment -%}
               {% when 'formHeading_p' %}
                 <div class="custom-form__block custom-form__block--heading form-item" {{ block.shopify_attributes }}>
-                  <p class="strong">{{ block.settings.title }}</p>
+                  <p>{{ block.settings.title }}</p>
                 </div>
+              
               {%- comment -%} 小見出し(複数の項目をまとめる。住所など) {%- endcomment -%}
               {% when 'formHeading_span' %}
                 <div class="w_col1" {{ block.shopify_attributes }}>
