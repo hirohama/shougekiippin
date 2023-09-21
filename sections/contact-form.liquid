@@ -237,7 +237,7 @@
                     id="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class="text-area field__input foJ_Thin"
                     name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
-                    placeholder="{{ block.settings.title }}"
+                    placeholder="{{ block.settings.def_content }}"
                     {% if block.settings.check %}
                       required="true"
                     {% endif %}
