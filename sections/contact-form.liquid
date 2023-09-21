@@ -1045,9 +1045,7 @@
           {
             "type": "text",
             "id": "title",
-            "label": "ラベル",
-            "default": "フルネーム",
-            "info": "例：フルネーム"
+            "label": "ラベル"
           },
           {
             "type": "checkbox",
@@ -1055,6 +1053,47 @@
             "label": "必須にする",
             "default": false,
             "info": "チェックを入れると必須項目にできます。"
+          },
+          {
+            "type": "checkbox",
+            "id": "label",
+            "label": "項目名の表示",
+            "default": true,
+            "info": "チェックを入れると項目名を表示します。"
+          },
+          {
+            "type": "checkbox",
+            "id": "newline_pc",
+            "label": "要素後に改行(モバイルサイト)",
+            "default": false,
+            "info": "チェックを入れると要素後に改行します。(モバイルサイト)"
+          },
+          {
+            "type": "checkbox",
+            "id": "newline_mobile",
+            "label": "要素後に改行(PCサイト)",
+            "default": false,
+            "info": "チェックを入れると要素後に改行します。(PCサイト)"
+          },
+          {
+            "type": "radio",
+            "id": "width_setting",
+            "label": "大きさt",
+            "options": [
+              {
+                "value": "col1",
+                "label": "約100%(1カラム)"
+              },
+              {
+                "value": "col2",
+                "label": "約50%(2カラム)"
+              },
+              {
+                "value": "col3",
+                "label": "約33%(3カラム)"
+              }
+            ],
+            "default": "col1"
           }
         ]
       },
