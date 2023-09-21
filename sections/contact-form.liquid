@@ -337,7 +337,7 @@
   
               <select id="Form-{{ section.id }}-{{ forloop.index0 }}"
                       class="contactFormSelect"
-                      name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
+                      name="contact[{{ block.settings.val | handleize | default: 'select' }}]"
                       {% if block.settings.check %} required="true" {% endif %}
                       >
                   <option value="{{ block.settings.label-zero }}">{{ block.settings.label-zero }}</option>
