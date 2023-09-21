@@ -56,7 +56,7 @@
             "newline_mobile": false,
             "width_setting": "col1",
             "margin-bottom": false,
-            "regex": ".+\\.[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]"
+            "regex": "\/^[a-zA-Z0-9.!#$%&'*+\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$\/"
           }
         },
         "a689a398-e112-481e-8bec-822c6572b4f9": {
@@ -70,7 +70,7 @@
             "newline_mobile": false,
             "width_setting": "col1",
             "margin-bottom": false,
-            "regex": ".+\\.[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]"
+            "regex": "\/^[a-zA-Z0-9.!#$%&'*+\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$\/"
           }
         },
         "4bee1af1-9c7a-4939-b714-cc3538600563": {
