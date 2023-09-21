@@ -760,6 +760,65 @@
                     </select>
                   </label>
                 </div>
+              
+                {%- comment -%} セレクトボックス10 {%- endcomment -%}
+              {% when 'select_ten' %}
+                <div class="field w_3col" {{ block.shopify_attributes }}>
+                  {%- comment -%}
+                    {% if block.settings.title != blank %}
+                      <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
+                              class="custom-form__label label--block">
+                        {{ block.settings.title }}
+                        {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
+                      </label>
+                    {% endif %}
+                  {%- endcomment -%}
+                  <label
+                    for="Form-{{ section.id }}-{{ forloop.index0 }}"
+                    class=" selectbox"
+                  >
+                    <select
+                      id="Form-{{ section.id }}-{{ forloop.index0 }}"
+                      class="contactFormSelect foJ_Thin"
+                      name="contact[{{ block.settings.val | handleize | default: 'select' }}]"
+                      {% if block.settings.check %}
+                        required="true"
+                      {% endif %}
+                    >
+                      <option value="{{ block.settings.label-zero }}">{{ block.settings['label-zero'] }}</option>
+                      {% if block.settings['label-one'] != blank %}
+                        <option value="{{ block.settings.label-one }}">{{ block.settings['label-one'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-two'] != blank %}
+                        <option value="{{ block.settings.label-two }}">{{ block.settings['label-two'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-three'] != blank %}
+                        <option value="{{ block.settings.label-three }}">{{ block.settings['label-three'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-four'] != blank %}
+                        <option value="{{ block.settings.label-four }}">{{ block.settings['label-four'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-five'] != blank %}
+                        <option value="{{ block.settings.label-five }}">{{ block.settings['label-five'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-six'] != blank %}
+                        <option value="{{ block.settings.label-six }}">{{ block.settings['label-six'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-seven'] != blank %}
+                        <option value="{{ block.settings.label-seven }}">{{ block.settings['label-seven'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-eight'] != blank %}
+                        <option value="{{ block.settings.label-eight }}">{{ block.settings['label-eight'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-nine'] != blank %}
+                        <option value="{{ block.settings.label-nine }}">{{ block.settings['label-nine'] }}</option>
+                      {% endif %}
+                      {% if block.settings['label-ten'] != blank %}
+                        <option value="{{ block.settings.label-ten }}">{{ block.settings['label-ten'] }}</option>
+                      {% endif %}
+                    </select>
+                  </label>
+                </div>
             {% endcase %}
           {% endfor %}
           <a href="/pages/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
@@ -772,16 +831,6 @@
             </span>
             <div class="icon submit"></div>
           </div>
-          <!--
-            label for="ContactFormPolicy">
-                <a href="/pages/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" required="">
-                プライバシーポリシーに同意する
-            </label
-          -->
-        </div>
         <!-- /#ContactForm_wrapper -->
       {%- endform -%}
     </div>
@@ -1042,6 +1091,103 @@
             "label": "必須にする",
             "default": false,
             "info": "チェックを入れると必須項目にできます。"
+          }
+        ]
+      },
+      {
+        "type": "select_ten",
+        "name": "セレクト ドロップダウン（10項目）",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "選択肢一つを選択してください",
+            "info": "例：配達場所を選択します"
+          },
+          {
+            "type": "text",
+            "id": "val",
+            "label": "変数名",
+            "default": "変数名を入力"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
+          },
+          {
+            "type": "header",
+            "content": "最大10のオプションを含めます",
+            "info":  "未入力のテキストのオプションは表示されません。"
+          },
+          {
+            "type": "text",
+            "id": "label-zero",
+            "default": "初期値",
+            "label": "オプション０"
+          },
+          {
+            "type": "text",
+            "id": "label-one",
+            "default": "オプション1",
+            "label": "オプション1"
+          },
+          {
+            "type": "text",
+            "id": "label-two",
+            "default": "オプション２",
+            "label": "オプション２"
+          },
+          {
+            "type": "text",
+            "id": "label-three",
+            "default": "オプション３",
+            "label": "オプション３"
+          },
+          {
+            "type": "text",
+            "id": "label-four",
+            "default": "オプション４",
+            "label": "オプション４"
+          },
+          {
+            "type": "text",
+            "id": "label-five",
+            "default": "オプション５",
+            "label": "オプション５"
+          },
+          {
+            "type": "text",
+            "id": "label-six",
+            "default": "オプション６",
+            "label": "オプション６"
+          },
+          {
+            "type": "text",
+            "id": "label-seven",
+            "default": "オプション７",
+            "label": "オプション７"
+          },
+          {
+            "type": "text",
+            "id": "label-eight",
+            "default": "オプション８",
+            "label": "オプション８"
+          },
+          {
+            "type": "text",
+            "id": "label-nine",
+            "default": "オプション９",
+            "label": "オプション９"
+          },
+          {
+            "type": "text",
+            "id": "label-ten",
+            "default": "オプション１０",
+            "label": "オプション１０"
           }
         ]
       },
