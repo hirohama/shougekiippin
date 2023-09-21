@@ -91,7 +91,7 @@
               {% when 'email_verify' %}
                 <div class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}" {{ block.shopify_attributes }}>
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                    {{ 'templates.contact.form.email_verify' | t }}
+                    {{ 'block.settings.title' | t }}
                     <span aria-hidden="true">*</span>
                   </label>
 
@@ -110,7 +110,7 @@
                       aria-invalid="true"
                       aria-describedby="ContactForm-email_verify-error"
                     {% endif %}
-                    placeholder="{{ 'templates.contact.form.email_verify' | t }}"
+                    placeholder="{{ 'block.settings.title' | t }}"
                   >
 
                   {%- if form.errors contains 'email_verify' -%}
