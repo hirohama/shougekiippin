@@ -51,7 +51,8 @@
           "type": "select",
           "settings": {
             "title": "都道府県",
-            "check": false,
+            "val": "pref",
+            "check": true,
             "label-zero": "都道府県選択",
             "label-one": "北海道",
             "label-two": "青森県",
