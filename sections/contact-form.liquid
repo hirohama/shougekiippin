@@ -49,45 +49,6 @@
 
           {% for block in section.blocks %}
             {% case block.type %}
-                {%- comment -%} おなまえ {%- endcomment -%}
-              {% when 'name' %}
-                <div class="field w_2col" {{ block.shopify_attributes }}>
-                  <label class="field__label" for="ContactForm-name">
-                    {{ 'templates.contact.form.name' | t }}
-                    <span aria-hidden="true">*</span>
-                  </label>
-
-                  <input
-                    class="field__input foJ_Thin"
-                    autocomplete="name"
-                    type="text"
-                    id="ContactForm-name"
-                    required="true"
-                    name="contact[{{ 'templates.contact.form.name' | t }}]"
-                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                    placeholder="{{ 'templates.contact.form.name' | t }}"
-                  >
-                </div>
-
-                {%- comment -%} おなまえ（ひらがな） {%- endcomment -%}
-              {% when 'name_kana' %}
-                <div class="field w_2col" {{ block.shopify_attributes }}>
-                  <label class="field__label" for="ContactForm-name_kana">
-                    {{ 'templates.contact.form.name_kana' | t }}
-                    <span aria-hidden="true">*</span>
-                  </label>
-
-                  <input
-                    class="field__input foJ_Thin"
-                    autocomplete="name_kana"
-                    type="text"
-                    id="ContactForm-name"
-                    required="true"
-                    name="contact[{{ 'templates.contact.form.name_kana' | t }}]"
-                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-                    placeholder="{{ 'templates.contact.form.name_kana' | t }}"
-                  >
-                </div>
 
                 {%- comment -%} Eメール {%- endcomment -%}
               {% when 'email' %}
@@ -969,34 +930,6 @@
     }
   ],
   "blocks": [
-      {
-        "type": "name",
-        "name": "おなまえ",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "おなまえ",
-            "default": "おなまえ",
-            "info": "例：山田 太郎"
-          }
-        ]
-      },
-      {
-        "type": "name_kana",
-        "name": "おなまえ（ひらがな）",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "おなまえ（ひらがな）",
-            "default": "おなまえ（ひらがな）",
-            "info": "例：やまだ たろう"
-          }
-        ]
-      },
       {
         "type": "email",
         "name": "Eメール",
