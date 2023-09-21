@@ -124,26 +124,6 @@
                     </small>
                   {%- endif -%}
                 </div>
-
-                {%- comment -%} 郵便番号 {%- endcomment -%}
-              {% when 'postal' %}
-                <div class="field w_3col" {{ block.shopify_attributes }}>
-                  <label class="field__label" for="ContactForm-postal">
-                    {{ 'templates.contact.form.postal' | t }}
-                    <span aria-hidden="true">*</span>
-                  </label>
-
-                  <input
-                    type="text"
-                    class="field__input foJ_Thin"
-                    autocomplete="postal"
-                    id="ContactForm-postal"
-                    required="true"
-                    name="contact[{{ 'templates.contact.form.postal' | t }}]"
-                    pattern="^[+-]?([1-9][0-9]*|0)$"
-                    placeholder="{{ 'templates.contact.form.postal' | t }}"
-                  >
-                </div>
           
                 {%- comment -%} 電話番号 {%- endcomment -%}
               {% when 'telephone' %}
@@ -937,26 +917,6 @@
             "id": "title",
             "label": "ラベル",
             "default": "Eメール（確認用）"
-          }
-        ]
-      },
-      {
-        "type": "postal",
-        "name": "郵便番号",
-        "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "ラベル",
-            "default": "郵便番号",
-            "info": "例：0123456"
-          },
-          {
-            "type": "checkbox",
-            "id": "check",
-            "label": "必須にする",
-            "default": false,
-            "info": "チェックを入れると必須項目にできます。"
           }
         ]
       },

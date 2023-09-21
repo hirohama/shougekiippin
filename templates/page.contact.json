@@ -68,7 +68,7 @@
         "49008eff-ef95-4f6c-a053-48e10a97ca71": {
           "type": "text",
           "settings": {
-            "title": "郵便番号（半角数字のみ）",
+            "title": "お郵便番号",
             "check": true,
             "label": true,
             "newline_pc": false,
