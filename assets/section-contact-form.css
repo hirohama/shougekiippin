@@ -16,7 +16,17 @@
 
 @media screen and (min-width: 750px) {
   .contact .field {
+    display:inline-block;
     margin-bottom: 2rem;
+  }
+  .contact .field.w_1col{
+    width:97.3%;
+  }
+  .contact .field.w_2col{
+    width:48.3%;/*見た目の大きさを揃えるために小数点以下をつけた*/
+  }
+  .contact .field.w_3col{
+    width:32%;
   }
 }
 

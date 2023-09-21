@@ -14,16 +14,15 @@
   }
 {%- endstyle -%}
 <div class="content">
-  <div class="color-{{ section.settings.color_scheme }} gradient">
-    <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
-  
+  <div class="innerpage_wrapper btm">
+    <div class="contact editor_content">
       {%- comment -%} タイトル {%- endcomment -%}
-      <h2 class="title title-wrapper--no-top-margin">{{ section.settings.heading | escape }}</h2>
+      <!--h2 class="title title-wrapper--no-top-margin">{{ section.settings.heading | escape }}</h2-->
       担当者より2〜3営業日以内にメールでご連絡させていただきます。<br>
       携帯電話のメールアドレスを設定のお客様は、｢メールの受信拒否、ドメイン指定受信、迷惑メール防止機能」などを設定している場合、受信ができない場合があります。
   
       {%- form 'contact', id: 'ContactForm', class: 'isolate custom-form' -%}
-  
+        <div id="ContactForm_wrapper">
         {%- if form.posted_successfully? -%}
           {%- comment -%} 成功した時のコメント {%- endcomment -%}
           <div class="form-status form-status-list form__message" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</div>
@@ -47,7 +46,7 @@
   
           {%- comment -%} Eメール {%- endcomment -%}
           {% when 'email' %}
-            <div class="field field--with-error" {{ block.shopify_attributes }}>
+            <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
               <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
                 {{ 'templates.contact.form.email' | t }}
                 <span aria-hidden="true">*</span>
@@ -57,7 +56,7 @@
                 autocomplete="email"
                 type="email"
                 id="ContactFormEmail"
-                class="field__input"
+                class="field__input foJ_Thin"
                 name="contact[email]"
                 spellcheck="false"
                 autocorrect="off"
@@ -80,7 +79,7 @@
       
           {%- comment -%} Eメール確認 {%- endcomment -%}
           {% when 'email_verify' %}
-            <div class="field field--with-error" {{ block.shopify_attributes }}>
+            <div class="field w_1col field--with-error" {{ block.shopify_attributes }}>
               <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
                 {{ 'templates.contact.form.email_verify' | t }}
                 <span aria-hidden="true">*</span>
@@ -90,7 +89,7 @@
                 autocomplete="email"
                 type="email"
                 id="ContactFormEmailVerify"
-                class="field__input"
+                class="field__input foJ_Thin"
                 name="contact[email_velify]"
                 spellcheck="false"
                 autocorrect="off"
@@ -123,7 +122,7 @@
             <textarea
               rows="10"
               id="ContactForm-body"
-              class="text-area field__input"
+              class="text-area field__input foJ_Thin"
               required="true"
               name="contact[{{ 'templates.contact.form.comment' | t }}]"
               placeholder="{{ 'templates.contact.form.comment' | t }}"
@@ -136,7 +135,7 @@
           {%- comment -%} 1行 テキスト{%- endcomment -%}
           {% when 'text' %}
             <div class="field" {{ block.shopify_attributes }}>
-              <input class="field__input"
+              <input class="field__input foJ_Thin"
                       type="text"
                       id="Form-{{ section.id }}-{{ forloop.index0 }}"
                       name="contact[{{ block.settings.title }}]"
@@ -157,7 +156,7 @@
               <textarea
                 rows="10"
                 id="Form-{{ section.id }}-{{ forloop.index0 }}"
-                class="text-area field__input"
+                class="text-area field__input foJ_Thin"
                 name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
                 placeholder="{{ block.settings.title }}"
                 {% if block.settings.check %} required="true" {% endif %}
@@ -180,7 +179,7 @@
               </label>
               
               <input type="tel"
-                      id="ContactForm-phone" class="field__input"
+                      id="ContactForm-phone" class="field__input foJ_Thin"
                       autocomplete="tel"
                       name="contact[{{ block.settings.title }}]"
                       pattern="[0-9\-]*"
@@ -193,13 +192,13 @@
   
           {%- comment -%} おなまえ {%- endcomment -%}
           {% when 'name' %}
-            <div class="field" {{ block.shopify_attributes }}>
+            <div class="field w_2col" {{ block.shopify_attributes }}>
               <label class="field__label" for="ContactForm-name">
                 {{ 'templates.contact.form.name' | t }}
                 <span aria-hidden="true">*</span>
               </label>
               
-              <input class="field__input"
+              <input class="field__input foJ_Thin"
               autocomplete="name"
               type="text"
               id="ContactForm-name"
@@ -211,13 +210,13 @@
           
           {%- comment -%} おなまえ（ひらがな） {%- endcomment -%}
           {% when 'name_kana' %}
-            <div class="field" {{ block.shopify_attributes }}>
+            <div class="field w_2col" {{ block.shopify_attributes }}>
               <label class="field__label" for="ContactForm-name_kana">
                 {{ 'templates.contact.form.name_kana' | t }}
                 <span aria-hidden="true">*</span>
               </label>
               
-              <input class="field__input"
+              <input class="field__input foJ_Thin"
               autocomplete="name_kana"
               type="text"
               id="ContactForm-name"
@@ -229,13 +228,13 @@
       
           {%- comment -%} 郵便番号 {%- endcomment -%}
           {% when 'postal' %}
-            <div class="field" {{ block.shopify_attributes }}>
+            <div class="field w_3col" {{ block.shopify_attributes }}>
               <label class="field__label" for="ContactForm-postal">
                 {{ 'templates.contact.form.postal' | t }}
                 <span aria-hidden="true">*</span>
               </label>
               
-              <input class="field__input"
+              <input class="field__input foJ_Thin"
               autocomplete="postal"
               type="text"
               id="ContactForm-postal"
@@ -387,6 +386,8 @@
           プライバシーポリシーに同意する
       </label-->
       {%- endform -%}
+    </div>
+    <!--/#ContactForm_wrapper-->
     </div>
   </div>
 </div>
