@@ -18,7 +18,8 @@
             "label": true,
             "newline_pc": false,
             "newline_mobile": false,
-            "width_setting": "col2",
+            "width_setting": "col3",
+            "margin-bottom": false,
             "regex": ""
           }
         },
@@ -31,6 +32,7 @@
             "newline_pc": true,
             "newline_mobile": true,
             "width_setting": "col2",
+            "margin-bottom": false,
             "regex": ""
           }
         },
@@ -69,6 +71,7 @@
             "newline_pc": false,
             "newline_mobile": false,
             "width_setting": "col3",
+            "margin-bottom": false,
             "regex": "\/^[0-9]+$\/"
           }
         },
@@ -143,6 +146,7 @@
             "newline_pc": false,
             "newline_mobile": false,
             "width_setting": "col1",
+            "margin-bottom": false,
             "regex": ""
           }
         },
