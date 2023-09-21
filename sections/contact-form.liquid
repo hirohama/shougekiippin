@@ -199,10 +199,11 @@
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
                     {% if block.settings.label %}
                     <span>{{ block.settings.title }}</span>
+                      {% if block.settings.check -%}
+                        <span aria-hidden="true">*</span>
+                      {%- endif %}
                     {% endif %}
-                    {% if block.settings.check -%}
-                      <span aria-hidden="true">*</span>
-                    {%- endif %}
+                    
                   </label>
                   <input
                     class="field__input foJ_Thin"
