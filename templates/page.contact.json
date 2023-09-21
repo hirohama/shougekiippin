@@ -41,6 +41,26 @@
             "title": "Eメール（確認用）"
           }
         },
+        "118ce3ed-ecc6-429f-9556-ce4513fce004": {
+          "type": "select_ten",
+          "settings": {
+            "title": "選択肢一つを選択してください",
+            "check": true,
+            "newline_pc": true,
+            "newline_mobile": false,
+            "label-zero": "初期値",
+            "label-one": "オプション1",
+            "label-two": "オプション２",
+            "label-three": "オプション３",
+            "label-four": "オプション４",
+            "label-five": "オプション５",
+            "label-six": "オプション６",
+            "label-seven": "オプション７",
+            "label-eight": "オプション８",
+            "label-nine": "オプション９",
+            "label-ten": "オプション１０"
+          }
+        },
         "29669ac1-d151-4e4f-88cd-133868340661": {
           "type": "postal",
           "settings": {
@@ -127,6 +147,7 @@
         "1f0fec0d-b6ca-44ad-8e97-14144f4605ac",
         "68b1d328-da20-4074-967b-afc8a8f5a2ff",
         "a689a398-e112-481e-8bec-822c6572b4f9",
+        "118ce3ed-ecc6-429f-9556-ce4513fce004",
         "29669ac1-d151-4e4f-88cd-133868340661",
         "ff047d4c-50f6-4297-bf38-21713a290651",
         "e9694184-9128-4023-9407-1df46a3662fe",
