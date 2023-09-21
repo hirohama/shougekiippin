@@ -50,7 +50,7 @@
           "settings": {
             "title": "Eメール",
             "placeholder": "ippin@shougeki.com",
-            "check": false,
+            "check": true,
             "label": true,
             "newline_pc": false,
             "newline_mobile": false,
@@ -64,13 +64,13 @@
           "settings": {
             "title": "Eメール（確認用）",
             "placeholder": "ippin@shougeki.com",
-            "check": false,
+            "check": true,
             "label": true,
             "newline_pc": false,
             "newline_mobile": false,
             "width_setting": "col1",
             "margin-bottom": false,
-            "regex": "[\\w\\-._]+@[\\w\\-._]+\\.[A-Za-z]+"
+            "regex": ""
           }
         },
         "4bee1af1-9c7a-4939-b714-cc3538600563": {
