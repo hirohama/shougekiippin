@@ -280,6 +280,12 @@
                 {%- comment -%} テキストエリア {%- endcomment -%}
               {% when 'textarea' %}
                 <div class="field" {{ block.shopify_attributes }}>
+                  <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
+                    {{ block.settings.title }}
+                    {% if block.settings.check -%}
+                      <span aria-hidden="true">*</span>
+                    {%- endif %}
+                  </label>
                   <textarea
                     rows="10"
                     id="Form-{{ section.id }}-{{ forloop.index0 }}"
@@ -292,12 +298,6 @@
                   >
                 {{- form.body -}}
               </textarea>
-                  <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
-                    {{ block.settings.title }}
-                    {% if block.settings.check -%}
-                      <span aria-hidden="true">*</span>
-                    {%- endif %}
-                  </label>
                 </div>
           
                 {%- comment -%} 装飾 {%- endcomment -%}
