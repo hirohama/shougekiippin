@@ -21,7 +21,7 @@
 {%- endstyle -%}
 <div class="content innerpage_content">
   <div class="innerpage_wrapper btm">
-    <h1 class="page_title_head foJ_Bld">プライバシーポリシー</h1>
+    <h1 class="page_title_head foJ_Bld">{{ 'sections.cart.login.title' | t }}</h1>
     {%- unless settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
     {%- endunless -%}
