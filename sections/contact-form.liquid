@@ -46,7 +46,7 @@
               </li>
             </ul>
           {%- endif -%}
-
+{{ form.errors }}
           {% for block in section.blocks %}
             {% case block.type %}
                 {%- comment -%} Eメール {%- endcomment -%}
