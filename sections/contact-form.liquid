@@ -85,6 +85,7 @@
                     placeholder="{{ block.settings.placeholder }}"
                   >
                   {%- if form.errors contains 'email' -%}
+                    テストテスト
                     <small class="contact__field-error" id="ContactForm-email-error">
                       <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
                       <span class="form__message">
@@ -131,16 +132,7 @@
                     placeholder="{{ block.settings.placeholder }}"
                   >
 
-                  {%- if form.errors contains 'email_verify' -%}
-                    <small class="contact__field-error" id="ContactForm-email_verify-error">
-                      <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-                      <span class="form__message">
-                        {%- render 'icon-error' -%}
-                        {{- form.errors.translated_fields.email_verify | capitalize }}
-                        {{ form.errors.messages.email_verify -}}
-                      </span>
-                    </small>
-                  {%- endif -%}
+          
                 </div>
 
                 {%- comment -%} 電話番号 {%- endcomment -%}
