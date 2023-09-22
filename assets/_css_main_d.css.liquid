@@ -574,6 +574,7 @@ ul#ippin{
                 height:100%;
                 text-align: center;
                 vertical-align: middle;
+                color:#000;
             }
                 div.ippin_text_rayout span{
                     font-size:0.9vw;
@@ -1050,10 +1051,10 @@ form#ContactForm label{
 form#ContactForm input[type="text"],
 form#ContactForm input[type="email"],
 form#ContactForm input[type="tel"],
-form#ContactForm select{
+form#ContactForm select,
+form#ContactForm textarea{
     vertical-align:middle; 
     width:100%;
-    height:3vw;
     padding: 0 1vw;
     border-radius: 0.2vw;
     border: none;
@@ -1064,6 +1065,16 @@ form#ContactForm select{
     -webkit-appearance: none;
     -moz-appearance: none;
 }
+form#ContactForm input[type="text"],
+form#ContactForm input[type="email"],
+form#ContactForm input[type="tel"],
+form#ContactForm select{
+    height:3vw;
+}
+form#ContactForm textarea{
+    height:10vw;
+}
+
 form#ContactForm input[type=checkbox]{
   min-width:1.1vw;
   min-height:1.1vw;
@@ -1073,48 +1084,126 @@ form#ContactForm input[type=checkbox]{
     position: relative;
 }
 
-.selectbox::before,
-.selectbox::after {
-    position: absolute;
-    content: '';
-    pointer-events: none;
-}
+    .selectbox::before,
+    .selectbox::after {
+        position: absolute;
+        content: '';
+        pointer-events: none;
+    }
 
-.selectbox::before {
-    display: inline-block;
-    right: 0;
-    width: 3vw;
-    height: 3vw;
-    border-radius: 0 3px 3px 0;
-    background-color: #DDD;
-}
+    .selectbox::before {
+        display: inline-block;
+        right: 0;
+        width: 3vw;
+        height: 3vw;
+        border-radius: 0 3px 3px 0;
+        background-color: #DDD;
+    }
 
-.selectbox::after {
-    position: absolute;
-    top: 50%;
-    right: 1.5vw;
-    transform: translate(50%, -50%) rotate(45deg);
-    width: 0.5vw;
-    height: 0.5vw;
-    border-bottom: 3px solid #fff;
-    border-right: 3px solid #fff;
-}
+    .selectbox::after {
+        position: absolute;
+        top: 50%;
+        right: 1.5vw;
+        transform: translate(50%, -50%) rotate(45deg);
+        width: 0.5vw;
+        height: 0.5vw;
+        border-bottom: 3px solid #fff;
+        border-right: 3px solid #fff;
+    }
 
-.selectbox select {
-    appearance: none;
-    height: 3vw;
-    border: none;
-    cursor: pointer;
-}
-.selectbox option{
-    color:#000;
-}
+    .selectbox select {
+        appearance: none;
+        height: 3vw;
+        border: none;
+        cursor: pointer;
+    }
+    .selectbox option{
+        color:#000;
+    }
 form#ContactForm input[type="text"]:focus,
 form#ContactForm input[type="email"]:focus,
 form#ContactForm input[type="tel"]:focus,
 form#ContactForm textarea:focus,
 form#ContactForm select:focus {
     outline: 2px solid #FC0;
+}
+.form_alert{
+    border:5px solid;
+    border-radius: 1vw;
+    padding:1vw;
+}
+
+.form_alert.success{
+    background: #ddebdb;
+    border-color: #FFF;
+}
+.form_alert.error{
+    background: #ffe2e2;
+    border-color: #FFF;
+}
+    .form_alert_icon{
+        vertical-align: middle;
+        width:3vw;
+        height: 3vw;
+        display:inline-block;
+    }
+    .form_alert_icon svg{
+        width:100%;
+    }
+    .form_alert p{
+        vertical-align: middle;
+        height: 3vw;
+        font-size: 1.5vw;
+        line-height: 3vw;
+        display:inline-block;
+    }
+    .alert_content{
+        display: block;
+        padding-left:3.4vw;
+        font-size: 1.1vw;
+        line-height: 1.5vw;
+    }
+    .alert_content a{
+        color:#000!important;
+    }
+.form_alert_for_item{
+    display: inline-block;
+}
+    .form_alert_for_item_icon{
+        vertical-align: middle;
+        display: inline-block;
+        width:1.5vw;
+        height:1.5vw;
+    }
+    .form_alert_for_item_icon svg{
+        width: 100%;
+    }
+    .alert_content_for_item{
+        vertical-align: middle;
+        display: inline-block;
+        font-size:1vw;
+        line-height: 1.1vw;
+    }
+.contact .field {
+    display:inline-block;
+    margin-bottom:2vw;
+}
+.contact .field.no-margin {
+    margin-bottom:0.2vw;
+}
+.contact .field.w_1col{
+    width:97.3%;
+}
+.contact .field.w_2col{
+    width:48.3%;/*見た目の大きさを揃えるために小数点以下をつけた*/
+}
+.contact .field.w_3col{
+    width:32%;
+}
+.privacy_check{
+    text-align: center;
+    line-height: 2.5vw;
+    padding:2vw;
 }
 /*------------------------------------------------
 
@@ -1145,6 +1234,7 @@ button
         height:calc(3.4vw - 2px);
         vertical-align: middle;
         font-size: 1.2vw;
+        color:#000;
     }
         /*.btn span.info */span.quantity_str{
             font-size:1vw;
@@ -1226,6 +1316,12 @@ button
 utility
 
 -------------------------------------------------*/
+
+.content a{
+    color:#ffba00;
+    text-decoration: underline 1px;
+    text-underline-offset: 0.25vw;
+}
 /*----------------------font----------------------*/
 .foJ_Thin{
     font-family: 'Zen Kaku Gothic New', sans-serif;

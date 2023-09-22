@@ -22,29 +22,34 @@
       携帯電話のメールアドレスを設定のお客様は、｢メールの受信拒否、ドメイン指定受信、迷惑メール防止機能」などを設定している場合、受信ができない場合があります。
 
       {%- form 'contact', id: 'ContactForm', class: 'isolate custom-form' -%}
-        <div id="ContactForm_wrapper">
+        <div id="ContactForm_wrapper" class="foJ_Thin">
           {%- if form.posted_successfully? -%}
             {%- comment -%} 成功した時のコメント {%- endcomment -%}
-            <div class="form-status form-status-list form__message" tabindex="-1" autofocus>
-              {% render 'icon-success' %}
-              {{ 'templates.contact.form.post_success' | t }}
+            <div class="form_alert success">
+              <div>
+              <span class="form_alert_icon">{% render 'icon-success' %}</span>
+                <p class="foJ_Mid">お問い合わせをいただき、ありがとうございます。</p>
+              </div>
+                <span class="alert_content">{{ 'templates.contact.form.post_success' | t }}</span>
             </div>
           {%- elsif form.errors -%}
             {%- comment -%} エラー表示 {%- endcomment -%}
-            <div class="form__message">
-              <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
-                {% render 'icon-error' %}
-                {{ 'templates.contact.form.error_heading' | t }}
-              </h2>
+            <div class="form_alert error">
+              <!--h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus-->
+              <div>
+                <span class="form_alert_icon">{% render 'icon-error' %}</span>
+                <p class="foJ_Mid">送信できませんでした。</p>
+              </div>
+                <span class="alert_content">{{ 'templates.contact.form.error_heading' | t }}
+              <!--/h2-->
+                <ul class="" role="list">
+                  <li>
+                      {{ form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email }}
+                  </li>
+                </ul>
+                </span>
             </div>
-            <ul class="form-status-list caption-large" role="list">
-              <li>
-                <a href="#ContactForm-email" class="link">
-                  {{ form.errors.translated_fields.email | capitalize }}
-                  {{ form.errors.messages.email }}
-                </a>
-              </li>
-            </ul>
           {%- endif -%}
           {% for block in section.blocks %}
             {% case block.type %}
@@ -80,17 +85,26 @@
                     {% endif %}
                     placeholder="{{ block.settings.placeholder }}"
                   >
-                  {%- if form.errors contains 'email' -%}
-                    <span class="contact_error" id="ContactForm-email-error">
+                {%- if form.errors contains 'email' -%}
+                    <span class="form_alert_for_item" id="ContactForm-email-error">
                       <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-                      <span class="form__message">
-                        {%- render 'icon-error' -%}
-                        {{- form.errors.translated_fields.email | capitalize }}
-                        {{ form.errors.messages.email -}}
-                      </span>
+                      <span class="form_alert_for_item_icon">{%- render 'icon-error' -%}</span>
+                      <span class="alert_content_for_item">{{- form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email -}}メール無効</span>
                     </span>
-                  {%- endif -%}
+                {%- endif -%}
                 </div>
+                {% if block.settings.width_setting != 'col1' %}
+                  {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                    <br>
+                  {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                    <br class="pc_br">
+                  {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                    <br class="mobile_br">
+                  {% endif %}
+                {% else %}
+                  <br>
+                {% endif %}
 
                 {%- comment -%} Eメール（確認用） {%- endcomment -%}
               {% when 'email_verify' %}
@@ -120,6 +134,17 @@
                     placeholder="{{ block.settings.placeholder }}"
                   >
                 </div>
+                {% if block.settings.width_setting != 'col1' %}
+                  {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                    <br>
+                  {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                    <br class="pc_br">
+                  {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                    <br class="mobile_br">
+                  {% endif %}
+                {% else %}
+                  <br>
+                {% endif %}
 
                 {%- comment -%} 電話番号 {%- endcomment -%}
               {% when 'telephone' %}
@@ -150,7 +175,7 @@
                     {% endif %}
                   >
                 </div>
-                {% unless block.settings.width_setting == 'col1' %}
+                {% if block.settings.width_setting != 'col1' %}
                   {% if block.settings.newline_pc and block.settings.newline_mobile %}
                     <br>
                   {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
@@ -158,27 +183,9 @@
                   {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
                     <br class="mobile_br">
                   {% endif %}
-                {% endunless %}
-
-                {%- comment -%} 本文 {%- endcomment -%}
-              {% when 'body' %}
-                <div class="field" {{ block.shopify_attributes }}>
-                  <label class="form__label field__label" for="ContactForm-body">
-                    {{ 'templates.contact.form.comment' | t }}
-                    <span aria-hidden="true">*</span>
-                  </label>
-
-                  <textarea
-                    rows="10"
-                    id="ContactForm-body"
-                    class="text-area field__input foJ_Thin"
-                    required="true"
-                    name="contact[{{ 'templates.contact.form.comment' | t }}]"
-                    placeholder="{{ 'templates.contact.form.comment' | t }}"
-                  >
-              {{- form.body -}}
-            </textarea>
-                </div>
+                {% else %}
+                  <br>
+                {% endif %}
 
                 {%- comment -%} 見出し {%- endcomment -%}
               {% when 'formHeading_p' %}
@@ -226,7 +233,7 @@
                     {% endif %}
                   >
                 </div>
-                {% unless block.settings.width_setting == 'col1' %}
+                {% if block.settings.width_setting != 'col1' %}
                   {% if block.settings.newline_pc and block.settings.newline_mobile %}
                     <br>
                   {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
@@ -234,7 +241,9 @@
                   {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
                     <br class="mobile_br">
                   {% endif %}
-                {% endunless %}
+                {% else %}
+                  <br>
+                {% endif %}
 
                 {%- comment -%} テキストエリア {%- endcomment -%}
               {% when 'textarea' %}
@@ -261,6 +270,18 @@
                 {{- form.body -}}
               </textarea>
                 </div>
+                {% if block.settings.width_setting != 'col1' %}
+                  {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                    <br>
+                  {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                    <br class="pc_br">
+                  {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                    <br class="mobile_br">
+                  {% endif %}
+                {% else %}
+                  <br>
+                {% endif %}
+
 
                 {%- comment -%} 装飾 {%- endcomment -%}
               {% when 'spacer' %}
@@ -745,7 +766,7 @@
                     </select>
                   </label>
                 </div>
-                {% unless block.settings.width_setting == 'col1' %}
+                {% if block.settings.width_setting != 'col1' %}
                   {% if block.settings.newline_pc and block.settings.newline_mobile %}
                     <br>
                   {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
@@ -753,7 +774,9 @@
                   {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
                     <br class="mobile_br">
                   {% endif %}
-                {% endunless %}
+                {% else %}
+                  <br>
+                {% endif %}
 
                 {%- comment -%} セレクトボックス10 {%- endcomment -%}
               {% when 'select_ten' %}
@@ -810,7 +833,7 @@
                     </select>
                   </label>
                 </div>
-                {% unless block.settings.width_setting == 'col1' %}
+                {% if block.settings.width_setting != 'col1' %}
                   {% if block.settings.newline_pc and block.settings.newline_mobile %}
                     <br>
                   {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
@@ -818,12 +841,17 @@
                   {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
                     <br class="mobile_br">
                   {% endif %}
-                {% endunless %}
+                {% else %}
+                  <br>
+                {% endif %}
+
             {% endcase %}
           {% endfor %}
-          <a href="/pages/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>に同意の上、送信ください。
-          <input type="checkbox" class="checkbox_box" required checked>
+          <div class="privacy_check">
+          <a href="/pages/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>に同意の上、送信ください。<br>
+          <input type="checkbox" class="checkbox_box" required>
           プライバシーポリシーに同意する
+          </div>
           {%- comment -%} フォームボタン {%- endcomment -%}
           <div class="btn" onclick="submitContactForm(event)">
             <span class="info foJ_Mid">
