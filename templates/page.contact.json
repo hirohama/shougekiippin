@@ -14,7 +14,7 @@
           "type": "text",
           "settings": {
             "title": "おなまえ",
-            "placeholder": "山田　太郎",
+            "placeholder": "例：山田　太郎",
             "check": true,
             "label": true,
             "newline_pc": false,
@@ -28,7 +28,7 @@
           "type": "text",
           "settings": {
             "title": "お名前（ひらがな）",
-            "placeholder": "やまだ　たろう",
+            "placeholder": "例：やまだ　たろう",
             "check": true,
             "label": true,
             "newline_pc": true,
@@ -42,14 +42,21 @@
           "type": "telephone",
           "settings": {
             "title": "電話番号",
-            "check": false
+            "placeholder": "例：000-0000-0000（半角数字）",
+            "check": false,
+            "label": true,
+            "newline_pc": false,
+            "newline_mobile": false,
+            "width_setting": "col1",
+            "margin-bottom": false,
+            "regex": ""
           }
         },
         "68b1d328-da20-4074-967b-afc8a8f5a2ff": {
           "type": "email",
           "settings": {
             "title": "Eメール",
-            "placeholder": "ippin@shougeki.com",
+            "placeholder": "例：ippin@shougeki.com（半角英数字）",
             "check": true,
             "label": true,
             "newline_pc": false,
@@ -84,7 +91,7 @@
           "type": "text",
           "settings": {
             "title": "郵便番号",
-            "placeholder": "1231234",
+            "placeholder": "例：1231234（半角英数字）",
             "check": true,
             "label": false,
             "newline_pc": false,
@@ -161,7 +168,7 @@
           "type": "text",
           "settings": {
             "title": "都道府県後に続く住所",
-            "placeholder": "〇〇市〇〇町〇〇番地",
+            "placeholder": "例：〇〇市〇〇町〇〇番地",
             "check": true,
             "label": false,
             "newline_pc": false,
