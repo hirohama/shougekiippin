@@ -43,7 +43,7 @@
           "settings": {
             "title": "電話番号",
             "placeholder": "例：000-0000-0000（半角数字）",
-            "check": false,
+            "check": true,
             "label": true,
             "newline_pc": false,
             "newline_mobile": false,
@@ -60,7 +60,7 @@
             "check": true,
             "label": true,
             "newline_pc": false,
-            "newline_mobile": false,
+            "newline_mobile": true,
             "width_setting": "col1",
             "margin-bottom": false,
             "regex": ""
@@ -74,7 +74,7 @@
             "check": true,
             "label": true,
             "newline_pc": false,
-            "newline_mobile": false,
+            "newline_mobile": true,
             "width_setting": "col1",
             "margin-bottom": false,
             "regex": ""
@@ -172,7 +172,7 @@
             "check": true,
             "label": false,
             "newline_pc": false,
-            "newline_mobile": false,
+            "newline_mobile": true,
             "width_setting": "col1",
             "margin-bottom": false,
             "regex": ""
@@ -185,7 +185,7 @@
             "placeholder": "お問い合わせの内容を入力してください",
             "check": true,
             "width_setting": "col1",
-            "margin-bottom": false
+            "margin-bottom": true
           }
         }
       },
