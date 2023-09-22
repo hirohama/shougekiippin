@@ -185,7 +185,7 @@
             "placeholder": "お問い合わせの内容を入力してください",
             "check": true,
             "width_setting": "col1",
-            "margin-bottom": false
+            "margin-bottom": true
           }
         }
       },
