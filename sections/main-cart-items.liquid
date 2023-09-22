@@ -118,7 +118,7 @@
                             </strong>
                           </div>
                         {%- else -%}
-                          <div class="product-option">
+                          <div class="product_option">
                             {{ item.original_price | money }}
                           </div>
                         {%- endif -%}
@@ -131,8 +131,9 @@
                             {%- if item.product.has_only_default_variant == false -%}
                               {%- for option in item.options_with_values -%}
                                 <div class="product_option">
-                                  <dt>{{ option.name }}:</dt>
-                                  <dd>{{ option.value }}</dd>
+                                {{ option.value }}
+                                  <!--dt>{{ option.name }}:</dt>
+                                  <dd>{{ option.value }}</dd-->
                                 </div>
                               {%- endfor -%}
                             {%- endif -%}
@@ -140,7 +141,7 @@
                             {%- for property in item.properties -%}
                               {%- assign property_first_char = property.first | slice: 0 -%}
                               {%- if property.last != blank and property_first_char != '_' -%}
-                                <div class="product-option">
+                                <div class="product_option">
                                   <dt>{{ property.first }}:</dt>
                                   <dd>
                                     {%- if property.last contains '/uploads/' -%}
