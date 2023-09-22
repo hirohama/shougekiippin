@@ -117,14 +117,8 @@
                     autocapitalize="off"
                     value="{% if form.email_verify %}{{ form.email_verify }}{% elsif customer %}{{ customer.email }}{% endif %}"
                     required="true"
-                    {% if form.errors contains 'email_verify' %}
-                      aria-invalid="true"
-                      aria-describedby="ContactForm-email_verify-error"
-                    {% endif %}
                     placeholder="{{ block.settings.placeholder }}"
                   >
-
-          
                 </div>
 
                 {%- comment -%} 電話番号 {%- endcomment -%}
