@@ -76,6 +76,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <!--商品-->
                   {%- for item in cart.items -%}
                     <tr class="cart_item_tr" id="CartItem-{{ item.index | plus: 1 }}">
                       <td class="cart_item_photo">
@@ -173,8 +174,9 @@
                           {%- endfor -%}
                         </ul>
                       </td>
-
-                      <td class="cart-item__totals right medium-hide large-up-hide">
+                    
+                  <!--合計-->
+                      <td class="cart_item_totals">
                         <div class="loading-overlay hidden">
                           <div class="loading-overlay__spinner">
                             <svg
