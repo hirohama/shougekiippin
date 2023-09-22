@@ -46,7 +46,6 @@
               </li>
             </ul>
           {%- endif -%}
-{{ form.errors }}
           {% for block in section.blocks %}
             {% case block.type %}
                 {%- comment -%} Eメール {%- endcomment -%}
@@ -80,7 +79,7 @@
                       aria-describedby="ContactForm-email-error"
                     {% endif %}
                     {% if block.settings.regex != blank %}
-                      pattern="{{ block.settings.regex }}"
+                      pattern="([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)"
                     {% endif %}
                     placeholder="{{ block.settings.placeholder }}"
                   >
