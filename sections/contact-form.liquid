@@ -79,7 +79,6 @@
                       aria-describedby="ContactForm-email-error"
                     {% endif %}
                       pattern="[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}]"
-
                     placeholder="{{ block.settings.placeholder }}"
                   >
                   {%- if form.errors contains 'email' -%}
@@ -124,9 +123,7 @@
                       aria-invalid="true"
                       aria-describedby="ContactForm-email_verify-error"
                     {% endif %}
-                    {% if block.settings.regex != blank %}
-                      pattern="{{ block.settings.regex }}"
-                    {% endif %}
+                      pattern="[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}]"
                     placeholder="{{ block.settings.placeholder }}"
                   >
 
