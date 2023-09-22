@@ -91,7 +91,7 @@
           "type": "text",
           "settings": {
             "title": "郵便番号",
-            "placeholder": "例：1231234（半角英数字）",
+            "placeholder": "郵便番号（半角英数字）",
             "check": true,
             "label": false,
             "newline_pc": false,
