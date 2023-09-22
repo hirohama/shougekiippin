@@ -1849,7 +1849,7 @@ details[open] > .share-button__fallback {
   font-size: 1.4rem;
   text-align: left;
 }
-
+*/
 .form__message .icon,
 .customer .form__message svg {
   flex-shrink: 0;
@@ -1868,7 +1868,7 @@ details[open] > .share-button__fallback {
 .customer .field .form__message svg {
   align-self: start;
 }
-
+/*
 .form-status {
   margin: 0;
   font-size: 1.6rem;
