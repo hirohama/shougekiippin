@@ -123,12 +123,17 @@
 
                 {%- comment -%} 電話番号 {%- endcomment -%}
               {% when 'telephone' %}
-                <div class="field w_1col" {{ block.shopify_attributes }}>
+                <div
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
                   <label class="field__label" for="ContactForm-phone">
-                    {{ block.settings.title }}
-                    {% if block.settings.check -%}
-                      <span aria-hidden="true">*</span>
-                    {%- endif %}
+                    {% if block.settings.label %}
+                      <span>{{ block.settings.title }}</span>
+                      {% if block.settings.check -%}
+                        <span aria-hidden="true">*</span>
+                      {%- endif %}
+                    {% endif %}
                   </label>
 
                   <input
@@ -139,12 +144,21 @@
                     name="contact[{{ block.settings.title }}]"
                     pattern="[0-9\-]*"
                     value=""
-                    placeholder="{{ block.settings.title }}"
+                    placeholder="{{ block.settings.placeholder }}"
                     {% if block.settings.check %}
                       required="true"
                     {% endif %}
                   >
                 </div>
+                {% unless block.settings.width_setting == 'col1' %}
+                  {% if block.settings.newline_pc and block.settings.newline_mobile %}
+                    <br>
+                  {% elsif block.settings.newline_pc and block.settings.newline_mobile == false %}
+                    <br class="pc_br">
+                  {% elsif block.settings.newline_pc == false and block.settings.newline_mobile %}
+                    <br class="mobile_br">
+                  {% endif %}
+                {% endunless %}
 
                 {%- comment -%} 本文 {%- endcomment -%}
               {% when 'body' %}
