@@ -61,33 +61,28 @@
                 </caption>
                 <thead>
                   <tr>
-                    <th class="caption-with-letter-spacing" colspan="2" scope="col">
+                    <th class="" colspan="2" scope="col">
                       {{ 'sections.cart.headings.product' | t }}
                     </th>
-                    <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                    <th class="" colspan="1" scope="col">
                       {{ 'sections.cart.headings.total' | t }}
                     </th>
-                    <th
-                      class="cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing"
-                      colspan="1"
-                      scope="col"
-                    >
+                    <th class="" colspan="1"  scope="col">
                       {{ 'sections.cart.headings.quantity' | t }}
                     </th>
-                    <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                    <th class="" colspan="1" scope="col">
                       {{ 'sections.cart.headings.total' | t }}
                     </th>
                   </tr>
                 </thead>
-
                 <tbody>
                   {%- for item in cart.items -%}
-                    <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
-                      <td class="cart-item__media">
+                    <tr class="cart_item_tr" id="CartItem-{{ item.index | plus: 1 }}">
+                      <td class="cart_item_photo">
                         {% if item.image %}
                           {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                          <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
-                          <div class="cart-item__image-container gradient global-media-settings">
+                          <a href="{{ item.url }}" class="cart_item_link" aria-hidden="true" tabindex="-1"> </a>
+                          <div class="">
                             <img
                               src="{{ item.image | image_url: width: 300 }}"
                               class="cart-item__image"
