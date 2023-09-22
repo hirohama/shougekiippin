@@ -245,6 +245,15 @@ header.fixed #draw_product_menu_box{
             #draw_product_menu_box.active .draw_product_btn .down{
                 display:none;
             }
+
+.select .icon-caret,
+.customer select + svg {
+  height: 0.6rem;
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - 0.2rem);
+  right: calc(var(--inputs-border-width) + 1.5rem);
+}
 /*-----------footer-----------*/
 footer{
     color:#FFF;
