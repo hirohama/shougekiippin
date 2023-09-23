@@ -3,11 +3,14 @@
     "title": {
       "type": "title-page",
       "settings": {
+        "text_content": "タイトル"
       }
     },
     "main": {
       "type": "main-page",
       "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
