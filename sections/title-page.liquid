@@ -1,12 +1,24 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+<div class="content innerpage_content">
+  {%- if page.content != blank -%}
+    <div class="innerpage_wrapper btm">
+  {%- else -%}
+    <div class="innerpage_wrapper">
+  {%- endif -%}
+    <h1 class="page_title_head foJ_Bld">
+      {{ page.title | escape }}
+    </h1>
+  </div>
+</div>
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "ページタイトル部分",
+  "settings": [
+		{
+			"type": "text",
+			"id": "text_content",
+			"label": "テキスト入力です（カスタマイズ画面上表示されるもの）"
+		}
+	]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
