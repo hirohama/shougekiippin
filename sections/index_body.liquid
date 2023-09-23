@@ -10,58 +10,61 @@
   </div>
 
   <ul id="ippin" class="clearfix">
-{% for collection in collections %}
-  {% if collection.handle == 'ippin_top_list' %}
-    {% for product in collection.products %}
-    <li class="store fadein">
-      <a href="{{ product.url }}">
-        <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
-          <div class="ribbon_box">
-            <ul class="ribbon_in_img">
-              <li><img src="{{ product.images[7] | img_url:'original' }}" alt="{{ product.metafields.custom.storename }}"></li>
-            </ul>
-          </div>
-        </div>
-        <div class="ippin">
-          <div class="ippin_img">
-            <img src="{{ product.images[2] | img_url:'original' }}" class="mask">
-            <svg version="1.1" x="0px" y="0px" viewBox="0 0 265.61 265.63" width="0" height="0">
-              <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
-                 <path d="M132.79,0A132.82,132.82,0,0,0,21.69,205.56c.76,10.34,0,31.88-18.26,36.92,0,0,21,10.89,48.81-4.08A132.81,132.81,0,1,0,132.79,0Z" transform="scale(0.0037,0.0037)"/>
-              </clipPath>
-            </svg>
-          </div>
-          <div class="ippin_text">
-            <div class="ippin_text_rayout">
-              <span class="foJ_Thin">{{ product.description }}</span>
-              <p class="foJ_Bld">{{ product.title }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="btn_box">
-          <div class="btn">
-            <span class="info foJ_Mid">
-              {% for variant in product.variants %}
-              <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
-              <span class="price_str foE">{{ variant.price | money }}</span>
-              <span class="tax_str foJ_Mid">(税別)</span>
-              {% endfor %}
-            </span>
-            <div class="icon cart"></div>
-          </div>
-        </div>
-      </a>
-    </li>
-    <!-- //store -->
+    {% for collection in collections %}
+      {% if collection.handle == 'ippin_top_list' %}
+        {% for product in collection.products %}
+          <li class="store fadein">
+            <a href="{{ product.url }}">
+              <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
+                <div class="ribbon_box">
+                  <ul class="ribbon_in_img">
+                    <li>
+                      <img
+                        src="{{ product.images[7] | img_url:'original' }}"
+                        alt="{{ product.metafields.custom.storename }}"
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ippin">
+                <div class="ippin_img">
+                  <img src="{{ product.images[2] | img_url:'original' }}" class="mask">
+                  <svg version="1.1" x="0px" y="0px" viewBox="0 0 265.61 265.63" width="0" height="0">
+                    <clipPath id="svgPath" clipPathUnits="objectBoundingBox">
+                       <path d="M132.79,0A132.82,132.82,0,0,0,21.69,205.56c.76,10.34,0,31.88-18.26,36.92,0,0,21,10.89,48.81-4.08A132.81,132.81,0,1,0,132.79,0Z" transform="scale(0.0037,0.0037)"/>
+                    </clipPath>
+                  </svg>
+                </div>
+                <div class="ippin_text">
+                  <div class="ippin_text_rayout">
+                    <span class="foJ_Thin">{{ product.description }}</span>
+                    <p class="foJ_Bld">{{ product.title }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="btn_box">
+                <div class="btn">
+                  <span class="info foJ_Mid">
+                    {% for variant in product.variants %}
+                      <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
+                      <span class="price_str foE">{{ variant.price | money }}</span>
+                      <span class="tax_str foJ_Mid">(税別)</span>
+                    {% endfor %}
+                  </span>
+                  <div class="icon cart"></div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <!-- //store -->
+        {% endfor %}
+      {% endif %}
     {% endfor %}
-  {% endif %}
-{% endfor %}
-  
   </ul>
-
 </div>
 <!-- //content -->
-<div class="content">     
+<div class="content">
   <div id="concept">
     <div id="concept_box">
       <ul class="concept_wrap">
