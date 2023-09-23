@@ -1,24 +1,4 @@
-{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
-{% comment %}
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-{% endcomment %}
 <div class="content innerpage_content">
-  {% comment %}
-  <div class="page-width page-width--narrow section-{{ section.id }}-padding">
-    <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-  {% endcomment %}
   {%- if page.content != blank -%}
     <div class="innerpage_wrapper btm">
   {%- else -%}
@@ -27,9 +7,6 @@
     <h1 class="page_title_head foJ_Bld">
       {{ page.title | escape }}
     </h1>
-  {% comment %}
-    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-  {% endcomment %}
     <div class="editor_content foJ_Thin">
       {{ page.content }}
     </div>
