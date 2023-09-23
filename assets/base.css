@@ -1347,14 +1347,16 @@ button.shopify-payment-button__button--unbranded {
 }
 
 /* Button - other */
-
+/*カートに入れる時、ボタンの透明度を設定している*/
 .button:disabled,
 .button[aria-disabled='true'],
 .button.disabled,
 .customer button:disabled,
 .customer button[aria-disabled='true'],
 .customer button.disabled,
-.quantity__button.disabled {
+.quantity__button.disabled,
+.loading-overlay:not(.hidden) + .cart_item_price_wrapper,
+.loading-overlay:not(.hidden) ~ cart-remove-button {
   cursor: not-allowed;
   opacity: 0.5;
 }

@@ -54,23 +54,25 @@
         <div class="cart_items" id="main-cart-items" data-id="{{ section.id }}">
           <div class="js-contents">
             {%- if cart != empty -%}
-              <table class="cart_item_table">
+              <table id="cart_item_table" class="foJ_Thin">
               <!--table class="cart-items"-->
                 <caption class="visually-hidden">
                   {{ 'sections.cart.title' | t }}
                 </caption>
                 <thead>
                   <tr>
-                    <th class="" colspan="2" scope="col">
+                    <th class="cart_head cart_item_photo foJ_Mid" colspan="1" scope="col">
                       {{ 'sections.cart.headings.product' | t }}
                     </th>
-                    <th class="" colspan="1" scope="col">
-                      {{ 'sections.cart.headings.total' | t }}
+                    <th class="cart_head cart_item_detail foJ_Mid" colspan="1">
                     </th>
-                    <th class="" colspan="1"  scope="col">
+                    <!--th class="cart_head foJ_Mid" colspan="1" scope="col">
+                      {{ 'sections.cart.headings.total' | t }}
+                    </th-->
+                    <th class="cart_head cart_item_quantity foJ_Mid" colspan="1"  scope="col">
                       {{ 'sections.cart.headings.quantity' | t }}
                     </th>
-                    <th class="" colspan="1" scope="col">
+                    <th class="cart_head cart_item_totals foJ_Mid" colspan="1" scope="col">
                       {{ 'sections.cart.headings.total' | t }}
                     </th>
                   </tr>
@@ -78,21 +80,19 @@
                 <tbody>
                   <!--商品-->
                   {%- for item in cart.items -%}
-                    <tr class="cart_item_tr" id="CartItem-{{ item.index | plus: 1 }}">
+                    <tr id="CartItem-{{ item.index | plus: 1 }}">
                       <td class="cart_item_photo">
                         {% if item.image %}
                           {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                          <a href="{{ item.url }}" class="cart_item_link" aria-hidden="true" tabindex="-1"> </a>
-                          <div class="">
-                            <img
-                              src="{{ item.image | image_url: width: 300 }}"
-                              class="cart-item__image"
+                          <a href="{{ item.url }}" class="cart_item_photo_img" aria-hidden="true" tabindex="-1" style="background-image:url('{{ item.image | image_url: width: 450 }}') ;">
+                            <!--img
+                              src="{{ item.image | image_url: width: 450 }}"
+                              class="cart_item_image"
                               alt="{{ item.image.alt | escape }}"
                               loading="lazy"
-                              width="150"
                               height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
-                            >
-                          </div>
+                            -->
+                          </a>
                         {% endif %}
                       </td>
 
@@ -101,8 +101,10 @@
                           <p class="">{{ item.product.vendor }}</p>
                         {%- endif -%}
 
-                        <a href="{{ item.url }}" class="cart_item_name">{{ item.product.title | escape }}</a>
-
+                        <a href="{{ item.url }}" class="cart_item_name foJ_Mid">{{ item.product.title | escape }}</a><br>
+                        {%- for option in item.options_with_values -%}
+                          {{ option.value }}<br>
+                        {%- endfor -%}
                         {%- if item.original_price != item.final_price -%}
                           <div class="cart-item__discounted-prices">
                             <span class="visually-hidden">
@@ -124,6 +126,7 @@
                           </div>
                         {%- endif -%}
 
+{% comment %}
                         {%- if item.product.has_only_default_variant == false
                           or item.properties.size != 0
                           or item.selling_plan_allocation != null
@@ -173,10 +176,11 @@
                             </li>
                           {%- endfor -%}
                         </ul>
+{% endcomment %}
                       </td>
                     
                   <!--合計-->
-                      <td class="cart_item_totals">
+                      <!--td class="cart_item_totals">
                         <div class="loading-overlay hidden">
                           <div class="loading-overlay__spinner">
                             <svg
@@ -229,7 +233,9 @@
                             </div>
                           {%- endif -%}
                         </div>
-                      </td>
+                      </td-->
+
+                  <!--数量-->
                       {%- liquid
                         assign has_qty_rules = false
                         if item.variant.quantity_rule.increment > 1 or item.variant.quantity_rule.min > 1 or item.variant.quantity_rule.max != null
@@ -411,7 +417,8 @@
                         </quantity-popover>
                       </td>
 
-                      <td class="cart_item__totals">
+                  <!--合計-->
+                      <td class="cart_item_totals">
                         <div class="loading-overlay hidden">
                           <div class="loading-overlay__spinner">
                             <svg
@@ -426,27 +433,29 @@
                           </div>
                         </div>
 
+                        <div class="cart_item_price_wrapper">{{ item.original_line_price | money }}</div>
+{% comment %}                        
                         <div class="cart-item__price-wrapper">
                           {%- if item.original_line_price != item.final_line_price -%}
                             <dl class="cart-item__discounted-prices">
                               <dt class="visually-hidden">
-                                {{ 'products.product.price.regular_price' | t }}
+                                {{ 'products.product.price.regular_price' | t }}z
                               </dt>
                               <dd>
                                 <s class="cart-item__old-price price price--end">
-                                  {{ item.original_line_price | money }}
+                                  {{ item.original_line_price | money }}b
                                 </s>
                               </dd>
                               <dt class="visually-hidden">
-                                {{ 'products.product.price.sale_price' | t }}
+                                {{ 'products.product.price.sale_price' | t }}c
                               </dt>
                               <dd class="price price--end">
-                                {{ item.final_line_price | money }}
+                                {{ item.final_line_price | money }}d
                               </dd>
                             </dl>
                           {%- else -%}
                             <span class="price price--end">
-                              {{ item.original_line_price | money }}
+                              {{ item.original_line_price | money }}e
                             </span>
                           {%- endif -%}
 
@@ -465,6 +474,7 @@
                             </div>
                           {%- endif -%}
                         </div>
+{% endcomment %}            
                       </td>
                     </tr>
                   {%- endfor -%}

@@ -698,6 +698,9 @@ ul#product li#product_introduce{
                 display: block;
                 font-size: 1vw;
             }
+    .product_form_button_box{
+        position:relative;
+    }
 ul#product li#product_photo{
     float: right;
     width: calc(70vw - 31px);
@@ -1204,6 +1207,48 @@ form#ContactForm select:focus {
     text-align: center;
     line-height: 2.5vw;
     padding:2vw;
+}
+
+/*------------------------------------------------
+
+cart
+
+-------------------------------------------------*/
+#cart_item_table{
+    width:100%;
+    table-layout: fixed;
+}
+#cart_item_table th,td{
+    margin:0;
+    padding:1vw;
+    font-size:1.1vw;
+    vertical-align: middle;
+}
+#cart_item_table .cart_item_photo{
+    width:20%;
+}
+    #cart_item_table .cart_item_photo_img{
+        display: block;
+        width:100%;
+        height:7vw;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border-radius: 1vw;
+    }
+#cart_item_table .cart_item_detail{
+    width:35%;
+}
+    .cart_item_detail .cart_item_name{
+        font-size:1.5vw;
+        color:#000;
+    }
+#cart_item_table .cart_item_quantity{
+    width:30%;
+}
+#cart_item_table .cart_item_totals{
+    width:15%;
+    position:relative
 }
 /*------------------------------------------------
 

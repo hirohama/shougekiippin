@@ -1,7 +1,7 @@
 .loading-overlay {
   position: absolute;
   z-index: 1;
-  width: 1.8rem;
+  width: 1.8vw;
 }
 
 price-per-item .loading-overlay {
@@ -17,12 +17,14 @@ price-per-item .loading-overlay {
 
 @media screen and (min-width: 750px) {
   .loading-overlay {
-    left: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
 .loading-overlay__spinner {
-  width: 1.8rem;
+  width: 1.8vw;
   display: inline-block;
 }
 
@@ -71,10 +73,10 @@ price-per-item .loading-overlay__spinner {
   }
 }
 
-.loading-overlay:not(.hidden) + .cart-item__price-wrapper,
+/*.loading-overlay:not(.hidden) + .cart_item_price_wrapper,
 .loading-overlay:not(.hidden) ~ cart-remove-button {
   opacity: 50%;
-}
+}->base.cssに移動*/
 
 .loading-overlay:not(.hidden) ~ cart-remove-button {
   pointer-events: none;
