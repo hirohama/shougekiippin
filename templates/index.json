@@ -58,11 +58,17 @@
       "type": "index_body",
       "settings": {
       }
+    },
+    "c1374cd7-40a3-46a5-a955-e850284f6272": {
+      "type": "index_movie",
+      "settings": {
+      }
     }
   },
   "order": [
     "mainvisual",
     "slider",
-    "body"
+    "body",
+    "c1374cd7-40a3-46a5-a955-e850284f6272"
   ]
 }
