@@ -48,6 +48,11 @@ div#wrap{
     width:100%;
     height:auto;
 }
+.content a{
+    color:#ffba00;
+    text-decoration: underline 1px;
+    text-underline-offset: 0.25vw;
+}
 .content.innerpage_content{
     padding-top:10vw;
 }
@@ -1302,6 +1307,14 @@ td.cart_item_quantity cart-remove-button{
 td.cart_item_quantity cart-remove-button a{
     color:#000;
 }
+.cart_item_price_wrapper span{
+    font-size:2rem;
+}
+.cart_item_price_wrapper span:before{
+    content:'\0a5';
+    letter-spacing: 0vw;
+    font-size:1.5rem;
+}
 #cart_item_table .cart_item_totals{
     width:15%;
     background: #E5E5E5;
@@ -1323,15 +1336,22 @@ td.cart_item_quantity cart-remove-button a{
     font-size:2rem;
 }
 #cart_foot .totals_total-value span.foE{
-    font-size:2.5rem;
+    font-size:3rem;
 }
 #cart_foot .totals_total-value span.foE:before{
     content:'\0a5';
-    letter-spacing: -0.3vw;
-    font-size:1vw;
+    letter-spacing: 0vw;
+    font-size:1.7rem;
 }
 #cart_foot .totals_total-value span.foJ_Thin{
-    font-size:2rem;
+    font-size:1.4rem;
+}
+.checkout_btn_box .t_link.backbtn{
+    float:left;
+    margin-top:2rem;
+}
+.checkout_btn_box .btn.checkout{
+    float:right;
 }
 /*------------------------------------------------
 
@@ -1356,6 +1376,9 @@ button
     border-radius: 9999px;
     margin:auto;
 }
+    .btn.inline-block{
+        display:inline-block;
+    }
     .btn span.info{
         display:table-cell;
         width:calc(15vw - 2px);
@@ -1394,11 +1417,12 @@ button
         background-repeat: no-repeat;
         background-position: 50% 50%;
     }
-.t_link{
+.t_link, a.t_link{
     display:inline-block;
     font-size:1.1vw;
     line-height:1.5vw;
     text-decoration: underline #000 1px;
+    color:#000;
     text-underline-offset: 0.25vw;
 }
 .t_link.no_deco{
@@ -1445,11 +1469,6 @@ utility
 
 -------------------------------------------------*/
 
-.content a{
-    color:#ffba00;
-    text-decoration: underline 1px;
-    text-underline-offset: 0.25vw;
-}
 /*----------------------font----------------------*/
 .foJ_Thin{
     font-family: 'Zen Kaku Gothic New', sans-serif;

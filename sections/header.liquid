@@ -86,7 +86,7 @@
     }
   }
 </style>
-
+{% comment %}
 {%- style -%}
   .header {
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
@@ -110,7 +110,7 @@
     }
   }
 {%- endstyle -%}
-
+{% endcomment %}
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -119,7 +119,7 @@
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-
+<!--
 {% comment %}
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
@@ -325,7 +325,7 @@
     </div>
   </header>
 {% endcomment %}
-
+-->
 
 {% if template == 'index' %} 
 <header id="menu_index" class="absolute">

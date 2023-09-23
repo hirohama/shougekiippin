@@ -20,7 +20,8 @@
 {% endcomment %}
 <div class="content">
   <div class="innerpage_wrapper btm">
-    {% comment %}
+{% comment %}
+
     <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
       <div>
         <div class="cart__footer section-{{ section.id }}-padding">
@@ -81,10 +82,10 @@
                   <div class="cart__ctas" {{ block.shopify_attributes }}>
                     <noscript>
                       <button type="submit" class="cart__update-button button button--secondary" form="cart">
-                        {{ 'sections.cart.update' | t }}
+                        {{ 'sections.cart.update' | t }}a
                       </button>
                     </noscript>
-
+                    
                     <button
                       type="submit"
                       id="checkout"
@@ -112,11 +113,13 @@
         </div>
       </div>
     </div>
-    {% endcomment %}
+{% endcomment %}
+
+
     <div class="editor_content {% if cart == empty %}is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
       <div>
+        {% if cart != empty %}
         <div id="cart_foot" class="section-{{ section.id }}-padding">
-
           <div class="cart_block">
             {% for block in section.blocks %}
               {%- case block.type -%}
@@ -155,8 +158,9 @@
                     </small>
                   </div>
                 {%- else -%}
-                c
-                  <div class="cart__ctas" {{ block.shopify_attributes }}>
+                  <div class="checkout_btn_box clearfix" {{ block.shopify_attributes }}>
+                    <a href="{{ routes.all_products_collection_url }}" class="t_link backbtn"><div class="icon back"></div>{{ 'general.continue_shopping' | t }}</a>
+                    
                     <noscript>
                       <button type="submit" class="cart__update-button button button--secondary" form="cart">
                         {{ 'sections.cart.update' | t }}
@@ -166,14 +170,17 @@
                     <button
                       type="submit"
                       id="checkout"
-                      class="cart__checkout-button button"
+                      class="btn checkout"
                       name="checkout"
                       {% if cart == empty %}
                         disabled
                       {% endif %}
                       form="cart"
                     >
-                      {{ 'sections.cart.checkout' | t }}
+                      <span class="info foJ_Mid">
+                        {{ 'sections.cart.checkout' | t }}
+                      </span>
+                      <div class="icon cart_checkout"></div>
                     </button>
                   </div>
 
@@ -188,6 +195,7 @@
             <div id="cart-errors"></div>
           </div>
         </div>
+        {% endif %}
       </div>
     </div>
 </div>
