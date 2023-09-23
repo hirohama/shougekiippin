@@ -55,11 +55,11 @@
       }
     },
     "body": {
-      "type": "index_body",
+      "type": "ippin_list",
       "settings": {
       }
     },
-    "c1374cd7-40a3-46a5-a955-e850284f6272": {
+    "movie_and_concept": {
       "type": "index_movie",
       "settings": {
       }
@@ -69,6 +69,6 @@
     "mainvisual",
     "slider",
     "body",
-    "c1374cd7-40a3-46a5-a955-e850284f6272"
+    "movie_and_concept"
   ]
 }
