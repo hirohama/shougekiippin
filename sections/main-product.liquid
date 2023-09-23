@@ -9,7 +9,7 @@
 {%- if product.quantity_price_breaks_configured? -%}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
-
+{% comment %}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -23,7 +23,7 @@
     }
   }
 {%- endstyle -%}
-
+{% endcomment %}
 <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- if product.quantity_price_breaks_configured? -%}
