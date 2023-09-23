@@ -7,6 +7,25 @@ body,html{
     font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
+@media screen and (min-width: 640px) {
+    /*タブレット縦向き、スマホ横向き（640px以上）のスタイル*/
+}
+@media screen and (max-width: 639px) {
+    /*スマホ縦向き（639px以下）のスタイル*/
+}
+@media screen and (min-width: 1024px) {
+    /*ノートPC、タブレット横向き（1024px以上）のスタイル*/
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    /*デスクトップ（1400px以上）のスタイル*/
+    html {
+        font-size: 75%;
+    }
+}
 /*------------------------------------------------
 
 common
@@ -277,19 +296,21 @@ footer{
 }
 footer nav ul#footer_nav {
     width:85%;
+    max-width:1400px;
     margin:auto;
 }
     ul#footer_nav li#footer_menu{
-        width:70%;
+        display:inline-block;
+        max-width: 80%;
     }
         li#footer_menu ul{
             width:100%;
         }
             li#footer_menu ul li{
-                font-size: 1.1vw;
+                font-size: 1.4rem;
                 display: inline-block;
-                padding:2vw 0;
-                margin-right:2vw;
+                padding:2rem 0;
+                margin-right:2rem;
             }
 
     ul#footer_nav li#footer_social{
@@ -298,6 +319,7 @@ footer nav ul#footer_nav {
 ul#footer_guide{
     display: flex;
     width:85%;
+    max-width:1400px;
     margin:auto;
 }
     ul#footer_guide li{
@@ -311,24 +333,25 @@ ul#footer_guide{
         ul#footer_guide li h5{
             display: block;
             background: #111;
-            padding:0.2vw 0.3vw;
-            font-size: 1vw;
+            padding:0.2rem 0.3rem;
+            font-size: 1.5rem;
         }
         ul#footer_guide li span{
             display: block;
-            padding:0.5vw 0 0;
-            font-size:0.9vw;
-            line-height: 1.5vw;
+            padding:0.5rem 0 0;
+            font-size:1.2rem;
+            line-height: 1.7rem;
         }
 ul#footer_support_menu{
     width:85%;
-    margin:2vw auto 0;
+    max-width:1400px;
+    margin:2rem auto 0;
 }
     ul#footer_support_menu li{
         display: inline-block;
         width:auto;
-        font-size:1.1vw;
-        padding:0.8vw 1.5vw;
+        font-size:1.4rem;
+        padding:0.8rem 1.5rem;
     }
     ul#footer_support_menu li:nth-child(1){
         border:1px solid #FFF;
@@ -336,7 +359,7 @@ ul#footer_support_menu{
     ul#footer_support_menu li:last-child{/*copyright*/
         float:right;
         text-align: right;
-        font-size: 0.8vw;
+        font-size: 1rem;
     }
 
 #information .count{
@@ -436,21 +459,19 @@ ul#slider{
     margin:0 0 0 5vw;
 }
     .ttl_index_01 h2.read{
-        display:block;
-        float:left;
-        font-size:2vw;
-        padding-right:1vw;
-        letter-spacing: 0.05vw;
+        display:inline-block;
+        font-size:3rem;
+        padding-bottom:1rem;
+        letter-spacing: 0.05rem;
     }
     .ttl_index_01 h2.read span{
         display:block;
-        font-size:0.8vw;
+        font-size:0.8rem;
     }
     .ttl_index_01 p.description{
         display:block;
-        float:left;
-        padding-left:1vw;
-        font-size:1.3vw;
+        padding-left:1rem;
+        font-size:1.4rem;
         border-left:1px solid #000;
     }
 ul#ippin{
@@ -854,7 +875,20 @@ div#product_spec_box td{
         display:table;
         width:100%;
     }
-
+        ul#product_spec h3{
+            position:absolute;
+            left:1.5vw;
+            top:-3rem;
+            display:block;
+            font-size:2.2rem;
+            line-height:2.2rem;
+            height:2.2rem;
+        }
+        ul#product_spec h4{
+            display:block;
+            font-size:1.6rem;
+            padding:0.5rem 0;
+        }
         ul#product_spec li#to_eat{
             position:relative;
             display:table-cell;
@@ -863,14 +897,6 @@ div#product_spec_box td{
             padding:0 1.5vw 1.5vw;
             border-right:1px dotted #333;
         }
-            li#to_eat h3{
-                position:absolute;
-                left:1.5vw;
-                top:-3vw;
-                display:block;
-                font-size:1.8vw;
-                height:3vw;
-            }
             li#to_eat .img{
                 display:block;
                 width:100%;
@@ -881,13 +907,8 @@ div#product_spec_box td{
                 border-radius:1vw;
 
             }
-            li#to_eat h4{
-                display:block;
-                font-size:1.5vw;
-                padding:0.5vw 0;
-            }
             li#to_eat span{
-                font-size:1.1vw;
+                font-size:1.4rem;
             }
 
         ul#product_spec li#component{
@@ -897,18 +918,14 @@ div#product_spec_box td{
             padding:0 1.5vw 1.5vw;
             border-right:1px dotted #333;
         }
-            li#component h4{
-                display:block;
-                font-size:1.5vw;
-                padding:0.5vw 0;
-            }
+            
             li#component table{
                 width:100%;
             }
             li#component th,
             li#component td{
-                font-size:1.1vw;
-                padding:0.5vw 0;
+                font-size:1.4rem;
+                padding:0.5rem 0;
                 border-top:1px dotted #666;
             }
             li#component th{
@@ -925,14 +942,6 @@ div#product_spec_box td{
             width:33%;
             padding:0 1.5vw 1.5vw;
         }
-            li#store_information h3{
-                position:absolute;
-                left:1.5vw;
-                top:-3vw;
-                display:block;
-                font-size:1.8vw;
-                height:3vw;
-            }
             li#store_information .img{
                 display:block;
                 width:100%;
@@ -942,23 +951,18 @@ div#product_spec_box td{
                 background-size:100% auto;
                 border-radius:1vw;
             }
-            li#store_information h4{
-                display:block;
-                font-size:1.5vw;
-                padding:0.5vw 0 0 0;
-            }
             li#store_information span{
                 display:block;
-                font-size:1.1vw;
-                padding-bottom:1vw;
+                font-size:1.4rem;
+                padding-bottom:1rem;
             }
             li#store_information table{
                 width:100%;
             }
             li#store_information th,
             li#store_information td{
-                font-size:1.1vw;
-                padding:0 0 0.5vw 0;
+                font-size:1.4rem;
+                padding:0 0 0.5rem 0;
             }
             li#store_information th{
                 width:30%;
@@ -982,6 +986,7 @@ pages
 -------------------------------------------------*/
 .innerpage_wrapper{
   width:80%;
+  max-width: 1200px;
   margin:auto;
   padding-bottom:0vw;
 }
@@ -990,21 +995,22 @@ pages
 }
 .innerpage_wrapper h1.page_title_head{
   display:block;
-  padding-bottom:2vw;
-  font-size:3vw;
+  padding-bottom:4rem;
+  font-size:3rem;
 }
 .editor_content{
   width:95%;
   margin:auto;
-  font-size:1.1vw;
+  font-size:1.4rem;
+  line-height:2.2rem;
   
 }
 .editor_content h5{
   width:100%;
   display:block;
-  padding:0.5vw;
-  margin:2vw auto 1vw;
-  font-size:1.3vw;
+  padding:0.5rem;
+  margin:2rem auto 1rem;
+  font-size:1.6rem;
   background:#FC0;
   border-radius:0.3vw;
   font-weight:700;
@@ -1015,19 +1021,20 @@ ul.mark_list{
 }
 
   ul.mark_list li{
-    margin-left:1.1vw;
+    margin-left:1.4rem;
   }
   ul.mark_list li:before {
     content:"・";
     display:inline-block;
-    margin-left:-1.1vw;
-    width:1.1vw;
-    height:1.1vw;
+    margin-left:-1.4rem;
+    width:1.4rem;
+    height:1.4rem;
   }
   ul.mark_list li.no_mark:before {
     content:"";
     width:0;
     height:0;
+    display: none;
   }
 /*------------------------------------------------
 
@@ -1214,15 +1221,42 @@ form#ContactForm select:focus {
 cart
 
 -------------------------------------------------*/
+#main-cart-items,
+#cart_foot{
+    background: #F4F4F4;
+    border:5px solid #FC0;
+
+}
+#main-cart-items{
+    border-radius: 1vw 1vw 0 0;
+    padding:2rem 2rem 0;
+    border-bottom:none;
+}
+#cart_foot{
+    border-radius: 0 0 1vw 1vw;
+    padding:0 2rem 2rem;
+    border-top :none;
+}
+
 #cart_item_table{
     width:100%;
     table-layout: fixed;
 }
-#cart_item_table th,td{
+
+#cart_item_table th{
+    padding:0 0.5rem 0.5rem;
+    font-size:1.8rem;
+    font-size:1.6rem;
+    line-height: 2.5rem;
+    border-bottom:1px solid #666;
+}
+#cart_item_table td{
     margin:0;
-    padding:1vw;
-    font-size:1.1vw;
+    padding:1rem 0 1rem;
+    font-size:1.6rem;
+    line-height: 2.5rem;
     vertical-align: middle;
+    border-bottom:1px dotted #AAA;
 }
 #cart_item_table .cart_item_photo{
     width:20%;
@@ -1231,24 +1265,73 @@ cart
         display: block;
         width:100%;
         height:7vw;
-        background-size: 90%;
+        background-color:#FFF;
+        background-size: 120%;
         background-repeat: no-repeat;
         background-position: 50% 50%;
+        border:8px solid #FFF;
         border-radius: 1vw;
     }
 #cart_item_table .cart_item_detail{
-    width:35%;
+    width:40%;
+    padding-left:1rem;
 }
     .cart_item_detail .cart_item_name{
-        font-size:1.5vw;
+        font-size:1.8rem;
         color:#000;
     }
-#cart_item_table .cart_item_quantity{
-    width:30%;
+#cart_item_table td.cart_item_quantity{
+    width:25%;
+    text-align: left;
+    background: #EEE;
+}
+#cart_item_table th.cart_item_quantity{
+    width:20%;
+    text-align: left;
+}
+td.cart_item_quantity .cart_item_quantity_wrapper{
+    display: inline-block;
+}
+td.cart_item_quantity quantity-popover{
+    text-align: center;
+}
+td.cart_item_quantity cart-remove-button{
+    display:inline-block;
+    vertical-align: -0.4vw;
+}
+td.cart_item_quantity cart-remove-button a{
+    color:#000;
 }
 #cart_item_table .cart_item_totals{
     width:15%;
+    background: #E5E5E5;
+    text-align: center;
     position:relative
+}
+#cart_item_table th.cart_item_totals{
+    width:15%;
+    background: none;
+    text-align: left;
+}
+#cart_item_table tr:last-child td{
+    border-bottom:1px solid #666;
+}
+#cart_foot .totals{
+    height:5rem;
+}
+#cart_foot .totals_total{
+    font-size:2rem;
+}
+#cart_foot .totals_total-value span.foE{
+    font-size:2.5rem;
+}
+#cart_foot .totals_total-value span.foE:before{
+    content:'\0a5';
+    letter-spacing: -0.3vw;
+    font-size:1vw;
+}
+#cart_foot .totals_total-value span.foJ_Thin{
+    font-size:2rem;
 }
 /*------------------------------------------------
 
