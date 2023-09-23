@@ -1,6 +1,6 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 <div class="content innerpage_content">
-    <div class="innerpage_wrapper">
+  <div class="innerpage_wrapper">
     <h1 class="page_title_head foJ_Bld">
       {{ page.title | escape }}
     </h1>
@@ -15,6 +15,11 @@
 			"id": "text_content",
 			"label": "テキスト入力です（カスタマイズ画面上表示されるもの）"
 		}
-	]
+	] ,
+    "presets": [
+      {
+        "name": "ページタイトル部分"
+      }
+    ]
 }
 {% endschema %}
