@@ -119,7 +119,7 @@
     <div class="editor_content {% if cart == empty %}is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
       <div>
         {% if cart != empty %}
-        <div id="cart_foot" class="section-{{ section.id }}-padding">
+        <div id="cart_foot" class="cart__footer section-{{ section.id }}-padding">
           <div class="cart_block">
             {% for block in section.blocks %}
               {%- case block.type -%}

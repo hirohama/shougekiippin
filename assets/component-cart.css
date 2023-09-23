@@ -64,7 +64,7 @@ cart-items {
 .cart__items--disabled {
   pointer-events: none;
 }
-
+/*
 .cart__footer-wrapper:last-child .cart__footer {
   padding-bottom: 5rem;
 }
@@ -80,7 +80,7 @@ cart-items {
 .cart__footer .discounts {
   margin-bottom: 1rem;
 }
-
+*/
 .cart__note {
   height: fit-content;
   top: 2.5rem;
@@ -128,7 +128,7 @@ cart-items {
   .cart__contents > * + * {
     margin-top: 0;
   }
-
+/*
   .cart__items + .cart__footer {
     grid-column: 2;
   }
@@ -152,7 +152,7 @@ cart-items {
     margin-top: 0;
   }
 }
-
+*/
 .cart__ctas button {
   width: 100%;
 }
