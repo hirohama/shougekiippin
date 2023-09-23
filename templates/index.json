@@ -1,11 +1,11 @@
 {
   "sections": {
-    "86224ffa-08b1-4ddd-9828-15339987ac89": {
+    "mainvisual": {
       "type": "index_MV",
       "settings": {
       }
     },
-    "316d22bc-b962-4cd4-bea0-6469d7777d48": {
+    "slider": {
       "type": "index_slider",
       "blocks": {
         "template--21057494450492__316d22bc-b962-4cd4-bea0-6469d7777d48-image-1": {
@@ -54,15 +54,15 @@
       "settings": {
       }
     },
-    "1684951f-64e4-42bf-b1c8-5aca981a4bdc": {
+    "body": {
       "type": "index_body",
       "settings": {
       }
     }
   },
   "order": [
-    "86224ffa-08b1-4ddd-9828-15339987ac89",
-    "316d22bc-b962-4cd4-bea0-6469d7777d48",
-    "1684951f-64e4-42bf-b1c8-5aca981a4bdc"
+    "mainvisual",
+    "slider",
+    "body"
   ]
 }
