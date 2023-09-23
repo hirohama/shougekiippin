@@ -1,5 +1,5 @@
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
-
+{% comment %}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -13,6 +13,7 @@
     }
   }
 {%- endstyle -%}
+{% endcomment %}
 <div class="content">
   <div class="innerpage_wrapper btm">
     <div class="contact editor_content">
