@@ -1272,6 +1272,7 @@ h1.cart_empty_text{
     line-height: 2.5rem;
     vertical-align: middle;
     border-bottom:1px dotted #666;
+    background-clip: padding-box;/*firefoxのバグ回避（borderが表示されない）*/
 }
 #cart_item_table .cart_item_photo{
     width:20%;
@@ -1338,7 +1339,6 @@ td.cart_item_quantity cart-remove-button a{
 }
 #cart_item_table tr:last-child td{
     border-bottom:1px solid #666;
-  background-clip: padding-box;
 }
 #cart_foot .totals{
     width:100%;
