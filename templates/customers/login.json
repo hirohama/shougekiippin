@@ -1,10 +1,17 @@
 {
   "sections": {
+    "title": {
+      "type": "title-page",
+      "settings": {
+        "text_content": ""
+      }
+    },
     "main": {
       "type": "main-login"
     }
   },
   "order": [
+    "title",
     "main"
   ]
 }

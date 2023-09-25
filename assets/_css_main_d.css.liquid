@@ -1049,6 +1049,7 @@ ul.mark_list{
 form
 
 -------------------------------------------------*/
+/*-----------contact------------*/
 form#ContactForm{
     display: block;
     width:100%;
@@ -1062,16 +1063,57 @@ form#ContactForm{
         padding:5vw 0;
         margin:auto;
     }
-form#ContactForm input{
-}
+
 form#ContactForm label{
     display:block;
+}
+.contact .field {
+    display:inline-block;
+    margin-bottom:2vw;
+}
+.contact .field.no-margin {
+    margin-bottom:0.2vw;
 }
 form#ContactForm input[type="text"],
 form#ContactForm input[type="email"],
 form#ContactForm input[type="tel"],
+form#ContactForm input[type="password"],
 form#ContactForm select,
 form#ContactForm textarea{
+    width:100%;
+}
+/*-----------coustomer_login------------*/
+form#customer_login{
+    display: block;
+    width:100%;
+    background: #F4F4F4;
+    border-radius: 1vw;
+    margin:3vw auto;
+    border:5px solid #FC0;
+}
+form#customer_login label{
+    display:inline-block;
+    width:10rem;
+    text-align: left;
+}
+form#customer_login input[type="text"],
+form#customer_login input[type="email"],
+form#customer_login input[type="tel"],
+form#customer_login input[type="password"],
+form#customer_login select,
+form#customer_login textarea{
+    width:50%;
+}
+.customer .firld{
+    width:75%;
+}
+/*--------------------input_common----------------*/
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea{
     vertical-align:middle; 
     width:100%;
     padding: 0 1vw;
@@ -1084,17 +1126,18 @@ form#ContactForm textarea{
     -webkit-appearance: none;
     -moz-appearance: none;
 }
-form#ContactForm input[type="text"],
-form#ContactForm input[type="email"],
-form#ContactForm input[type="tel"],
-form#ContactForm select{
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select{
     height:3vw;
 }
-form#ContactForm textarea{
+textarea{
     height:10vw;
 }
 
-form#ContactForm input[type=checkbox]{
+input[type=checkbox]{
   min-width:1.1vw;
   min-height:1.1vw;
 }
@@ -1139,11 +1182,11 @@ form#ContactForm input[type=checkbox]{
     .selectbox option{
         color:#000;
     }
-form#ContactForm input[type="text"]:focus,
-form#ContactForm input[type="email"]:focus,
-form#ContactForm input[type="tel"]:focus,
-form#ContactForm textarea:focus,
-form#ContactForm select:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
     outline: 2px solid #FC0;
 }
 .form_alert{
@@ -1203,20 +1246,13 @@ form#ContactForm select:focus {
         font-size:1vw;
         line-height: 1.1vw;
     }
-.contact .field {
-    display:inline-block;
-    margin-bottom:2vw;
-}
-.contact .field.no-margin {
-    margin-bottom:0.2vw;
-}
-.contact .field.w_1col{
+.field.w_1col{
     width:97.3%;
 }
-.contact .field.w_2col{
+.field.w_2col{
     width:48.3%;/*見た目の大きさを揃えるために小数点以下をつけた*/
 }
-.contact .field.w_3col{
+.field.w_3col{
     width:32%;
 }
 .privacy_check{

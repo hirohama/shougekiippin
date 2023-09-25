@@ -1,5 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
-
+{% comment %}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -13,7 +13,8 @@
     }
   }
 {%- endstyle -%}
-test1
+{% endcomment %}
+<div class="content">
 <div class="customer login section-{{ section.id }}-padding">
   <h1 id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}test2
@@ -26,6 +27,9 @@ test1
     {%- form 'recover_customer_password' -%}
       {% assign recover_success = form.posted_successfully? %}
       <div class="field">
+        <label for="RecoverEmail">
+          {{ 'customer.login_page.email' | t }}
+        </label>
         <input
           type="email"
           value=""
@@ -41,9 +45,6 @@ test1
           {% endif %}
           placeholder="{{ 'customer.login_page.email' | t }}"
         >
-        <label for="RecoverEmail">
-          {{ 'customer.login_page.email' | t }}
-        </label>
       </div>
       {%- if form.errors -%}
         <small id="RecoverEmail-email-error" class="form__message">
@@ -97,6 +98,9 @@ test1
       {%- endif -%}
 
       <div class="field">
+        <label for="CustomerEmail">
+          {{ 'customer.login_page.email' | t }}
+        </label>
         <input
           type="email"
           name="customer[email]"
@@ -109,13 +113,13 @@ test1
           {% endif %}
           placeholder="{{ 'customer.login_page.email' | t }}"
         >
-        <label for="CustomerEmail">
-          {{ 'customer.login_page.email' | t }}
-        </label>
       </div>
 
       {%- if form.password_needed -%}
         <div class="field">
+          <label for="CustomerPassword">
+            {{ 'customer.login_page.password' | t }}
+          </label>
           <input
             type="password"
             value=""
@@ -127,9 +131,6 @@ test1
             {% endif %}
             placeholder="{{ 'customer.login_page.password' | t }}"
           >
-          <label for="CustomerPassword">
-            {{ 'customer.login_page.password' | t }}
-          </label>
         </div>
 
         <a href="#recover">
@@ -160,7 +161,7 @@ test1
     </div>
   {%- endif -%}
 </div>
-
+</div>
 {% schema %}
 {
   "name": "t:sections.main-login.name",

@@ -1,6 +1,6 @@
 {
   "sections": {
-    "e20087c4-a1a2-4ac8-876d-796283a93e04": {
+    "title": {
       "type": "title-page",
       "settings": {
         "text_content": ""
@@ -214,7 +214,7 @@
     }
   },
   "order": [
-    "e20087c4-a1a2-4ac8-876d-796283a93e04",
+    "title",
     "main",
     "13a7414c-250f-4e37-963d-b29d0c525978"
   ]
