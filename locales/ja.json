@@ -441,6 +441,7 @@
     "register": {
       "title": "アカウントを作成する",
       "first_name": "名",
+      "first_name_placeholder": "お名前",
       "last_name": "姓",
       "email": "メール",
       "password": "パスワード",

@@ -29,14 +29,14 @@
             {%- if form.errors -%}
             <div class="form_alert error">
                 <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
-                  <div>
-                    <span class="form_alert_icon">{% render 'icon-error' %}</span>
-                    <p class="foJ_Mid">送信できませんでした。</p>
-                  </div>
-                    <span class="alert_content">
-                {{ form.errors.messages.form }}
-                    </span>
+                <div>
+                  <span class="form_alert_icon">{% render 'icon-error' %}</span>
+                  <p class="foJ_Mid">送信できませんでした。</p>
                 </div>
+                <span class="alert_content">
+                  {{ form.errors.messages.form }}
+                </span>
+            </div>
               
             {%- endif -%}
             <div class="field">
@@ -54,9 +54,9 @@
                 {% if form.errors %}
                   aria-invalid="true"
                   aria-describedby="RecoverEmail-email-error"
-                  autofocus
                 {% endif %}
                 placeholder="{{ 'customer.login_page.email' | t }}"
+                required
               >
             </div><!--field-->
             {% comment %}
@@ -106,7 +106,7 @@
           {{ 'customer.recover_password.success' | t }}</span>
             </div>
       {%- endif -%}
-      {% form 'customer_login', novalidate: 'novalidate' %}
+      {% form 'customer_login' %}
 
           <div id="customer_login_form_box">
         {%- if form.errors -%}
@@ -138,6 +138,7 @@
               aria-invalid="true"
             {% endif %}
             placeholder="{{ 'customer.login_page.email' | t }}"
+            required
           >
         </div>
 
@@ -156,6 +157,7 @@
                 aria-invalid="true"
               {% endif %}
               placeholder="{{ 'customer.login_page.password' | t }}"
+              required
             >
             <div id="recover_box">
               <a href="#recover">

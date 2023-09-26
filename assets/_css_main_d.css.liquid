@@ -271,7 +271,8 @@ header.fixed #draw_product_menu_box{
             }
 
 .select .icon-caret,
-.customer select + svg {
+.customer select + svg,
+.register select + svg {
   height: 0.6rem;
   pointer-events: none;
   position: absolute;
@@ -279,7 +280,8 @@ header.fixed #draw_product_menu_box{
   right: calc(var(--inputs-border-width) + 1.5rem);
 }
 .form__message .icon,
-.customer .form__message svg {
+.customer .form__message svg,
+.register .form__message svg {
   flex-shrink: 0;
   height: 1.3rem;
   margin-right: 0.5rem;
@@ -287,7 +289,8 @@ header.fixed #draw_product_menu_box{
 }
 
 .form__message--large .icon,
-.customer .form__message svg {
+.customer .form__message svg,
+.register .form__message svg {
   height: 1.5rem;
   width: 1.5rem;
   margin-right: 1rem;
@@ -1069,10 +1072,10 @@ form#ContactForm label{
 }
 .contact .field {
     display:inline-block;
-    margin-bottom:2vw;
+    margin-top:2vw;
 }
 .contact .field.no-margin {
-    margin-bottom:0.2vw;
+    margin-top:0.2vw;
 }
 form#ContactForm input[type="text"],
 form#ContactForm input[type="email"],
@@ -1176,7 +1179,39 @@ div#recover_btn_box button{
 #recover:target ~ #login + div {
   display: none;
 }
+/*-------------------register-------------------*/
+form#RegisterForm{
+    display: block;
+    width:80%;
+    background: #F4F4F4;
+    border-radius: 1vw;
+    margin:3vw auto;
+    border:5px solid #FC0;
+}
+    #RegisterForm_wrapper{
+        width:80%;
+        padding:5vw 0;
+        margin:auto;
+    }
 
+form#RegisterForm label{
+    display:block;
+}
+.register .field {
+    display:inline-block;
+    margin-top:2vw;
+}
+.register .field.no-margin {
+    margin-top:0.2vw;
+}
+form#RegisterForm input[type="text"],
+form#RegisterForm input[type="email"],
+form#RegisterForm input[type="tel"],
+form#RegisterForm input[type="password"],
+form#RegisterForm select,
+form#RegisterForm textarea{
+    width:100%;
+}
 /*--------------------input_common----------------*/
 input[type="text"],
 input[type="email"],
