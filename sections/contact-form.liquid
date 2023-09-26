@@ -196,7 +196,7 @@
 
                 {%- comment -%} 小見出し(複数の項目をまとめる。住所など) {%- endcomment -%}
               {% when 'formHeading_span' %}
-                <div class="min_head w_col1" {{ block.shopify_attributes }}>
+                <div class="min_head w_col1{% if block.settings.margin %} no-margin{% endif %}" {{ block.shopify_attributes }}>
                   <span>
                     {{- block.settings.title }}
                     {% if block.settings.check %}
@@ -1339,6 +1339,13 @@
             "label": "必須マーク表示",
             "default": false,
             "info": "チェックを入れると必須マークを表示できます。"
+          },
+          {
+            "type": "checkbox",
+            "id": "margin",
+            "label": "上マージンを狭く",
+            "default": false,
+            "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
           }
         ]
       },
