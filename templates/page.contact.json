@@ -24,7 +24,7 @@
             "newline_pc": false,
             "newline_mobile": false,
             "width_setting": "col2",
-            "margin-bottom": false,
+            "margin": false,
             "regex": ""
           }
         },
@@ -38,7 +38,7 @@
             "newline_pc": true,
             "newline_mobile": true,
             "width_setting": "col2",
-            "margin-bottom": false,
+            "margin": false,
             "regex": ""
           }
         },
@@ -52,7 +52,7 @@
             "newline_pc": false,
             "newline_mobile": false,
             "width_setting": "col1",
-            "margin-bottom": false,
+            "margin": false,
             "regex": ""
           }
         },
@@ -66,7 +66,7 @@
             "newline_pc": false,
             "newline_mobile": true,
             "width_setting": "col1",
-            "margin-bottom": false,
+            "margin": false,
             "regex": ""
           }
         },
@@ -80,7 +80,7 @@
             "newline_pc": false,
             "newline_mobile": true,
             "width_setting": "col1",
-            "margin-bottom": false,
+            "margin": false,
             "regex": ""
           }
         },
@@ -101,7 +101,7 @@
             "newline_pc": false,
             "newline_mobile": false,
             "width_setting": "col3",
-            "margin-bottom": true,
+            "margin": true,
             "regex": "^[0-9]{3}-?[0-9]{4}$"
           }
         },
@@ -114,7 +114,7 @@
             "newline_pc": false,
             "newline_mobile": true,
             "width_setting": "col3",
-            "margin-bottom": true,
+            "margin": true,
             "label-zero": "都道府県選択",
             "label-one": "北海道",
             "label-two": "青森県",
@@ -178,7 +178,7 @@
             "newline_pc": false,
             "newline_mobile": true,
             "width_setting": "col1",
-            "margin-bottom": false,
+            "margin": true,
             "regex": ""
           }
         },
@@ -189,7 +189,7 @@
             "placeholder": "お問い合わせの内容を入力してください",
             "check": true,
             "width_setting": "col1",
-            "margin-bottom": true
+            "margin": false
           }
         }
       },
