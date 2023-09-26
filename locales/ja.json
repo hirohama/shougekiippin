@@ -440,12 +440,15 @@
     },
     "register": {
       "title": "アカウントを作成する",
-      "first_name": "名",
-      "first_name_placeholder": "お名前",
-      "last_name": "姓",
-      "email": "メール",
+      "first_name": "お名前：名",
+      "first_name_placeholder": "例：太郎",
+      "last_name": "お名前：姓",
+      "last_name_placeholder": "例：山田",
+      "email": "メールアドレス",
+      "email_placeholder": "メールアドレス",
       "password": "パスワード",
-      "submit": "作成する"
+      "password_placeholder": "パスワード",
+      "submit": "送信する"
     },
     "reset_password": {
       "title": "アカウントのパスワードをリセットする",

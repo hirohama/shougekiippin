@@ -91,7 +91,7 @@
           value="{{ form.last_name }}"
         {% endif %}
         autocomplete="family-name"
-        placeholder="{{ 'customer.register.last_name' | t }}"
+        placeholder="{{ 'customer.register.last_name_placeholder' | t }}"
         required>
     </div>
     <div class="field w_2col">
@@ -125,12 +125,11 @@
         autocapitalize="off"
         autocomplete="email"
         aria-required="true"
-        pattern="[a-zA-Z0-9._%+-]{8, 15}"
         {% if form.errors contains 'email' %}
           aria-invalid="true"
           aria-describedby="RegisterForm-email-error"
         {% endif %}
-        placeholder="{{ 'customer.register.email' | t }}"
+        placeholder="{{ 'customer.register.email_placeholder' | t }}"
         required
       >
     </div>
@@ -157,7 +156,7 @@
           aria-invalid="true"
           aria-describedby="RegisterForm-password-error"
         {% endif %}
-        placeholder="{{ 'customer.register.password' | t }}"
+        placeholder="{{ 'customer.register.password_placeholder' | t }}"
         required
       >
     </div>
@@ -170,6 +169,7 @@
         {{ form.errors.messages.password }}.
       </span>
     {%- endif -%}
+    <div class="min_head">&nbsp;</div>
     <button class="btn">
             <span class="info foJ_Mid">
       {{ 'customer.register.submit' | t }}
