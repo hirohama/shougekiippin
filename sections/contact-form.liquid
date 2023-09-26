@@ -57,7 +57,7 @@
                 {%- comment -%} Eメール {%- endcomment -%}
               {% when 'email' %}
                 <div
-                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
@@ -110,7 +110,7 @@
                 {%- comment -%} Eメール（確認用） {%- endcomment -%}
               {% when 'email_verify' %}
                 <div
-                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
@@ -150,7 +150,7 @@
                 {%- comment -%} 電話番号 {%- endcomment -%}
               {% when 'telephone' %}
                 <div
-                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   <label class="field__label" for="ContactForm-phone">
@@ -208,7 +208,7 @@
                 {%- comment -%} 1行 テキスト{%- endcomment -%}
               {% when 'text' %}
                 <div
-                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
@@ -249,7 +249,7 @@
                 {%- comment -%} テキストエリア {%- endcomment -%}
               {% when 'textarea' %}
                 <div
-                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
@@ -418,7 +418,7 @@
                 {%- comment -%} セレクトボックス50 {%- endcomment -%}
               {% when 'select_fifty' %}
                 <div
-                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {% if block.settings.label %}
@@ -671,7 +671,7 @@
                 {%- comment -%} セレクトボックス20 {%- endcomment -%}
               {% when 'select_twenty' %}
                 <div
-                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {% if block.settings.label %}
@@ -782,7 +782,7 @@
                 {%- comment -%} セレクトボックス10 {%- endcomment -%}
               {% when 'select_ten' %}
                 <div
-                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin-bottom %} no-margin{% endif %}"
+                  class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {% if block.settings.label %}
@@ -998,10 +998,10 @@
           },
           {
             "type": "checkbox",
-            "id": "margin-bottom",
-            "label": "下マージンを狭く",
+            "id": "margin",
+            "label": "上マージンを狭く",
             "default": false,
-            "info": "チェックを入れると下マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
+            "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
           },
           {
             "type": "text",
@@ -1076,10 +1076,10 @@
           },
           {
             "type": "checkbox",
-            "id": "margin-bottom",
-            "label": "下マージンを狭く",
+            "id": "margin",
+            "label": "上マージンを狭く",
             "default": false,
-            "info": "チェックを入れると下マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
+            "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
           },
           {
             "type": "text",
@@ -1165,10 +1165,10 @@
           },
           {
             "type": "checkbox",
-            "id": "margin-bottom",
-            "label": "下マージンを狭く",
+            "id": "margin",
+            "label": "上マージンを狭く",
             "default": false,
-            "info": "チェックを入れると下マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
+            "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
           },
           {
             "type": "text",
@@ -1224,10 +1224,10 @@
           },
           {
             "type": "checkbox",
-            "id": "margin-bottom",
-            "label": "下マージンを狭く",
+            "id": "margin",
+            "label": "上マージンを狭く",
             "default": false,
-            "info": "チェックを入れると下マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
+            "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
           }
         ]
       },
@@ -1297,10 +1297,10 @@
           },
           {
             "type": "checkbox",
-            "id": "margin-bottom",
-            "label": "下マージンを狭く",
+            "id": "margin",
+            "label": "上マージンを狭く",
             "default": false,
-            "info": "チェックを入れると下マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
+            "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
           },
           {
             "type": "text",
@@ -1435,10 +1435,10 @@
           },
           {
             "type": "checkbox",
-            "id": "margin-bottom",
-            "label": "下マージンを狭く",
+            "id": "margin",
+            "label": "上マージンを狭く",
             "default": false,
-            "info": "チェックを入れると下マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
+            "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
           },
           {
             "type": "header",
@@ -1574,10 +1574,10 @@
           },
           {
             "type": "checkbox",
-            "id": "margin-bottom",
-            "label": "下マージンを狭く",
+            "id": "margin",
+            "label": "上マージンを狭く",
             "default": false,
-            "info": "チェックを入れると下マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
+            "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
           },
           {
             "type": "header",
@@ -1773,7 +1773,7 @@
           },
           {
             "type": "checkbox",
-            "id": "margin-top",
+            "id": "margin",
             "label": "上マージンを狭く",
             "default": false,
             "info": "チェックを入れると上マージンが狭くなります。まとまりを作るときに見やすくするために使います。"
