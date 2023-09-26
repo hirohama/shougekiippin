@@ -87,7 +87,7 @@
         "4bee1af1-9c7a-4939-b714-cc3538600563": {
           "type": "formHeading_span",
           "settings": {
-            "title": "住所",
+            "title": "ご住所",
             "check": true,
             "margin": false
           }
