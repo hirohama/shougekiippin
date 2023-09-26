@@ -1082,31 +1082,97 @@ form#ContactForm select,
 form#ContactForm textarea{
     width:100%;
 }
-/*-----------coustomer_login------------*/
-form#customer_login{
+/*-----------customer_login------------*/
+div#customer_login_form_box,
+div#recover_customer_password_form_box{
     display: block;
-    width:100%;
+    width:50%;
+    min-height: 20vw;
     background: #F4F4F4;
     border-radius: 1vw;
-    margin:3vw auto;
+    margin:0 auto 3vw;
+    padding: 2vw 0 0;
     border:5px solid #FC0;
+    text-align:center;
 }
-form#customer_login label{
+
+div#recover_customer_password_form_box{
+    padding: 4vw 0 0;
+}
+
+div#customer_login_form_box label,
+div#recover_customer_password_form_box label{
     display:inline-block;
-    width:10rem;
+    width:35%;
     text-align: left;
 }
-form#customer_login input[type="text"],
-form#customer_login input[type="email"],
-form#customer_login input[type="tel"],
-form#customer_login input[type="password"],
-form#customer_login select,
-form#customer_login textarea{
-    width:50%;
+div#customer_login_form_box input[type="text"],
+div#customer_login_form_box input[type="email"],
+div#customer_login_form_box input[type="tel"],
+div#customer_login_form_box input[type="password"],
+div#customer_login_form_box select,
+div#customer_login_form_box textarea,
+div#recover_customer_password_form_box input[type="email"]{
+    width:63%;
 }
-.customer .firld{
-    width:75%;
+.customer .field{
+    width:90%;
+    margin:auto;
+    padding:1.5vw 0 0.5vw;
 }
+p.recover_subtext{
+    display: block;
+    text-align: center;
+    margin:0 auto;
+    font-size: 1.4rem;
+    padding:0 0 1.5vw;
+}
+.customer div#recover_box{
+    display: block;
+    width:100%;
+    margin:auto;
+    text-align:right;
+    font-size:1.1rem;
+    padding:0.5rem 0;
+}
+.customer div#recover_box a{
+    color:#000;
+    text-decoration: none;
+}
+
+div#recover_btn_box{
+    padding:1vw 1vw;
+    text-align: left;
+}
+div#recover_btn_box .t_link.backbtn{
+    margin-top:3rem;
+}
+div#recover_btn_box button{
+    display:block;
+    margin:auto;
+}
+.customer.login .form__message{
+    text-align: center;
+    padding:2vw 0;
+}
+#recover,
+#recover + div /*id recoverと、隣接するdiv*/{
+  display: none;
+}
+
+#recover:target {
+  display: block;
+}
+
+#recover:target + div {
+  display: block;
+}
+
+#recover:target ~ #login,
+#recover:target ~ #login + div {
+  display: none;
+}
+
 /*--------------------input_common----------------*/
 input[type="text"],
 input[type="email"],
@@ -1425,7 +1491,8 @@ button
     top:22.3vw;
 }
 
-.btn{
+.btn,
+a.btn{
     cursor:pointer;
     position:relative;
     display:block;
@@ -1436,6 +1503,7 @@ button
     text-align: center;
     border-radius: 9999px;
     margin:auto;
+    text-decoration:none;
 }
     .btn.inline-block{
         display:inline-block;
@@ -1523,6 +1591,12 @@ button
 }
 .icon.submit{
     background-image: url("{{ '_img_submit.svg' | asset_url }}");
+}
+.icon.login{
+    background-image: url("{{ '_img_login.svg' | asset_url }}");
+}
+.icon.make_account{
+    background-image: url("{{ '_img_make_account.svg' | asset_url }}");
 }
 /*------------------------------------------------
 

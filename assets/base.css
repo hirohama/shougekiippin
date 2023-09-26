@@ -615,12 +615,12 @@ details > * {
   color: currentColor;
 }
 
-.underlined-link:hover,
+/*.underlined-link:hover,
 .customer a:hover,
 .inline-richtext a:hover {
   color: rgb(var(--color-link));
   text-decoration-thickness: 0.2rem;
-}
+}*/
 
 .icon-arrow {
   width: 1.5rem;
@@ -1192,7 +1192,7 @@ deferred-media {
   --alpha-button-background: 0;
   --alpha-button-border: 0.2;
 }
-
+/*
 .button,
 .shopify-challenge__button,
 .customer button,
@@ -1210,7 +1210,7 @@ button.shopify-payment-button__button--unbranded,
   border-radius: var(--buttons-radius-outset);
   position: relative;
 }
-
+*/
 /*.button,
 .shopify-challenge__button,
 .customer button,

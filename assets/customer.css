@@ -1,4 +1,4 @@
-.customer:not(.account):not(.order) {
+/*.customer:not(.account):not(.order) {
   margin: 0 auto;
   max-width: 33.4rem;
   padding-left: 1.5rem;
@@ -57,9 +57,9 @@
 
 .customer .field:first-of-type {
   margin-top: 0;
-}
+}*/
 
-/* Customer Table */
+/* Customer Table 
 .customer table {
   table-layout: auto;
   border-collapse: collapse;
@@ -205,9 +205,9 @@
   .customer tfoot tr:last-of-type th {
     padding-bottom: 2.4rem;
   }
-}
+}*/
 
-/* works around colspan phantom border issues */
+/* works around colspan phantom border issues 
 .customer thead::after,
 .customer tfoot::before {
   content: ' ';
@@ -224,9 +224,9 @@
   .customer tfoot::before {
     background: CanvasText;
   }
-}
+}*/
 
-/* mobile table overrides */
+/* mobile table overrides 
 @media screen and (max-width: 749px) {
   .customer thead,
   .customer th,
@@ -260,9 +260,9 @@
     justify-content: flex-start;
     width: 100%;
   }
-}
+}*/
 
-/* Pagination */
+/* Pagination 
 .customer .pagination {
   margin-top: 5rem;
   margin-bottom: 7rem;
@@ -326,9 +326,9 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: currentColor;
-}
+}*/
 
-/* Login */
+/* Login 
 .login a {
   display: block;
   margin: 0 auto;
@@ -397,9 +397,9 @@
     margin-top: inherit;
     margin-left: 1rem;
   }
-}
+}*/
 
-/* Account/Order */
+/* Account/Order 
 :is(.account, .order) {
   margin: 0 auto;
   max-width: var(--page-width);
@@ -650,9 +650,9 @@
 
 .order .regular-price {
   font-size: 1.3rem;
-}
+}*/
 
-/* Addresses */
+/* Addresses 
 .addresses li > button {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -753,3 +753,4 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
 }
+*/
