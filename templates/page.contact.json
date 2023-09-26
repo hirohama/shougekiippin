@@ -94,7 +94,7 @@
         "f4b297b4-b630-417b-b2cb-1932918f9d82": {
           "type": "text",
           "settings": {
-            "title": "郵便番号",
+            "title": "住所",
             "placeholder": "郵便番号（半角英数字）",
             "check": true,
             "label": false,
