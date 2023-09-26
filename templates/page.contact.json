@@ -59,7 +59,7 @@
         "68b1d328-da20-4074-967b-afc8a8f5a2ff": {
           "type": "email",
           "settings": {
-            "title": "Eメール",
+            "title": "メールアドレス",
             "placeholder": "例：ippin@shougeki.com（半角英数字）",
             "check": true,
             "label": true,
@@ -73,7 +73,7 @@
         "a689a398-e112-481e-8bec-822c6572b4f9": {
           "type": "email_verify",
           "settings": {
-            "title": "Eメール（確認用）",
+            "title": "メールアドレス（確認用）",
             "placeholder": "ippin@shougeki.com",
             "check": true,
             "label": true,
