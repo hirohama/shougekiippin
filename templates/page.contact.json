@@ -88,7 +88,8 @@
           "type": "formHeading_span",
           "settings": {
             "title": "住所",
-            "check": true
+            "check": true,
+            "margin": false
           }
         },
         "f4b297b4-b630-417b-b2cb-1932918f9d82": {
