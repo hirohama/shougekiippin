@@ -399,7 +399,7 @@
   }
 }*/
 
-/* Account/Order 
+/* Account/Order */
 :is(.account, .order) {
   margin: 0 auto;
   max-width: var(--page-width);
@@ -650,7 +650,7 @@
 
 .order .regular-price {
   font-size: 1.3rem;
-}*/
+}
 
 /* Addresses 
 .addresses li > button {
