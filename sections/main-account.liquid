@@ -161,11 +161,12 @@
                         </li>
                     </ul>
                   </nav>
-                <!--//見た目いじる用のページネーション-->
+                <!--//見た目いじる用の予備ページネーション-->
 
 
               {%- if paginate.pages > 1 -%}
-              <!--ここにページネーション挿入予定-->
+              {%- render 'pagination', paginate: paginate -%}
+              <!--ここにページネーション挿入-->
                 {%- if paginate.parts.size > 0 -%}
                   <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
                     <ul role="list">
