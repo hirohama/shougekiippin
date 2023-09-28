@@ -29,7 +29,7 @@
         <!--アカウント詳細-->
           <div id="addresses_details" class="foJ_Thin">
             <div class="account_name">
-              <h2 class="foJ_Mid">{{ customer.default_address.first_name }}&nbsp;{{ customer.default_address.last_name }}様</h2><br>
+              <h2 class="foJ_Mid">{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}様</h2><br>
               <!--{% comment %}
                 {{ 'customer.account.details' | t }}
               {% endcomment %}-->
@@ -76,14 +76,12 @@
           </div>
 <!--//アカウント詳細-->
 
-
         <div id="order_details" class="foJ_Thin">
           <div id="order_details_wrapper">
 <!--注文履歴-->
             <h3 class="foJ_Mid">{{ 'customer.orders.title' | t }}</h3>
             {% paginate customer.orders by 10 %}
               {%- if customer.orders.size > 0 -%}
-            customer.orders.size:{{ customer.orders }}
                 <table role="table" class="order-history">
                   <caption class="visually-hidden">
                     {{ 'customer.orders.title' | t }}
@@ -140,18 +138,40 @@
                   </tbody>
                 </table>
               {%- else -%}
-                <p>{{ 'customer.orders.none' | t }}</p>
+                <p>{{ 'customer.orders.none' | t }}</p><!--カートにないとき-->
               {%- endif -%}
-              paginate.pages:{{ paginate.pages }}
-<nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">a</nav>
+
+                <!--見た目いじる用のページネーション-->
+                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                    <ul role="list">
+                        <li>
+                          <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">0
+                          </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                              1
+                            </a>
+                        </li>
+                        <li>
+                              <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                                2
+                              </span>
+                        </li>
+                    </ul>
+                  </nav>
+                <!--//見た目いじる用のページネーション-->
+
+
               {%- if paginate.pages > 1 -%}
-              A
+              <!--ここにページネーション挿入予定-->
                 {%- if paginate.parts.size > 0 -%}
-                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">B
+                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
                     <ul role="list">
                       {%- if paginate.previous -%}
                         <li>
-                          <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">C
+                          <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
                             <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
                             </svg>
