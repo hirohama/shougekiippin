@@ -51,7 +51,7 @@
               <table>
                 <tr>
                   <th>お名前</th>
-                  <td>{{ customer.default_address.first_name }}&nbsp;{{ customer.default_address.last_name }}</td>
+                  <td>{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}</td>
                 </tr>
                 <tr>
                   <th>ご住所</th>
@@ -77,14 +77,13 @@
 <!--//アカウント詳細-->
 
 
-        <div id="account_details" class="foJ_Thin">
-          <div id="account_details_wrapper">
+        <div id="order_details" class="foJ_Thin">
+          <div id="order_details_wrapper">
 <!--注文履歴-->
-          <div class="orders_details">
             <h3 class="foJ_Mid">{{ 'customer.orders.title' | t }}</h3>
-
-            {% paginate customer.orders by 20 %}
+            {% paginate customer.orders by 10 %}
               {%- if customer.orders.size > 0 -%}
+            customer.orders.size:{{ customer.orders }}
                 <table role="table" class="order-history">
                   <caption class="visually-hidden">
                     {{ 'customer.orders.title' | t }}
@@ -143,14 +142,16 @@
               {%- else -%}
                 <p>{{ 'customer.orders.none' | t }}</p>
               {%- endif -%}
-
+              paginate.pages:{{ paginate.pages }}
+<nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">a</nav>
               {%- if paginate.pages > 1 -%}
+              A
                 {%- if paginate.parts.size > 0 -%}
-                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">B
                     <ul role="list">
                       {%- if paginate.previous -%}
                         <li>
-                          <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                          <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">C
                             <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
                             </svg>
@@ -190,9 +191,8 @@
                 {%- endif -%}
               {%- endif -%}
             {% endpaginate %}
-          </div>
 <!--//注文履歴-->
-</div>
+          </div>
 
         </div>
       </div>

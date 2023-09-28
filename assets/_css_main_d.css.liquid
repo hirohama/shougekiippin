@@ -1207,7 +1207,7 @@ form#RegisterForm select,
 form#RegisterForm textarea{
     width:100%;
 }
-/*-----------account------------*/
+/*-----------account addresses------------*/
 #addresses_details{
     display: flex;
     background: #F4F4F4;
@@ -1268,14 +1268,24 @@ form#RegisterForm textarea{
     border-bottom:1px solid #ccc;
     border-radius: 0 0 1rem 0;
 }
-#account_details_wrapper{
-    /*display:flex;*/
-}
-.orders_details{
-    flex-grow: 1;
-    padding-right: 3.2rem;
-}
+/*-----------account orders------------*/
 
+/*#order_details -> form#ContactForm,#order_detailsに記入*/
+
+#order_details #order_details_wrapper{
+    font-size:1.4rem;
+}
+#order_details_wrapper h3{
+    font-size:1.8rem;
+}
+#order_details_wrapper table{
+    width:100%;
+}
+#order_details_wrapper table th,
+#order_details_wrapper table td{
+    padding:1rem;
+    border-bottom:1px dotted #999;
+}
 /*--------------------form,input_common----------------*/
 form .field,
 form .min_head{
