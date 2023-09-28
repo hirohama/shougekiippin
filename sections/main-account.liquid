@@ -1,5 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
-
+{% comment %}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -13,7 +13,9 @@
     }
   }
 {%- endstyle -%}
-
+{% endcomment %}
+<div class="content innerpage_content">
+    <div class="innerpage_wrapper btm">
 <div class="customer account section-{{ section.id }}-padding">
   <div>
     <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
@@ -150,6 +152,8 @@
   </div>
 </div>
 
+</div>
+</div>
 {% schema %}
 {
   "name": "t:sections.main-account.name",
