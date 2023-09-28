@@ -1049,11 +1049,11 @@ ul.mark_list{
   }
 /*------------------------------------------------
 
-form
+form,customer,account
 
 -------------------------------------------------*/
 /*-----------contact------------*/
-form#ContactForm{
+form#ContactForm,#account_details{
     display: block;
     width:100%;
     background: #F4F4F4;
@@ -1061,9 +1061,10 @@ form#ContactForm{
     margin:3vw auto;
     border:5px solid #FC0;
 }
-    #ContactForm_wrapper{
+    #ContactForm_wrapper,
+    #account_details_wrapper{
         width:80%;
-        padding:5vw 0;
+        padding:3vw 0;
         margin:auto;
     }
 
@@ -1206,6 +1207,75 @@ form#RegisterForm select,
 form#RegisterForm textarea{
     width:100%;
 }
+/*-----------account------------*/
+#addresses_details{
+    display: flex;
+    background: #F4F4F4;
+    border-radius: 1vw;
+    padding:2vw;
+}
+#addresses_details .account_name{
+    width:30%;
+}
+#addresses_details .account_name h2{
+    font-size:2.5rem;
+    display: inline;
+}
+#addresses_details .account_address{
+    flex-grow: 1;
+}
+#addresses_details h3{
+    font-size:2rem;
+    margin-bottom:1rem;
+}
+#addresses_details .account_address{
+    padding-left:2rem;
+    text-align: right;
+}
+#addresses_details .account_address table{
+    width:100%;
+    border-collapse: separate;
+    font-size:1.3rem;
+    text-align: left;
+    margin-bottom:1rem;
+}
+#addresses_details .account_address table th{
+    border-left:1px solid #ccc;
+    border-top:1px solid #ccc;
+    padding:0.75rem;
+    white-space: nowrap;
+    width:10rem;
+}
+#addresses_details .account_address table tr:first-child th{
+    border-radius: 1rem 0 0 0;
+}
+#addresses_details .account_address table tr:last-child th{
+    border-bottom:1px solid #ccc;
+    border-radius: 0 0 0 1rem;
+}
+
+#addresses_details .account_address table td{
+    border-left:1px solid #ccc;
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
+    padding:0.75rem;
+    width:auto;
+}
+#addresses_details .account_address table tr:first-child td{
+    border-radius: 0 1rem 0 0;
+}
+#addresses_details .account_address table tr:last-child td{
+    border-bottom:1px solid #ccc;
+    border-radius: 0 0 1rem 0;
+}
+#account_details_wrapper{
+    /*display:flex;*/
+}
+.orders_details{
+    flex-grow: 1;
+    padding-right: 3.2rem;
+}
+
 /*--------------------form,input_common----------------*/
 form .field,
 form .min_head{
@@ -1597,26 +1667,26 @@ a.btn{
     }
 .t_link, a.t_link{
     display:inline-block;
-    font-size:1.1vw;
-    line-height:1.5vw;
+    font-size:1.4rem;
+    line-height:1.5rem;
     text-decoration: underline #000 1px;
     color:#000;
     text-underline-offset: 0.25vw;
 }
 .t_link.no_deco{
     display:inline-block;
-    font-size:1.1vw;
-    line-height:1.5vw;
+    font-size:1.4rem;
+    line-height:1.5rem;
     text-decoration: none;
 }
     .t_link .icon{
-        width:1.5vw;
-        height:1.5vw;
+        width:1.5rem;
+        height:1.5rem;
         display:inline-block;
-        background-size: 100%;
+        background-size: 140%;
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        vertical-align:-0.4vw;
+        vertical-align:-0.35rem;
     }
 
 
@@ -1632,6 +1702,9 @@ a.btn{
 .icon.back{
     background-image: url("{{ '_img_back.svg' | asset_url }}");
 }
+.icon.close{
+    background-image: url("{{ '_img_close.svg' | asset_url }}");
+}
 .icon.draw_down{
     background-image: url("{{ '_img_draw_down.svg' | asset_url }}");
 }
@@ -1640,6 +1713,9 @@ a.btn{
 }
 .icon.submit{
     background-image: url("{{ '_img_submit.svg' | asset_url }}");
+}
+.icon.edit{
+    background-image: url("{{ '_img_edit.svg' | asset_url }}");
 }
 .icon.login{
     background-image: url("{{ '_img_login.svg' | asset_url }}");
