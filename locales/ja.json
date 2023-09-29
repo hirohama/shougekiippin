@@ -373,7 +373,7 @@
   "customer": {
     "account": {
       "title": "アカウント",
-      "order": "ご注文詳細",
+      "order_detail": "ご注文詳細",
       "details": "アカウントの詳細",
       "view_addresses": "アカウントの編集",
       "return": "アカウントに戻る"
