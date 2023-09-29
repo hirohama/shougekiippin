@@ -380,12 +380,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <p>{{ order.billing_address.last_name }} {{ order.billing_address.first_name }}</p>
-   <p>{{ order.billing_address.zip }}</p>
-   <p>{{ order.billing_address.province }}</p>
-   <p>{{ order.billing_address.city }}</p>
-   <p>{{ order.billing_address.address1 }}</p>
-   <p>{{ order.billing_address.address2 }}</p></td>
+                    〒{{ customer.default_address.zip }}<br>{{ customer.default_address.province }} {{ customer.default_address.city }} {{ customer.default_address.street }}</td>
                 </tr>
                 <tr>
                   <td>
@@ -399,6 +394,7 @@
           {{ order.billing_address | format_address }}
         </div>
         <div class="customer_address_box">
+          aaa
           <h2>{{ 'customer.order.shipping_address' | t }}</h2>
           <p>
             <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
