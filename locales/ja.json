@@ -459,8 +459,8 @@
       "submit": "パスワードをリセットする"
     },
     "order": {
-      "title": "ご注文 ({{ name }})",
-      "date_html": "ご注文日: {{ date }}",
+      "title": "注文 ({{ name }})",
+      "date_html": "注文日: {{ date }}",
       "cancelled_html": "注文キャンセル日: {{ date }}",
       "cancelled_reason": "キャンセルの理由: {{ reason }}",
       "billing_address": "請求先住所",
