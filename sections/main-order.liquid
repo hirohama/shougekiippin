@@ -376,8 +376,8 @@
           <h2>{{ 'customer.order.billing_address' | t }}</h2>
               <table>
                 <tr>
-                  <th>お名前</th>
-                  <td>{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}</td>
+                  <th>{{ 'customer.order.payment_status' | t }}</th>
+                  <td>{{ order.financial_status_label }}</td>
                 </tr>
                 <tr>
                   <th>ご住所</th>
