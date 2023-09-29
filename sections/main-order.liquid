@@ -375,9 +375,9 @@
         <div class="billing_address_box">
           <h2>{{ 'customer.order.billing_address' | t }}</h2>
               <p>{{ 'customer.order.payment_status' | t }}:{{ order.financial_status_label }}</p>
-              <p>
+              <p class="name">
                     {{ order.billing_address.last_name }} {{ order.billing_address.first_name }}</p>
-          <p class="name">
+          <p>
                     〒{{ order.billing_address.zip }}<br>
                     {{ order.billing_address.province }}{{ order.billing_address.city }}{{ order.billing_address.address1 }}{{ order.billing_address.address2 }}
               </p>
