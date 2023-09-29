@@ -516,5 +516,10 @@
       "expanded": "ギフトカードカードの受取人フォームを展開しました",
       "collapsed": "ギフトカードカードの受取人フォームを折りたたみました"
     }
+  },
+  "customer_accounts": {
+    "navigation_and_structure": {
+      "document_title": "aaa"
+    }
   }
 }
