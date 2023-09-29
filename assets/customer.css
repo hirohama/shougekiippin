@@ -654,22 +654,18 @@
 }
 */
 /* Addresses */
-.addresses li > button {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
 
 .addresses li > button + button,
 .addresses form button + button {
   margin-top: 0rem;
 }
-
+/*
 @media screen and (min-width: 750px) {
   .addresses li > button:first-of-type {
     margin-top: 3rem;
   }
 }
-
+*/
 .addresses form button:first-of-type {
   margin-right: 1rem;
 }
@@ -696,11 +692,11 @@ label[for='AddressProvinceNew'] {
   padding-left: 0;
   text-align: center;
 }
-
+/*
 li[data-address] {
   margin-top: 5rem;
 }
-
+*/
 .addresses [aria-expanded='false'] ~ div[id] {
   display: none;
 }

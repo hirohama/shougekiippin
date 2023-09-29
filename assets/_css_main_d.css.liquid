@@ -1383,6 +1383,35 @@ table.order_price_details{
   padding:0 0 0 2rem;
   width:50%;
 }
+/*------------------addresses--------------------*/
+.addresses_list_box{
+    background: #F4F4F4;
+    border-radius: 2rem;
+    padding:2rem 0;
+}
+.addresses_list li{
+    width:calc(100% - 5rem);
+    margin-left:2rem;
+    margin-top:2rem;
+    display: block;
+    background: #FFF;
+    text-align: left;
+    border:0.5rem solid #FFF;
+    border-radius: 1rem;
+    padding:2rem;
+}
+.addresses_list li:first-child{
+    margin-top:0;
+}
+.addresses_list li.default{
+    border:0.5rem solid #FC0;
+}
+.addresses_list li button{
+    margin:2rem 1rem 0;
+}
+.btn_form_box{
+    text-align: center;
+}
 /*--------------------form,input_common----------------*/
 form .field,
 form .min_head{
@@ -1826,6 +1855,9 @@ a.btn{
 }
 .icon.login{
     background-image: url("{{ '_img_login.svg' | asset_url }}");
+}
+.icon.delete{
+    background-image: url("{{ '_img_delete.svg' | asset_url }}");
 }
 .icon.make_account{
     background-image: url("{{ '_img_make_account.svg' | asset_url }}");

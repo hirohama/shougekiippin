@@ -36,6 +36,7 @@
 }
 .pagination a{
   color:currentColor;
+  text-decoration: none;
 }
 a.pagination__item:hover::after {
   height: 1px;

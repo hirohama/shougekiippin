@@ -17,16 +17,20 @@
 {%- endstyle -%}
 {% endcomment %}
 
-{%- paginate customer.addresses by 5 -%}
+<div class="content innerpage_content">
+  <div class="innerpage_wrapper foJ_Thin btm">
+{%- paginate customer.addresses by 3 -%}
   <div class="customer addresses section-{{ section.id }}-padding" data-customer-addresses>
+    <!--{% comment %}
     <svg style="display: none">
       <symbol id="icon-caret" viewBox="0 0 10 6">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
       </symbol>
     </svg>
-    <h1>{{ 'customer.addresses.title' | t }}</h1>
-    <a href="{{ routes.account_url }}">
-      {{ 'customer.account.return' | t }}
+    {% endcomment %}-->
+    <h1 class="page_title_head foJ_Bld">{{ 'customer.addresses.title' | t }}</h1>
+    <a class="t_link no_deco" href="{{ routes.account_url }}">
+          <div class="icon back"></div>{{ 'customer.account.return' | t }}
     </a>
 
     <div data-address>
@@ -170,32 +174,41 @@
         {%- endform -%}
       </div>
     </div>
-
-    <ul role="list">
+    <div class="addresses_list_box">
+    <ul class="addresses_list"role="list">
       {%- for address in customer.addresses -%}
-        <li data-address>
-          {%- if address == customer.default_address -%}
+      {%- if address == customer.default_address -%}
+        <li class="default" data-address>
             <h2>{{ 'customer.addresses.default' | t }}</h2>
-          {%- endif -%}
+      {%- else -%}
+        <li data-address>
+      {%- endif -%}
+      {% comment %}
           {{ address | format_address }}
-          <button
-            type="button"
-            id="EditFormButton_{{ address.id }}"
-            aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
-            aria-controls="EditAddress_{{ address.id }}"
-            aria-expanded="false"
-            data-address-id="{{ address.id }}"
-          >
-            {{ 'customer.addresses.edit' | t }}
-          </button>
-          <button
-            type="button"
-            aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
-            data-target="{{ address.url }}"
-            data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
-          >
-            {{ 'customer.addresses.delete' | t }}
-          </button>
+      {% endcomment %}
+      {{ address.last_name }}&nbsp;{{ address.first_name }}<br>
+      〒{{ customer.default_address.zip }}&nbsp;{{ customer.default_address.province }} {{ customer.default_address.city }} {{ customer.default_address.street }}<br>
+      <div class="btn_form_box">
+<!--編集ボタン-->
+            <button
+              type="button"
+              id="EditFormButton_{{ address.id }}"
+              aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+              aria-controls="EditAddress_{{ address.id }}"
+              aria-expanded="false"
+              data-address-id="{{ address.id }}"
+              class="t_link no_deco"
+            ><div class="icon edit"></div>{{ 'customer.addresses.edit' | t }}</button>
+<!--/編集ボタン-->
+<!--削除ボタン-->
+            <button
+              type="button"
+              aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+              data-target="{{ address.url }}"
+              data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+              class="t_link no_deco"
+            ><div class="icon delete"></div>{{ 'customer.addresses.delete' | t }}</button>
+<!--/削除ボタン-->
           <div id="EditAddress_{{ address.id }}">
             <h2>{{ 'customer.addresses.edit_address' | t }}</h2>
             {%- form 'customer_address', address -%}
@@ -336,11 +349,15 @@
               </div>
             {%- endform -%}
           </div>
+          </div>
+          <!--/btn_form_box-->
         </li>
       {%- endfor -%}
     </ul>
 
     {%- if paginate.pages > 1 -%}
+    {%- render 'pagination', paginate: paginate -%}
+      <!--{% comment %}
       {%- if paginate.parts.size > 0 -%}
         <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
           <ul role="list">
@@ -384,10 +401,14 @@
           </ul>
         </nav>
       {%- endif -%}
+      {% endcomment %}-->
     {%- endif -%}
+    </div>
+    <!--/address_list-->
   </div>
 {%- endpaginate -%}
-
+</div>
+</div>
 <script>
   window.addEventListener('load', () => {
     typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
