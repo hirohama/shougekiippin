@@ -164,20 +164,20 @@
                             <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
                           </dt>
                           <dd class="regular-price">
-                            <s>{{ line_item.original_price | money }}</s>
+                            <s>&yen;{{ line_item.original_price | money }}</s>
                           </dd>
                           <dt>
                             <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
                           </dt>
                           <dd>
-                            <span>{{ line_item.final_price | money }}</span>
+                            <span>&yen;{{ line_item.final_price | money }}</span>
                           </dd>
                         {%- else -%}
                           <dt>
                             <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
                           </dt>
                           <dd>
-                            {{ line_item.original_price | money }}
+                            &yen;{{ line_item.original_price | money }}
                           </dd>
                         {%- endif -%}
                         {%- if line_item.unit_price_measurement -%}
@@ -196,7 +196,7 @@
                             {%- endif -%}
                             {{ line_item.unit_price_measurement.reference_unit }}
                           {%- endcapture -%}
-                              <span data-unit-price>{{ line_item.unit_price | money }}</span>
+                              <span data-unit-price>&yen;{{ line_item.unit_price | money }}</span>
                               {{- unit_price_separator -}}
                               {{- unit_price_base_unit -}}
                             </span>
