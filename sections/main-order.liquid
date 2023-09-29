@@ -374,6 +374,28 @@
       <div id="address_box">
         <div class="billing_address_box">
           <h2>{{ 'customer.order.billing_address' | t }}</h2>
+              <table>
+                <tr>
+                  <th>お名前</th>
+                  <td>{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}</td>
+                </tr>
+                <tr>
+                  <th>ご住所</th>
+                  <td>
+                    〒{{ customer.default_address.zip }}<br>{{ customer.default_address.province }} {{ customer.default_address.city }} {{ customer.default_address.street }}</td>
+                </tr>
+                <tr>
+                  <th>TEL</th>
+                  <td>
+                    {{ customer.default_address.phone }}
+                  </td>
+                </tr>
+                <tr>
+                  <th>E-MAIL</th>
+                  <td>{{ customer.email }}</td>
+                </tr>
+              </table>
+          
           <p>
             <strong>{{ 'customer.order.payment_status' | t }}:</strong>
             {{ order.financial_status_label }}
