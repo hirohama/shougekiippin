@@ -39,7 +39,7 @@
             <p>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</p>
           {%- endif -%}
 
-          <table role="table" class="order-details">
+          <table role="table" class="order_details">
             <caption class="visually-hidden">
               {{ 'customer.order.title' | t: name: order.name }}
             </caption>
@@ -248,7 +248,10 @@
 <!--/商品数で繰り返し-->
             </tbody>
             </table>
-            <table>
+
+
+                                  
+            <table role="table" class="order_price_details">
             <tfoot role="rowgroup">
               <tr role="row">
                 <td id="RowSubtotal" role="rowheader" scope="row" colspan="4">
