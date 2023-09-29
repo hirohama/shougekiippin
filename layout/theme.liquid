@@ -17,9 +17,9 @@
 
     <title>
       {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"A{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}B{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}C{% endunless -%}
     </title>
 
     {% if page_description %}
