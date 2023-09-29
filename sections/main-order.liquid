@@ -334,7 +334,7 @@
                     {{ 'customer.order.total_duties' | t }}
                   </td>
                   <td headers="RowDuties" role="cell" data-label="{{ 'customer.order.total_duties' | t }}">
-                    {{ order.total_duties | money }}
+                    &yen;{{ order.total_duties | money }}
                   </td>
                 </tr>
               {%- endif -%}
