@@ -23,9 +23,9 @@
               href="{{ paginate.previous.url }}{{ anchor }}"
               class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
               aria-label="{{ 'general.pagination.previous' | t }}"
-            >
+            >&lt;{% comment %}
               {% render 'icon-caret' %}
-            </a>
+            {% endcomment %}</a>
           </li>
         {%- endif -%}
 
@@ -63,9 +63,9 @@
               href="{{ paginate.next.url }}{{ anchor }}"
               class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
               aria-label="{{ 'general.pagination.next' | t }}"
-            >
+            >&gt;{% comment %}
               {%- render 'icon-caret' -%}
-            </a>
+            {% endcomment %}</a>
           </li>
         {%- endif -%}
       </ul>

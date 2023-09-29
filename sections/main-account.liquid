@@ -131,7 +131,7 @@
                           {{ order.fulfillment_status_label }}
                         </td>
                         <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
-                          {{ order.total_net_amount | money_with_currency }}
+                          &yen;{{ order.total_net_amount | money }}
                         </td>
                       </tr>
                     {%- endfor -%}
@@ -141,75 +141,80 @@
                 <p>{{ 'customer.orders.none' | t }}</p><!--カートにないとき-->
               {%- endif -%}
 
-                <!--見た目いじる用のページネーション-->
-                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-                    <ul role="list">
-                        <li>
-                          <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">0
+{% comment %}
+<!--//見た目いじる用の予備ページネーション-->
+{{ 'component-pagination.css' | asset_url | stylesheet_tag }}
+              <div class="pagination-wrapper">
+                <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                  <ul class="pagination__list list-unstyled" role="list">
+
+ <!--前のページ-->
+                      <li>
+                        <a
+                          href="{{ paginate.previous.url }}{{ anchor }}"
+                          class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
+                          aria-label="{{ 'general.pagination.previous' | t }}"
+                        >
+                        &lt;
+                          {% comment %}
+                          {% render 'icon-caret' %}
+                          {% endcomment %}
+                        </a>
+                      </li>
+                      <li>
+                        <!--リンクの場合-->
+                          <a
+                            href="{{ part.url }}{{ anchor }}"
+                            class="pagination__item link"
+                            aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                          >
+                            {{- part.title -}}1
                           </a>
-                        </li>
-
-                        <li>
-                            <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
-                              1
+                      </li>
+                      <li>
+                        <!--リンクの場合-->
+                          <a
+                            href="{{ part.url }}{{ anchor }}"
+                            class="pagination__item link"
+                            aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                          >
+                            {{- part.title -}}2
+                          </a>
+                      </li>
+                      <li>
+                        <!--いまいるページ-->
+                            <a
+                              role="link"
+                              aria-disabled="true"
+                              class="pagination__item pagination__item--current light"
+                              aria-current="page"
+                              aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                            >
+                              {{- part.title -}}
                             </a>
-                        </li>
-                        <li>
-                              <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
-                                2
-                              </span>
-                        </li>
-                    </ul>
-                  </nav>
-                <!--//見た目いじる用の予備ページネーション-->
+                      </li>
+                      <li>
+                            <span class="pagination__item">{{ part.title }}3</span>
+                      </li>
 
+<!--次のページ-->
+                      <li>
+                        <a
+                          href="{{ paginate.next.url }}{{ anchor }}"
+                          class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
+                          aria-label="{{ 'general.pagination.next' | t }}"
+                        >
+                          >
+                        </a>
+                      </li>
+                  </ul>
+                </nav>
+              </div>
+<!--//見た目いじる用の予備ページネーション-->
+{% endcomment %}
 
               {%- if paginate.pages > 1 -%}
               {%- render 'pagination', paginate: paginate -%}
-              <!--ここにページネーション挿入-->
-                {%- if paginate.parts.size > 0 -%}
-                  <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-                    <ul role="list">
-                      {%- if paginate.previous -%}
-                        <li>
-                          <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
-                            <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
-                            </svg>
-                          </a>
-                        </li>
-                      {%- endif -%}
-
-                      {%- for part in paginate.parts -%}
-                        <li>
-                          {%- if part.is_link -%}
-                            <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
-                              {{- part.title -}}
-                            </a>
-                          {%- else -%}
-                            {%- if part.title == paginate.current_page -%}
-                              <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
-                                {{- part.title -}}
-                              </span>
-                            {%- else -%}
-                              <span>{{ part.title }}</span>
-                            {%- endif -%}
-                          {%- endif -%}
-                        </li>
-                      {%- endfor -%}
-
-                      {%- if paginate.next -%}
-                        <li>
-                          <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
-                            <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
-                            </svg>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                    </ul>
-                  </nav>
-                {%- endif -%}
               {%- endif -%}
             {% endpaginate %}
 <!--//注文履歴-->

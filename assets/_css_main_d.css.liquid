@@ -48,7 +48,7 @@ div#wrap{
     width:100%;
     height:auto;
 }
-.content a{
+.content a:not(.pagination a){
     color:#ffba00;
     text-decoration: underline 1px;
     text-underline-offset: 0.25vw;
@@ -58,14 +58,14 @@ div#wrap{
 }
 .content.add_spacer{
     padding-top:5vw;
-}
+}/*
 .pagination{
     width:100%;
     text-align: center;
 }
 .pagination ul li{
     display:inline-block;
-}
+}*/
 /*-----------header-----------*/
 header{
     position:relative;
@@ -1289,8 +1289,12 @@ form#RegisterForm textarea{
 }
 #order_details_wrapper table th,
 #order_details_wrapper table td{
+    text-align: center;
     padding:1rem;
     border-bottom:1px dotted #999;
+}
+#order_details_wrapper table td:last-child{
+    text-align: right;
 }
 /*--------------------form,input_common----------------*/
 form .field,

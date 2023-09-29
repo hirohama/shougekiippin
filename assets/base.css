@@ -596,7 +596,7 @@ details > * {
   --animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
   --animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
 }
-
+/*
 .underlined-link,
 .customer a,
 .inline-richtext a {
@@ -604,11 +604,11 @@ details > * {
   text-decoration-thickness: 0.1rem;
   transition: text-decoration-thickness ease 100ms;
 }
-
 .underlined-link,
 .customer a {
   color: rgba(var(--color-link), var(--alpha-link));
 }
+*/
 
 .inline-richtext a,
 .rte.inline-richtext a {
