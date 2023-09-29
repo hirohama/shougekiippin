@@ -34,7 +34,9 @@
   padding: 0;
   text-decoration: none;
 }
-
+.pagination a{
+  color:currentColor;
+}
 a.pagination__item:hover::after {
   height: 1px;
 }
