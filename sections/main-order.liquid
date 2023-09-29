@@ -401,6 +401,20 @@
         </div>
         <div class="customer_address_box">
           <h2>{{ 'customer.order.shipping_address' | t }}</h2>
+          <p>{{ 'customer.order.fulfillment_status' | t }}:{{ order.fulfillment_status_label }}</p>
+          <p class="name">
+            {{ order.shipping_address.last_name }}
+            {{ order.shipping_address.first_name }}
+          </p>
+          <p class="address">
+            〒{{ order.shipping_address.zip -}}
+            <br>
+            {{ order.shipping_address.province -}}
+            {{- order.shipping_address.city -}}
+            {{- order.shipping_address.address1 -}}
+            {{- order.shipping_address.address2 }}
+          </p>
+          <h2>{{ 'customer.order.shipping_address' | t }}</h2>
           <p>
             <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
             {{ order.fulfillment_status_label }}
