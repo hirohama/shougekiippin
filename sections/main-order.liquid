@@ -314,7 +314,7 @@
                     role="cell"
                     data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)"
                   >
-                    {{ tax_line.price | money }}
+                    &yen;{{ tax_line.price | money }}
                   </td>
                 </tr>
               {%- endfor -%}
