@@ -30,7 +30,7 @@
 
       <div id="order_detail">
         <div id="order_detail_wrapper">
-          <h2>{{ 'customer.order.title' | t: name: order.name }}</h2>
+          <h2 class="foJ_Mid">{{ 'customer.order.title' | t: name: order.name }}</h2>
           {%- assign order_date = order.created_at | time_tag: format: 'date_at_time' -%}
           <p>{{ 'customer.order.date_html' | t: date: order_date }}</p>
           {%- if order.cancelled -%}
