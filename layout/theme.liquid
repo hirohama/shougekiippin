@@ -19,7 +19,7 @@
       {% comment %}各ページに対応したページタイトルの設定{% endcomment %}
       {%- if page_title == "アカウント" -%}{% assign page_title = "マイページ" %}{%- endif -%}
       {%- if page_title == "住所" -%}{% assign page_title = "ご住所の編集" %}{%- endif -%}
-      {%- if article.tags contains '注文 #' -%}{% assign page_title = "ご注文の詳細" %}{% endif %}
+      {%- if page_title contains '注文 #' -%}{% assign page_title = "ご注文詳細" %}{% endif %}
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"A{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}B{% endif -%}
