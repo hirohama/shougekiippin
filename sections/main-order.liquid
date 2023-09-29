@@ -52,7 +52,8 @@
                 <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</th>
               </tr>
             </thead>
-            <tbody role="rowgroup">
+            <tbody role="rowgroup">     
+<!--商品数で繰り返し-->
               {%- for line_item in order.line_items -%}
                 <tr role="row">
 <!--商品名-->
@@ -243,6 +244,7 @@
 <!--/小計-->
                 </tr>
               {%- endfor -%}
+<!--/商品数で繰り返し-->
             </tbody>
             <tfoot role="rowgroup">
               <tr role="row">
