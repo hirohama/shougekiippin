@@ -55,6 +55,7 @@
             <tbody role="rowgroup">
               {%- for line_item in order.line_items -%}
                 <tr role="row">
+<!--商品名-->
                   <td
                     id="Row{{ line_item.key }}"
                     headers="ColumnProduct"
@@ -134,6 +135,8 @@
                       {%- endif -%}
                     </div>
                   </td>
+<!--/商品名-->
+<!--SKU-->
                   <td
                     headers="Row{{ line_item.key }} ColumnSku"
                     role="cell"
@@ -141,6 +144,10 @@
                   >
                     {{ line_item.sku }}
                   </td>
+
+<!--/SKU-->
+                                  
+<!--商品価格-->
                   <td
                     headers="Row{{ line_item.key }} ColumnPrice"
                     role="cell"
@@ -196,6 +203,9 @@
                       <span>{{ line_item.final_price | money }}</span>
                     {%- endif -%}
                   </td>
+                  
+<!--/商品価格-->                  
+<!--数量-->
                   <td
                     headers="Row{{ line_item.key }} ColumnQuantity"
                     role="cell"
@@ -203,6 +213,9 @@
                   >
                     {{ line_item.quantity }}
                   </td>
+                  
+<!--/数量-->                  
+<!--小計-->
                   <td
                     headers="Row{{ line_item.key }} ColumnTotal"
                     role="cell"
