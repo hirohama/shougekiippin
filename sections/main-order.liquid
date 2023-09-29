@@ -315,7 +315,7 @@
                 <tr role="row">
                   <td id="RowTax" role="rowheader" scope="row" colspan="4">
                     {{ 'customer.order.tax' | t }} ({{ tax_line.title }}
-                    {{ tax_line.percentage }}%)
+                    {{ tax_line.rate_percentage | times: 100 }}%)
                   </td>
                   <td
                     headers="RowTax"
