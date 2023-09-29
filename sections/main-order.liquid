@@ -314,7 +314,7 @@
               {%- for tax_line in order.tax_lines -%}
                 <tr role="row">
                   <td id="RowTax" role="rowheader" scope="row" colspan="4">
-                    {{ 'customer.order.tax' | t }} (
+                    {{ 'customer.order.tax' | t }} ({{ tax_line.title }}
                     {{ tax_line.rate | times: 100 }}%)
                   </td>
                   <td
