@@ -26,7 +26,6 @@
   </div>
 
   <div>
-    testtest
     <div>
       <h2>{{ 'customer.order.title' | t: name: order.name }}</h2>
       {%- assign order_date = order.created_at | time_tag: format: 'date_at_time' -%}
