@@ -255,6 +255,7 @@
                                   
             <table role="table" class="order_price_details">
             <tfoot role="rowgroup">
+<!--小計-->
               <tr role="row">
                 <td id="RowSubtotal" role="rowheader" scope="row" colspan="4">
                   {{ 'customer.order.subtotal' | t }}
@@ -263,6 +264,7 @@
                   {{ order.line_items_subtotal_price | money }}
                 </td>
               </tr>
+<!--/小計-->
               {%- if order.cart_level_discount_applications != blank -%}
                 <tr role="row">
                   {%- for discount_application in order.cart_level_discount_applications -%}
