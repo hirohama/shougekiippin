@@ -372,11 +372,11 @@
   },
   "customer": {
     "account": {
-      "title": "アカウント",
+      "title": "マイページ",
       "order_detail": "ご注文詳細",
-      "details": "アカウントの詳細",
-      "view_addresses": "アカウントの編集",
-      "return": "アカウントに戻る"
+      "details": "マイページの詳細",
+      "view_addresses": "マイページの編集",
+      "return": "マイページに戻る"
     },
     "account_fallback": "アカウント",
     "activate_account": {
