@@ -375,7 +375,7 @@
       "title": "アカウント",
       "details": "アカウントの詳細",
       "view_addresses": "アカウントの編集",
-      "return": "アカウントの詳細に戻る"
+      "return": "アカウントTOPに戻る"
     },
     "account_fallback": "アカウント",
     "activate_account": {
