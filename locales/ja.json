@@ -375,7 +375,7 @@
       "title": "マイページ",
       "order_detail": "ご注文詳細",
       "details": "マイページの詳細",
-      "view_addresses": "マイページの編集",
+      "view_addresses": "ご住所の編集",
       "return": "マイページに戻る"
     },
     "account_fallback": "アカウント",
