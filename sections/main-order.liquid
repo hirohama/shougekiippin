@@ -25,9 +25,10 @@
       </svg>
       <div>
         <h1 class="page_title_head foJ_Bld customer__title">{{ 'customer.account.order_detail' | t }}</h1>
-            <a class="t_link no_deco" href="{{ routes.account_url }}">
-              <div class="icon back"></div>{{ 'customer.account.return' | t }}
-            </a>
+        <a class="t_link no_deco" href="{{ routes.account_url }}">
+          <div class="icon back"></div>
+          {{ 'customer.account.return' | t }}
+        </a>
       </div>
 
       <div id="order_detail">
@@ -54,11 +55,11 @@
                 <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.order.total' | t }}</th>
               </tr>
             </thead>
-            <tbody role="rowgroup">     
-<!--商品数で繰り返し-->
+            <tbody role="rowgroup">
+              <!-- 商品数で繰り返し -->
               {%- for line_item in order.line_items -%}
                 <tr role="row">
-<!--商品名-->
+                  <!-- 商品名 -->
                   <td
                     id="Row{{ line_item.key }}"
                     headers="ColumnProduct"
@@ -138,8 +139,8 @@
                       {%- endif -%}
                     </div>
                   </td>
-<!--/商品名-->
-<!--SKU-->
+                  <!-- /商品名 -->
+                  <!-- SKU -->
                   <td
                     headers="Row{{ line_item.key }} ColumnSku"
                     role="cell"
@@ -149,9 +150,9 @@
                     {{ line_item.sku }}
                   </td>
 
-<!--/SKU-->
-                                  
-<!--商品価格-->
+                  <!-- /SKU -->
+
+                  <!-- 商品価格 -->
                   <td
                     headers="Row{{ line_item.key }} ColumnPrice"
                     role="cell"
@@ -176,9 +177,7 @@
                           <dt>
                             <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
                           </dt>
-                          <dd>
-                            &yen;{{ line_item.original_price | money }}
-                          </dd>
+                          <dd>&yen;{{ line_item.original_price | money }}</dd>
                         {%- endif -%}
                         {%- if line_item.unit_price_measurement -%}
                           <dt>
@@ -207,9 +206,9 @@
                       <span>&yen;{{ line_item.final_price | money }}</span>
                     {%- endif -%}
                   </td>
-                  
-<!--/商品価格-->                  
-<!--数量-->
+
+                  <!-- /商品価格 -->
+                  <!-- 数量 -->
                   <td
                     headers="Row{{ line_item.key }} ColumnQuantity"
                     role="cell"
@@ -217,9 +216,9 @@
                   >
                     {{ line_item.quantity }}
                   </td>
-                  
-<!--/数量-->                  
-<!--小計-->
+
+                  <!-- /数量 -->
+                  <!-- 小計 -->
                   <td
                     headers="Row{{ line_item.key }} ColumnTotal"
                     role="cell"
@@ -243,19 +242,17 @@
                     {%- else -%}
                       &yen;{{ line_item.original_line_price | money }}
                     {%- endif -%}
-                  </td>                  
-<!--/小計-->
+                  </td>
+                  <!-- /小計 -->
                 </tr>
               {%- endfor -%}
-<!--/商品数で繰り返し-->
+              <!-- /商品数で繰り返し -->
             </tbody>
-            </table>
+          </table>
 
-
-                                  
-            <table role="table" class="order_price_details">
+          <table role="table" class="order_price_details">
             <tfoot role="rowgroup">
-<!--小計-->
+              <!-- 小計 -->
               <tr role="row">
                 <td id="RowSubtotal" role="rowheader" scope="row" colspan="4">
                   {{ 'customer.order.subtotal' | t }}
@@ -264,8 +261,8 @@
                   {{ order.line_items_subtotal_price | money }}
                 </td>
               </tr>
-<!--/小計-->
-<!--ディスカウント-->
+              <!-- /小計 -->
+              <!-- ディスカウント -->
               {%- if order.cart_level_discount_applications != blank -%}
                 <tr role="row">
                   {%- for discount_application in order.cart_level_discount_applications -%}
@@ -292,9 +289,9 @@
                   {%- endfor -%}
                 </tr>
               {%- endif -%}
-<!--/ディスカウント-->
+              <!-- /ディスカウント -->
 
-<!--配送-->
+              <!-- 配送 -->
               {%- for shipping_method in order.shipping_methods -%}
                 <tr role="row">
                   <td id="RowShipping" role="rowheader" scope="row" colspan="4">
@@ -309,13 +306,16 @@
                   </td>
                 </tr>
               {%- endfor -%}
-<!--/配送-->
-<!--税-->
+              <!-- /配送 -->
+              <!-- 税 -->
               {%- for tax_line in order.tax_lines -%}
                 <tr role="row">
                   <td id="RowTax" role="rowheader" scope="row" colspan="4">
-                    {{ 'customer.order.tax' | t }} ({% comment %}{{ tax_line.title }}
-                    {% endcomment %}{{ tax_line.rate | times: 100 }}%)
+                    {{ 'customer.order.tax' | t }} (
+                    {% comment %}
+                      {{ tax_line.title }}
+                    {% endcomment %}
+                    {{- tax_line.rate | times: 100 }}%)
                   </td>
                   <td
                     headers="RowTax"
@@ -326,8 +326,8 @@
                   </td>
                 </tr>
               {%- endfor -%}
-<!--税-->
-<!--関税-->
+              <!-- 税 -->
+              <!-- 関税 -->
               {%- if order.total_duties -%}
                 <tr role="row">
                   <td id="RowDuties" role="rowheader" scope="row" colspan="4">
@@ -338,8 +338,8 @@
                   </td>
                 </tr>
               {%- endif -%}
-<!--/関税-->
-<!--返金-->
+              <!-- /関税 -->
+              <!-- 返金 -->
               {%- if order.total_refunded_amount > 0 -%}
                 <tr role="row">
                   <td id="RowTotalRefund" role="rowheader" scope="row" colspan="3">
@@ -355,15 +355,23 @@
                   </td>
                 </tr>
               {%- endif -%}
-<!--/返金-->
-<!--合計-->
+              <!-- /返金 -->
+              <!-- 合計 -->
               <tr role="row">
-                <td id="RowTotal" role="rowheader" scope="row" colspan="3" class="foJ_Mid">{{ 'customer.order.total' | t }}</td>
-                <td headers="RowTotal" role="cell" colspan="2" data-label="{{ 'customer.order.total' | t }}" class="foJ_Mid">
+                <td id="RowTotal" role="rowheader" scope="row" colspan="3" class="foJ_Mid">
+                  {{ 'customer.order.total' | t }}
+                </td>
+                <td
+                  headers="RowTotal"
+                  role="cell"
+                  colspan="2"
+                  data-label="{{ 'customer.order.total' | t }}"
+                  class="foJ_Mid"
+                >
                   &yen;{{ order.total_net_amount | money_with_currency }}
                 </td>
               </tr>
-<!--/合計-->
+              <!-- /合計 -->
             </tfoot>
           </table>
         </div>
@@ -374,15 +382,21 @@
       <div id="address_box">
         <div class="billing_address_box">
           <h2>{{ 'customer.order.billing_address' | t }}</h2>
-              <p>{{ 'customer.order.payment_status' | t }}:{{ order.financial_status_label }}</p>
-              <p class="name">
-                    {{ order.billing_address.last_name }} {{ order.billing_address.first_name }}</p>
+          <p>{{ 'customer.order.payment_status' | t }}:{{ order.financial_status_label }}</p>
+          <p class="name">
+            {{ order.billing_address.last_name }}
+            {{ order.billing_address.first_name }}
+          </p>
           <p class="address">
-                    〒{{ order.billing_address.zip }}<br>
-                    {{ order.billing_address.province }}{{ order.billing_address.city }}{{ order.billing_address.address1 }}{{ order.billing_address.address2 }}
-              </p>
+            〒{{ order.billing_address.zip -}}
+            <br>
+            {{ order.billing_address.province -}}
+            {{- order.billing_address.city -}}
+            {{- order.billing_address.address1 -}}
+            {{- order.billing_address.address2 }}
+          </p>
           {% comment %}
-          {{ order.billing_address | format_address }}
+            {{ order.billing_address | format_address }}
           {% endcomment %}
         </div>
         <div class="customer_address_box">
@@ -395,7 +409,6 @@
         </div>
       </div>
       <!-- //address_box -->
-                              
     </div>
   </div>
   <!-- //#innerpage_wrapper -->
