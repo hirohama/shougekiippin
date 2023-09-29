@@ -28,7 +28,7 @@
         <a href="{{ routes.account_url }}">{{ 'customer.account.return' | t }}</a>
       </div>
 
-        <div id="order_detail">
+      <div id="order_detail">
         <div id="order_detail_wrapper">
           <h2>{{ 'customer.order.title' | t: name: order.name }}</h2>
           {%- assign order_date = order.created_at | time_tag: format: 'date_at_time' -%}
@@ -327,26 +327,27 @@
               </tr>
             </tfoot>
           </table>
-        </div>
-        <!--//order_detail_wrapper-->
-        <div id="address_box">
-          <div class="billing_address_box">
-            <h2>{{ 'customer.order.billing_address' | t }}</h2>
-            <p>
-              <strong>{{ 'customer.order.payment_status' | t }}:</strong>
-              {{ order.financial_status_label }}
-            </p>
-            {{ order.billing_address | format_address }}
+
+          <div id="address_box">
+            <div class="billing_address_box">
+              <h2>{{ 'customer.order.billing_address' | t }}</h2>
+              <p>
+                <strong>{{ 'customer.order.payment_status' | t }}:</strong>
+                {{ order.financial_status_label }}
+              </p>
+              {{ order.billing_address | format_address }}
+            </div>
+            <div class="customer_address_box">
+              <h2>{{ 'customer.order.shipping_address' | t }}</h2>
+              <p>
+                <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
+                {{ order.fulfillment_status_label }}
+              </p>
+              {{ order.shipping_address | format_address }}
+            </div>
           </div>
-          <div class="customer_address_box">
-            <h2>{{ 'customer.order.shipping_address' | t }}</h2>
-            <p>
-              <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
-              {{ order.fulfillment_status_label }}
-            </p>
-            {{ order.shipping_address | format_address }}
-          </div>
         </div>
+        <!-- //order_detail_wrapper -->
       </div>
     </div>
   </div>
