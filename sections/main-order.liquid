@@ -265,6 +265,7 @@
                 </td>
               </tr>
 <!--/小計-->
+<!--ディスカウント-->
               {%- if order.cart_level_discount_applications != blank -%}
                 <tr role="row">
                   {%- for discount_application in order.cart_level_discount_applications -%}
@@ -291,6 +292,9 @@
                   {%- endfor -%}
                 </tr>
               {%- endif -%}
+<!--/ディスカウント-->
+
+<!--配送-->
               {%- for shipping_method in order.shipping_methods -%}
                 <tr role="row">
                   <td id="RowShipping" role="rowheader" scope="row" colspan="4">
@@ -305,6 +309,8 @@
                   </td>
                 </tr>
               {%- endfor -%}
+<!--/配送-->
+<!--税-->
               {%- for tax_line in order.tax_lines -%}
                 <tr role="row">
                   <td id="RowTax" role="rowheader" scope="row" colspan="4">
@@ -320,6 +326,8 @@
                   </td>
                 </tr>
               {%- endfor -%}
+<!--税-->
+<!--関税-->
               {%- if order.total_duties -%}
                 <tr role="row">
                   <td id="RowDuties" role="rowheader" scope="row" colspan="4">
@@ -330,6 +338,8 @@
                   </td>
                 </tr>
               {%- endif -%}
+<!--/関税-->
+<!--返金-->
               {%- if order.total_refunded_amount > 0 -%}
                 <tr role="row">
                   <td id="RowTotalRefund" role="rowheader" scope="row" colspan="3">
@@ -345,12 +355,15 @@
                   </td>
                 </tr>
               {%- endif -%}
+<!--/返金-->
+<!--合計-->
               <tr role="row">
                 <td id="RowTotal" role="rowheader" scope="row" colspan="3">{{ 'customer.order.total' | t }}</td>
                 <td headers="RowTotal" role="cell" colspan="2" data-label="{{ 'customer.order.total' | t }}">
                   {{ order.total_net_amount | money_with_currency }}
                 </td>
               </tr>
+<!--/合計-->
             </tfoot>
           </table>
         </div>
