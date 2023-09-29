@@ -426,7 +426,7 @@
     },
     "orders": {
       "title": "注文履歴",
-      "order_number": "注文",
+      "order_number": "ご注文",
       "order_number_link": "注文番号{{ number }}",
       "date": "日付",
       "payment_status": "支払い状況",
