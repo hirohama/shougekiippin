@@ -16,6 +16,7 @@
     {%- endunless -%}
 
     <title>
+      
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"A{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}B{% endif -%}
