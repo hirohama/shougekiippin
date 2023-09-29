@@ -1278,9 +1278,7 @@ form#RegisterForm textarea{
     border-radius: 0 0 1rem 0;
 }
 /*-----------account orders------------*/
-
 /*#order_list -> form#ContactFormに並べて記入*/
-
 #order_list #order_list_wrapper{
     font-size:1.4rem;
 }
@@ -1301,7 +1299,18 @@ form#RegisterForm textarea{
 }
 /*-----------order detail------------*/
 /*#order_detail -> form#ContactFormに並べて記入*/
-
+table.order-details{
+    width:100%;
+}
+.order-details th,
+.order-details td{
+    text-align: center;
+    padding:1rem;
+    border-bottom:1px dotted #999;
+}
+.order-details td:last-child{
+    text-align: right;
+}
 #address_box{
   display:flex;
 }
