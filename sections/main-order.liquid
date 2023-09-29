@@ -376,30 +376,26 @@
           <h2>{{ 'customer.order.billing_address' | t }}</h2>
               <table>
                 <tr>
-                  <th></th>
                   <td>{{ 'customer.order.payment_status' | t }}:{{ order.financial_status_label }}</td>
                 </tr>
                 <tr>
-                  <th>ご住所</th>
                   <td>
-                    〒{{ customer.default_address.zip }}<br>{{ customer.default_address.province }} {{ customer.default_address.city }} {{ customer.default_address.street }}</td>
+                    <p>{{ order.billing_address.last_name }} {{ order.billing_address.first_name }}</p>
+   <p>{{ order.billing_address.zip }}</p>
+   <p>{{ order.billing_address.province }}</p>
+   <p>{{ order.billing_address.city }}</p>
+   <p>{{ order.billing_address.address1 }}</p>
+   <p>{{ order.billing_address.address2 }}</p></td>
                 </tr>
                 <tr>
-                  <th>TEL</th>
                   <td>
                     {{ customer.default_address.phone }}
                   </td>
                 </tr>
                 <tr>
-                  <th>E-MAIL</th>
                   <td>{{ customer.email }}</td>
                 </tr>
               </table>
-          
-          <p>
-            <strong>{{ 'customer.order.payment_status' | t }}:</strong>
-            {{ order.financial_status_label }}
-          </p>
           {{ order.billing_address | format_address }}
         </div>
         <div class="customer_address_box">
