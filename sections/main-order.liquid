@@ -351,7 +351,7 @@
                     colspan="2"
                     data-label="{{ 'customer.order.total_refunded' | t }}"
                   >
-                    -{{ order.total_refunded_amount | money_with_currency }}
+                    -&yen;{{ order.total_refunded_amount | money_with_currency }}
                   </td>
                 </tr>
               {%- endif -%}
@@ -360,7 +360,7 @@
               <tr role="row">
                 <td id="RowTotal" role="rowheader" scope="row" colspan="3">{{ 'customer.order.total' | t }}</td>
                 <td headers="RowTotal" role="cell" colspan="2" data-label="{{ 'customer.order.total' | t }}">
-                  {{ order.total_net_amount | money_with_currency }}
+                  &yen;{{ order.total_net_amount | money_with_currency }}
                 </td>
               </tr>
 <!--/合計-->
