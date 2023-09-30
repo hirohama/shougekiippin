@@ -141,8 +141,9 @@
             required
           >
         </div>
-
-        {%- if form.password_needed -%}
+{% comment %}
+        {- if form.password_needed -}
+{% endcomment %}
           <div class="field">
             <label for="CustomerPassword">
               {{ 'customer.login_page.password' | t }}
@@ -163,11 +164,12 @@
               <a href="#recover">
                 {{ 'customer.login_page.forgot_password' | t }}
               </a>
-            </div>
+            </div> 
           </div>
-
-          
-        {%- endif -%}
+ 
+{% comment %}
+        {- endif -}
+{% endcomment %}
 
         <button class="btn">
           <span class="info foJ_Mid">

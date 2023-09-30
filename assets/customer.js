@@ -35,19 +35,25 @@ class CustomerAddresses {
   }
 
   _setupCountries() {
-    if (Shopify && Shopify.CountryProvinceSelector) {
+    
+  //2023.09.30
+  //マイページ->ご住所の編集にて、
+  //選択した国に対応した県名を返してセレクトボックスを表示するスクリプト
+  //エラーが返るのでコメントアウトした
+
+    //if (Shopify && Shopify.CountryProvinceSelector) {
       // eslint-disable-next-line no-new
-      new Shopify.CountryProvinceSelector('AddressCountryNew', 'AddressProvinceNew', {
-        hideElement: 'AddressProvinceContainerNew',
-      });
-      this.elements.countrySelects.forEach((select) => {
-        const formId = select.dataset.formId;
+      //new Shopify.CountryProvinceSelector('AddressCountryNew', 'AddressProvinceNew', {
+        //hideElement: 'AddressProvinceContainerNew',
+      //});
+      //this.elements.countrySelects.forEach((select) => {
+        //const formId = select.dataset.formId;
         // eslint-disable-next-line no-new
-        new Shopify.CountryProvinceSelector(`AddressCountry_${formId}`, `AddressProvince_${formId}`, {
-          hideElement: `AddressProvinceContainer_${formId}`,
-        });
-      });
-    }
+        //new Shopify.CountryProvinceSelector(`AddressCountry_${formId}`, `AddressProvince_${formId}`, {
+          //hideElement: `AddressProvinceContainer_${formId}`,
+        //});
+      //});
+    //}
   }
 
   _setupEventListeners() {

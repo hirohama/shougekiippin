@@ -1089,7 +1089,7 @@ form#ContactForm select,
 form#ContactForm textarea{
     width:100%;
 }
-/*-----------customer_login------------*/
+/*-----------customer_login,recover------------*/
 div#customer_login_form_box,
 div#recover_customer_password_form_box{
     display: block;
@@ -1118,7 +1118,8 @@ div#customer_login_form_box textarea,
 div#recover_customer_password_form_box input[type="email"]{
     width:63%;
 }
-.customer .field{
+div#customer_login_form_box .field,
+div#recover_customer_password_form_box .field{
     width:90%;
     margin:auto;
     padding:1.5vw 0 0.5vw;
@@ -1384,10 +1385,15 @@ table.order_price_details{
   width:50%;
 }
 /*------------------addresses--------------------*/
-.addresses_list_box{
+.addresses_list_box,
+#AddAddress{
     background: #F4F4F4;
     border-radius: 2rem;
     padding:2rem 0;
+    margin-top:2rem;
+}
+#AddAddress{
+    padding:2rem 2rem;
 }
 .addresses_list li{
     width:calc(100% - 5rem);
@@ -1400,6 +1406,17 @@ table.order_price_details{
     border-radius: 1rem;
     padding:2rem;
 }
+.addresses_list li h5.default_address{
+    display: inline-block;
+    background: #FC0;
+    font-size:1.3rem;
+    padding:0.5rem;
+    margin-bottom:0.5rem;
+    border-radius:0.3rem;
+}
+.addresses_list li h2{
+    font-size:2rem;
+}
 .addresses_list li:first-child{
     margin-top:0;
 }
@@ -1410,9 +1427,45 @@ table.order_price_details{
     margin:2rem 1rem 0;
 }
 .btn_form_box{
+    text-align: right;
+}
+.addresses form,
+form#address_form_new{
+    display:block;
+    width:80%;
+    margin:auto;
+    text-align: left;
+}
+.addresses h3,
+#AddAddress h2{
+    font-size:1.8rem;
+    text-align: left;
+    border-bottom:1px dotted #666;
+}
+.default_address_check,
+.addresses_edit_btn{
     text-align: center;
 }
+.default_address_check{
+    margin:1rem 0;
+}
+
 /*--------------------form,input_common----------------*/
+span.require{
+    display: inline-block;
+    background: #C00;
+    font-size: .9rem;
+    padding: 0.1rem 0.8rem;
+    margin: 0 0 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    vertical-align: 0.2rem;
+    line-height: 1.3rem;
+    color:#FFF;
+}
+label.subset{
+    font-size:1.3rem;
+    color:#666;
+}
 form .field,
 form .min_head{
     margin-top:2vw;
@@ -1815,6 +1868,11 @@ a.btn{
     line-height:1.5rem;
     text-decoration: none;
 }
+.t_link.no_deco.button_mode{
+    padding:0.5rem 2rem;
+    border:1px solid #333;
+    border-radius: 0.3rem;
+}
     .t_link .icon{
         width:1.5rem;
         height:1.5rem;
@@ -1822,7 +1880,7 @@ a.btn{
         background-size: 140%;
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        vertical-align:-0.3rem;
+        vertical-align:-0.25rem;
     }
 
 
@@ -1861,6 +1919,9 @@ a.btn{
 }
 .icon.make_account{
     background-image: url("{{ '_img_make_account.svg' | asset_url }}");
+}
+.icon.add_address{
+    background-image: url("{{ '_img_add_address.svg' | asset_url }}");
 }
 
 /*--------------------status------------------------------*/

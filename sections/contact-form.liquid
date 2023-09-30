@@ -17,7 +17,7 @@
 <div class="content">
   <div class="innerpage_wrapper btm">
     <div class="contact editor_content">
-      {%- comment -%} タイトル {%- endcomment -%}
+{%- comment -%} タイトル {%- endcomment -%}
       <!-- h2 class="title title-wrapper--no-top-margin">{{ section.settings.heading | escape }}</h2 -->
       担当者より2〜3営業日以内にメールでご連絡させていただきます。<br>
       携帯電話のメールアドレスを設定のお客様は、｢メールの受信拒否、ドメイン指定受信、迷惑メール防止機能」などを設定している場合、受信ができない場合があります。
@@ -25,7 +25,7 @@
       {%- form 'contact', id: 'ContactForm', class: 'isolate custom-form' -%}
         <div id="ContactForm_wrapper" class="foJ_Thin">
           {%- if form.posted_successfully? -%}
-            {%- comment -%} 成功した時のコメント {%- endcomment -%}
+{%- comment -%} 成功した時のコメント {%- endcomment -%}
             <div class="form_alert success">
               <div>
               <span class="form_alert_icon">{% render 'icon-success' %}</span>
@@ -34,7 +34,7 @@
                 <span class="alert_content">{{ 'templates.contact.form.post_success' | t }}</span>
             </div>
           {%- elsif form.errors -%}
-            {%- comment -%} エラー表示 {%- endcomment -%}
+{%- comment -%} エラー表示 {%- endcomment -%}
             <div class="form_alert error">
               <!--h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus-->
               <div>
@@ -54,7 +54,7 @@
           {%- endif -%}
           {% for block in section.blocks %}
             {% case block.type %}
-                {%- comment -%} Eメール {%- endcomment -%}
+{%- comment -%} Eメール {%- endcomment -%}
               {% when 'email' %}
                 <div
                   class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
@@ -63,9 +63,9 @@
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
                     {% if block.settings.label %}
                       <span>{{ block.settings.title }}</span>
-                      {% if block.settings.check -%}
-                        <span aria-hidden="true">*</span>
-                      {%- endif %}
+                      {% if block.settings.check %}
+                        <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
+                      {% endif %}
                     {% endif %}
                   </label>
 
@@ -79,7 +79,7 @@
                     autocorrect="off"
                     autocapitalize="off"
                     value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                    required="true"
+                    required
                     {% if form.errors contains 'email' %}
                       aria-invalid="true"
                       aria-describedby="ContactForm-email-error"
@@ -107,7 +107,7 @@
                   <br>
                 {% endif %}
 
-                {%- comment -%} Eメール（確認用） {%- endcomment -%}
+{%- comment -%} Eメール（確認用） {%- endcomment -%}
               {% when 'email_verify' %}
                 <div
                   class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
@@ -116,9 +116,9 @@
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
                     {% if block.settings.label %}
                       <span>{{ block.settings.title }}</span>
-                      {% if block.settings.check -%}
-                        <span aria-hidden="true">*</span>
-                      {%- endif %}
+                      {% if block.settings.check %}
+                        <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
+                      {% endif %}
                     {% endif %}
                   </label>
                   <input
@@ -131,8 +131,8 @@
                     autocorrect="off"
                     autocapitalize="off"
                     value="{% if form.email_verify %}{{ form.email_verify }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                    required="true"
                     placeholder="{{ block.settings.placeholder }}"
+                    required
                   >
                 </div>
                 {% if block.settings.width_setting != 'col1' %}
@@ -147,7 +147,7 @@
                   <br>
                 {% endif %}
 
-                {%- comment -%} 電話番号 {%- endcomment -%}
+{%- comment -%} 電話番号 {%- endcomment -%}
               {% when 'telephone' %}
                 <div
                   class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
@@ -156,9 +156,9 @@
                   <label class="field__label" for="ContactForm-phone">
                     {% if block.settings.label %}
                       <span>{{ block.settings.title }}</span>
-                      {% if block.settings.check -%}
-                        <span aria-hidden="true">*</span>
-                      {%- endif %}
+                      {% if block.settings.check %}
+                        <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
+                      {% endif %}
                     {% endif %}
                   </label>
 
@@ -172,7 +172,7 @@
                     value=""
                     placeholder="{{ block.settings.placeholder }}"
                     {% if block.settings.check %}
-                      required="true"
+                      required
                     {% endif %}
                   >
                 </div>
@@ -188,24 +188,24 @@
                   <br>
                 {% endif %}
 
-                {%- comment -%} 見出し {%- endcomment -%}
+{%- comment -%} 見出し {%- endcomment -%}
               {% when 'formHeading_p' %}
                 <div class="custom-form__block custom-form__block--heading form-item" {{ block.shopify_attributes }}>
                   <p>{{ block.settings.title }}</p>
                 </div>
 
-                {%- comment -%} 小見出し(複数の項目をまとめる。住所など) {%- endcomment -%}
+{%- comment -%} 小見出し(複数の項目をまとめる。住所など) {%- endcomment -%}
               {% when 'formHeading_span' %}
                 <div class="min_head w_col1{% if block.settings.margin %} no-margin{% endif %}" {{ block.shopify_attributes }}>
                   <span>
                     {{- block.settings.title }}
                     {% if block.settings.check %}
-                      <span aria-hidden="true">*</span>
+                      <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
                     {% endif %}
                   </span>
                 </div>
 
-                {%- comment -%} 1行 テキスト{%- endcomment -%}
+{%- comment -%} 1行 テキスト{%- endcomment -%}
               {% when 'text' %}
                 <div
                   class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
@@ -214,9 +214,9 @@
                   <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
                     {% if block.settings.label %}
                       <span>{{ block.settings.title }}</span>
-                      {% if block.settings.check -%}
-                        <span aria-hidden="true">*</span>
-                      {%- endif %}
+                      {% if block.settings.check %}
+                        <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
+                      {% endif %}
                     {% endif %}
                   </label>
                   <input
@@ -230,7 +230,7 @@
                     value=""
                     placeholder="{{ block.settings.placeholder }}"
                     {% if block.settings.check %}
-                      required="true"
+                      required
                     {% endif %}
                   >
                 </div>
@@ -246,7 +246,7 @@
                   <br>
                 {% endif %}
 
-                {%- comment -%} テキストエリア {%- endcomment -%}
+{%- comment -%} テキストエリア {%- endcomment -%}
               {% when 'textarea' %}
                 <div
                   class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
@@ -254,9 +254,9 @@
                 >
                   <label class="form__label field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
                     {{ block.settings.title }}
-                    {% if block.settings.check -%}
-                      <span aria-hidden="true">*</span>
-                    {%- endif %}
+                    {% if block.settings.check %}
+                      <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
+                    {% endif %}
                   </label>
                   <textarea
                     rows="10"
@@ -265,7 +265,7 @@
                     name="contact[{{ block.settings.title | handleize | default: 'textarea' }}]"
                     placeholder="{{ block.settings.placeholder }}"
                     {% if block.settings.check %}
-                      required="true"
+                      required
                     {% endif %}
                   >
                 {{- form.body -}}
@@ -284,7 +284,7 @@
                 {% endif %}
 
 
-                {%- comment -%} 装飾 {%- endcomment -%}
+{%- comment -%} 装飾 {%- endcomment -%}
               {% when 'spacer' %}
                 {%- assign hr_class = 'hr--clear' -%}
                 {%- if block.settings.line -%}
@@ -294,7 +294,7 @@
                   <hr class="{{ hr_class }}">
                 </div>
 
-                {%- comment -%} チェックボックス {%- endcomment -%}
+{%- comment -%} チェックボックス {%- endcomment -%}
               {% when 'checkbox' %}
                 <div class="field no-border" {{ block.shopify_attributes }}>
                   <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
@@ -305,7 +305,7 @@
                       name="contact[{{ block.settings.title | handleize | default: 'checkbox' }}]"
                       value="{{ block.settings.title }}"
                       {% if block.settings.check %}
-                        required="true"
+                        required
                       {% endif %}
                     >
                     {{ block.settings.title }}
@@ -315,7 +315,7 @@
                   </label>
                 </div>
 
-                {%- comment -%} ラジオボタン {%- endcomment -%}
+{%- comment -%} ラジオボタン {%- endcomment -%}
               {% when 'radio' %}
                 <div class="field no-border colum" {{ block.shopify_attributes }}>
                   {% if block.settings.title != blank %}
@@ -335,7 +335,7 @@
                         name="contact[{{ block.settings.title | handleize | default: 'radio' }}]"
                         value="{{ block.settings.label-one }}"
                         {% if block.settings.check %}
-                          required="true"
+                          required
                         {% endif %}
                       >
                       <label for="Form-{{ section.id }}-{{ forloop.index0 }}-1">
@@ -415,7 +415,7 @@
                   {% endif %}
                 </div>
 
-                {%- comment -%} セレクトボックス50 {%- endcomment -%}
+{%- comment -%} セレクトボックス50 {%- endcomment -%}
               {% when 'select_fifty' %}
                 <div
                   class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
@@ -423,6 +423,9 @@
                 >
                   {% if block.settings.label %}
                     <span>{{ block.settings.title }}</span>
+                    {% if block.settings.check %}
+                      <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
+                    {% endif %}
                   {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
@@ -433,7 +436,7 @@
                       class="contactFormSelect foJ_Thin"
                       name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                       {% if block.settings.check %}
-                        required="true"
+                        required
                       {% endif %}
                     >
                       <option value="{{ block.settings.label-zero }}">{{ block.settings['label-zero'] }}</option>
@@ -668,7 +671,7 @@
                   {% endif %}
                 {% endunless %}
 
-                {%- comment -%} セレクトボックス20 {%- endcomment -%}
+{%- comment -%} セレクトボックス20 {%- endcomment -%}
               {% when 'select_twenty' %}
                 <div
                   class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
@@ -676,6 +679,9 @@
                 >
                   {% if block.settings.label %}
                     <span>{{ block.settings.title }}</span>
+                    {% if block.settings.check %}
+                      <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
+                    {% endif %}
                   {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
@@ -686,7 +692,7 @@
                       class="contactFormSelect foJ_Thin"
                       name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                       {% if block.settings.check %}
-                        required="true"
+                        required
                       {% endif %}
                     >
                       <option value="{{ block.settings.label-zero }}">{{ block.settings['label-zero'] }}</option>
@@ -779,7 +785,7 @@
                   <br>
                 {% endif %}
 
-                {%- comment -%} セレクトボックス10 {%- endcomment -%}
+{%- comment -%} セレクトボックス10 {%- endcomment -%}
               {% when 'select_ten' %}
                 <div
                   class="field{% if block.settings.width_setting == "col1" %} w_1col{% endif %}{% if block.settings.width_setting == "col2" %} w_2col{% endif %}{% if block.settings.width_setting == "col3" %} w_3col{% endif %}{% if block.settings.margin %} no-margin{% endif %}"
@@ -787,6 +793,9 @@
                 >
                   {% if block.settings.label %}
                     <span>{{ block.settings.title }}</span>
+                    {% if block.settings.check %}
+                      <span class="require" aria-hidden="true">{{ 'templates.contact.form.require' | t }}</span>
+                    {% endif %}
                   {% endif %}
                   <label
                     for="Form-{{ section.id }}-{{ forloop.index0 }}"
@@ -797,7 +806,7 @@
                       class="contactFormSelect foJ_Thin"
                       name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                       {% if block.settings.check %}
-                        required="true"
+                        required
                       {% endif %}
                     >
                       <option value="{{ block.settings.label-zero }}">{{ block.settings['label-zero'] }}</option>
@@ -853,13 +862,16 @@
           <input type="checkbox" class="checkbox_box" required>
           プライバシーポリシーに同意する
           </div>
-          {%- comment -%} フォームボタン {%- endcomment -%}
+
+{%- comment -%} フォームボタン {%- endcomment -%}
+
           <div class="btn" onclick="submitContactForm(event)">
             <span class="info foJ_Mid">
               {{ 'templates.contact.form.send' | t }}
             </span>
             <div class="icon submit"></div>
           </div>
+
         </div>
         <!-- /#ContactForm_wrapper -->
       {%- endform -%}

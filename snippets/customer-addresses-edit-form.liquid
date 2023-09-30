@@ -1,0 +1,258 @@
+<h2 class="foJ_Mid">{{ address.last_name }}&nbsp;{{ address.first_name }}</h2>
+      {% if address.company != blank %}
+      会社名：{{ address.company }}<br>
+      {% endif %}
+      〒{{ address.zip }}&nbsp;{{ address.province }} {{ address.city }} {{ address.street }} {{ address.country }}<br>
+      <div class="btn_form_box">
+<!--編集ボタン-->
+            <button
+              type="button"
+              id="EditFormButton_{{ address.id }}"
+              aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+              aria-controls="EditAddress_{{ address.id }}"
+              aria-expanded="false"
+              data-address-id="{{ address.id }}"
+              class="t_link no_deco button_mode"
+            ><div class="icon edit"></div>{{ 'customer.addresses.edit' | t }}</button>
+<!--/編集ボタン-->
+<!--削除ボタン-->
+            <button
+              type="button"
+              aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+              data-target="{{ address.url }}"
+              data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+              class="t_link no_deco button_mode"
+            ><div class="icon delete"></div>{{ 'customer.addresses.delete' | t }}</button>
+<!--/削除ボタン-->
+          <div id="EditAddress_{{ address.id }}">
+            <h3 class="foJ_Mid">{{ 'customer.addresses.edit_address' | t }}</h3>
+            {%- form 'customer_address', address -%}
+<!--姓-->
+              <div class="field w_2col">
+                <label for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}<span class="require" aria-hidden="true">{{ 'customer.addresses.require' | t }}</span></label>
+                <input
+                  type="text"
+                  id="AddressLastName_{{ form.id }}"
+                  name="address[last_name]"
+                  value="{{ form.last_name }}"
+                  autocomplete="family-name"
+                  placeholder="{{ 'customer.addresses.last_name' | t }}"
+                  required
+                >
+              </div>
+<!--名-->
+              <div class="field w_2col">
+                <label for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}<span class="require" aria-hidden="true">{{ 'customer.addresses.require' | t }}</span></label>
+                <input
+                  type="text"
+                  id="AddressFirstName_{{ form.id }}"
+                  name="address[first_name]"
+                  value="{{ form.first_name }}"
+                  autocomplete="given-name"
+                  placeholder="{{ 'customer.addresses.first_name' | t }}"
+                  required
+                >
+              </div>
+
+<!--会社-->
+              <div class="field w_1col">
+                <label for="AddressCompany_{{ form.id }}">{{ 'customer.addresses.company' | t }}</label>
+                <input
+                  type="text"
+                  id="AddressCompany_{{ form.id }}"
+                  name="address[company]"
+                  value="{{ form.company }}"
+                  autocomplete="organization"
+                  placeholder="{{ 'customer.addresses.company' | t }}"
+                >
+              </div>
+<!--電話番号-->
+              <div class="field w_1col">
+                <label for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}<span class="require" aria-hidden="true">{{ 'customer.addresses.require' | t }}</span></label>
+                <input
+                  type="tel"
+                  id="AddressPhone_{{ form.id }}"
+                  name="address[phone]"
+                  value="{{ form.phone }}"
+                  autocomplete="tel"
+                  placeholder="{{ 'customer.addresses.phone' | t }}"
+                  required
+                >
+                
+              </div>
+<!--見出し-->
+              <div class="min_head w_col1">
+                  <span>ご住所<span class="require" aria-hidden="true">{{ 'customer.addresses.require' | t }}</span>
+                  </span>
+              </div>
+<!--郵便番号-->
+
+              <div class="field w_3col no-margin">
+                <!--label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label-->
+                <input
+                  type="text"
+                  id="AddressZip_{{ form.id }}"
+                  name="address[zip]"
+                  value="{{ form.zip }}"
+                  autocapitalize="characters"
+                  autocomplete="postal-code"
+                  placeholder="{{ 'customer.addresses.zip' | t }}"
+                  required
+                >
+              </div>
+<!--国-->
+              <input type="hidden" id="AddressCountry_{{ form.id }}" name="address[country]" value="Japan">
+              <!--{% comment %}
+              <div>
+                <label for="AddressCountry_{{ form.id }}">
+                  {{ 'customer.addresses.country' | t }}
+                </label>
+                <div class="select">
+                  <select
+                    id="AddressCountry_{{ form.id }}"
+                    name="address[country]"
+                    data-address-country-select
+                    data-default="{{ form.country }}"
+                    data-form-id="{{ form.id }}"
+                    autocomplete="country"
+                  >
+                    {{ all_country_option_tags }}
+                  </select>
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <use href="#icon-caret" />
+                  </svg>
+                </div>
+              </div>
+              {% endcomment %}-->
+<!--都道府県-->
+              <div class="field w_3col no-margin" id="AddressProvinceContainer_{{ form.id }}">
+                {% comment %}
+                <!--label for="AddressProvince_{{ form.id }}">
+                  {{ 'customer.addresses.province' | t }}
+                </label>
+                <div class="select">
+                  <select
+                    id="AddressProvince_{{ form.id }}"
+                    name="address[province]"
+                    data-default="{{ form.province }}"
+                    autocomplete="address-level1"
+                  ></select>
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <use href="#icon-caret" />
+                  </svg>
+                </div-->
+                {% endcomment %}
+                <div class="select">
+                  <label for="AddressProvince_{{ form.id }}" class="selectbox">{{ customer.addresses.province }}
+                  <!--{{ 'customer.addresses.province' | t }}-->
+
+                  <select id="AddressProvince_{{ form.id }}" name="address[province]" data-default="{{ form.province }}" autocomplete="address-level1" required><option value="Hokkaidō">北海道</option>
+                  <option value="Aomori">青森県</option>
+                  <option value="Iwate">岩手県</option>
+                  <option value="Miyagi">宮城県</option>
+                  <option value="Akita">秋田県</option>
+                  <option value="Yamagata">山形県</option>
+                  <option value="Fukushima">福島県</option>
+                  <option value="Ibaraki">茨城県</option>
+                  <option value="Tochigi">栃木県</option>
+                  <option value="Gunma">群馬県</option>
+                  <option value="Saitama">埼玉県</option>
+                  <option value="Chiba">千葉県</option>
+                  <option value="Tōkyō">東京都</option>
+                  <option value="Kanagawa">神奈川県</option>
+                  <option value="Niigata">新潟県</option>
+                  <option value="Toyama">富山県</option>
+                  <option value="Ishikawa">石川県</option>
+                  <option value="Fukui">福井県</option>
+                  <option value="Yamanashi">山梨県</option>
+                  <option value="Nagano">長野県</option>
+                  <option value="Gifu">岐阜県</option>
+                  <option value="Shizuoka">静岡県</option>
+                  <option value="Aichi">愛知県</option>
+                  <option value="Mie">三重県</option>
+                  <option value="Shiga">滋賀県</option>
+                  <option value="Kyōto">京都府</option>
+                  <option value="Ōsaka">大阪府</option>
+                  <option value="Hyōgo">兵庫県</option>
+                  <option value="Nara">奈良県</option>
+                  <option value="Wakayama">和歌山県</option>
+                  <option value="Tottori">鳥取県</option>
+                  <option value="Shimane">島根県</option>
+                  <option value="Okayama">岡山県</option>
+                  <option value="Hiroshima">広島県</option>
+                  <option value="Yamaguchi">山口県</option>
+                  <option value="Tokushima">徳島県</option>
+                  <option value="Kagawa">香川県</option>
+                  <option value="Ehime">愛媛県</option>
+                  <option value="Kōchi">高知県</option>
+                  <option value="Fukuoka">福岡県</option>
+                  <option value="Saga">佐賀県</option>
+                  <option value="Nagasaki">長崎県</option>
+                  <option value="Kumamoto">熊本県</option>
+                  <option value="Ōita">大分県</option>
+                  <option value="Miyazaki">宮崎県</option>
+                  <option value="Kagoshima">鹿児島県</option>
+                  <option value="Okinawa">沖縄県</option></select>
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <use href="#icon-caret"></use>
+                  </svg>
+                  </label>
+                </div>
+              </div>
+
+<!--市長区村-->
+              <div class="field w_2col no-margin">
+                <label for="AddressCity_{{ form.id }}" class="subset">{{ 'customer.addresses.city' | t }}</label>
+                <input
+                  type="text"
+                  id="AddressCity_{{ form.id }}"
+                  name="address[city]"
+                  value="{{ form.city }}"
+                  autocomplete="address-level2"
+                  placeholder="{{ 'customer.addresses.city' | t }}"
+                  required
+                >
+              </div>
+<!--住所1-->
+              <div class="field w_1col no-margin">
+                <label for="AddressAddress1_{{ form.id }}" class="subset">{{ 'customer.addresses.address1' | t }}</label>
+                <input
+                  type="text"
+                  id="AddressAddress1_{{ form.id }}"
+                  name="address[address1]"
+                  value="{{ form.address1 }}"
+                  autocomplete="address-line1"
+                  placeholder="{{ 'customer.addresses.address1' | t }}"
+                  required
+                >
+              </div>
+<!--住所2-->
+              <div class="field w_1col no-margin">
+                <label for="AddressAddress2_{{ form.id }}" class="subset">{{ 'customer.addresses.address2' | t }}</label>
+                <input
+                  type="text"
+                  id="AddressAddress2_{{ form.id }}"
+                  name="address[address2]"
+                  value="{{ form.address2 }}"
+                  autocomplete="address-line2"
+                  placeholder="{{ 'customer.addresses.address2' | t }}"
+                >
+              </div>
+
+
+<!--既定の住所のチェックボックス-->
+              <div class="default_address_check">
+                {{ form.set_as_default_checkbox }}
+                <label for="address_default_address_{{ form.id }}">
+                  {{ 'customer.addresses.set_default' | t }}
+                </label>
+              </div>
+              <div class="addresses_edit_btn">
+                <button class="t_link no_deco button_mode"><div class="icon submit"></div>{{ 'customer.addresses.update' | t }}</button>
+                <button class="t_link no_deco button_mode" type="reset"><div class="icon close"></div>{{ 'customer.addresses.cancel' | t }}</button>
+              </div>
+            {%- endform -%}
+          </div>
+          </div>
+          <!--/btn_form_box-->
+
