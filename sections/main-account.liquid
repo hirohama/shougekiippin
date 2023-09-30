@@ -53,6 +53,12 @@
                   <th>お名前</th>
                   <td>{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}</td>
                 </tr>
+                {% if customer.default_address.company != blank %}
+                <tr>
+                  <th>会社・法人名</th>
+                  <td>{{ customer.default_address.company }}</td>
+                </tr>
+                {% endif %}
                 <tr>
                   <th>ご住所</th>
                   <td>
