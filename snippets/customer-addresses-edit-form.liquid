@@ -1,6 +1,6 @@
 <h2 class="foJ_Mid">{{ address.last_name }}&nbsp;{{ address.first_name }}</h2>
       {% if address.company != blank %}
-      会社・法人名：{{ address.company }}<br>
+      {{ 'customer.addresses.company' | t }}：{{ address.company }}<br>
       {% endif %}
       〒{{ address.zip }}&nbsp;{{ address.province }} {{ address.city }} {{ address.street }} {{ address.country }}<br>
       <div class="btn_form_box">
