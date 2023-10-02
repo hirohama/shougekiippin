@@ -15,6 +15,8 @@
   }
 {%- endstyle -%}
 {% endcomment %}
+<div class="content">
+  <div class="innerpage_wrapper btm">
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
@@ -108,6 +110,8 @@
   </div>
 </div>
 
+  </div>
+</div>
 {% schema %}
 {
   "name": "t:sections.collapsible_content.name",
