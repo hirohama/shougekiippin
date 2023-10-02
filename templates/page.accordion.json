@@ -152,12 +152,69 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "a0a22c54-11e3-4c2d-bf45-8cb6a843b881": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "賞味期限はどれぐらいですか",
+            "icon": "check_mark",
+            "row_content": "<p>商品によって異なりますので、各商品情報をご確認ください。<\/p>",
+            "page": ""
+          }
+        },
+        "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "保存方法を教えてください",
+            "icon": "check_mark",
+            "row_content": "<p>商品によって異なりますので、各商品情報をご確認ください。<\/p>",
+            "page": ""
+          }
+        },
+        "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "実物を見れる店舗はありますか",
+            "icon": "check_mark",
+            "row_content": "<p>冷凍での販売はWEB限定となりますが、元の商品はそれぞれのお店で提供しておりますので、ぜひお店へ足を運んでみてください。<\/p>",
+            "page": ""
+          }
+        },
+        "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-1",
+        "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-2",
+        "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-3",
+        "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-4"
+      ],
+      "settings": {
+        "caption": "その他のよくあるご質問",
+        "heading": "",
+        "heading_alignment": "center",
+        "layout": "none",
+        "open_first_collapsible_row": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "title",
     "main",
     "60a9c95a-999f-434a-aa63-40181c89df79",
-    "08817919-e8b3-4d8b-90f2-b2bef5c82c66"
+    "08817919-e8b3-4d8b-90f2-b2bef5c82c66",
+    "a0a22c54-11e3-4c2d-bf45-8cb6a843b881"
   ]
 }
