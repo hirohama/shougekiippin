@@ -642,6 +642,7 @@ h3 .icon-arrow,
 }
 
 /* base-details-summary */
+/*
 summary {
   cursor: pointer;
   list-style: none;
@@ -693,7 +694,7 @@ summary::-webkit-details-marker {
     z-index: 2;
   }
 }
-
+*/
 /* base-focus */
 /*
   Focus ring - default (with offset)

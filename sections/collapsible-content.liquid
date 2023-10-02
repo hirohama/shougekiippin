@@ -18,29 +18,29 @@
 <div class="content">
   <div class="innerpage_wrapper foJ_Thin btm">
 
+<!--{% comment %}
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
-      <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
-        <div
-          class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          style="text-align: {{ section.settings.heading_alignment }};"
-        >
+       <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
+{% endcomment %}-->
+        <div class="editor_content foJ_Thin">
+        <div class="" style="text-align: {{ section.settings.heading_alignment }};">
           {%- if section.settings.caption != blank -%}<!--見出し設定-->
-            <p class="caption-with-letter-spacing">
+            <h5 class="no-margin">
               {{ section.settings.caption | escape }}
-            </p>
+            </h5>
           {% endif %}
           {%- if section.settings.heading != blank -%}
-            <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
+            <p>
               {{ section.settings.heading }}
-            </h2>
+            </p>
           {%- else -%}
             <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
           {% endif %}
         </div>
-        <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid{% if section.settings.desktop_layout == 'image_second' %} collapsible-content__grid--reverse{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {% comment %}
+        <div class="summary_block">
+          <!--{% comment %}画像があるときの記述
           {%- if section.settings.image != blank -%}
             <div class="grid__item collapsible-content__grid-item">
               <div
@@ -73,13 +73,13 @@
               </div>
             </div>
           {% endif %}
-        {% endcomment %}
+        {% endcomment %}-->
+
+          <!--{% comment %}
           <div class="grid__item">
+        {% endcomment %}-->
             {%- for block in section.blocks -%}
-              <div
-                class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
-                {{ block.shopify_attributes }}
-              >
+              <div class="summary_" {{ block.shopify_attributes }}>
                 <details
                   id="Details-{{ block.id }}-{{ section.id }}"
                   {% if section.settings.open_first_collapsible_row and forloop.first %}
@@ -90,29 +90,38 @@
               {% comment %}
                     {% render 'icon-accordion', icon: block.settings.icon %}
               {% endcomment %}
-                    <h3 class="accordion__title inline-richtext h4">
+                    <h3 class="accordion_title foJ_Mid">
                       {{ block.settings.heading | default: block.settings.page.title }}
                     </h3>
-                    {% render 'icon-caret' %}
+                    <div class="icon"></div>
                   </summary>
                   <div
-                    class="accordion__content rte"
+                    class="accordion_content"
                     id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
                     role="region"
                     aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
                   >
-                    {{ block.settings.row_content }}
-                    {{ block.settings.page.content }}
+                    <div class="accordion_content_text">
+                      {{ block.settings.row_content }}
+                      {{ block.settings.page.content }}
+                    </div>
                   </div>
                 </details>
               </div>
             {%- endfor -%}
+          <!--{% comment %}
           </div>
+        {% endcomment %}-->
         </div>
+        </div>
+
+
+{% comment %}
       </div>
     </div>
   </div>
 </div>
+{% endcomment %}
 
   </div>
 </div>

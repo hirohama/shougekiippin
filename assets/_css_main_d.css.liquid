@@ -47,6 +47,7 @@ div#wrap{
     text-align:left;
     width:100%;
     height:auto;
+    word-break: break-word;
 }
 .content a{
     color:#ffba00;
@@ -1055,6 +1056,104 @@ ul.mark_list{
   }
 /*------------------------------------------------
 
+pages - FAQ
+
+-------------------------------------------------*/
+.summary_block{
+    width:90%;
+    margin:2rem auto 2rem;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+h3.accordion_title{
+    display:inline-block;
+    width:100%;
+    padding:1rem;
+    font-size:1.8rem;
+    line-height:2.8rem;
+    height:4.8rem;
+    border-bottom:1px dotted #333;
+}
+h3.accordion_title:before{
+    content:"Q.";
+    display:inline-block;
+    font-size:1.8rem;
+    width:2rem;
+}
+summary .icon {
+    display:block;
+        position: absolute;
+        top: 0.9rem;
+        right: 0.9rem;
+        width:3rem;
+        height:3rem;
+        background-color: #FC0;
+        border-radius: 9999px;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-image: url("{{ '_img_draw_down.svg' | asset_url }}");
+}
+summary[aria-expanded="true"] .icon{
+     background-image: url("{{ '_img_draw_up.svg' | asset_url }}");
+}
+.accordion_content{
+    position: relative;
+    padding:1rem;
+}
+.accordion_content_text{
+    display:inline-block;
+    margin-left:2.5rem;
+}
+.accordion_content_text p{
+}
+.accordion_content:before{
+    content:"A.";
+    font-weight:700;
+    display:block;
+    position: absolute;
+    left:1rem;
+    top:1rem;
+    font-size:1.8rem;
+    line-height:2.8rem;
+
+}
+.disclosure-has-popup[open] > summary::before {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  cursor: default;
+  content: ' ';
+  background: transparent;
+}
+
+.disclosure-has-popup > summary::before {
+  display: none;
+}
+
+.disclosure-has-popup[open] > summary + * {
+  z-index: 100;
+}
+
+@media screen and (min-width: 750px) {
+  .disclosure-has-popup[open] > summary + * {
+    z-index: 4;
+  }
+
+  .facets .disclosure-has-popup[open] > summary + * {
+    z-index: 2;
+  }
+}
+/*------------------------------------------------
+
 form,customer,account
 
 -------------------------------------------------*/
@@ -1848,7 +1947,7 @@ a.btn{
         right:0.3vw;
         width:calc(2.8vw - 2px);
         height:calc(2.8vw - 2px);
-        background: #FC0;
+        background-color: #FC0;
         border-radius: 9999px;
         background-size: 90%;
         background-repeat: no-repeat;
