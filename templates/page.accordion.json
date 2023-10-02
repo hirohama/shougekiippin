@@ -10,10 +10,72 @@
       "type": "main-page",
       "settings": {
       }
+    },
+    "60a9c95a-999f-434a-aa63-40181c89df79": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "電話でも注文できますか？",
+            "icon": "check_mark",
+            "row_content": "<p>ご注文方法はインターネットからのご注文のみとなっております。お電話やFAX、メールでのご注文は承っておりませんのでご了承ください。<\/p>",
+            "page": ""
+          }
+        },
+        "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-1",
+        "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-2",
+        "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-3",
+        "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-4"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Collapsible content",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "title",
-    "main"
+    "main",
+    "60a9c95a-999f-434a-aa63-40181c89df79"
   ]
 }
