@@ -40,6 +40,7 @@
           {% endif %}
         </div>
         <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid{% if section.settings.desktop_layout == 'image_second' %} collapsible-content__grid--reverse{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {% comment %}
           {%- if section.settings.image != blank -%}
             <div class="grid__item collapsible-content__grid-item">
               <div
@@ -72,6 +73,7 @@
               </div>
             </div>
           {% endif %}
+        {% endcomment %}
           <div class="grid__item">
             {%- for block in section.blocks -%}
               <div
@@ -85,7 +87,9 @@
                   {% endif %}
                 >
                   <summary id="Summary-{{ block.id }}-{{ section.id }}">
+              {% comment %}
                     {% render 'icon-accordion', icon: block.settings.icon %}
+              {% endcomment %}
                     <h3 class="accordion__title inline-richtext h4">
                       {{ block.settings.heading | default: block.settings.page.title }}
                     </h3>
@@ -134,26 +138,6 @@
     },
     {
       "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
-    },
-    {
-      "type": "select",
       "id": "heading_alignment",
       "label": "t:sections.collapsible_content.settings.heading_alignment.label",
       "options": [
@@ -193,19 +177,6 @@
       "default": "none"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "background-1"
-    },
-    {
-      "type": "color_scheme",
-      "id": "container_color_scheme",
-      "label": "t:sections.collapsible_content.settings.container_color_scheme.label",
-      "info": "t:sections.collapsible_content.settings.container_color_scheme.info",
-      "default": "background-2"
-    },
-    {
       "type": "checkbox",
       "id": "open_first_collapsible_row",
       "default": false,
@@ -214,48 +185,6 @@
     {
       "type": "header",
       "content": "t:sections.collapsible_content.settings.header.content"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "t:sections.collapsible_content.settings.image.label"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.collapsible_content.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.collapsible_content.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.collapsible_content.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.collapsible_content.settings.image_ratio.label"
-    },
-    {
-      "type": "select",
-      "id": "desktop_layout",
-      "options": [
-        {
-          "value": "image_first",
-          "label": "t:sections.collapsible_content.settings.desktop_layout.options__1.label"
-        },
-        {
-          "value": "image_second",
-          "label": "t:sections.collapsible_content.settings.desktop_layout.options__2.label"
-        }
-      ],
-      "default": "image_second",
-      "label": "t:sections.collapsible_content.settings.desktop_layout.label",
-      "info": "t:sections.collapsible_content.settings.desktop_layout.info"
     },
     {
       "type": "header",
