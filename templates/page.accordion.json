@@ -58,16 +58,11 @@
         "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-4"
       ],
       "settings": {
-        "caption": "test",
-        "heading": "testetetstesetse",
-        "heading_size": "h1",
-        "heading_alignment": "center",
+        "caption": "",
+        "heading": "よくあるご質問をまとめました。ご注文の際に、ご一読ください。",
+        "heading_alignment": "left",
         "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
         "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
       }
