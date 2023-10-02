@@ -26,9 +26,9 @@
         "template--21376814711100__60a9c95a-999f-434a-aa63-40181c89df79-collapsible_row-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "電話でも注文できますかな？",
+            "icon": "none",
+            "row_content": "<p>ご注文方法はインターネットからのご注文のみとなっております。<\/p><p>お電話やFAX、メールでのご注文は承っておりませんのでご了承ください。<\/p>",
             "page": ""
           }
         },
