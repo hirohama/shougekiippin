@@ -39,7 +39,7 @@
             <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
           {% endif %}
         </div>
-        <div class="summary_block">
+        <div class="summary_block {%- if section.settings.caption == blank -%} no_margin {%endif%}<!--見出し設定-->">
           <!--{% comment %}画像があるときの記述
           {%- if section.settings.image != blank -%}
             <div class="grid__item collapsible-content__grid-item">
@@ -79,7 +79,7 @@
           <div class="grid__item">
         {% endcomment %}-->
             {%- for block in section.blocks -%}
-              <div class="summary_" {{ block.shopify_attributes }}>
+              <div class="" {{ block.shopify_attributes }}>
                 <details
                   id="Details-{{ block.id }}-{{ section.id }}"
                   {% if section.settings.open_first_collapsible_row and forloop.first %}
