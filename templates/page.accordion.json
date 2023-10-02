@@ -186,9 +186,9 @@
         "template--21376814711100__a0a22c54-11e3-4c2d-bf45-8cb6a843b881-collapsible_row-4": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "ギフトラッピングはできますか",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>ギフト包装は行っておりません。<br\/>専用の箱にてお届けを致します。<\/p>",
             "page": ""
           }
         }
