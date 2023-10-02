@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "title": {
+      "type": "title-page",
+      "settings": {
+        "text_content": "タイトル"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "title",
+    "main"
+  ]
+}
