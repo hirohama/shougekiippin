@@ -103,36 +103,36 @@
         "template--21376814711100__08817919-e8b3-4d8b-90f2-b2bef5c82c66-collapsible_row-1": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "配送方法を教えてください",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>商品の配送は「ヤマト運輸」に委託しております。お買い上げ商品の合計金額が10,000円以上（税込）で送料無料となります（配送先一箇所につき）。<\/p><p>■基本送料（すべて税込）<br\/>北海道 1,400円<br\/>東北（青森・岩手・秋田・宮城・山形・福島） 990円<br\/>関東・信越（茨城・栃木・群馬・埼玉・千葉・東京・神奈川・山梨・長野・新潟） 770円<br\/>北陸・中部（富山・石川・福井・静岡・岐阜・愛知・三重） 660円<br\/>関西（滋賀・京都・大阪・奈良・和歌山・兵庫） 770円<br\/>中国（鳥取・島根・岡山・広島・山口） 660円<br\/>四国（香川・徳島・愛媛・高知） 770円<br\/>九州（福岡・佐賀・長崎・大分・熊本・宮崎・鹿児島） 660円<br\/>沖縄 1,190円<\/p><p>※離島・一部地域へは追加料金がかかる場合がございます。<br\/>※配送は国内のみとさせていただきます。<\/p>",
             "page": ""
           }
         },
         "template--21376814711100__08817919-e8b3-4d8b-90f2-b2bef5c82c66-collapsible_row-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "到着はいつ頃でしょうか",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>「お支払い確認後5日以内」に発送いたします。ただし、年末年始やGWの大型連休中、または、実店舗での展示イベント期間中、出張中は発送が遅れる場合もございます。予めご了承いただきますようお願いいたします。<\/p><p>※お届け日の指定は、ご注文日の5日後～14日後までの間とさせていただきます。<br\/>※お届けのご指定日が無い場合は、最短でのお届けとなります。<\/p>",
             "page": ""
           }
         },
         "template--21376814711100__08817919-e8b3-4d8b-90f2-b2bef5c82c66-collapsible_row-3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "到着時間は選べますか",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>ヤマト便の配送時間帯から選べます。<br\/>午前中、12時～14時、14～16時、16～18時、18時～20時、からお選びください。<br\/>発送指定日が直近ですと、時間帯指定に対応できない場合がありますので、余裕をもって指定下さい。<\/p>",
             "page": ""
           }
         },
         "template--21376814711100__08817919-e8b3-4d8b-90f2-b2bef5c82c66-collapsible_row-4": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": " 1回のご注文で複数住所へのお届けはできますか？",
             "icon": "check_mark",
-            "row_content": "",
+            "row_content": "<p>申し訳ございませんが、対応できかねます。お手数をおかけしますが、複数箇所への発送をご希望の方は再度ご注文をお願いいたします。<\/p>",
             "page": ""
           }
         }
@@ -144,7 +144,7 @@
         "template--21376814711100__08817919-e8b3-4d8b-90f2-b2bef5c82c66-collapsible_row-4"
       ],
       "settings": {
-        "caption": "てｓｔ",
+        "caption": "配送・お届け日について",
         "heading": "",
         "heading_alignment": "center",
         "layout": "none",
