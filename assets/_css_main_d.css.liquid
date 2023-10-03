@@ -19,6 +19,12 @@ body,html{
         font-size: 62.5%;
     }
 }
+@media screen and (min-width: 1280px) {
+    /*デスクトップ（1400px以上）のスタイル*/
+    html {
+        font-size: 68%;
+    }
+}
 
 @media screen and (min-width: 1400px) {
     /*デスクトップ（1400px以上）のスタイル*/
@@ -812,24 +818,79 @@ ul#product_introduce_col1{
                     line-height:2.5vw;
                     letter-spacing: 0.04vw;
                 }
-            ul#outline_1_textbox .outline_1_text{
+            /*ul#outline_1_textbox .outline_1_text{
                 padding-top:4vw;
                 float:left;
                 width:30vw;
                 font-size:1.15vw;
                 line-height:2vw;
                 letter-spacing: 0.04vw;
+            }*/
+            ul#outline_1_textbox .outline_1_text{
+                padding-top:6rem;
+                float:left;
+                width:30vw;
             }
-        li#product_outline_1 div#outline_1_handjob{
-            width:25vw;
-            height:15vw;
-            position:absolute;
-            bottom:2vw;
-            right:0;
-            background-size: auto 100%;
-            background-position: 50% 50%;
-            z-index:9;
-        }
+            @media screen and (min-width: 1024px){
+                /* PCで小さめのディスプレイ */
+                ul#outline_1_textbox .outline_1_text,
+                ul#outline_2_textbox .outline_2_text{
+                    /*font-size:1.4rem;*/
+                    font-size:1.4rem;
+                    line-height:2.3rem;
+                    letter-spacing: 0rem;
+                }
+                li#product_outline_1 div#outline_1_handjob{
+                    width:20vw;
+                    height:15vw;
+                    position:absolute;
+                    bottom:2vw;
+                    right:0;
+                    background-size: auto 100%;
+                    background-position: 50% 50%;
+                    z-index:9;
+                }
+            }
+            @media screen and (min-width: 1280px){
+                /* PCで中くらいのディスプレイ */
+                ul#outline_1_textbox .outline_1_text,
+                ul#outline_2_textbox .outline_2_text{
+                    /*font-size:1.4rem;*/
+                    font-size:1.5rem;
+                    line-height:2.5rem;
+                    letter-spacing: 0.04rem;
+                }
+                li#product_outline_1 div#outline_1_handjob{
+                    width:25vw;
+                    height:15vw;
+                    position:absolute;
+                    bottom:2vw;
+                    right:0;
+                    background-size: auto 100%;
+                    background-position: 50% 50%;
+                    z-index:9;
+                }
+            }
+            @media screen and (min-width: 1400px) {
+                /*デスクトップ（1400px以上）のスタイル*/
+                ul#outline_1_textbox .outline_1_text,
+                ul#outline_2_textbox .outline_2_text{
+                    font-size:1.5rem;
+                    line-height:2.8rem;
+                    letter-spacing: 0.04rem;
+                }
+                li#product_outline_1 div#outline_1_handjob{
+                    width:25vw;
+                    height:15vw;
+                    position:absolute;
+                    bottom:2vw;
+                    right:0;
+                    background-size: auto 100%;
+                    background-position: 50% 50%;
+                    z-index:9;
+                }
+            }
+
 ul#product_introduce_col2{
     padding-bottom:5vw;
 }
@@ -869,9 +930,6 @@ ul#product_introduce_col2{
             ul#outline_2_textbox .outline_2_text{
                 float:left;
                 width:30vw;
-                font-size:1.15vw;
-                line-height:2vw;
-                letter-spacing: 0.04vw;
             }
 div#product_spec_box{
     background:#F4F4F4;
