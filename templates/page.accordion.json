@@ -130,7 +130,7 @@
         "template--21376814711100__08817919-e8b3-4d8b-90f2-b2bef5c82c66-collapsible_row-4": {
           "type": "collapsible_row",
           "settings": {
-            "heading": " 1回のご注文で複数住所へのお届けはできますか",
+            "heading": "1回のご注文で複数住所へのお届けはできますか",
             "icon": "check_mark",
             "row_content": "<p>申し訳ございませんが、対応できかねます。お手数をおかけしますが、複数箇所への発送をご希望の方は都度それぞれのご注文をお願いいたします。<\/p>",
             "page": ""
