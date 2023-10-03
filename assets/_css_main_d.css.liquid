@@ -1160,6 +1160,7 @@ summary {
   cursor: pointer;
   list-style: none;
   position: relative;
+  display: block;
 }
 h3.accordion_title{
     display:inline-block;
@@ -1192,6 +1193,9 @@ summary .icon {
 }
 summary[aria-expanded="true"] .icon{
      background-image: url("{{ '_img_draw_up.svg' | asset_url }}");
+}
+summary::-webkit-details-marker {
+  display: none;
 }
 .accordion_content{
     position: relative;
