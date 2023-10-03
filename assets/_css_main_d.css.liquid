@@ -81,9 +81,12 @@ header{
     z-index: 99;
     text-align: right;
 }
-header a:hover{
+header a:not(.header__icon--cart):hover{
     text-decoration: underline #000 1px;
-    text-underline-offset: 0.25vw;
+    text-underline-offset: 0.3vw;
+}
+header a.header__icon--cart:hover{
+    opacity: 0.5;
 }
 .fixed{
     position: fixed;
@@ -319,10 +322,17 @@ footer{
     background: #000;
     padding-bottom:2vw;
 }
-footer nav ul#footer_nav {
+footer a:hover{
+    opacity:0.5;
+}
+footer nav{
     width:85%;
     max-width:1400px;
     margin:auto;
+    position: relative;
+}
+footer nav ul#footer_nav {
+
 }
     ul#footer_nav li#footer_menu{
         display:inline-block;
@@ -337,6 +347,7 @@ footer nav ul#footer_nav {
                 padding:2rem 0;
                 margin-right:2rem;
             }
+
 
     ul#footer_nav li#footer_social{
         width:30%;
