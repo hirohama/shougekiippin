@@ -1,7 +1,7 @@
-.loading-overlay {
+/*.loading-overlay {
   position: absolute;
   z-index: 1;
-  width: 1.8vw;
+  width: 2rem;
 }
 
 price-per-item .loading-overlay {
@@ -24,7 +24,7 @@ price-per-item .loading-overlay {
 }
 
 .loading-overlay__spinner {
-  width: 1.8vw;
+  width: 2rem;
   display: inline-block;
 }
 
@@ -49,10 +49,11 @@ price-per-item .loading-overlay__spinner {
   stroke-dasharray: 280;
   stroke-dashoffset: 0;
   transform-origin: center;
-  stroke: rgb(var(--color-foreground));
+  stroke: #333;
   animation: dash 1.4s ease-in-out infinite;
-}
+}*/
 
+/*
 @media screen and (forced-colors: active) {
   .path {
     stroke: CanvasText;
@@ -72,13 +73,14 @@ price-per-item .loading-overlay__spinner {
     transform: rotate(450deg);
   }
 }
-
+*/
 /*.loading-overlay:not(.hidden) + .cart_item_price_wrapper,
 .loading-overlay:not(.hidden) ~ cart-remove-button {
   opacity: 50%;
 }->base.cssに移動*/
-
+/*
 .loading-overlay:not(.hidden) ~ cart-remove-button {
   pointer-events: none;
   cursor: default;
 }
+*/

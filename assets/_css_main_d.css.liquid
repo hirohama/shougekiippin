@@ -41,7 +41,6 @@ div#wrap{
     background:#FFF;
     width:100%;
     height:auto;
-    /*min-height:calc(100% - 40px);*/
     border-top:20px solid #FC0;
     border-bottom:20px solid #FC0;
 }
@@ -50,6 +49,7 @@ div#wrap{
     border-left:20px solid #FC0;
     border-right:20px solid #FC0;
     position:relative;
+    font-size:1.4rem;
     text-align:left;
     width:100%;
     height:auto;
@@ -186,6 +186,27 @@ header#menu_index.absolute/*top*/{
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
             }
+/* component-cart-count-bubble */
+.cart-count-bubble:empty {
+  display: none;
+}
+
+.cart-count-bubble {
+  position: absolute;
+    background-color: #C00;
+    color: #FFF;
+    height: 1.7rem;
+    width: 1.7rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    bottom: 0.3rem;
+    left: 3.2rem;
+    line-height: 1.5rem;
+  
+}
 
 header #draw_product_menu_box{/*product用の購入boxで、位置だけを参照する*/
     width:0;
@@ -510,7 +531,6 @@ ul#slider{
     .ttl_index_01 p.description{
         display:block;
         padding-left:1rem;
-        font-size:1.4rem;
         border-left:1px solid #000;
     }
 ul#ippin{
@@ -1099,7 +1119,6 @@ pages
 .editor_content{
   width:95%;
   margin:auto;
-  font-size:1.4rem;
   line-height:2.2rem;
   
 }
@@ -1383,7 +1402,6 @@ p.recover_subtext{
     display: block;
     text-align: center;
     margin:0 auto;
-    font-size: 1.4rem;
     padding:0 0 1.5vw;
 }
 .customer div#recover_box{
@@ -1538,7 +1556,6 @@ form#RegisterForm textarea{
 /*-----------account orders------------*/
 /*#order_list -> form#ContactFormに並べて記入*/
 #order_list #order_list_wrapper{
-    font-size:1.4rem;
 }
 #order_list_wrapper h3{
     font-size:1.8rem;
@@ -1569,7 +1586,6 @@ form#RegisterForm textarea{
   padding-bottom:2rem;
 }
 #order_detail_wrapper {
-    font-size:1.4rem;
 }
 table.order_details{
     width:100%;
@@ -1614,7 +1630,6 @@ table.order_price_details{
 }
 #address_box{
   display:flex;
-  font-size:1.4rem;
 }
 #address_box h2{
   font-size:1.8rem;
@@ -1723,7 +1738,7 @@ label.subset{
 }
 form .field,
 form .min_head{
-    margin-top:2vw;
+    margin-top:2rem;
 }
 form .field{
     display:inline-block;
@@ -1732,10 +1747,10 @@ form .min_head{
     display:block;
 }
 form .field.no-margin {
-    margin-top:0.2vw;
+    margin-top:0.2rem;
 }
 form .min_head.no-margin {
-    margin-top:0.2vw;
+    margin-top:0.2rem;
 }
 input[type="text"],
 input[type="email"],
@@ -1745,10 +1760,10 @@ select,
 textarea{
     vertical-align:middle; 
     width:100%;
-    padding: 0 1vw;
-    border-radius: 0.2vw;
+    padding: 0 1rem;
+    border-radius: 0.3rem;
     border: none;
-    font-size:1.1vw;
+    font-size:1.4rem;
     color:#666;
     box-shadow: 0 0 0 1px #ccc inset;
     appearance: none;
@@ -1760,7 +1775,7 @@ input[type="email"],
 input[type="tel"],
 input[type="password"],
 select{
-    height:3vw;
+    height:4rem;
 }
 textarea{
     height:10vw;
@@ -1785,26 +1800,26 @@ input[type=checkbox]{
     .selectbox::before {
         display: inline-block;
         right: 0;
-        width: 3vw;
-        height: 3vw;
+        width: 4rem;
+        height: 4rem;
         border-radius: 0 3px 3px 0;
-        background-color: #DDD;
+        background-color: #BBB;
     }
 
     .selectbox::after {
         position: absolute;
         top: 50%;
-        right: 1.5vw;
+        right: 2rem;
         transform: translate(50%, -50%) rotate(45deg);
-        width: 0.5vw;
-        height: 0.5vw;
+        width: 0.75rem;
+        height: 0.75rem;
         border-bottom: 3px solid #fff;
         border-right: 3px solid #fff;
     }
 
     .selectbox select {
         appearance: none;
-        height: 3vw;
+        height: 4rem;
         border: none;
         cursor: pointer;
     }
@@ -2027,9 +2042,6 @@ td.cart_item_quantity cart-remove-button a{
     letter-spacing: 0vw;
     font-size:1.7rem;
 }
-#cart_foot .totals_total-value span.foJ_Thin{
-    font-size:1.4rem;
-}
 .tax-note{
   font-size:1.2rem;
   margin: 1rem 0 1.6rem auto;
@@ -2189,26 +2201,7 @@ a.t_link:hover{
 }
 
 /*--------------------status------------------------------*/
-/*.status{
-  display:inline-block;
-  color:#FFF;
-  font-weight:bold;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    padding: 0.4rem;
-    vertical-align: 0.1rem;
-  border-radius:0.5rem;
-  margin:0 0.5rem;
-}
-.status.success{
-  background:#27ab81;
-}
-.status.worning{
-  background:#ff9900;
-}
-.status.fault{
-  background:#CC0000;
-}*/
+
 /*------------------------------------------------
 
 utility
@@ -2238,6 +2231,259 @@ utility
     clear: both;
 }
 
+/*---------------quantity button----------------*/
+/* component-quantity */
+
+.quantity {
+  color: rgba(var(--color-foreground));
+  position: relative;
+  width:12rem;
+  display: flex;
+  border-radius: ;
+  height:4.5rem;
+}
+
+.quantity:after {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border:1px solid #333;
+  z-index: 1;
+}
+
+.quantity:before {
+  background: rgb(var(--color-background));
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--inputs-radius-outset);
+  box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset)
+    var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
+  z-index: -1;
+}
+
+.quantity__input {
+  color: currentColor;
+  font-size:1.3rem;
+  font-weight: 500;
+  opacity: 0.85;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0.5rem;
+  width: 100%;
+  flex-grow: 1;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.quantity__button {
+  width:4rem;
+  flex-shrink: 0;
+  font-size:1vw;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--color-foreground));
+  padding: 0;
+}
+
+.quantity__button:first-child {
+  margin-left: calc(var(--inputs-border-width));
+}
+
+.quantity__button:last-child {
+  margin-right: calc(var(--inputs-border-width));
+}
+
+.quantity__button svg {
+  width: 1rem;
+  pointer-events: none;
+}
+
+.quantity__button:focus-visible,
+.quantity__input:focus-visible {
+  background-color: rgb(var(--color-background));
+  z-index: 2;
+}
+
+.quantity__button:focus,
+.quantity__input:focus {
+  background-color: rgb(var(--color-background));
+  z-index: 2;
+}
+
+.quantity__button:not(:focus-visible):not(.focused),
+.quantity__input:not(:focus-visible):not(.focused) {
+  box-shadow: inherit;
+  background-color: inherit;
+}
+
+.quantity__input:-webkit-autofill,
+.quantity__input:-webkit-autofill:hover,
+.quantity__input:-webkit-autofill:active {
+  box-shadow: 0 0 0 10rem rgb(var(--color-background)) inset !important;
+  -webkit-box-shadow: 0 0 0 10rem rgb(var(--color-background)) inset !important;
+}
+
+.quantity__input::-webkit-outer-spin-button,
+.quantity__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity__input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.quantity__rules {
+  margin-top: 0.5rem;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.quantity__rules .caption {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.quantity__rules .divider + .divider::before {
+  content: '\2022';
+  margin: 0 0.5rem;
+}
+
+.quantity__rules-cart {
+  position: relative;
+  display:inline-block;
+}
+
+/*----------loading_overlay(数量調整時のくるくる等)----------------*/
+.loading-overlay {
+  position: absolute;
+  z-index: 1;
+  width: 2rem;
+}
+
+price-per-item .loading-overlay {
+  position: relative;
+}
+
+@media screen and (max-width: 749px) {
+  .loading-overlay {
+    top: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .loading-overlay {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.loading-overlay__spinner {
+  width: 2rem;
+  display: inline-block;
+}
+
+price-per-item .loading-overlay__spinner {
+  display: flex;
+}
+
+.spinner {
+  animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: 280;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  stroke: #333;
+  animation: dash 1.4s ease-in-out infinite;
+}
+
+@media screen and (forced-colors: active) {
+  .path {
+    stroke: CanvasText;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 280;
+  }
+  50% {
+    stroke-dashoffset: 75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(450deg);
+  }
+}
+
+.loading-overlay:not(.hidden) + .cart_item_price_wrapper,
+.loading-overlay:not(.hidden) ~ cart-remove-button {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+product-info .loading-overlay:not(.hidden) ~ *,
+.quantity__rules-cart .loading-overlay:not(.hidden) ~ * {
+  visibility: hidden;
+}
+.loading-overlay:not(.hidden) ~ cart-remove-button {
+  pointer-events: none;
+  cursor: default;
+}
+
+/*-----------------hidden------------------*/
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  word-wrap: normal !important;
+}
+
+.visually-hidden--inline {
+  margin: 0;
+  height: 1em;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
 /*-----------------jquery fadein------------------*/
 .fadein {
   opacity : 0;
@@ -2253,6 +2499,7 @@ utility
 iframe{
     width:100%;
     height:25vw;
+
 }
 
 

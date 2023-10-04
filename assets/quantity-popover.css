@@ -4,7 +4,7 @@ quantity-popover {
 }
 
 quantity-popover volume-pricing li:nth-child(odd) {
-  background: rgba(var(--color-foreground), 0.03);
+  background: #FFF;
 }
 
 quantity-popover volume-pricing li {
@@ -19,7 +19,7 @@ quantity-popover volume-pricing li {
   width: 100%;
   z-index: 2;
   position: absolute;
-  background-color: rgb(var(--color-background));
+  background: #FFF;
   max-width: 36rem;
 }
 
@@ -123,7 +123,7 @@ quantity-popover .quantity__rules span:first-of-type {
 
 @media screen and (min-width: 990px) {
   .quantity-popover-container--hover:hover {
-    background-color: rgba(var(--color-foreground), 0.03);
+    background: #FFF;
     border-radius: var(--inputs-radius-outset);
   }
 
@@ -150,7 +150,7 @@ quantity-popover:has(.quantity__input:focus-visible) .quantity-popover__info {
 }
 
 quantity-popover .quantity {
-  background: rgb(var(--color-background));
+  background: #FFF;
 }
 
 quantity-popover .quantity__rules {

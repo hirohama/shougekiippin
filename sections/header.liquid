@@ -1,17 +1,14 @@
-<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<!--link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'"-->
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-{%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-  <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
-{%- endif -%}
 
+{% comment %}cart_type == "drawer"であれば(今回は"notification"で作成する)
 {%- if settings.cart_type == "drawer" -%}
   {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
   {{ 'component-cart.css' | asset_url | stylesheet_tag }}
@@ -20,19 +17,19 @@
   {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
-
-<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
+{% endcomment %}
+<!--noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript-->
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
+{% comment %}
 <style>
   header-drawer {
     justify-self: start;
     margin-left: -1.2rem;
   }
-
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
       width: 75%;
@@ -86,7 +83,6 @@
     }
   }
 </style>
-{% comment %}
 {%- style -%}
   .header {
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
@@ -118,214 +114,6 @@
 {%- if settings.cart_type == "drawer" -%}
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-
-<!--
-{% comment %}
-<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
-  <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
-  </symbol>
-
-  <symbol id="icon-reset" class="icon icon-close"  fill="none" viewBox="0 0 18 18" stroke="currentColor">
-    <circle r="8.5" cy="9" cx="9" stroke-opacity="0.2"/>
-    <path d="M6.82972 6.82915L1.17193 1.17097" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 5)"/>
-    <path d="M1.22896 6.88502L6.77288 1.11523" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 5)"/>
-  </symbol>
-
-  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
-    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
-  </symbol>
-</svg>
-
-{%- liquid
-  for block in section.blocks
-    if block.type == '@app'
-      assign has_app_block = true
-    endif
-  endfor
--%}
-
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
-  {%- liquid
-    assign social_links = false
-    assign localization_forms = false
-
-    if settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_pinterest_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_vimeo_link != blank or settings.social_tiktok_link != blank or settings.social_tumblr_link != blank or settings.social_snapchat_link != blank
-      assign social_links = true
-    endif
-
-    if localization.available_countries.size > 1 and section.settings.enable_country_selector or section.settings.enable_language_selector and localization.available_languages.size > 1
-      assign localization_forms = true
-    endif
-  -%}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
-    {%- liquid
-      if section.settings.menu != blank
-        render 'header-drawer'
-      endif
-
-      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-        render 'header-search', input_id: 'Search-In-Modal-1'
-      endif
-    -%}
-
-    {%- if section.settings.logo_position != 'middle-center' -%}
-      {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
-      {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
-                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo motion-reduce',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
-              </div>
-            {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
-            {%- endif -%}
-          </a>
-      {%- if request.page_type == 'index' -%}
-        </h1>
-      {%- endif -%}
-    {%- endif -%}
-
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
-      endif
-    %}
-
-    {%- if section.settings.logo_position == 'middle-center' -%}
-      {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
-      {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
-                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
-              </div>
-            {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
-            {%- endif -%}
-          </a>
-      {%- if request.page_type == 'index' -%}
-        </h1>
-      {%- endif -%}
-    {%- endif -%}
-
-    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
-      <div class="desktop-localization-wrapper">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <noscript class="small-hide medium-hide">
-            {%- form 'localization', id: 'HeaderCountryMobileFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="HeaderCountryMobileLabelNoScript">{{ 'localization.country_label' | t }}</h2>
-                <select class="localization-selector link" name="country_code" aria-labelledby="HeaderCountryMobileLabelNoScript">
-                  {%- for country in localization.available_countries -%}
-                    <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
-                      {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
-          <localization-form class="small-hide medium-hide no-js-hidden">
-            {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {% endif %}
-
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <noscript class="small-hide medium-hide">
-            {%- form 'localization', id: 'HeaderLanguageMobileFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="HeaderLanguageMobileLabelNoScript">{{ 'localization.language_label' | t }}</h2>
-                <select class="localization-selector link" name="locale_code" aria-labelledby="HeaderLanguageMobileLabelNoScript">
-                  {%- for language in localization.available_languages -%}
-                    <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
-                      {{ language.endonym_name | capitalize }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
-          <localization-form class="small-hide medium-hide no-js-hidden">
-            {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
-                {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
-
-      {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
-          {% render 'icon-account' %}
-          <span class="visually-hidden">
-            {%- liquid
-              if customer
-                echo 'customer.account_fallback' | t
-              else
-                echo 'customer.log_in' | t
-              endif
-            -%}
-          </span>
-        </a>
-      {%- endif -%}
-
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when '@app' -%}
-            {% render block %}
-        {%- endcase -%}
-      {%- endfor -%}
-
-      
-    </div>
-  </header>
-{% endcomment %}
--->
 
 {% if template == 'index' %} 
 <header id="menu_index" class="absolute">
@@ -416,7 +204,9 @@
 
             <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
               {{ 'products.product.quantity.label' | t }}
-              <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
+            </label>
+            <div class="price-per-item__container" style="display:inline-block;">
+              <span class="quantity__rules-cart">
                 <span class="loading-overlay hidden">
                   <span class="loading-overlay__spinner">
                     <svg
@@ -430,42 +220,37 @@
                     </svg>
                   </span>
                 </span>
-                <!--span>(
-                  {{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}}
-                  )</span-->
+                <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
+                  <button class="quantity__button no-js-hidden" name="minus" type="button">
+                    <span class="visually-hidden">
+                      {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                    </span>
+                    {% render 'icon-minus' %}
+                  </button>
+                  <input
+                    class="quantity__input"
+                    type="number"
+                    name="quantity"
+                    id="Quantity-{{ section.id }}"
+                    data-cart-quantity="{{ cart_qty }}"
+                    data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                      data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                      max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                    {% endif %}
+                    step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                    value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                    form="{{ product_form_id }}"
+                  >
+                  <button class="quantity__button no-js-hidden" name="plus" type="button">
+                    <span class="visually-hidden">
+                      {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                    </span>
+                    {% render 'icon-plus' %}
+                  </button>
+                </quantity-input>
               </span>
-            </label>
-            <div class="price-per-item__container" style="display:inline-block;">
-              <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                <button class="quantity__button no-js-hidden" name="minus" type="button">
-                  <span class="visually-hidden">
-                    {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
-                  </span>
-                  {% render 'icon-minus' %}
-                </button>
-                <input
-                  class="quantity__input"
-                  type="number"
-                  name="quantity"
-                  id="Quantity-{{ section.id }}"
-                  data-cart-quantity="{{ cart_qty }}"
-                  data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                  min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                  {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
-                    data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-                    max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-                  {% endif %}
-                  step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
-                  value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                  form="{{ product_form_id }}"
-                >
-                <button class="quantity__button no-js-hidden" name="plus" type="button">
-                  <span class="visually-hidden">
-                    {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
-                  </span>
-                  {% render 'icon-plus' %}
-                </button>
-              </quantity-input>
               {%- liquid
                 assign volume_pricing_array = product.selected_or_first_available_variant.quantity_price_breaks | sort: 'quantity' | reverse
                 assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.min
@@ -645,12 +430,6 @@
 </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
-{% comment %}
-{%- if settings.cart_type == "notification" -%}
-  {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
-{%- endif -%}
-
-{% endcomment %}
 
 {% javascript %}
   class StickyHeader extends HTMLElement {
