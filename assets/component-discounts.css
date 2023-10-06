@@ -1,12 +1,16 @@
 .discounts {
   font-size: 1.4rem;
-  padding:0.5rem;
+  padding: 1rem;
+  background: #EDEDED;
+  margin: 0 0;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .discounts__discount {
   display: flex;
   align-items: center;
   line-height: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .discounts__discount svg {
