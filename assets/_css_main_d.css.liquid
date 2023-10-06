@@ -1251,6 +1251,11 @@ li#product_outline_1 div#outline_1_handjob{
 }
 @media screen and (min-width: 1024px){
     /* PCで小さめのディスプレイ */
+    li#product_outline_1 ul#outline_1_textbox{
+        width:41vw;
+        position: relative;
+        z-index:10;
+    }
     ul#outline_1_textbox .outline_1_text,
     ul#outline_2_textbox .outline_2_text{
         font-size:1.4rem;
@@ -1291,6 +1296,11 @@ li#product_outline_1 div#outline_1_handjob{
 }
 @media screen and (min-width: 1280px){
     /* PCで中くらいのディスプレイ */
+    li#product_outline_1 ul#outline_1_textbox{
+        width:41vw;
+        position: relative;
+        z-index:10;
+    }
     ul#outline_1_textbox .outline_1_text,
     ul#outline_2_textbox .outline_2_text{
         font-size:1.5rem;
@@ -1335,6 +1345,36 @@ li#product_outline_1 div#outline_1_handjob{
     ul#outline_2_textbox .outline_2_text{
         font-size:1.5rem;
         line-height:2.5rem;
+        letter-spacing: 0.04rem;
+    }
+    ul#outline_1_textbox .outline_1_title h2{
+        padding-top:4vw;
+        margin-top:-2vw;
+        display: inline-block;
+        writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        text-align: left;
+        font-size:2vw;
+        line-height:2.5vw;
+        letter-spacing: 0.04vw;
+    }
+    ul#outline_2_textbox .outline_2_title h2{
+        display: inline-block;
+        margin-top:-2vw;
+        writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        text-align: left;
+        font-size:2vw;
+        line-height:2.5vw;
+        letter-spacing: 0.04vw;
+    }
+}
+@media screen and (min-width: 1600px) {
+    /*デスクトップ（1600px以上）のスタイル*/
+    ul#outline_1_textbox .outline_1_text,
+    ul#outline_2_textbox .outline_2_text{
+        font-size: 1.8rem;
+        line-height: 3rem;
         letter-spacing: 0.04rem;
     }
     ul#outline_1_textbox .outline_1_title h2{
