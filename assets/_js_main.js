@@ -15,46 +15,65 @@ function submitContactForm(event) {
 }
 
 $(function(){
+    //--------------グローバルメニュー（メガメニュー）
+    var target=$('menu');
+    var megamenu=$('#mega_menu');
+    var trigger=$('#menu_btn');
+    var menuIsOpen = false;
+    trigger.click(function(){
+        if(menuIsOpen){//メニューが開いていたら
+            target.addClass("close");
+            trigger.removeClass("active");
+        }else{//メニューが閉まっていたら
+            target.removeClass("close");
+            trigger.addClass("active");
+        }
+        console.log(menuIsOpen);
+        menuIsOpen = !menuIsOpen;
+    });
+    //--------------グローバルメニュー（メガメニュー）ここまで
+
 
     //ヘッダーのアニメーション
-    console.log("onReady");
-    var headNav = $("header");
     var draw_menu_container = $('#draw_product_menu');
-    var draw_menu_active_box = $('#draw_product_menu_box');
     var draw_menu_btn = $('.draw_product_btn');
     var scrollNum = 500;
+    var draw_height=0;
+    var btn_height=0;
+    var draw_menu_height=0
     var draw_menu = false;
-    var draw_menu_active = draw_menu_active_box.hasClass("active");
     if(draw_menu_container.length){//もし#draw_product_menu_boxがあれば
-        draw_menu=true;
+        draw_menu=true;//あるよと判定
     }
-
-    var headHeight=headNav.height();
-    console.log(headHeight);
       //scrollだけだと読み込み時困るのでloadも追加
-      $(window).on('load scroll', function () {
-        headHeight=headNav.height();
-        draw_menu_active = draw_menu_active_box.hasClass("active");
-        if(draw_menu&&draw_menu_active){
-            headHeight+=draw_menu_container.height();
-        }else if(draw_menu&&!draw_menu_active){
-            headHeight+=draw_menu_btn.height();
-            console.log(headHeight);
-        }
-        //現在の位置が"scrollNum"以上かつ、クラスfixedが付与されていない時
 
-        if($(this).scrollTop() > scrollNum && headNav.hasClass('fixed') == false) {
-          headNav.css({"top": '-'+headHeight+'px'}).removeClass('absolute').addClass('fixed').animate({"top": 0},600);
-        }else if($(this).scrollTop() < scrollNum && headNav.hasClass('fixed') == true){
-          headNav.not(":animated").animate({"top": '-'+headHeight},150, function() {
-            headNav.removeClass('fixed').addClass('absolute').css({"top": '0'});
-          })
-        }
-      });
 
-    draw_menu_btn.click(function(){
-      $("#draw_product_menu_box").toggleClass("active");
-    });
+function drawer_menu_check(){
+    draw_menu_active = draw_menu_container.hasClass("active");
+    draw_height=draw_menu_container.outerHeight(true);/*全体の高さ*/
+    btn_height=draw_menu_btn.outerHeight(true);/*ボタンのみの高さ*/
+    draw_menu_height=draw_height-btn_height;
+    console.log(draw_height);
+
+    if($(this).scrollTop() > scrollNum&&!draw_menu_active){
+        //ドロワーは出ておらず、ボタンを出す高さである
+        draw_menu_container.css("top","-"+draw_menu_height+"px");
+    }else if($(this).scrollTop() <= scrollNum&&!draw_menu_active){
+        //ドロワーは出ておらず、ボタンを出す高さでもない
+        draw_menu_container.css("top","-"+draw_height+"px");
+    }else if(draw_menu_active){
+        draw_menu_container.css("top","0px");
+    }
+}
+$(window).on('load scroll resize', function () {
+    //現在の位置が"scrollNum"以上
+    drawer_menu_check();
+});
+draw_menu_btn.click(function(){
+    draw_menu_container.toggleClass("active");
+    drawer_menu_check();
+});
+
 
 
     //スライダーアニメーション
