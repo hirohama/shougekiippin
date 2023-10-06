@@ -15,7 +15,7 @@ function submitContactForm(event) {
 }
 
 $(function(){
-    //--------------グローバルメニュー（メガメニュー）
+//--------------グローバルメニュー（メガメニュー）
     var target=$('menu');
     var megamenu=$('#mega_menu');
     var trigger=$('#menu_btn');
@@ -31,21 +31,21 @@ $(function(){
         console.log(menuIsOpen);
         menuIsOpen = !menuIsOpen;
     });
-    //--------------グローバルメニュー（メガメニュー）ここまで
+//--------------グローバルメニュー（メガメニュー）ここまで
 
 
-    //ヘッダーのアニメーション
-    var draw_menu_container = $('#draw_product_menu');
-    var draw_menu_btn = $('.draw_product_btn');
-    var scrollNum = 500;
-    var draw_height=0;
-    var btn_height=0;
-    var draw_menu_height=0
-    var draw_menu = false;
-    if(draw_menu_container.length){//もし#draw_product_menu_boxがあれば
-        draw_menu=true;//あるよと判定
-    }
-      //scrollだけだと読み込み時困るのでloadも追加
+//---------------product時ヘッダードロワーメニュー
+var draw_menu_container = $('#draw_product_menu');
+var draw_menu_btn = $('.draw_product_btn');
+var scrollNum = 500;
+var draw_height=0;
+var btn_height=0;
+var draw_menu_height=0
+var draw_menu = false;
+if(draw_menu_container.length){//もし#draw_product_menu_boxがあれば
+    draw_menu=true;//あるよと判定
+}
+  //scrollだけだと読み込み時困るのでloadも追加
 
 
 function drawer_menu_check(){
@@ -73,7 +73,7 @@ draw_menu_btn.click(function(){
     draw_menu_container.toggleClass("active");
     drawer_menu_check();
 });
-
+//---------------product時ヘッダードロワーメニューここまで
 
 
     //スライダーアニメーション

@@ -1,18 +1,20 @@
 <footer>
   <nav>
-    <ul id="footer_nav">
+    <ul id="footer_nav" class="clearfix">
       <li id="footer_menu">
         <ul class="foJ_Thin">
-          <li><a href="{{ routes.root_url }}">TOP</a></li>
-          <li><a href="#">「衝撃一品」とは？</a></li>
+          <li><a href="{{ routes.root_url }}">トップページ</a></li>
+          <li><a href="#">商品一覧</a></li>
+          <li><a href="#">衝撃一品とは？</a></li>
           <li><a href="/pages/faq/">よくあるご質問</a></li>
           <li><a href="/pages/shopping_guide/">お買い物ガイド</a></li>
-          <li><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">マイページ</a></li>
-          <li><a href="{{ routes.cart_url }}">カートをみる</a></li>
         </ul>
       </li>
-      <li id="footer_social">
-        
+      <li id="footer_sns">
+        <ul class="foJ_Thin">
+          <li><a href="#">{% render '_img_instagram_logo' %}</a></li>
+          <li><a href="#">{% render '_img_x_logo' %}</a></li>
+        </ul>
       </li>
     </ul>
   </nav>
