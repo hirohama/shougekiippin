@@ -1,19 +1,33 @@
 <div class="content">
-  <ul id="product_introduce_col1" class="clearfix fadein">
+  <ul id="product_introduce_col1" class="clearfix">
     <li id="chef_photo">
-      <div class="chef_photobox" style="background-image: url('{{ product.images[1] | img_url:"original" }}');">
-        <div><h5 class="foJ_Mid">{{ product.metafields.custom.storename }}</h5><h4 class="foJ_Bld">{{ product.metafields.custom.owner }}さん</h4></div>
+      <div class="chef_photobox fadein" style="background-image: url('{{ product.images[1] | img_url:"original" }}');"><!--relative-->
+        <div class="chef_name"><h5 class="foJ_Mid">{{ product.metafields.custom.storename }}</h5><h4 class="foJ_Bld">{{ product.metafields.custom.owner }}さん</h4></div>
       </div>
-    </li>
-    <li id="product_outline_1">
-      <ul id="outline_1_textbox" class="clearfix">
-        <li class="outline_1_title foJ_Mid"><h2>{{ product.metafields.custom.title_1 }}</h2></li>
-        <li class="outline_1_text foJ_Thin">{{ product.metafields.custom.text_1 }}</li>
+    </li><!--余白7%-->
+    <li id="product_outline_1" >
+      <div class="outline_1_title fadein"><h2 class="foJ_Bld">{{ product.metafields.custom.title_1 }}</h2></div><!--absolute right0-->
+      <ul id="outline_1_textbox" class="clearfix fadein">
+        <li class="outline_1_text foJ_Thin">{{ product.metafields.custom.text_1 }}</li><!--block,width指定-->
+        {% if product.metafields.custom.text_1_2 != blank%}
+        <li class="outline_1_2_text foJ_Thin">{{ product.metafields.custom.text_1_2 }}</li><!--block,width大き目指定-->
+        {% endif %}
       </ul>
-      <div id="outline_1_handjob" style="background-image: url('{{ product.images[3] | img_url:"original" }}');"></div>
     </li>
   </ul>
-  <ul id="product_introduce_col2" class="clearfix fadein">
+  <ul id="product_introduce_col2" class="clearfix">
+    <li id="product_outline_2_1">
+      <div class="chef_photo2 fadein" style="background-image: url('{{ product.images[4] | img_url:"original" }}');"></div>
+      <p class="outline_2_text fadein foJ_Thin">{{ product.metafields.custom.text_2 }}</p>
+    </li><!--w64%-->
+    <li id="product_outline_2_2">
+      <div class="image_photo fadein" style="background-image: url('{{ product.images[3] | img_url:"original" }}');"></div>
+      <h2 class="foJ_Bld">{{ product.metafields.custom.title_2 }}</h2>
+    </li><!--w36%-->
+  </ul>
+  <!--ul id="product_introduce_col2" class="clearfix fadein">
+
+      <div id="outline_1_handjob" style="background-image: url('{{ product.images[3] | img_url:"original" }}');"></div>
     <li id="image_photo">
       <div class="image_photobox" style="background-image: url('{{ product.images[4] | img_url:"original" }}');"></div>
     </li>
@@ -23,7 +37,7 @@
         <li class="outline_2_text foJ_Thin">{{ product.metafields.custom.text_2 }}</li>
       </ul>
     </li>
-  </ul>
+  </ul-->
 </div>
 
 {% schema %}

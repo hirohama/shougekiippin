@@ -1109,313 +1109,167 @@ ul#product li#product_photo{
     background-size: 100%;
     background-position: 50% 50%;
 }
-ul#product_introduce_col1{
-    padding-top:7vw;
-}
-    ul#product_introduce_col1 li#chef_photo{
-        width:33vw;
-        height:40vw;
-        padding-left:5vw;
-        float:left;
-    }
-        li#chef_photo .chef_photobox{
-            position: relative;
-            width:28vw;
-            height:40vw;
-            background-size: auto 100%;
-            background-position: 50% 50%;
-        }
-        li#chef_photo .chef_photobox div{
-            width:5vw;
-            height:25vw;
-            background: #FFF;
-            position: absolute;
-            display: inline-block;
-            writing-mode: vertical-rl;
-            -ms-writing-mode: tb-rl;
-            top:-2.5vw;
-            right:-2vw;
-        }
-        li#chef_photo .chef_photobox div h5{
-            display:block;
-            width:1.8vw;
-            font-size:1.2vw;
-            line-height:1.2vw;
-        }
-        li#chef_photo .chef_photobox div h4{
-            display:block;
-            width:2.2vw;
-            font-size:2.2vw;
-            line-height:2.2vw;
-        }
-    ul#product_introduce_col1 li#product_outline_1{
-        width:calc(63vw - 80px);
-        float:right;
-        position:relative;
-        min-height: 49vw;
-        padding-bottom:7.5vw;/*div#outline_1_handjobにpadding分を足した数字*/
+/*-----------------text section------------------*/
 
-    }
-        li#product_outline_1 ul#outline_1_textbox{
-            width:45vw;
-            position: relative;
-            z-index:10;
-        }
-            ul#outline_1_textbox .outline_1_title{
-                float: right;
-                text-align: right;
-                width:11vw;
-            }
-                ul#outline_1_textbox .outline_1_title h2{
-                    padding-top:4vw;
-                    margin-top:-2vw;
-                    display: inline-block;
-                    writing-mode: vertical-rl;
-                    -ms-writing-mode: tb-rl;
-                    text-align: left;
-                    font-size:2vw;
-                    line-height:2.5vw;
-                    letter-spacing: 0.04vw;
-                }
-            /*ul#outline_1_textbox .outline_1_text{
-                padding-top:4vw;
-                float:left;
-                width:30vw;
-                font-size:1.15vw;
-                line-height:2vw;
-                letter-spacing: 0.04vw;
-            }*/
-            ul#outline_1_textbox .outline_1_text{
-                padding-top:6rem;
-                float:left;
-                width:30vw;
-            }
+ul#product_introduce_col1{
+    width:100%;
+    max-width: 1400px;
+    margin:auto;
+    padding-top:10rem;
+}
+
+ul#product_introduce_col1 #chef_photo{
+    float:left;
+    width:35%;
+}
+#chef_photo .chef_photobox{
+    position:relative;
+    width:100%;
+    aspect-ratio: 1 / 1.2;
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.chef_photobox .chef_name{
+    background: #FFF;
+    position: absolute;
+    display: inline-block;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    top:-3.5rem;
+    right:-2rem;
+}
+
+ul#product_introduce_col1 #product_outline_1{
+    position: relative;
+    width:50%;
+    float:right;
+    margin-right:10%;
+    padding-top:10rem;
+}
+#product_outline_1 .outline_1_title{
+    position:absolute;
+    top:3rem;
+    right:0;
+}
+#product_outline_1 .outline_1_title h2{
+    padding-top: 0rem;
+    margin-top: -3rem;
+    display: inline-block;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    text-align: left;
+}
+#product_outline_1 .outline_1_text{
+    width:74%;
+}
+#product_outline_1 .outline_1_2_text{
+    width:100%;
+}
 
 
 ul#product_introduce_col2{
-    padding-bottom:5vw;
+    width:100%;
+    max-width: 1400px;
+    margin:auto;
+    padding:7rem 0;
 }
-    ul#product_introduce_col2 li#image_photo{
-        width:42vw;
-        float:right;
-    }
-        li#image_photo .image_photobox{
-            width:40vw;
-            height:27vw;
-            margin-right:2vw;
-            background-size: auto 100%;
-            background-position: 50% 50%;
-        }
-    ul#product_introduce_col2 li#product_outline_2{
-        width:calc(55vw - 80px);
-        float:right;
-    }
-        li#product_outline_2 ul#outline_2_textbox{
-            width:100%;
-        }
-            ul#outline_2_textbox .outline_2_title{
-                float: left;
-                text-align: left;
-                width:13vw;
-            }
-                ul#outline_2_textbox .outline_2_title h2{
-                    display: block;
-                    width:7vw;
-                    text-align: left;
-                    margin-top:-2vw;
-                    writing-mode: vertical-rl;
-                    -ms-writing-mode: tb-rl;
-                    font-size:3vw;
-                    line-height:3.5vw;
-                    letter-spacing: 0.04vw;
-                }
-            ul#outline_2_textbox .outline_2_text{
-                float:left;
-                width:30vw;
-            }
-
-ul#outline_1_textbox .outline_1_text,
-ul#outline_2_textbox .outline_2_text{
-    font-size:1.7rem;
-    line-height:3rem;
-    letter-spacing: 0.04rem;
+#product_outline_2_1{
+    margin-top:7rem;
+    width:64%;
+    float:left;
 }
-li#product_outline_1 div#outline_1_handjob{
-    width:25vw;
-    height:15vw;
-    position:absolute;
-    bottom:2vw;
-    right:0;
-    background-size: auto 100%;
+#product_outline_2_2{
+    width:36%;
+    float:right;
+}
+#product_outline_2_1 .chef_photo2{
+    width:83%;
+    aspect-ratio: 1.5 / 1;
+    background-repeat:no-repeat;
     background-position: 50% 50%;
-    z-index:9;
+    background-size: cover;
 }
+#product_outline_2_1 .outline_2_text{
+    padding:7rem 1rem 0 7rem;
+}
+#product_outline_2_2 .image_photo{
+    width:100%;
+    aspect-ratio: 1.5 / 1;
+    background-repeat:no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+#product_outline_2_2 h2{
+    padding: 7rem 0 0;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    text-align: left;
+}
+/*----------------branch moniter size-----------------*/
+.chef_photobox .chef_name{
+    width:6rem;
+    height:28rem;
+}
+.chef_photobox .chef_name h5{
+    display: block;
+    width: 2rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.chef_photobox .chef_name h4{
+    display: block;
+    width: 3rem;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+#product_outline_1 .outline_1_title h2,
+#product_outline_2_2 h2{
+    font-size: 3rem;
+    line-height: 3.5rem;
+    letter-spacing: .2rem;
+}
+#product_outline_2_2{
+    text-align: center;
+}
+#product_outline_2_2 h2{
+    display:inline-block;
+}
+#product_outline_1 .outline_1_text,
+#product_outline_1 .outline_1_2_text,
+#product_outline_2_1 .outline_2_text{
+    font-size:1.5rem;
+    line-height:2.8rem;
+    letter-spacing: .1rem;
+}
+
 @media screen and (min-width: 1024px){
     /* PCで小さめのディスプレイ */
-    li#chef_photo .chef_photobox div{
-        width:6vw;
-        height:25vw;
-        background: #FFF;
-        position: absolute;
-        display: inline-block;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        top:-2.5vw;
-        right:-2vw;
-    }
-    li#chef_photo .chef_photobox div h5{
-        display:block;
-        width: 1.8vw;
-        font-size: 1.5vw;
-        line-height: 1.5vw;
-    }
-    li#chef_photo .chef_photobox div h4{
-        display:block;
-        width: 3.5vw;
-        font-size: 2.9vw;
-        line-height: 3.5vw;
-    }
-    ul#outline_1_textbox .outline_1_text,
-    ul#outline_2_textbox .outline_2_text{
-        font-size:1.5rem;
+    #product_outline_1 .outline_1_text,
+    #product_outline_1 .outline_1_2_text,
+    #product_outline_2_1 .outline_2_text{
+        font-size:1.4rem;
         line-height:2.5rem;
-        letter-spacing: 0rem;
-    }
-    li#product_outline_1 div#outline_1_handjob{
-        width:20vw;
-        height:15vw;
-        position:absolute;
-        bottom:2vw;
-        right:0;
-        background-size: auto 100%;
-        background-position: 50% 50%;
-        z-index:9;
-    }
-    ul#outline_1_textbox .outline_1_title h2{
-        padding-top:4vw;
-        margin-top:-2vw;
-        display: inline-block;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        text-align: left;
-        font-size:2.7vw;
-        line-height:3.5vw;
-        letter-spacing: 0.04vw;
-    }
-    ul#outline_2_textbox .outline_2_title h2{
-        display: block;
-        width:7vw;
-        text-align: left;
-        margin-top:-2vw;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        font-size:3vw;
-        line-height:3.5vw;
-        letter-spacing: 0.04vw;
+        letter-spacing: .1rem;
     }
 }
 @media screen and (min-width: 1280px){
     /* PCで中くらいのディスプレイ */
-    ul#outline_1_textbox .outline_1_text,
-    ul#outline_2_textbox .outline_2_text{
+    #product_outline_1 .outline_1_text,
+    #product_outline_1 .outline_1_2_text,
+    #product_outline_2_1 .outline_2_text{
         font-size:1.5rem;
-        line-height:2.5rem;
-        letter-spacing: 0.04rem;
-    }
-    li#product_outline_1 div#outline_1_handjob{
-        width:25vw;
-        height:15vw;
-        position:absolute;
-        bottom:2vw;
-        right:0;
-        background-size: auto 100%;
-        background-position: 50% 50%;
-        z-index:9;
-    }
-    ul#outline_1_textbox .outline_1_title h2{
-        padding-top:4vw;
-        margin-top:-2vw;
-        display: inline-block;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        text-align: left;
-        font-size:2.5vw;
-        line-height:3vw;
-        letter-spacing: 0.04vw;
-    }
-    ul#outline_2_textbox .outline_2_title h2{
-        display: block;
-        width:7vw;
-        text-align: left;
-        margin-top:-2vw;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        font-size:2.5vw;
-        line-height:3vw;
-        letter-spacing: 0.04vw;
+        line-height:2.8rem;
+        letter-spacing: .1rem;
     }
 }
 @media screen and (min-width: 1400px) {
     /*デスクトップ（1400px以上）のスタイル*/
-    ul#outline_1_textbox .outline_1_text,
-    ul#outline_2_textbox .outline_2_text{
-        font-size:1.5rem;
-        line-height:2.5rem;
-        letter-spacing: 0.04rem;
-    }
-    ul#outline_1_textbox .outline_1_title h2{
-        padding-top:4vw;
-        margin-top:-2vw;
-        display: inline-block;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        text-align: left;
-        font-size:2.2vw;
-        line-height:2.7vw;
-        letter-spacing: 0.04vw;
-    }
-    ul#outline_2_textbox .outline_2_title h2{
-        display: block;
-        width:7vw;
-        text-align: left;
-        margin-top:-2vw;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        font-size:2.2vw;
-        line-height:2.7vw;
-        letter-spacing: 0.04vw;
-    }
 }
 @media screen and (min-width: 1600px) {
     /*デスクトップ（1600px以上）のスタイル*/
-    ul#outline_1_textbox .outline_1_text,
-    ul#outline_2_textbox .outline_2_text{
-        font-size: 1.8rem;
-        line-height: 3rem;
-        letter-spacing: 0.04rem;
-    }
-    ul#outline_1_textbox .outline_1_title h2{
-        padding-top:4vw;
-        margin-top:-2vw;
-        display: inline-block;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        text-align: left;
-        font-size:2.3vw;
-        line-height:3vw;
-        letter-spacing: 0.04vw;
-    }
-    ul#outline_2_textbox .outline_2_title h2{
-        display: block;
-        width:7vw;
-        text-align: left;
-        margin-top:-2vw;
-        writing-mode: vertical-rl;
-        -ms-writing-mode: tb-rl;
-        font-size:2.3vw;
-        line-height:3vw;
-        letter-spacing: 0.04vw;
-    }
+
 }
 
 
