@@ -1071,12 +1071,15 @@ product,store
 
 -------------------------------------------------*/
 ul#product{
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
 }
 ul#product li#product_introduce{
     float: left;
     position: relative;
-    width: calc(30vw - 31px);
-    height: 30vw;
+    width: 30%;
+    height: 40rem;
 }
     li#product_introduce #information{
         display: inline;
@@ -1091,23 +1094,23 @@ ul#product li#product_introduce{
         }
             #information .item_name h1{
                 display: block;
-                font-size: 2vw;
-                line-height: 2.2vw;
-                padding:0 0 3vw 0;
+                font-size: 2.5rem;
+                line-height: 3rem;
+                padding: 0 0 4rem;
             }
             #information .item_name span{
                 display: block;
-                font-size: 1vw;
+                font-size: 1.5rem;
             }
     .product_form_button_box{
         position:relative;
     }
 ul#product li#product_photo{
     float: right;
-    width: calc(70vw - 31px);
-    height: 30vw;
+    width: 70%;
+    height: 40rem;
     background-size: 100%;
-    background-position: 50% 50%;
+    background-position: 50% 50
 }
 /*-----------------text section------------------*/
 
@@ -2392,12 +2395,12 @@ a.btn:hover{
         color: #000;
     }
         /*.btn span.info */span.quantity_str{
-            font-size:1vw;
+            font-size:1.5rem;
         }
         /*.btn span.info */span.quantity_str::after{
             content:'\0a5';
-            letter-spacing: -0.3vw;
-            font-size:1vw;
+            letter-spacing: -.3rem;
+            font-size: 1.5rem;
         }
         /*.btn span.info */span.price_str{
             font-size:2.2rem;
@@ -2428,7 +2431,7 @@ a.t_link{
     line-height:1.5rem;
     text-decoration: underline #000 1px;
     color:#000;
-    text-underline-offset: 0.25vw;
+    text-underline-offset: 0.25rem;
 }
 .t_link:hover, 
 a.t_link:hover{
