@@ -42,7 +42,7 @@
         "description": "",
         "show_description": false,
         "collection": "ippin_top_list",
-        "products_to_show": 4,
+        "products_to_show": 50,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid"
