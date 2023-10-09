@@ -877,27 +877,28 @@ ul#slider{
         padding-left:1rem;
         border-left:1px solid #000;
     }
-ul#ippin{
+
+#ippin{
     width:90%;
     margin:0 auto 0;
 }
 
-    ul#ippin li.store{
+    #ippin li.store{
         position: relative;
         display:inline-block;
         width:50%;
         height:32vw;
     }
-    ul#ippin li.store:nth-child(even){
+    #ippin li.store:nth-child(even){
         float:left;
     }
-    ul#ippin li.store:nth-child(odd){
+    #ippin li.store:nth-child(odd){
         float:right;
     }
-    ul#ippin li.store:nth-child(2){;
+    #ippin li.store:nth-child(2){;
         margin-top:15vw;
     }
-        ul#ippin li.store div.chef{
+        #ippin li.store div.chef{
             float:left;
             width:57%;
             height:24vw;
@@ -970,7 +971,7 @@ ul#ippin{
                 border-left: 1px solid #000;
             }
 
-        ul#ippin li.store div.ippin{
+        #ippin li.store div.ippin{
             float:right;
             width:43%;
             height:25vw;
@@ -979,7 +980,7 @@ ul#ippin{
             background-size:100% auto;
             border-radius:1vw;
         }
-        ul#ippin li.store div.ippin_img{
+        #ippin li.store div.ippin_img{
             width:85%;
             height:62%;
             margin:-10% auto 0;
@@ -988,7 +989,7 @@ ul#ippin{
                 -webkit-clip-path: url(#svgPath);
                 clip-path: url(#svgPath);
             }
-        ul#ippin li.store div.ippin_text{
+        #ippin li.store div.ippin_text{
             display: table;
             width:100%;
             height:30%;
@@ -1014,6 +1015,9 @@ ul#ippin{
                     text-decoration: underline #000 1px;
                     text-underline-offset: 0.25vw;
                 }
+
+
+
 
 /*-----------concept-----------*/
 div#concept #concept_box {
@@ -1089,6 +1093,24 @@ div#concept #concept_box {
                 letter-spacing: 0.05vw;
                 white-space:nowrap;
             }
+            
+/*------------------------------------------------
+
+products collection
+
+-------------------------------------------------*/
+.facets-wrapper{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 40%;
+    padding: 3rem;
+    background: #F4F4F4;
+    border-radius: 1rem;
+    margin: 0 auto 3rem;
+}
+
+
 /*------------------------------------------------
 
 product,store
@@ -1496,7 +1518,7 @@ pages - FAQ
     margin:2rem auto 2rem;
 }
 
-summary {
+.summary_block summary {
   cursor: pointer;
   list-style: none;
   position: relative;
@@ -1517,7 +1539,7 @@ h3.accordion_title:before{
     font-size:1.8rem;
     width:2.2rem;
 }
-summary .icon {
+.summary_block summary .icon {
     display:block;
         position: absolute;
         top: 0.9rem;
@@ -1531,10 +1553,10 @@ summary .icon {
         background-position: 50% 50%;
         background-image: url("{{ '_img_draw_down.svg' | asset_url }}");
 }
-summary[aria-expanded="true"] .icon{
+.summary_block summary[aria-expanded="true"] .icon{
      background-image: url("{{ '_img_draw_up.svg' | asset_url }}");
 }
-summary::-webkit-details-marker {
+.summary_block summary::-webkit-details-marker {
   display: none;
 }
 .accordion_content{
@@ -2373,7 +2395,6 @@ td.cart_item_quantity cart-remove-button a{
 .checkout_btn_box .btn.checkout{
     float:right;
 }
-
 
 /*------------------------------------------------
 

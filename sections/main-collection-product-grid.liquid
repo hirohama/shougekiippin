@@ -12,7 +12,7 @@
   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-
+{% comment %}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -26,6 +26,9 @@
     }
   }
 {%- endstyle -%}
+{% endcomment %}
+<div class="content">
+  <div class="foJ_Thin btm">
 
 <div class="section-{{ section.id }}-padding">
   {%- paginate collection.products by section.settings.products_per_page -%}
@@ -122,7 +125,7 @@
       {%- endif -%}
 
       <div
-        class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger{% endif %}"
         id="ProductGridContainer"
         {% if settings.animations_reveal_on_scroll %}
           data-cascade
@@ -142,30 +145,97 @@
               </h2>
             </div>
           </div>
+          <!--//product-grid-->
         {%- else -%}
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
-
+            <!--{% comment %}
             <ul
               id="product-grid"
               data-id="{{ section.id }}"
               class="
-                grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
               "
             >
+            {% endcomment %}-->
+
+
+
+
+            <div id="ippin">
+            <ul
+              id="product-grid"
+              data-id="{{ section.id }}"
+              class="
+                grid--{{ section.settings.columns_desktop }}-col-desktop clearfix
+              "
+            >
               {%- for product in collection.products -%}
+
+
+
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
+                {% comment %}
                 <li
-                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  class="grid__item"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
+                {% endcomment %}
+
+                <li class="store fadein">
+                  <a href="{{ product.url }}">
+                    <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
+                      <div class="ribbon_box">
+                        <ul class="ribbon_in_img">
+                          <li>
+                            <img
+                              src="{{ product.images[7] | img_url:'original' }}"
+                              alt="{{ product.metafields.custom.storename }}"
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="ippin">
+                      <div class="ippin_img">
+                        <svg width="100%" height="100%" viewBox="0 0 200 200" class="">
+                        <image xlink:href="{{ product.images[2] | img_url:'original' }}" width="100%" height="100%" clip-path="url(#clip{{ product.id }})" />
+                        </svg>
+                        <svg class="clipNum_fromScript" viewBox="0 0 200 200" width="0" height="0" style="position: absolute; top: 0; left: 0;">
+                          <clipPath id="clip{{ product.id }}" clipPathUnits="objectBoundingBox">
+                             <path d="M44.6,-76.8C58.6,-69.2,71.3,-58.9,78.6,-45.6C85.8,-32.4,87.4,-16.2,87.4,0C87.5,16.2,85.8,32.4,78.6,45.6C71.3,58.8,58.5,69,44.5,75.8C30.5,82.5,15.2,85.9,0.3,85.4C-14.6,84.8,-29.2,80.3,-42,72.8C-54.8,65.3,-65.9,54.9,-74.1,42.3C-82.3,29.6,-87.5,14.8,-88.4,-0.5C-89.3,-15.8,-85.7,-31.6,-78.5,-45.9C-71.3,-60.1,-60.3,-72.8,-46.6,-80.5C-32.9,-88.3,-16.4,-91.2,-0.6,-90.2C15.3,-89.2,30.6,-84.3,44.6,-76.8Z" transform="translate(0.5,0.5)scale(0.0053,0.0053)""/>
+                          </clipPath>
+                        </svg>
+                      </div>
+                      <div class="ippin_text">
+                        <div class="ippin_text_rayout">
+                          <span class="foJ_Thin">{{ product.description }}</span>
+                          <p class="foJ_Bld">{{ product.title }}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn_box">
+                      <div class="btn">
+                        <span class="info foJ_Mid">
+                          {% for variant in product.variants %}
+                            <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
+                            <span class="price_str foE">{{ variant.price | money }}</span>
+                            <span class="tax_str foJ_Mid">(税別)</span>
+                          {% endfor %}
+                        </span>
+                        <div class="icon cart"></div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <!-- //store -->
+                <!--{% comment %}
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
@@ -178,9 +248,13 @@
                     section_id: section.id
                   %}
                 </li>
+                {% endcomment %}-->
+
+
+
               {%- endfor -%}
             </ul>
-
+          </div>
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
@@ -189,11 +263,10 @@
       </div>
     </div>
   {%- endpaginate -%}
-  {% if section.settings.image_shape == 'arch' %}
-    {% render 'mask-arch' %}
-  {%- endif -%}
 </div>
 
+</div>
+</div>
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",

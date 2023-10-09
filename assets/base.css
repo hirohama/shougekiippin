@@ -72,7 +72,7 @@
 }
 */
 /* base */
-/*
+
 .no-js:not(html) {
   display: none !important;
 }
@@ -92,7 +92,7 @@ html.no-js .no-js-inline {
 html.no-js .no-js-hidden {
   display: none !important;
 }
-
+/*
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
@@ -410,24 +410,28 @@ table:not([class]) th {
   padding: 1em;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
 }
+*/
 
-@media screen and (max-width: 749px) {
+/* 一覧ページのソートで使用 */
+@media screen and (max-width: 1023px) {
   .small-hide {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 750px) and (max-width: 989px) {
+/*@media screen and (min-width: 750px) and (max-width: 989px) {
   .medium-hide {
     display: none !important;
   }
-}
+}*/
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .large-up-hide {
     display: none !important;
   }
 }
+
+/*
 .left {
   text-align: left;
 }
@@ -619,7 +623,8 @@ h3 .icon-arrow,
 }
 
 /* base-details-summary */
-/*
+
+/* 一覧ページのソートで使用 */
 summary {
   cursor: pointer;
   list-style: none;
@@ -671,7 +676,7 @@ summary::-webkit-details-marker {
     z-index: 2;
   }
 }
-*/
+
 /* base-focus */
 /*
   Focus ring - default (with offset)
