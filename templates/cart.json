@@ -30,7 +30,7 @@
         "padding_bottom": 40
       }
     },
-    "19aaa5a8-385b-4a98-8392-251efa4a1692": {
+    "featured-collection": {
       "type": "featured-collection",
       "settings": {
         "title": "Featured collection",
@@ -62,6 +62,6 @@
   "order": [
     "cart-items",
     "cart-footer",
-    "19aaa5a8-385b-4a98-8392-251efa4a1692"
+    "featured-collection"
   ]
 }
