@@ -1453,7 +1453,8 @@ pages
 .editor_content .no-margin{
   margin-top:0;
 }
-.editor_content h6{
+.editor_content h6,
+.collection_title h6{
   display:block;
   border-bottom:2px dotted #999;
   font-size:1.6rem;
@@ -2373,6 +2374,36 @@ td.cart_item_quantity cart-remove-button a{
 .checkout_btn_box .btn.checkout{
     float:right;
 }
+
+
+/*------------------------------------------------
+
+feature list
+
+-------------------------------------------------*/
+/*.collection_title h6 ->.editor_content h6と同じ個所に記述{*/
+ul.feature_list{
+    width:100%;
+    margin:auto;
+}
+ul.feature_list li{
+    width:25%;
+
+}
+ul.feature_list li a{
+    text-decoration: none;
+    color:#000;
+}
+ul.feature_list li h3{
+    text-align: center;
+    padding:0 1.5rem;
+    font-size:1.8rem;
+}
+ul.feature_list li h4{
+    text-align: center;
+    padding:0 1.5rem;
+    font-size:1.4rem;
+}
 /*------------------------------------------------
 
 button
@@ -2524,29 +2555,7 @@ a.t_link:hover{
 utility
 
 -------------------------------------------------*/
-/*-------------------feature list-----------------*/
-ul.feature_list{
-    width:100%;
-    margin:auto;
-}
-ul.feature_list li{
-    width:25%;
 
-}
-ul.feature_list li a{
-    text-decoration: none;
-    color:#000;
-}
-ul.feature_list li h3{
-    text-align: center;
-    padding:0 1.5rem;
-    font-size:1.8rem;
-}
-ul.feature_list li h4{
-    text-align: center;
-    padding:0 1.5rem;
-    font-size:1.4rem;
-}
 /*----------------------font----------------------*/
 .foJ_Thin{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
