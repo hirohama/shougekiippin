@@ -982,7 +982,7 @@ ul#ippin{
         ul#ippin li.store div.ippin_img{
             width:85%;
             height:62%;
-            margin:-4% auto 0;
+            margin:-10% auto 0;
         }
             .mask {
                 -webkit-clip-path: url(#svgPath);
@@ -2518,14 +2518,35 @@ a.t_link:hover{
     background-image: url("{{ '_img_add_address.svg' | asset_url }}");
 }
 
-/*--------------------status------------------------------*/
 
 /*------------------------------------------------
 
 utility
 
 -------------------------------------------------*/
+/*-------------------feature list-----------------*/
+ul.feature_list{
+    width:100%;
+    margin:auto;
+}
+ul.feature_list li{
+    width:25%;
 
+}
+ul.feature_list li a{
+    text-decoration: none;
+    color:#000;
+}
+ul.feature_list li h3{
+    text-align: center;
+    padding:0 1.5rem;
+    font-size:1.8rem;
+}
+ul.feature_list li h4{
+    text-align: center;
+    padding:0 1.5rem;
+    font-size:1.4rem;
+}
 /*----------------------font----------------------*/
 .foJ_Thin{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;

@@ -12,8 +12,8 @@
     font-weight: normal;
     font-style: normal;
 
-    src: url('./fonts/slick.eot');
-    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+    src: url('_font_slick.eot');
+    src: url('_font_slick.eot?#iefix') format('embedded-opentype'), url('_font_slick.woff') format('woff'), url('_font_slick.ttf') format('truetype'), url('_font_slick.svg#slick') format('svg');
 }
 /* Arrows */
 .slick-prev,
@@ -27,8 +27,8 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: 3rem;
+    height: 3rem;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -67,11 +67,11 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 20px;
+    font-size: 3rem;
     line-height: 1;
 
-    opacity: .75;
-    color: white;
+    opacity: 1;
+    color: #000;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -79,9 +79,9 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: -3rem;
 }
-[dir='rtl'] .slick-prev
+[dir='rtl'] .slick-prev/*dir='rtl'右から左の場合*/
 {
     right: -25px;
     left: auto;
@@ -90,16 +90,16 @@
 {
     content: '←';
 }
-[dir='rtl'] .slick-prev:before
+[dir='rtl'] .slick-prev:before/*dir='rtl'右から左の場合*/
 {
     content: '→';
 }
 
 .slick-next
 {
-    right: -25px;
+    right: -3rem;
 }
-[dir='rtl'] .slick-next
+[dir='rtl'] .slick-next/*dir='rtl'右から左の場合*/
 {
     right: auto;
     left: -25px;
@@ -108,7 +108,7 @@
 {
     content: '→';
 }
-[dir='rtl'] .slick-next:before
+[dir='rtl'] .slick-next:before/*dir='rtl'右から左の場合*/
 {
     content: '←';
 }
