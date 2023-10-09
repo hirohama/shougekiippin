@@ -83,7 +83,8 @@ draw_menu_btn.click(function(){
       autoplay: true,
       dots: true,
       autoplaySpeed: 4000,
-      speed:600});
+      speed:600,
+      centerMode: "true" });
     const tl = gsap.timeline()
         .to(".pNoren", {
             duration: 0.5,
