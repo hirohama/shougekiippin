@@ -3,7 +3,8 @@
     "1f474210-6eca-48e1-80c3-26aa665e399e": {
       "type": "title-page",
       "settings": {
-        "text_content": "テキスト"
+        "text_content": "テキスト",
+        "pageTitle": "kokoko"
       }
     },
     "banner": {
