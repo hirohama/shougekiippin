@@ -33,13 +33,12 @@
     "19aaa5a8-385b-4a98-8392-251efa4a1692": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured collection",
+        "title": "おすすめの一品",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "collection": "ippin_top_list",
         "products_to_show": 25,
-        "columns_desktop": 1,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid"
