@@ -1,9 +1,9 @@
 {
   "sections": {
-    "b811243d-d60e-4893-8396-a77f82f16a92": {
+    "1f474210-6eca-48e1-80c3-26aa665e399e": {
       "type": "title-page",
       "settings": {
-        "text_content": ""
+        "text_content": "テキスト"
       }
     },
     "banner": {
@@ -36,7 +36,7 @@
     }
   },
   "order": [
-    "b811243d-d60e-4893-8396-a77f82f16a92",
+    "1f474210-6eca-48e1-80c3-26aa665e399e",
     "banner",
     "product-grid"
   ]
