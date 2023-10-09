@@ -33,12 +33,27 @@
       "type": "product_spec",
       "settings": {
       }
+    },
+    "1bd864c8-cce3-4bf4-a8ea-2829422e3d16": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "おすすめ商品",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "collection": "ippin_top_list",
+        "products_to_show": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid"
+      }
     }
   },
   "order": [
     "c79a481a-6218-4098-9826-5de5aa6e069b",
     "related-products",
     "e1c7fa7f-2180-44bf-bbd3-de44a4187928",
-    "f6403f3e-bd5f-4e8e-a2a5-9cfb51685635"
+    "f6403f3e-bd5f-4e8e-a2a5-9cfb51685635",
+    "1bd864c8-cce3-4bf4-a8ea-2829422e3d16"
   ]
 }
