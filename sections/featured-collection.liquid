@@ -90,14 +90,19 @@
           {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
 
 
-            <!--li
+            <!--{% comment %}
+            <li
               id="Slide-{{ section.id }}-{{ forloop.index }}"
               class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
               {% if settings.animations_reveal_on_scroll %}
                 data-cascade
                 style="--animation-order: {{ forloop.index }};"
               {% endif %}
-            >testA
+
+            {% endcomment %}-->
+            <li>
+            <a href="{{ product.url }}"><div><img src="{{ product.images[1] | img_url:'original' }}" alt=""></div></a> 
+            <!--{% comment %}
               {% render 'card-product',
                 card_product: product,
                 media_aspect_ratio: section.settings.image_ratio,
@@ -108,12 +113,14 @@
                 show_quick_add: section.settings.enable_quick_add,
                 section_id: section.id
               %}
-            </li-->
+            {% endcomment %}-->
+            </li>
 
           {%- else -%}
 
             {%- for i in (1..4) -%}
-              <li>testB
+              <li>
+                testB{{ product.url }}
                 {%- assign placeholder_image = 'product-apparel-' | append: forloop.rindex -%}
                 {% render 'card-product',
                   show_vendor: section.settings.show_vendor,
@@ -226,7 +233,7 @@
       "type": "range",
       "id": "products_to_show",
       "min": 2,
-      "max": 25,
+      "max": 50,
       "step": 1,
       "default": 4,
       "label": "t:sections.featured-collection.settings.products_to_show.label"

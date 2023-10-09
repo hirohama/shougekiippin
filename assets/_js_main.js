@@ -75,9 +75,10 @@ draw_menu_btn.click(function(){
 });
 //---------------product時ヘッダードロワーメニューここまで
 
+//---------------indexスライダーアニメーション
+if($('#slider').length){
 
-    //スライダーアニメーション
-    $('#slider').slick({slidesToShow: 3,
+    $('#slider').slick({slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
       slidesToScroll: 1,
       arrows:false,
       autoplay: true,
@@ -105,6 +106,19 @@ draw_menu_btn.click(function(){
     $('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         tl.restart();
     });
+}
+//---------------indexスライダーアニメーションここまで
+
+//----------特集商品リストスライダー
+if($('.feature_list').length){
+    $('.feature_list').slick({
+      arrows:true,
+      infinite: false,
+      slidesToShow: 4,
+      slidesToScroll: 4
+    });
+}
+//----------特集商品リストスライダーここまで
 
     //フェードインアニメーション
     $(window).scroll(function (){
