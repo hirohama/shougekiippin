@@ -14,8 +14,16 @@
 			"type": "text",
 			"id": "text_content",
 			"label": "テキスト入力です（カスタマイズ画面上表示されるもの）"
-		}
-	] ,
+		},{
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },{
+      "type": "text",
+      "id": "pageTitle",
+      "label": "ページタイトル",
+      "default": "{{ page.title | escape }}",
+      "info": "ページの名前を入れてください"
+    }] ,
     "presets": [
       {
         "name": "ページタイトル部分"
