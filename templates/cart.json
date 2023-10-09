@@ -30,18 +30,18 @@
         "padding_bottom": 40
       }
     },
-    "featured-collection": {
+    "19aaa5a8-385b-4a98-8392-251efa4a1692": {
       "type": "featured-collection",
       "settings": {
         "title": "Featured collection",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
-        "collection": "",
-        "products_to_show": 4,
+        "collection": "ippin_top_list",
+        "products_to_show": 5,
         "columns_desktop": 4,
         "full_width": false,
-        "show_view_all": false,
+        "show_view_all": true,
         "view_all_style": "solid"
       }
     }
@@ -49,6 +49,6 @@
   "order": [
     "cart-items",
     "cart-footer",
-    "featured-collection"
+    "19aaa5a8-385b-4a98-8392-251efa4a1692"
   ]
 }
