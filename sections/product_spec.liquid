@@ -1,6 +1,76 @@
-<div class="content">
+<div class="content foJ_Thin">
   <div id="product_spec_box">
-    <ul id="product_spec" class="clearfix">
+    <div id="product_info_box">
+      <ul class="info_box clearfix">
+        <li class="image_box">
+          <div class="photo" style="background-image:url('{{ product.images[5] | img_url:"original" }}');"></div>
+          <div class="descriptions">
+            <h3 class="foJ_Mid">商品情報</h3>
+            <a href="#" class="click_to_active t_link foJ_Mid" name=".to_eat"><div class="icon arrow"></div>お召し上がり方</a>
+            <a href="#" class="click_to_active t_link foJ_Mid" name=".component"><div class="icon arrow"></div>成分表示</a>
+          </div>
+        </li>
+        <li class="text_field">
+          <ul>
+            <li class="to_eat active">
+              <h4 class="foJ_Mid">お召し上がり方</h4>
+              {{ product.metafields.custom.to_eat }}
+            </li>
+            <li class="component">
+              <h4 class="foJ_Mid">成分表示</h4>
+              <table>
+                {% for i in (0..100) %}
+                  {% if product.metafields.custom.component_title.value[i] == blank %}
+                    {% break %}
+                  {% else %}
+                  <tr>
+                    <th class="foJ_Thin">{{ product.metafields.custom.component_title.value[i] }}</th>
+                    <td class="foJ_Thin">{{ product.metafields.custom.component_content.value[i] }}</td>
+                  </tr>
+                  {% endif %}
+                {% endfor %}
+              </table>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="store_info_box">
+      <ul class="info_box clearfix">
+        <li class="image_box">
+          <div class="photo" style="background-image:url('{{ product.images[6] | img_url:"original" }}');"></div>
+          <div class="descriptions">
+            <h3 class="foJ_Mid">店舗情報</h3>
+            <a href="#" class="click_to_active t_link foJ_Mid" name=".on_time"><div class="icon arrow"></div>基本情報</a>
+            <a href="#" class="click_to_active t_link foJ_Mid" name=".accessmap"><div class="icon arrow"></div>アクセスマップ</a>
+          </div>
+        </li>
+        <li class="text_field">
+          <ul>
+            <li class="on_time active">
+              <h4 class="foJ_Mid">基本情報</h4>
+              <table>
+                {% for i in (0..100) %}
+                  {% if product.metafields.custom.store_information_title.value[i] == blank %}
+                    {% break %}
+                  {% else %}
+                  <tr>
+                    <th class="foJ_Thin">{{ product.metafields.custom.store_information_title.value[i] }}</th>
+                    <td class="foJ_Thin">{{ product.metafields.custom.store_information_content.value[i] }}</td>
+                  </tr>
+                  {% endif %}
+                {% endfor %}
+              </table>
+            </li>
+            <li class="accessmap">
+              {{ product.metafields.custom.storemap }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <!--ul id="product_spec" class="clearfix">
       <li id="to_eat">
         <h3 class="foJ_Bld">商品情報</h3>
         <div class="img" style="background-image:url('{{ product.images[5] | img_url:"original" }}');"></div>
@@ -40,11 +110,11 @@
           {% endfor %}
         </table>
       </li>
-    </ul>
-    <div id="product_accessmap">
+    </ul-->
+    <!--div id="product_accessmap">
       <h3 class="foJ_Bld">アクセスマップ</h3>
       {{ product.metafields.custom.storemap }}
-    </div>
+    </div-->
   </div>
   <!-- //product_spec_box -->
 </div>

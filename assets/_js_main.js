@@ -149,6 +149,24 @@ if($('.feature_list').length){
 }
 //----------特集商品リストスライダーここまで
 
+//----------クリックしたら指定した要素に".active"を付与し、兄弟要素から".active"を削る
+if($('a.click_to_active').length){
+    console.log("click");
+    $("a.click_to_active").each(function(){
+        $(this).click(function(){
+            console.log($(this).attr("name"));
+            var act=$($(this).attr("name"));
+            var act_siblings=act.siblings();
+            act_siblings.removeClass("active");
+            act.addClass("active");
+            return false;
+        });
+    });
+}
+//----------クリックしたら指定した要素に".active"を付与し、兄弟要素から".active"を削るここまで
+
+//--------------グローバルメニュー（メガメニュー）
+
     //フェードインアニメーション
     $(window).scroll(function (){
         $('.fadein').each(function(){
