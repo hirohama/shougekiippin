@@ -3,7 +3,9 @@
     "title": {
       "type": "title-page",
       "settings": {
-        "text_content": "タイトル"
+        "text_content": "タイトル",
+        "pageTitle": "よくあるご質問",
+        "width": "innerpage_wrapper"
       }
     },
     "main": {
