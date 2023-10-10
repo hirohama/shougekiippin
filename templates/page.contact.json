@@ -3,7 +3,9 @@
     "title": {
       "type": "title-page",
       "settings": {
-        "text_content": ""
+        "text_content": "",
+        "pageTitle": "お問い合わせ",
+        "width": "innerpage_wrapper"
       }
     },
     "main": {
