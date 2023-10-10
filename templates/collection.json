@@ -4,7 +4,8 @@
       "type": "title-page",
       "settings": {
         "text_content": "テキスト",
-        "pageTitle": "商品一覧"
+        "pageTitle": "商品一覧",
+        "width": "innerpage_wrapper_wide"
       }
     },
     "banner": {
