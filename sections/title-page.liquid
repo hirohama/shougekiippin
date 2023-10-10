@@ -1,6 +1,6 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 <div class="content innerpage_content">
-  <div class="innerpage_wrapper">
+  <div class="{{ section.settings.pageTitle }}">
     <h1 class="page_title_head foJ_Bld">
       {% if section.settings.pageTitle != blank %}
         {{ section.settings.pageTitle }}
@@ -25,8 +25,24 @@
       "type": "text",
       "id": "pageTitle",
       "label": "ページタイトル",
-      "default": "}",
+      "default": "{{ page.title | escape }}",
       "info": "ページの名前を入れてください"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "options": [
+        {
+          "value": "innerpage_wrapper",
+          "label": "通常"
+        },
+        {
+          "value": "innerpage_wrapper_wide",
+          "label": "広め"
+        }
+      ],
+      "default": "innerpage_wrapper",
+      "label": "通常"
     }] ,
     "presets": [
       {
