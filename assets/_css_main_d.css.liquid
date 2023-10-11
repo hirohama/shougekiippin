@@ -1318,6 +1318,99 @@ ul#product_introduce_col2{
     }
 }
 
+@media screen and (min-width: 1024px){
+    /* PCで小さめのディスプレイ以上 */
+    div#product_spec_box .info_box{
+        height:auto;/**/
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    div#product_spec_box .image_box{
+        width:100%;/**/
+        margin-bottom:1.5rem;
+    }
+    div#product_spec_box .text_field{
+        width:100%;/**/
+        height:100%;
+        background: #FFF;
+        border-radius: 1rem;
+        padding:1rem;
+    }
+    div#product_spec_box .image_box .photo{
+        width:55%;/**/
+        float:right;
+        aspect-ratio: 1.4 / 1;
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        border-radius: 0.5rem 0.5rem 0 0;
+        margin-top:-5rem;
+        box-shadow: 0 1rem 1.5rem -1rem #FFF;
+        border-bottom: 1px solid #FFF;
+    }
+    div#product_spec_box .image_box h3{
+        display: block;/**/
+        font-size:2.2rem;
+        line-height: 2.2rem;
+        padding:0rem 0 2.5rem;
+    }
+    div#product_spec_box .image_box a{
+        display: block;
+        font-size:1.5rem;
+        line-height: 1.5rem;
+        padding:0.5rem 0 0.5rem 1.5rem;
+        color:#000;
+        text-decoration: none;
+    }
+}
+@media screen and (min-width: 1280px){
+    /* PCで中くらいのディスプレイ以上 */
+    div#product_spec_box .info_box{
+        height:100%;
+        display:block;
+    }
+    div#product_spec_box .image_box{
+        width:45%;
+        float: left;
+    }
+    div#product_spec_box .text_field{
+        width:calc(55% - 1.5rem);
+        height:100%;
+        margin-left:1.5rem;
+        background: #FFF;
+        border-radius: 1rem;
+        padding:1rem;
+        float: right;
+    }
+    div#product_spec_box .image_box .photo{
+        width:100%;
+        aspect-ratio: 1.4 / 1;
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        border-radius: 0.5rem 0.5rem 0 0;
+        margin-top:-5rem;
+        box-shadow: 0 1rem 1.5rem -1rem #FFF;
+        border-bottom: 1px solid #FFF;
+        float:none;
+    }
+    div#product_spec_box .image_box h3{
+        display: block;
+        font-size:2.2rem;
+        line-height: 2.2rem;
+        padding:1rem 0;
+    }
+    div#product_spec_box .image_box a{
+        display: block;
+        font-size:1.5rem;
+        line-height: 1.5rem;
+        padding:0.5rem 0 0.5rem 1.5rem;
+        color:#000;
+        text-decoration: none;
+    }
+
+}
 div#product_spec_box{
     width: 100%;
     max-width: 1400px;
@@ -1330,12 +1423,10 @@ div#product_spec_box{
 }
 #product_info_box{
     background:#f5efdb;
-    /*box-shadow:0 0 1rem #d4ded5 inset;*/
     margin:0 0.5rem 0 1rem;
 }
 #store_info_box{
     background:#e7ebec;
-    /*box-shadow:0 0 1rem #d2dadc inset;*/
     margin:0 1rem 0 0.5rem;
 }
 #product_info_box,
@@ -1343,56 +1434,26 @@ div#product_spec_box{
     width:50%;
     padding:1.5rem;
 }
-div#product_spec_box .info_box{
-    height:100%;
-}
-div#product_spec_box .image_box{
-    width:45%;
-    float: left;
-}
-div#product_spec_box .text_field{
-    width:calc(55% - 1.5rem);
-    height:100%;
-    margin-left:1.5rem;
-    background: #FFF;
-    border-radius: 1rem;
-    padding:1rem;
-    float: right;
-}
-div#product_spec_box .image_box .photo{
-    width:100%;
-    aspect-ratio: 1.4 / 1;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-    border-radius: 0.5rem 0.5rem 0 0;
-    margin-top:-5rem;
-    box-shadow: 0 1rem 1.5rem -1rem #FFF;
-    border-bottom: 1px solid #FFF;
-}
-div#product_spec_box .image_box h3{
-    display: block;
-    font-size:2.2rem;
-    line-height: 2.2rem;
-    padding:1rem 0;
-}
-div#product_spec_box .image_box a{
-    display: block;
-    font-size:1.4rem;
-    line-height: 1.4rem;
-    padding:0.5rem 0 0.5rem 1.5rem;
+div#product_spec_box .image_box a.active{
     color:#000;
-    text-decoration: none;
-}
-div#product_spec_box .text_field h4{
-    display: block;
-    font-size:1.6rem;
-    line-height: 1.8rem;
-    padding:0 0 1.5rem;
+    text-decoration: underline 0.25px #000;
+    text-underline-offset: 0.25rem;
 }
 div#product_spec_box .text_field{
     font-size:1.3rem;
     line-height: 1.8rem;
+}
+
+div#product_spec_box .text_field h4{
+    display: block;
+    font-size:1.6rem;
+    line-height: 2.2rem;
+    padding:0 0 1.5rem;
+}
+div#product_spec_box .text_field h4 span{
+    display: block;
+    font-size:1.4rem;
+    line-height: 2.2rem;
 }
 div#product_spec_box .text_field ul{
     height:100%;

@@ -75,7 +75,6 @@ if($('#draw_product_menu').length){
     }
       //scrollだけだと読み込み時困るのでloadも追加
 
-
     function drawer_menu_check(){
         draw_menu_active = draw_menu_container.hasClass("active");
         draw_height=draw_menu_container.outerHeight(true);/*全体の高さ*/
@@ -154,11 +153,14 @@ if($('a.click_to_active').length){
     console.log("click");
     $("a.click_to_active").each(function(){
         $(this).click(function(){
-            console.log($(this).attr("name"));
-            var act=$($(this).attr("name"));
-            var act_siblings=act.siblings();
-            act_siblings.removeClass("active");
-            act.addClass("active");
+            var act=$(this).attr("name");
+            var act_array=String(act).split(",");
+            console.log(act_array);
+            for (var i = 0; i < act_array.length; i++) {
+                var act_siblings=$(act_array[i]).siblings();
+                act_siblings.removeClass("active");
+                $(act_array[i]).addClass("active");
+            }
             return false;
         });
     });
