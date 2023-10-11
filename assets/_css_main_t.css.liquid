@@ -7,20 +7,27 @@ body,html{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
-@media screen and (max-width: 639px) {
-    /*スマホ縦向き（639px以下）のスタイル*/
+/*タブレット縦向き、スマホ横向き（640px以上）のスタイル*/
 
+html {
+    font-size: 62.5%;
+}
+div#wrap{
+    border-top:10px solid #FC0;
+    border-bottom:10px solid #FC0;
+}
+.content{
+    border-left:10px solid #FC0;
+    border-right:10px solid #FC0;
+}
+ul#slider{
+    border-bottom:10px solid #FC0;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 840px) {
     /*タブレット縦向き、スマホ横向き（640px以上）のスタイル*/
-
-}
-@media screen and (min-width: 1024px) {
-    /*ノートPC、タブレット横向き（1024px以上）のスタイル*/
-
     html {
-        font-size: 62.5%;
+        font-size: 80%;
     }
     div#wrap{
         border-top:10px solid #FC0;
@@ -32,32 +39,6 @@ body,html{
     }
     ul#slider{
         border-bottom:10px solid #FC0;
-    }
-}
-@media screen and (min-width: 1280px) {
-    /*デスクトップ（1280px以上）のスタイル*/
-
-    html {
-        font-size: 68%;
-    }
-    div#wrap{
-        border-top:20px solid #FC0;
-        border-bottom:20px solid #FC0;
-    }
-    .content{
-        border-left:20px solid #FC0;
-        border-right:20px solid #FC0;
-    }
-    ul#slider{
-        border-bottom:20px solid #FC0;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    /*デスクトップ（1400px以上）のスタイル*/
-
-    html {
-        font-size: 75%;
     }
 }
 /*------------------------------------------------
@@ -110,40 +91,40 @@ header{
     position:relative;
 }
 header #logo_box{
-    position: absolute;
-    top: 3rem;
-    left: 3rem;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
     height: auto;
-    z-index: 1096;
+    z-index: 3000;
 }
 header#menu_index #logo_box{
-    display:none;
+    display:block;
 }
 #mega_menu #mega_menu_logo_box{
     position:fixed;
-    top: 3rem;
-    left: 3rem;
+    top: 2rem;
+    left: 2rem;
     height: auto;
 }
 #logo_box #menu_logo,
 #mega_menu_logo_box #menu_logo{
-    width:20rem;
+    width: 13rem;
     height: auto;
-    display:inline-block;
+    display: inline-block;
 }
 #logo_box .cross,
 #mega_menu_logo_box .cross{
     display: inline-block;
-    width: 2rem;
-    vertical-align: 1.5rem;
-    margin: 0 1rem;
+    width: 1.5rem;
+    vertical-align: 1rem;
+    margin: 0 0.5rem;
 }
 #logo_box .city,
 #mega_menu_logo_box .city{
     display: inline-block;
-    font-size: 1.8rem;
-    letter-spacing: 0.05em;
-    vertical-align: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: .05em;
+    vertical-align: 0.35rem;
 }
 #logo_box .city span,
 #mega_menu_logo_box .city span{
@@ -324,10 +305,9 @@ header nav li #menu_btn{
     }
 }
 
+
 /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
-
-
-
+/*ここから*/
 header nav li svg{
     width:2.5rem;
     height:2.5rem;
@@ -339,7 +319,7 @@ menu #menu_back{
     position:fixed;
     z-index:1098;
     top:calc(100vh - 110vh);
-    right:-2rem;
+    right:0;
     background: #FC0;
     width:110vw;
     height:110vh;
@@ -349,7 +329,7 @@ menu #menu_back{
 }
 menu.close #menu_back{
     top:calc(7.5rem - 110vh);
-    right:calc(33rem - 110vw);
+    right:0;
 }
 
 menu #mega_menu{
@@ -373,126 +353,59 @@ menu.close #mega_menu{
 }
 #mega_menu_box{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: calc(50vh - 25rem);
+    flex-direction: column;
+    height: 100vh;
 }
 #mega_menu #head_menu_box{
     flex-grow: 1;
-    width: 40vw;
+    width: 100vw;
 }
-
 
 #mega_menu div.margin_box{
-    width: 45rem;
+    width: 100%;
     padding: 0;
-    height: 50rem;
     margin: auto;
 }
-#mega_menu div.bubble_box{
+#mega_menu div.bubble_box{/**/
     width: 40rem;
     text-align: center;
-    padding: 16rem 5rem 0;
-    height: 50rem;
+    padding: 10rem 5rem 0;
+    height: 40rem;
     background-position: center center;
     background-repeat: no-repeat;
 }
-#head_menu_box div.bubble_box{
-    margin: 0 0 0 5rem;
-    background-size: 107%;
+#head_menu_box div.bubble_box{/**/
+    margin: 12rem 0 0 10vw;
+    background-size: 105%;
     background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
 }
 
-#sub_menu_box div.bubble_box{
-    margin: 0 5rem 0 0;
-    background-size: 90%;
+#sub_menu_box div.bubble_box{/**/
+    margin: -9rem 0 0 35vw;
+    background-size: 100%;
     background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
-}
-
-
-#mega_menu div.margin_box{
-    width: 45rem;
-    padding: 0;
-    height: 50rem;
-    margin: auto;
-}
-#mega_menu div.bubble_box{
-    width: 40rem;
-    text-align: center;
-    padding: 16rem 5rem 0;
-    height: 50rem;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-#head_menu_box div.bubble_box{
-    margin: 0 0 0 5rem;
-    background-size: 107%;
-    background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
-}
-
-#sub_menu_box div.bubble_box{
-    margin: 0 5rem 0 0;
-    background-size: 95%;
-    background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
-}
-@media screen and (min-width: 1280px){
-    /* PCで中くらい以上のディスプレイ */
-    #mega_menu div.margin_box{
-        width: 55rem;
-        padding: 0;
-        height: 50rem;
-        margin: auto;
-    }
-    #mega_menu div.bubble_box{
-        width: 40rem;
-        text-align: center;
-        padding: 16rem 5rem 0;
-        height: 50rem;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-    #head_menu_box div.bubble_box{
-        margin: 0 0 0 15rem;
-        background-size: 107%;
-        background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
-    }
-
-    #sub_menu_box div.bubble_box{
-        margin: 0 15rem 0 0;
-        background-size: 95%;
-        background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
-    }
 }
 
 #head_menu_box ul{
     margin:auto;
 }
-#head_menu_box ul li{
+#head_menu_box ul li{/**/
     display: inline-block;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     line-height: 5rem;
     letter-spacing: .2rem;
     vertical-align: top;
 }
 #mega_menu #head_text{
-    flex-grow: 0;
-    width: 5rem;
-    color: #4e3e00;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    font-size: 1.8rem;
-    line-height: 3rem;
-    letter-spacing: .2rem;
-    height: 43rem;
-    display: block;
+    display: none;
 }
 #mega_menu #sub_menu_box{
     width:40vw;
     flex-grow:1;
 }
-#sub_menu_box div{
+#sub_menu_box div{/**/
     text-align: left;
     width: 22rem;
     margin: auto;
@@ -527,6 +440,48 @@ menu.close #mega_menu{
     padding-top: 1rem;
     letter-spacing: .1rem;
 }
+
+@media screen and (min-width: 840px) {
+    #mega_menu div.bubble_box{
+        width: 37rem;
+        text-align: center;
+        padding: 10rem 5rem 0;
+        height: 37rem;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    #head_menu_box div.bubble_box{
+        margin: 8rem 0 0 7rem;
+        background-size: 100%;
+        background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
+    }
+
+    #sub_menu_box div.bubble_box{
+        margin: -10rem 0 0 40vw;
+        background-size: 90%;
+        background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
+    }
+
+    #head_menu_box ul{
+        margin:auto;
+    }
+    #head_menu_box ul li{
+        display: inline-block;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        font-size: 2rem;
+        line-height: 4.5rem;
+        letter-spacing: .2rem;
+        vertical-align: top;
+    }
+    #sub_menu_box div{
+    text-align: left;
+    width: 20rem;
+    margin: auto;
+}
+}
+
+
 /*productのページで出てくるドロワーメニュー。*/
 
     #draw_product_menu{
@@ -772,6 +727,7 @@ div#slider_box{
     width:100%;
     background:#FC0;
     position:relative;
+    overflow: hidden;
 }
 div#slider_box::before{
     content:"";
@@ -782,7 +738,8 @@ div#slider_box::before{
     background:#FFF;
 }
 ul#slider{
-    width:100%;
+    width: 160%;
+    margin-left: -30%;
 }
     ul#slider li.slide_clip{
         position:relative;
@@ -817,159 +774,155 @@ ul#slider{
     position: absolute;
     margin:0 0 0 5vw;
 }
-    .ttl_index_01 h2.read{
-        display:inline-block;
-        font-size:3rem;
-        padding-bottom:1rem;
-        letter-spacing: 0.05rem;
-    }
-    .ttl_index_01 h2.read span{
-        display:block;
-        font-size:0.8rem;
-    }
-    .ttl_index_01 p.description{
-        display:block;
-        padding-left:1rem;
-        border-left:1px solid #000;
-    }
-
-#ippin{
-    width:90%;
-    margin:0 auto 0;
+.ttl_index_01 h2.read{
+    display:inline-block;
+    font-size:3rem;
+    padding-bottom:1rem;
+    letter-spacing: 0.05rem;
+}
+.ttl_index_01 h2.read span{
+    display:block;
+    font-size:0.8rem;
+}
+.ttl_index_01 p.description{
+    display:block;
+    padding-left:1rem;
+    border-left:1px solid #000;
 }
 
-    #ippin li.store{
-        position: relative;
-        display:inline-block;
-        width:50%;
-        height:32vw;
-    }
-    #ippin li.store:nth-child(even){
-        float:left;
-    }
-    #ippin li.store:nth-child(odd){
-        float:right;
-    }
-    #ippin li.store:nth-child(2){;
-        margin-top:15vw;
-    }
-        #ippin li.store div.chef{
-            float:left;
-            width:57%;
-            height:24vw;
-            background-repeat:no-repeat;
-            background-position:center;
-            background-size:100% auto;
-            border-radius:1vw;
-        }
-        div.ribbon_box{
-            position: relative;
-            width: 3.55rem;
-            margin: -4% 0 0 5%;
-            padding-bottom: 2rem;
-            border-top: 1px solid #000;
-            border-left: 1px solid #000;
-            border-right: 1px solid #000;
-            overflow: hidden;
-        }
-            div.ribbon_box ul.ribbon_in_img,
-            div.ribbon_box ul.ribbon{
-                width: 100%;
-                background: #f5c520;
-                padding-top: 1rem;
-                padding-bottom: 1.25rem;
-                text-align: left;
-            }
-                div.ribbon_box ul.ribbon li{
-                    width:100%;
-                    min-height:20rem;
-                    -ms-writing-mode: tb-rl;
-                    writing-mode: vertical-rl;
-                    font-size: 2.2rem;
-                    line-height: 3.5rem;
-                    letter-spacing: .1rem;
-                    white-space: nowrap;
-                }
-                div.ribbon_box ul.ribbon_in_img li{
-                    width: 100%;
-                    min-height: 18rem;
-                }
-                    div.ribbon_box ul.ribbon_in_img li img{
-                        width:100%;
-                    }
-            div.ribbon_box ul.ribbon_in_img::before,
-            div.ribbon_box ul.ribbon::before{
-                    content: "";
-                    display: block;
-                    left: -1.45rem;
-                    bottom: 0.54rem;
-                    position: absolute;
-                    background: #f5c520;
-                    width: 2.65rem;
-                    height: 2.65rem;
-                    -webkit-transform: rotate(-48deg);
-                    transform: rotate(-48deg);
-                    border-bottom: 1px solid #000;
-            }
-            div.ribbon_box ul.ribbon_in_img::after,
-            div.ribbon_box ul.ribbon::after{
-                content: "";
-                display: block;
-                right: -1.5rem;
-                bottom: 0.54rem;
-                position: absolute;
-                background: #f5c520;
-                width: 2.65rem;
-                height: 2.65rem;
-                -webkit-transform: rotate(-42deg);
-                transform: rotate(-42deg);
-                border-left: 1px solid #000;
-            }
+#ippin{
+width: 80%;
+margin: 0 auto;
+}
 
-        #ippin li.store div.ippin{
-            float:right;
-            width:43%;
-            height:25vw;
-            background-repeat:no-repeat;
-            background-position:center;
-            background-size:100% auto;
-        }
-        #ippin li.store div.ippin_img{
-            width:85%;
-            height:62%;
-            margin:-10% auto 0;
-        }
-            .mask {
-                -webkit-clip-path: url(#svgPath);
-                clip-path: url(#svgPath);
-            }
-        #ippin li.store div.ippin_text{
-            display: table;
-            width:100%;
-            height:30%;
-        }
-            div.ippin_text div.ippin_text_rayout{
-                display: table-cell;
-                width:100%;
-                height:100%;
-                text-align: center;
-                vertical-align: middle;
-                color:#000;
-            }
-                div.ippin_text_rayout span{
-                    font-size:0.9vw;
-                    line-height:1vw;
-                    padding:0.2vw 0.5vw;
-                }
-                div.ippin_text_rayout p{
-                    display:block;
-                    padding:0.2vw 0.5vw;
-                    font-size:1.5vw;
-                    line-height:2vw;
-                    text-decoration: underline #000 1px;
-                    text-underline-offset: 0.25vw;
-                }
+#ippin li.store{
+    position: relative;
+    display:inline-block;
+    width:100%;
+    margin-bottom: 7rem;
+}
+#ippin li.store a.box{
+    display: flex;
+    align-items: stretch
+}
+#ippin li.store:nth-child(even),
+#ippin li.store:nth-child(odd){
+    float:none;
+}
+#ippin li.store div.chef{
+    float: left;
+    width: 57%;
+    aspect-ratio: 1.05 / 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+}
+div.ribbon_box{
+    position: relative;
+    width: 3.55rem;
+    margin: -4% 0 0 5%;
+    padding-bottom: 2rem;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    overflow: hidden;
+}
+div.ribbon_box ul.ribbon_in_img,
+div.ribbon_box ul.ribbon{
+    width: 100%;
+    background: #f5c520;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+    text-align: left;
+}
+div.ribbon_box ul.ribbon li{
+    width:100%;
+    min-height:20rem;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    font-size: 2.2rem;
+    line-height: 3.5rem;
+    letter-spacing: .1rem;
+    white-space: nowrap;
+}
+div.ribbon_box ul.ribbon_in_img li{
+    width: 100%;
+    min-height: 18rem;
+}
+div.ribbon_box ul.ribbon_in_img li img{
+    width:100%;
+}
+div.ribbon_box ul.ribbon_in_img::before,
+div.ribbon_box ul.ribbon::before{
+        content: "";
+        display: block;
+        left: -1.45rem;
+        bottom: 0.54rem;
+        position: absolute;
+        background: #f5c520;
+        width: 2.65rem;
+        height: 2.65rem;
+        -webkit-transform: rotate(-48deg);
+        transform: rotate(-48deg);
+        border-bottom: 1px solid #000;
+}
+div.ribbon_box ul.ribbon_in_img::after,
+div.ribbon_box ul.ribbon::after{
+    content: "";
+    display: block;
+    right: -1.5rem;
+    bottom: 0.54rem;
+    position: absolute;
+    background: #f5c520;
+    width: 2.65rem;
+    height: 2.65rem;
+    -webkit-transform: rotate(-42deg);
+    transform: rotate(-42deg);
+    border-left: 1px solid #000;
+}
 
+#ippin li.store div.ippin{
+    float: right;
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+}
+#ippin li.store div.ippin_img{
+    width: 100%;
+    height: 65%;
+    margin: -10% auto 0;
+}
+.mask {
+    -webkit-clip-path: url(#svgPath);
+    clip-path: url(#svgPath);
+}
+#ippin li.store div.ippin_text{
+    display: table;
+    width: 100%;
+    flex-grow: 1;
+    margin-top: -4rem;
+}
+div.ippin_text div.ippin_text_rayout{
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: #000;
+}
+div.ippin_text_rayout span{
+    font-size: 1.25rem;
+    line-height: 2rem;
+    padding: 0.5rem 0;
+}
+div.ippin_text_rayout p{
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-decoration: underline #000 1px;
+    text-underline-offset: 0.5rem;
+}
 
 
 
@@ -1239,7 +1192,6 @@ ul#product_introduce_col2{
 #product_outline_2_2 h2{
     display:inline-block;
 }
-
 #product_outline_1 .outline_1_text,
 #product_outline_1 .outline_1_2_text,
 #product_outline_2_1 .outline_2_text{
@@ -2449,8 +2401,8 @@ button
 -------------------------------------------------*/
 .btn_box{/*indexのみ*/
     position: absolute;
-    left:calc(22vw - 12.5rem);
-    top:calc(24vw - 2.5rem);
+    left: calc(50% - 12.5rem);
+    top: calc(100% - 2.5rem);
 }
 
 .btn,

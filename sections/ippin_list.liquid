@@ -19,7 +19,7 @@
       {% if collection.handle == 'ippin_top_list' %}
         {% for product in collection.products %}
           <li class="store fadein">
-            <a href="{{ product.url }}">
+            <a href="{{ product.url }}" class="box">
               <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
                 <div class="ribbon_box">
                   <ul class="ribbon_in_img">
