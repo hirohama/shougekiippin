@@ -62,17 +62,15 @@ div#wrap{
 }
 .content a{
     color:#ffba00;
-    text-decoration: underline 1px;
-    text-underline-offset: 0.25rem;
 }
 .content a:hover{
     opacity:0.5;
 }
 .content.innerpage_content{
-    padding-top:12rem;
+    padding-top:9rem;
 }
 .content.add_spacer{
-    padding-top:7rem;
+    padding-top:4rem;
 }
 .content.add_spacer2{
     padding-top:2rem;
@@ -95,7 +93,7 @@ header #logo_box{
     top: 2rem;
     left: 2rem;
     height: auto;
-    z-index: 3000;
+    z-index: 1999;
 }
 header#menu_index #logo_box{
     display:block;
@@ -475,10 +473,10 @@ menu.close #mega_menu{
         vertical-align: top;
     }
     #sub_menu_box div{
-    text-align: left;
-    width: 20rem;
-    margin: auto;
-}
+        text-align: left;
+        width: 20rem;
+        margin: auto;
+    }
 }
 
 
@@ -773,9 +771,10 @@ ul#slider{
 
 /*---------------ippin_list-----------------*/
 .ttl_index_01{
-    width:calc(44vw - 20px);
-    position: absolute;
-    margin:0 0 0 5vw;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom:5rem;
 }
 .ttl_index_01 h2.read{
     display:inline-block;
@@ -789,8 +788,6 @@ ul#slider{
 }
 .ttl_index_01 p.description{
     display:block;
-    padding-left:1rem;
-    border-left:1px solid #000;
 }
 
 #ippin{
@@ -802,18 +799,21 @@ margin: 0 auto;
     position: relative;
     display:inline-block;
     width:100%;
-    margin-bottom: 7rem;
+    margin-bottom: 7.5rem;
 }
 #ippin li.store a.box{
     display: flex;
-    align-items: stretch
+    align-items: stretch;
+    flex-direction : row;
+}
+#ippin li.store:nth-child(even) a.box{
+    flex-direction : row-reverse;
 }
 #ippin li.store:nth-child(even),
 #ippin li.store:nth-child(odd){
     float:none;
 }
 #ippin li.store div.chef{
-    float: left;
     width: 57%;
     aspect-ratio: 1.05 / 1;
     background-repeat: no-repeat;
@@ -821,6 +821,7 @@ margin: 0 auto;
     background-size: cover;
     border-radius: 1rem;
 }
+
 div.ribbon_box{
     position: relative;
     width: 3.55rem;
@@ -830,6 +831,9 @@ div.ribbon_box{
     border-left: 1px solid #000;
     border-right: 1px solid #000;
     overflow: hidden;
+}
+#ippin li.store:nth-child(even) div.ribbon_box{
+    margin: -4% 0 0 83%;
 }
 div.ribbon_box ul.ribbon_in_img,
 div.ribbon_box ul.ribbon{
@@ -886,7 +890,6 @@ div.ribbon_box ul.ribbon::after{
 }
 
 #ippin li.store div.ippin{
-    float: right;
     width: 43%;
     display: flex;
     flex-direction: column;
@@ -912,6 +915,7 @@ div.ippin_text div.ippin_text_rayout{
     text-align: center;
     vertical-align: middle;
     color: #000;
+    text-decoration: none;
 }
 div.ippin_text_rayout span{
     font-size: 1.25rem;
@@ -1398,8 +1402,8 @@ pages
 
 -------------------------------------------------*/
 .innerpage_wrapper{
-  width:80%;
-  max-width: 1200px;
+  width:90%;
+  max-width: none;
   margin:auto;
   padding-bottom:0vw;
 }
@@ -1414,7 +1418,7 @@ pages
 }
 h1.page_title_head{
   display:block;
-  padding-bottom:4rem;
+  padding-bottom:2rem;
   font-size:3rem;
 }
 .editor_content{
@@ -1669,15 +1673,15 @@ form#ContactForm textarea{
 div#customer_login_form_box,
 div#recover_customer_password_form_box{
     display: block;
-    width:50%;
-    min-height: 20vw;
+    width: 80%;
+    min-height: 20rem;
     background: #F4F4F4;
-    box-shadow: 0 0 1rem #FFF inset;
+    box-shadow: 0 0 1rem #fff inset;
     border-radius: 1vw;
-    margin:0 auto 3vw;
-    padding: 2vw 0 2vw;
-    border:5px solid #FC0;
-    text-align:center;
+    margin: 0 auto 3vw;
+    padding: 2rem 0;
+    border: 5px solid #FC0;
+    text-align: center;
 }
 
 div#customer_login_form_box label,
@@ -2575,6 +2579,16 @@ utility
     clear: both;
 }
 
+/*-------------------br-----------------------*/
+br.d{
+    display:none;
+}
+br.t{
+    display:inline;
+}
+br.m{
+    display:none;
+}
 /*---------------quantity button----------------*/
 /* component-quantity */
 
@@ -2866,36 +2880,30 @@ product-info .loading-overlay:not(.hidden) ~ *,
     visibility: visible;
   }
 
-  .modal-display-wrapper > .image-wrapper {
-    position: relative;
-    height: 70%;
-  }
-  
-  @media screen and (max-width: 750px) {
     .modal-display-wrapper > .image-wrapper {
       height: unset;
+        position: relative;
       width: 85%;
     }
-  }
 
   .modal-display-wrapper > .image-wrapper > img {
     width: 100%;
     height: 100%;
-    border-radius: 2rem;
+    border-radius: 1rem 0 1rem 1rem;
     object-fit: cover;
     vertical-align: bottom;
   }
   
   .modal-display-wrapper > .image-wrapper > .close-btn {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    top: -15px;
-    right: -15px;
-    line-height: 30px;
-    background-color: #ffffff;
+    width: 3rem;
+    height: 3rem;
+    top: -1.5rem;
+    right: -1.5rem;
+    line-height: 2.8rem;
+    background-color: #fff;
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
-    font-size: 30px;
-  }
+    font-size: 2rem;
+}
