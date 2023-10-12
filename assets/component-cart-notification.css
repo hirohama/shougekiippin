@@ -1,5 +1,6 @@
 .cart-notification-wrapper {
   position: relative;
+  z-index: 1150;
 }
 
 .cart-notification-wrapper .cart-notification {
@@ -7,27 +8,25 @@
 }
 
 .cart-notification {
-  padding-bottom:2.5vw;
-  position:fixed;
-  left: 50%;
-  top: 50%;
-  border:5px solid #FC0;
-  border-radius: 1vw;
-  background: #f4f4f4;
-  width:70%;
-  min-height:35%;
-  box-shadow: 0 0 10px 3px rgba(0, 0, 0, .2);
-  transform: translate(-50%, -50%);
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  opacity: 0;
-
-  /*transform: translateY(-100%);*/
-  visibility: hidden;
-  z-index: 100;
+  padding-bottom: 2.5vw;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    border: 5px solid #FC0;
+    border-radius: 1vw;
+    background: #f4f4f4;
+    width: 70%;
+    min-height: 30%;
+    box-shadow: 0 0 10px 3px #0003;
+    transform: translate(-50%,-50%);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
 }
 
 @media screen and (min-width: 1024px){/*pc*/
