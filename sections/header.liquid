@@ -132,8 +132,8 @@
     <div id="menu_back"></div>
     <nav>
       <ul>
-        <li class="foJ_Bld"><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 537 537"><defs><style>.b{fill:none;}.a{fill:#000;}</style></defs><rect class="b" width="537" height="537"></rect><path class="a" d="M398.39,306.53a179.45,179.45,0,0,0-69.19-43,114,114,0,1,0-116.3,0A181.23,181.23,0,0,0,90.29,434.71a12.8,12.8,0,0,0,25.59,0c0-85.57,69.61-155.18,155.18-155.18s155.18,69.61,155.18,155.18a12.8,12.8,0,0,0,25.59,0A180.2,180.2,0,0,0,398.39,306.53ZM271,253.93a88.41,88.41,0,1,1,88.42-88.4A88.42,88.42,0,0,1,271,253.93Z" transform="translate(0 0)"></path></svg>マイページ</a></li>
-        <li class="foJ_Bld">
+        <li class="foJ_Bld min_menu_btn"><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 537 537"><defs><style>.b{fill:none;}.a{fill:#000;}</style></defs><rect class="b" width="537" height="537"></rect><path class="a" d="M398.39,306.53a179.45,179.45,0,0,0-69.19-43,114,114,0,1,0-116.3,0A181.23,181.23,0,0,0,90.29,434.71a12.8,12.8,0,0,0,25.59,0c0-85.57,69.61-155.18,155.18-155.18s155.18,69.61,155.18,155.18a12.8,12.8,0,0,0,25.59,0A180.2,180.2,0,0,0,398.39,306.53ZM271,253.93a88.41,88.41,0,1,1,88.42-88.4A88.42,88.42,0,0,1,271,253.93Z" transform="translate(0 0)"></path></svg><span class="min_title">マイページ</span></a></li>
+        <li class="foJ_Bld min_menu_btn">
           <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
             {%- liquid
               if cart == empty
@@ -171,8 +171,8 @@
                 <li class="foJ_Bld"><a href="{{ routes.root_url }}">トップページ</a></li>
                 <li class="foJ_Bld"><a href="/collections/all/">商品一覧</a></li>
                 <li class="foJ_Bld"><a href="#">衝撃一品とは？</a></li>
-                <li class="foJ_Bld"><a href="/pages/faq/">よくあるご質問</a></li>
-                <li class="foJ_Bld"><a href="/pages/shopping_guide/">お買い物ガイド</a></li>
+                <li class="foJ_Bld"><a href="/pages/faq/">マイページ</a></li>
+                <li class="foJ_Bld"><a href="/pages/shopping_guide/">カートをみる</a></li>
                 <!--li>
                   <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
                   {%- liquid
@@ -214,16 +214,21 @@
               </div>
               <div>
                 <ul>
-                  <li class="foJ_Mid"><a href="/pages/contact">お問い合わせ</a></li>
-                  <li class="foJ_Mid"><a href="/pages/privacy">プライバシーポリシー</a></li>
-                  <li class="foJ_Mid"><a href="/pages/specified_commercial_transactions">特定商取引法に基づく表示</a></li>
+                  <li class="foJ_Mid"><a href="/pages/faq/">お買い物ガイド</a></li>
+                  <li class="foJ_Mid"><a href="/pages/pages/shopping_guide/">よくあるご質問</a></li>
+                  <li class="foJ_Mid"><a href="/pages/contact/">お問い合わせ</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+        
     </div>
     <!--#mega_menu_box-->
+    <ul class="menu_bottom">
+      <li class="foJ_Mid"><a href="/pages/privacy/">プライバシーポリシー</a></li>
+      <li class="foJ_Mid"><a href="/pages/specified_commercial_transactions/">特定商取引法に基づく表示</a></li>
+    </ul>
     </div>
   </menu>
   {% if template == 'product' %} 

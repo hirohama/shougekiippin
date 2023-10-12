@@ -271,7 +271,10 @@ header nav li #menu_btn{
     top: 0.6rem;
     left: 0.1rem;
 }
-
+#mega_menu ul.menu_bottom li:first-child:after{
+    content:"／";
+    font-size:1.6rem;
+}
 @media screen and (min-width: 1280px){
     #menu_btn span:nth-of-type(1) {
       top:1.3rem; 
@@ -322,17 +325,17 @@ header nav li #menu_btn{
     }
 }
 
-/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
-
-
-
 header nav li svg{
     width:2.5rem;
     height:2.5rem;
     vertical-align: -.75rem;
 }
-
-
+.min_menu_btn span.min_title{
+    display:inline;
+}
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+/*--------------------------mega menu-------------------------*/
+/*メガメニュー本体と背景*/
 menu #menu_back{
     position:fixed;
     z-index:1098;
@@ -369,145 +372,117 @@ menu.close #mega_menu{
     opacity:0;
     pointer-events: none
 }
+/*メガメニュー本体と背景 - ここまで*/
+
+/*メガメニュー内部 - 基本は縦向きで記述（PCの場合はウインドウを伸ばせるため）*/
+
+/*メガメニュー下、小メニュー*/
+#mega_menu ul.menu_bottom{
+    position: fixed;
+    bottom: 2vh;
+    right: 0;
+    padding: 0.5vw 2vw;
+}
+#mega_menu ul.menu_bottom li{
+    display: inline-block;
+    font-size:1.3rem;
+}
+#mega_menu ul.menu_bottom li:first-child:after{
+    content:"／";
+    font-size:1.3rem;
+}
+/*メガメニュー下、小メニュー - ここまで*/
+
 #mega_menu_box{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: calc(50vh - 25rem);
+    height: 100vh;
 }
-#mega_menu #head_menu_box{
-    flex-grow: 1;
+
+/*大メニューと中メニュー共通*/
+#mega_menu div.margin_box{
+    width: 45vw;
+    padding: 0;
+    height: 100%;
+    margin: auto;
+}
+#mega_menu div.bubble_box{
     width: 40vw;
-}
-
-
-#mega_menu div.margin_box{
-    width: 45rem;
-    padding: 0;
-    height: 50rem;
-    margin: auto;
-}
-#mega_menu div.bubble_box{
-    width: 40rem;
     text-align: center;
-    padding: 16rem 5rem 0;
-    height: 50rem;
+    padding-top: calc(50vh - 10vw);
+    height: 100%;
     background-position: center center;
     background-repeat: no-repeat;
 }
+#mega_menu #head_menu_box,
+#mega_menu #sub_menu_box{
+    flex-grow: 1;
+    width: 45vw;
+    height: 100vh;
+}
+/*大メニューと中メニュー共通 - ここまで*/
+
+/*大メニュー*/
 #head_menu_box div.bubble_box{
-    margin: 0 0 0 5rem;
-    background-size: 107%;
+    margin: 0 0 0 5vw;
+    background-size: 100%;
     background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
 }
-
-#sub_menu_box div.bubble_box{
-    margin: 0 5rem 0 0;
-    background-size: 90%;
-    background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
-}
-
-
-#mega_menu div.margin_box{
-    width: 45rem;
-    padding: 0;
-    height: 50rem;
-    margin: auto;
-}
-#mega_menu div.bubble_box{
-    width: 40rem;
-    text-align: center;
-    padding: 16rem 5rem 0;
-    height: 50rem;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-#head_menu_box div.bubble_box{
-    margin: 0 0 0 5rem;
-    background-size: 107%;
-    background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
-}
-
-#sub_menu_box div.bubble_box{
-    margin: 0 5rem 0 0;
-    background-size: 95%;
-    background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
-}
-@media screen and (min-width: 1280px){
-    /* PCで中くらい以上のディスプレイ */
-    #mega_menu div.margin_box{
-        width: 55rem;
-        padding: 0;
-        height: 50rem;
-        margin: auto;
-    }
-    #mega_menu div.bubble_box{
-        width: 40rem;
-        text-align: center;
-        padding: 16rem 5rem 0;
-        height: 50rem;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-    #head_menu_box div.bubble_box{
-        margin: 0 0 0 15rem;
-        background-size: 107%;
-        background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
-    }
-
-    #sub_menu_box div.bubble_box{
-        margin: 0 15rem 0 0;
-        background-size: 95%;
-        background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
-    }
-}
-
 #head_menu_box ul{
+    height:20vw;
     margin:auto;
 }
 #head_menu_box ul li{
     display: inline-block;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-    font-size: 2.2rem;
-    line-height: 5rem;
-    letter-spacing: .2rem;
+    font-size: 2.2vw;
+    line-height: 4vw;
+    letter-spacing: .2vw;
     vertical-align: top;
 }
+/*大メニュー - ここまで*/
+
+/*中央キャッチコピー*/
 #mega_menu #head_text{
     flex-grow: 0;
-    width: 5rem;
+    width: 5vw;
     color: #4e3e00;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-    font-size: 1.8rem;
-    line-height: 3rem;
-    letter-spacing: .2rem;
-    height: 43rem;
+    font-size: 1.85vw;
+    line-height: 2.3vw;
+    letter-spacing: 0.1vw;
+    height: 42vw;
     display: block;
 }
-#mega_menu #sub_menu_box{
-    width:40vw;
-    flex-grow:1;
+/*中央キャッチコピー - ここまで*/
+
+/*中メニュー*/
+#sub_menu_box div.bubble_box{
+    margin: 0 5vw 0 0;
+    background-size: 90%;
+    background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
 }
 #sub_menu_box div{
     text-align: left;
-    width: 22rem;
+    width: 20vw;
     margin: auto;
 }
 #sub_menu_box .sns_head{
-    font-size: 1.2rem;
-    height: 2.2rem;
+    font-size: 1.2vw;
+    height: 2.2vw;
 }
 #sub_menu_box .sns_link{
-    height: 5rem;
+    height: 6vw;
     border-bottom: 1px solid #000;
 }
 #sub_menu_box .sns_link a{
     display: inline-block;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0 0.3rem 0 0;
+    width: 3vw;
+    height: 3vw;
+    padding: 0 0.3vw 0 0;
 }
 #sub_menu_box .sns_link a svg{
     width: 100%;
@@ -520,11 +495,15 @@ menu.close #mega_menu{
 #sub_menu_box ul li{
     text-align: left;
     display: block;
-    font-size: 1.4rem;
-    line-height: 1.5rem;
-    padding-top: 1rem;
-    letter-spacing: .1rem;
+    font-size: 1.5vw;
+    line-height: 1.5vw;
+    padding-top: 1vw;
+    letter-spacing: .1vw;
 }
+
+/*中メニュー - ここまで*/
+
+
 /*productのページで出てくるドロワーメニュー。*/
 
     #draw_product_menu{
@@ -2776,13 +2755,6 @@ br.m{
 
 price-per-item .loading-overlay {
   position: relative;
-}
-
-@media screen and (max-width: 749px) {
-  .loading-overlay {
-    top: 0;
-    right: 0;
-  }
 }
 
 @media screen and (min-width: 750px) {

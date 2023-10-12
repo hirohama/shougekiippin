@@ -89,14 +89,14 @@ header{
     position:relative;
 }
 header #logo_box{
-    position: fixed;
+    position: absolute;
     top: 2rem;
     left: 2rem;
     height: auto;
-    z-index: 1999;
+    z-index: 1096;
 }
 header#menu_index #logo_box{
-    display:block;
+    display:none;
 }
 #mega_menu #mega_menu_logo_box{
     position:fixed;
@@ -253,71 +253,26 @@ header nav li #menu_btn{
     left: 0.1rem;
 }
 
-@media screen and (min-width: 1280px){
-    #menu_btn span:nth-of-type(1) {
-      top:1.3rem; 
-      width: 2rem;
-    }
-
-    #menu_btn span:nth-of-type(2) {
-      top:1.95rem;
-      width: 1.6rem;
-    }
-
-    #menu_btn span:nth-of-type(3) {
-      top:2.6rem;
-      width: 1.2rem;
-    }
-    #menu_btn span:nth-of-type(3)::after {
-        content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
-        position: absolute;
-        top: 0.5rem;
-        left: -0.3rem;
-        color: #fff;
-        font-size: .9rem;
-        text-transform: uppercase;
-        line-height: 1rem;
-    }
-    #menu_btn.active span:nth-of-type(1) {
-        top: 1.25rem;
-        left: 1.7rem;
-        transform: translateY(0.5rem) rotate(-45deg);
-        width: 30%;
-    }
-
-    #menu_btn.active span:nth-of-type(2) {
-      opacity: 0;
-    }
-
-    #menu_btn.active span:nth-of-type(3){
-        top: 2.25rem;
-        left: 1.7rem;
-        transform: translateY(-0.5rem) rotate(45deg);
-        width: 30%;
-    }
-    #menu_btn.active span:nth-of-type(3)::after {
-        content:"Close";/*3つ目の要素のafterにClose表示を指定*/
-        transform: translateY(0) rotate(-45deg);
-        top: 0.7rem;
-        left: 0.4rem;
-    }
-}
-
-
-/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
-/*ここから*/
 header nav li svg{
     width:2.5rem;
     height:2.5rem;
     vertical-align: -.75rem;
 }
 
+.min_menu_btn span.min_title{
+    display:none;
+}
 
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+/*--------------------------mega menu-------------------------*/
+
+
+/*メガメニュー本体と背景*/
 menu #menu_back{
     position:fixed;
     z-index:1098;
     top:calc(100vh - 110vh);
-    right:0;
+    right:-2rem;
     background: #FC0;
     width:110vw;
     height:110vh;
@@ -327,7 +282,7 @@ menu #menu_back{
 }
 menu.close #menu_back{
     top:calc(7.5rem - 110vh);
-    right:0;
+    right:calc(17rem - 110vw)
 }
 
 menu #mega_menu{
@@ -345,140 +300,283 @@ menu #mega_menu{
     background-position: right 8rem,left 8rem;
     background-size: auto calc(100vh - 8rem),auto calc(100vh - 8rem);
 }
+
 menu.close #mega_menu{
     opacity:0;
     pointer-events: none
 }
-#mega_menu_box{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-#mega_menu #head_menu_box{
-    flex-grow: 1;
-    width: 100vw;
-}
+/*メガメニュー本体と背景 - ここまで*/
 
-#mega_menu div.margin_box{
-    width: 100%;
-    padding: 0;
-    margin: auto;
-}
-#mega_menu div.bubble_box{/**/
-    width: 40rem;
-    text-align: center;
-    padding: 10rem 5rem 0;
-    height: 40rem;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-#head_menu_box div.bubble_box{/**/
-    margin: 12rem 0 0 10vw;
-    background-size: 105%;
-    background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
-}
+/*メガメニュー内部 - 基本は縦向きで記述（PCの場合はウインドウを伸ばせるため）*/
 
-#sub_menu_box div.bubble_box{/**/
-    margin: -9rem 0 0 35vw;
-    background-size: 100%;
-    background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
+/*メガメニュー下、小メニュー*/
+#mega_menu ul.menu_bottom{
+    position: fixed;
+    bottom: 2vh;
+    right: 0;
+    padding: 0.5vw 2vw;
 }
-
-#head_menu_box ul{
-    margin:auto;
-}
-#head_menu_box ul li{/**/
+#mega_menu ul.menu_bottom li{
     display: inline-block;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    font-size: 2.5rem;
-    line-height: 5rem;
-    letter-spacing: .2rem;
-    vertical-align: top;
+    font-size:1.4vw;
 }
-#mega_menu #head_text{
-    display: none;
+#mega_menu ul.menu_bottom li:first-child:after{
+    content:"／";
+    font-size:1.4vw;
 }
-#mega_menu #sub_menu_box{
-    width:40vw;
-    flex-grow:1;
-}
-#sub_menu_box div{/**/
-    text-align: left;
-    width: 22rem;
-    margin: auto;
-}
-#sub_menu_box .sns_head{
-    font-size: 1.2rem;
-    height: 2.2rem;
-}
-#sub_menu_box .sns_link{
-    height: 5rem;
-    border-bottom: 1px solid #000;
-}
-#sub_menu_box .sns_link a{
-    display: inline-block;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0 0.3rem 0 0;
-}
-#sub_menu_box .sns_link a svg{
-    width: 100%;
-    height: 100%;
-    fill:#000000;
-}
-#sub_menu_box ul{
-    margin:auto;
-}
-#sub_menu_box ul li{
-    text-align: left;
-    display: block;
-    font-size: 1.4rem;
-    line-height: 1.5rem;
-    padding-top: 1rem;
-    letter-spacing: .1rem;
-}
+/*メガメニュー下、小メニュー - ここまで*/
 
-@media screen and (min-width: 840px) {
+@media (orientation: landscape){/*横向き*/
+    #mega_menu_box{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+    }
+    /*大メニューと中メニュー共通*/
+    #mega_menu #head_menu_box,
+    #mega_menu #sub_menu_box{
+        flex-grow: 1;
+        width: 40vw;
+        height: 100%;
+    }
+
+    #mega_menu div.margin_box{
+        width: 40vw;
+        padding: 0;
+        margin: auto;
+        height: 100%;
+    }
     #mega_menu div.bubble_box{
-        width: 37rem;
+        width: 40vw;
         text-align: center;
-        padding: 10rem 5rem 0;
-        height: 37rem;
+        padding-top: calc(50vh - 10.5vw);
+        height: 100%;
         background-position: center center;
         background-repeat: no-repeat;
     }
+    /*大メニューと中メニュー共通 - ここまで*/
+
+    /*大メニュー*/
     #head_menu_box div.bubble_box{
-        margin: 8rem 0 0 7rem;
-        background-size: 100%;
+        margin: 0 0 0 5vw;
+        background-size: 107%;
         background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
     }
-
-    #sub_menu_box div.bubble_box{
-        margin: -10rem 0 0 40vw;
-        background-size: 90%;
-        background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
-    }
-
     #head_menu_box ul{
         margin:auto;
+        height: 21vw;
     }
     #head_menu_box ul li{
         display: inline-block;
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
-        font-size: 2rem;
-        line-height: 4.5rem;
-        letter-spacing: .2rem;
+        font-size: 2.5vw;
+        line-height: 4vw;
+        letter-spacing: .1vw;
         vertical-align: top;
+    }
+    /*大メニュー - ここまで*/
+
+    /*中央キャッチコピー*/
+    #mega_menu #head_text{
+        flex-grow: 0;
+        width: 10vw;
+        color: #4e3e00;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        font-size: 1.7vw;
+        line-height: 2.5vw;
+        letter-spacing: 0.2vw;
+        height: 40vw;
+        display: block;
+        white-space: nowrap;
+        padding: 0 0 0 5vw;
+    }
+    /*中央キャッチコピー　- ここまで*/
+
+    /*中メニュー*/
+    #sub_menu_box div.bubble_box{
+        margin: 0 5vw 0 0;
+        background-size: 95%;
+        background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
     }
     #sub_menu_box div{
         text-align: left;
-        width: 20rem;
+        width: 20vw;
         margin: auto;
     }
+    #sub_menu_box .sns_head{
+        font-size: 1.3vw;
+        height: 2.5vw;
+    }
+    #sub_menu_box .sns_link{
+        height: 7vw;
+        border-bottom: 1px solid #000;
+    }
+    #sub_menu_box .sns_link a{
+        display: inline-block;
+        width: 4vw;
+        height: 4vw;
+        padding: 0 0.5vw 0 0;
+    }
+    #sub_menu_box .sns_link a svg{
+        width: 100%;
+        height: 100%;
+        fill:#000000;
+    }
+    #sub_menu_box ul{
+        margin:auto;
+    }
+    #sub_menu_box ul li{
+        text-align: left;
+        display: block;
+        font-size: 1.7vw;
+        line-height: 1.7vw;
+        padding-top: 1.2vw;
+        letter-spacing: .1vw;
+    }
+    /*中メニュー - ここまで*/
 }
+@media (orientation: portrait){/*縦向き*/
+    #mega_menu_box{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    /*大メニュー*/
+    #head_menu_box div.bubble_box{
+        margin: 15vh 0 0 7rem;
+        background-size: 100%;
+        background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
+    }
+    #head_menu_box ul{
+        margin:auto;
+    }
+    #head_menu_box ul li{/**/
+        display: inline-block;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        font-size: 2.2vh;
+        line-height: 4vh;
+        letter-spacing: .1vw;
+        vertical-align: top;
+    }
+    /*大メニューと中メニュー共通*/
+    #mega_menu #head_menu_box,
+    #mega_menu #sub_menu_box{
+        flex-grow: 1;
+        width: 100vw;
+    }
+    #mega_menu div.margin_box{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #mega_menu div.bubble_box{/**/
+        width: 40vh;
+        text-align: center;
+        padding: 11.5vh 5rem 0;
+        height: 40vh;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    /*大メニューと中メニュー共通 - ここまで*/
 
+    /*中央キャッチコピー*/
+    #mega_menu #head_text{
+        display: none;
+    }
+    /*中央キャッチコピー　- ここまで*/
+
+    /*中メニュー*/
+    #sub_menu_box div.bubble_box{
+        margin: -15vh 0 0 42vw;
+        background-size: 95%;
+        background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
+    }
+    #sub_menu_box div{
+        text-align: left;
+        width: 22vh;
+        margin: auto;
+    }
+    #sub_menu_box .sns_head{
+        font-size: 1.2vh;
+        height: 2.2vh;
+    }
+    #sub_menu_box .sns_link{
+        height: 5rem;
+        border-bottom: 1px solid #000;
+    }
+    #sub_menu_box .sns_link a{
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0 0.3rem 0 0;
+    }
+    #sub_menu_box .sns_link a svg{
+        width: 100%;
+        height: 100%;
+        fill:#000000;
+    }
+    #sub_menu_box ul{
+        margin:auto;
+    }
+    #sub_menu_box ul li{
+            text-align: left;
+            display: block;
+            font-size: 1.6vh;
+            line-height: 1.8vh;
+            padding-top: 1vh;
+            letter-spacing: .1vh;
+    }
+    /*中メニュー - ここまで*/
+
+    @media screen and (min-width: 840px) {/*横840px以上(1023px以下)*/
+        /*大メニューと中メニュー共通*/
+        #mega_menu div.bubble_box{
+            width: 38rem;
+            text-align: center;
+            padding: 11rem 5rem 0;
+            height: 38rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        /*大メニューと中メニュー共通 - ここまで*/
+
+        /*大メニュー*/
+        #head_menu_box div.bubble_box{
+            margin: 8rem 0 0 7rem;
+            background-size: 100%;
+            background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
+        }
+        #head_menu_box ul{
+            margin:auto;
+        }
+        #head_menu_box ul li{
+            display: inline-block;
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            font-size: 2rem;
+            line-height: 4.5rem;
+            letter-spacing: .2rem;
+            vertical-align: top;
+        }
+        /*大メニュー - ここまで*/
+        /*中メニュー*/
+        #sub_menu_box div.bubble_box{
+            margin: -12rem 0 0 40vw;
+            background-size: 90%;
+            background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
+        }
+        #sub_menu_box div{
+            text-align: left;
+            width: 20rem;
+            margin: auto;
+        }
+        /*中メニュー - ここまで*/
+    }
+}
 
 /*productのページで出てくるドロワーメニュー。*/
 
