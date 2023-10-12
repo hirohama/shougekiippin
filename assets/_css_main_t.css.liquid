@@ -775,7 +775,7 @@ ul#footer_support_menu{
     }
 
 #information .count{
-    font-size:1vw;
+    font-size:1.3rem;
     padding:1vw 0;
 }
     .count button.plus,
@@ -942,11 +942,11 @@ div.ribbon_box ul.ribbon{
     text-align: left;
 }
 div.ribbon_box ul.ribbon li{
-    width:100%;
-    min-height:20rem;
+    width: 100%;
+    min-height: 20rem;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     line-height: 3.5rem;
     letter-spacing: .1rem;
     white-space: nowrap;
@@ -1127,14 +1127,13 @@ product,store
 -------------------------------------------------*/
 ul#product{
     width: 100%;
-    max-width: 1500px;
     margin: auto;
 }
 ul#product li#product_introduce{
     float: left;
     position: relative;
-    width: 30%;
-    height: 40rem;
+    width: 35%;
+    height: 25rem;
 }
     li#product_introduce #information{
         display: inline;
@@ -1149,23 +1148,24 @@ ul#product li#product_introduce{
         }
             #information .item_name h1{
                 display: block;
-                font-size: 2.5rem;
-                line-height: 3rem;
-                padding: 0 0 4rem;
+                font-size: 1.7rem;
+                line-height: 2.5rem;
+                padding: 0 0 2rem;
             }
             #information .item_name span{
                 display: block;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
     .product_form_button_box{
         position:relative;
     }
 ul#product li#product_photo{
     float: right;
-    width: 70%;
-    height: 40rem;
+    width: 65%;
+    height: 25rem;
     background-size: 100%;
-    background-position: 50% 50
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 /*-----------------text section------------------*/
 
@@ -1174,17 +1174,20 @@ ul#product_introduce_col1{
     max-width: 1400px;
     margin:auto;
     padding-top:10rem;
+    position:relative;
 }
 
 ul#product_introduce_col1 #chef_photo{
-    float:left;
-    width:35%;
+    position: absolute;
+    top: 10rem;
+    left: 5rem;
+    width: 50%;
 }
 #chef_photo .chef_photobox{
-    position:relative;
-    width:100%;
+    position: relative;
+    width: 100%;
     aspect-ratio: 1 / 1.2;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
 }
@@ -1194,21 +1197,18 @@ ul#product_introduce_col1 #chef_photo{
     display: inline-block;
     writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
-    top:-3.5rem;
-    right:-2rem;
+    top: -3.5rem;
+    left: -2rem;
 }
 
 ul#product_introduce_col1 #product_outline_1{
     position: relative;
-    width:48%;
-    float:right;
-    margin-right:10%;
-    padding-top:10rem;
+    padding-top: 39rem;
 }
 #product_outline_1 .outline_1_title{
-    position:absolute;
-    top:3rem;
-    right:0;
+    position: absolute;
+    top: 9.5rem;
+    right: 16vw;
 }
 #product_outline_1 .outline_1_title h2{
     padding-top: 0rem;
@@ -1220,38 +1220,38 @@ ul#product_introduce_col1 #product_outline_1{
     white-space: nowrap;
     width:7rem;
 }
-#product_outline_1 .outline_1_text{
-    width:78%;
-}
+#product_outline_1 .outline_1_text,
 #product_outline_1 .outline_1_2_text{
     width:100%;
+    padding-left:2rem;
+    padding-right:2rem;
 }
 
 
 ul#product_introduce_col2{
-    width:100%;
-    max-width: 1400px;
-    margin:auto;
-    padding: 7rem 0 14rem;
+    width: 100%;
+    margin: auto;
+    padding: 2rem 0 8rem;
 }
 #product_outline_2_1{
-    margin-top:7rem;
-    width:64%;
-    float:left;
+    margin-top: 9rem;
+    width: 68%;
+    float: left;
 }
 #product_outline_2_2{
-    width:36%;
-    float:right;
+    width: 32%;
+    float: right;
 }
 #product_outline_2_1 .chef_photo2{
-    width:83%;
+    width: 90%;
     aspect-ratio: 1.5 / 1;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
 }
 #product_outline_2_1 .outline_2_text{
-    padding:7rem 1rem 0 7rem;
+    padding-top:2rem;
+    padding-left:2rem;
 }
 #product_outline_2_2 .image_photo{
     width:100%;
@@ -1274,20 +1274,31 @@ ul#product_introduce_col2{
 }
 .chef_photobox .chef_name h5{
     display: block;
-    width: 2rem;
+    width: 2.5rem;
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
 }
 .chef_photobox .chef_name h4{
     display: block;
-    width: 3rem;
-    font-size: 3rem;
-    line-height: 3rem;
+    width: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
 }
 
+ul#outline_1_textbox{
+    width: 70%;
+    margin-left: 30%;
+}
+ul#outline_1_textbox li:first-child{
+    padding-top:2rem;
+}
+
+ul#outline_1_textbox li:last-child{
+    padding-bottom:2rem;
+}
 #product_outline_1 .outline_1_title h2,
 #product_outline_2_2 h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 3.5rem;
     letter-spacing: .2rem;
 }
@@ -1300,19 +1311,10 @@ ul#product_introduce_col2{
 #product_outline_1 .outline_1_text,
 #product_outline_1 .outline_1_2_text,
 #product_outline_2_1 .outline_2_text{
-    font-size:1.4rem;
-    line-height:2.5rem;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
     letter-spacing: .1rem;
-}
-@media screen and (min-width: 1280px){
-    /* PCで中くらいのディスプレイ以上 */
-    #product_outline_1 .outline_1_text,
-    #product_outline_1 .outline_1_2_text,
-    #product_outline_2_1 .outline_2_text{
-        font-size:1.5rem;
-        line-height:2.8rem;
-        letter-spacing: .1rem;
-    }
+    background: #FFF;
 }
 /*----------------branch moniter size-----------------*/
 
@@ -2515,8 +2517,8 @@ a.btn{
     cursor: pointer;
     position: relative;
     display: block;
-    width: 25rem;
-    height: 5rem;
+    width: 20rem;
+    height: 4rem;
     border: 1px solid #000;
     background: #FFF;
     text-align: center;
@@ -2533,25 +2535,25 @@ a.btn:hover{
     }
     .btn span.info{
         display: table-cell;
-        width: calc(22rem - 2px);
-        height: calc(5rem - 2px);
+        width: calc(16.5rem - 2px);
+        height: calc(4rem - 2px);
         vertical-align: middle;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: #000;
     }
         /*.btn span.info */span.quantity_str{
-            font-size:1.5rem;
+            font-size: 1.3rem;
         }
         /*.btn span.info */span.quantity_str::after{
             content:'\0a5';
             letter-spacing: -.3rem;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         /*.btn span.info */span.price_str{
-            font-size:2.2rem;
+            font-size:1.8rem;
         }
         /*.btn span.info */span.tax_str{
-            font-size:1.5rem;
+            font-size:1.3rem;
         }
         /*.btn span.info */span.cart_count{
             font-size:0.8vw;
@@ -2561,8 +2563,8 @@ a.btn:hover{
         position: absolute;
         top: 0.3rem;
         right: 0.3rem;
-        width: calc(4.4rem - 2px);
-        height: calc(4.4rem - 2px);
+        width: calc(3.4rem - 2px);
+        height: calc(3.4rem - 2px);
         background-color: #fc0;
         border-radius: 9999px;
         background-size: 90%;
@@ -2693,10 +2695,9 @@ br.m{
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
-  width:12rem;
+  width:9rem;
   display: flex;
-  border-radius: ;
-  height:4.5rem;
+  height:3.5rem;
 }
 
 .quantity:after {
@@ -2742,7 +2743,7 @@ br.m{
 }
 
 .quantity__button {
-  width:4rem;
+  width:3rem;
   flex-shrink: 0;
   font-size:1vw;
   border: 0;
@@ -2835,22 +2836,11 @@ br.m{
 price-per-item .loading-overlay {
   position: relative;
 }
-
-@media screen and (max-width: 749px) {
-  .loading-overlay {
-    top: 0;
-    right: 0;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .loading-overlay {
+.loading-overlay {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
 }
-
 .loading-overlay__spinner {
   width: 2rem;
   display: inline-block;

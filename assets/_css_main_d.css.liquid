@@ -1085,7 +1085,9 @@ ul#product li#product_photo{
     width: 70%;
     height: 40rem;
     background-size: 100%;
-    background-position: 50% 50
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 }
 /*-----------------text section------------------*/
 
@@ -1205,6 +1207,10 @@ ul#product_introduce_col2{
     line-height: 3rem;
 }
 
+ul#outline_1_textbox{
+    width: auto;
+    margin-left: 0;
+}
 #product_outline_1 .outline_1_title h2,
 #product_outline_2_2 h2{
     font-size: 3rem;
@@ -2769,12 +2775,10 @@ price-per-item .loading-overlay {
   position: relative;
 }
 
-@media screen and (min-width: 750px) {
-  .loading-overlay {
+.loading-overlay {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
 }
 
 .loading-overlay__spinner {
