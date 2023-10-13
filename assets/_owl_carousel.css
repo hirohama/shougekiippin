@@ -90,9 +90,9 @@
   width: 3rem;
   height: 3rem;
 }
-button.owl-prev:before
-{
-    content: '←';
+
+button.owl-prev:before{
+    content: '\03c';
 }
 
 .owl-carousel div.owl-nav button.owl-next{
@@ -101,12 +101,21 @@ button.owl-prev:before
   top:calc(50% - 1.5rem);
   width: 3rem;
   height: 3rem;
-}button.owl-next:before
-{
-    content: '←';
 }
+button.owl-next:before{
+    content: "\03e";
+}
+button.owl-prev:before,
+button.owl-next:before{
+  font-size: 3rem;
+    line-height: 1;
 
+    opacity: 1;
+    color: #000;
 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 .owl-carousel div.owl-nav button.owl-prev,
 .owl-carousel div.owl-nav button.owl-next{
   font-size: 0;
