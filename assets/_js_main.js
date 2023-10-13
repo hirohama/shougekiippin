@@ -120,7 +120,13 @@ if($('#slider').length){
   
 
 if($('.feature_list').length){
-      $('.feature_list').owlCarousel();
+      $('.feature_list').slick({
+          autoplay:false,
+          arrows:true,
+          infinite: false,
+          slidesToShow: 4,
+          slidesToScroll: 4
+        });
 }
 //----------特集商品リストスライダーここまで
 
