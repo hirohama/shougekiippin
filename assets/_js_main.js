@@ -118,8 +118,8 @@ if($('#slider').length){
 
 //----------特集商品リストスライダー
   
-$(window).on('scroll', function() {
-    if($('.feature_list').length){
+
+if($('.feature_list').length){
       $('.feature_list').slick({
           autoplay:false,
           arrows:true,
@@ -127,8 +127,7 @@ $(window).on('scroll', function() {
           slidesToShow: 4,
           slidesToScroll: 4
         });
-    }
-});
+}
 //----------特集商品リストスライダーここまで
 
 //--------------SVGのパスをランダムで返す関数
