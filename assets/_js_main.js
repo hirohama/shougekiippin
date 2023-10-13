@@ -118,10 +118,13 @@ if($('#slider').length){
 
 //----------特集商品リストスライダー
 $(window).on('load', function() {
- $('.feature_list').on('init', function(event, slick){
+
+    if($('.feature_list').length){
+
+       $('.feature_list').on('init', function(event, slick){
     console.log('init : 初期化しました。');
   });
-    if($('.feature_list').length){
+      
         $('.feature_list').slick({
           arrows:true,
           infinite: false,
