@@ -84,8 +84,8 @@ if($('#draw_product_menu').length){
 
 //---------------indexスライダーアニメーション
 if($('#slider').length){
-
-    $('#slider').slick({slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
+    $('#slider').slick({
+      slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
       slidesToScroll: 1,
       arrows:false,
       autoplay: true,
