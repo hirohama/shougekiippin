@@ -127,7 +127,8 @@ $(window).on('load', function() {
           slidesToShow: 4,
           slidesToScroll: 4,
           touchMove:false,
-          draggable:false
+          draggable:false,
+          lazyLoad:"progressive"
         });
     }
   //--------------SVGのパスをランダムで返す関数
