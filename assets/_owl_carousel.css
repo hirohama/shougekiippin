@@ -128,6 +128,8 @@ button.owl-next:before{
 
 .owl-carousel div.owl-nav button.owl-prev,
 .owl-carousel div.owl-nav button.owl-next{
+  appearance: none;
+  -webkit-appearance: none;
   font-size: 0;
   line-height: 0;
   position: absolute;
