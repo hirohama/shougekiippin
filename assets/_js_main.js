@@ -102,11 +102,7 @@ if($('#draw_product_menu').length){
 
         var read_block_cross_padding=one_percent*7;/*写真にかかる部分の高さ*/
         var read_top;
-        if(chef_photo_box.h<read_box.h){
             read_top=((chef_photo_box.h-read_box.h)/2-read_block_cross_padding);
-        }else{
-            read_top=((chef_photo_box.h-read_box.h)/2-read_block_cross_padding/2);
-        }
         
         console.log("read_top"+read_top);
         var read_right=(chef_photo_right-read_box.w)/2;
