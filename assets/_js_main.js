@@ -39,9 +39,11 @@ $(function(){
 
 
 
-//---------------product時ヘッダードロワーメニュー
+//---------------product時ヘッダードロワーメニュー、レイアウト調整など
 
 if($('#draw_product_menu').length){
+
+    /*------------------ヘッダードロワーメニュー-----------------------*/
     var draw_menu_container = $('#draw_product_menu');
     var draw_menu_btn = $('.draw_product_btn');
     var scrollNum = 500;
@@ -75,12 +77,63 @@ if($('#draw_product_menu').length){
         //現在の位置が"scrollNum"以上
         drawer_menu_check();
     });
+    /*------------------ヘッダードロワーメニューここまで-----------------------*/
+    /*------------------レイアウト調整-----------------------*/
+    function layout_tablet(){
+        console.log("タブレット");
+        var winsize=$("#product_outline_1").width();
+        var chef_photo=$("#chef_photo");
+        var chef_photo_box={
+            h:chef_photo.outerHeight(),
+            w:chef_photo.outerWidth()
+        }
+        var read_block=$("#product_outline_1");
+        var read=read_block.find(".outline_1_title");
+        var read_box={
+            h:read.outerHeight(),
+            w:read.outerWidth()
+        }
+        var one_percent=winsize/100;
+
+        var chef_photo_left=one_percent*5;
+            chef_photo.css("left",chef_photo_left+"px");//シェフ写真の位置決定
+
+        var chef_photo_right=winsize-chef_photo_left-chef_photo_box.w;/*写真の横の余白*/
+
+        var read_block_cross_padding=one_percent*7;/*写真にかかる部分の高さ*/
+
+        var read_top=((chef_photo_box.h-read_box.h)/2-(read_block_cross_padding/2));
+        console.log("read_top"+read_top);
+        var read_right=(chef_photo_right-read_box.w)/2;
+            read.css({"top":read_top+"px","right":read_right+"px"});
+        var read_block_top_padding=chef_photo_box.h-read_block_cross_padding;
+            read_block.css("padding-top",read_block_top_padding+"px");
+    }
+    function layout_tablet_clear(){
+        var chef_photo=$("#chef_photo");
+        var read_block=$("#product_outline_1");
+        var read=read_block.find(".outline_1_title");
+        chef_photo.attr("style","");
+        read_block.attr("style","");
+        read.attr("style","");
+    }
+    $(window).on('load resize', function () {
+        if(window.matchMedia("(max-width:1023px)").matches&&window.matchMedia("(min-width:640px)").matches){
+            layout_tablet();
+        }else{
+            layout_tablet_clear();
+        }
+    });
     draw_menu_btn.click(function(){
         draw_menu_container.toggleClass("active");
         drawer_menu_check();
     });
+
+
+    /*--------------レイアウト調整-------------*/
+
 }
-//---------------product時ヘッダードロワーメニューここまで
+//---------------product時ヘッダードロワーメニュー、レイアウト調整などここまで
 
 //---------------indexスライダーアニメーション
 if($('#slider').length){
@@ -117,8 +170,6 @@ if($('#slider').length){
 //---------------indexスライダーアニメーションここまで
 
 //----------特集商品リストスライダー
-  
-
 if($('.feature_list').length){
       $('.feature_list').owlCarousel({
         loop:false,
@@ -161,7 +212,6 @@ if($('.clipNum_fromScript').length){
     })
 }
 //--------------SVGのパスをランダムで返す関数ここまで
-  
 //----------クリックしたら指定した要素に".active"を付与し、兄弟要素から".active"を削る
 if($('a.click_to_active').length){
     console.log("click");
@@ -180,7 +230,6 @@ if($('a.click_to_active').length){
     });
 }
 //----------クリックしたら指定した要素に".active"を付与し、兄弟要素から".active"を削るここまで
-
 //--------------グローバルメニュー（メガメニュー）
 
     //フェードインアニメーション
