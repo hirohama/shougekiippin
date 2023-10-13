@@ -88,7 +88,13 @@ button.owl-prev:before{
 button.owl-next:before{
     content: "\025b6";
 }
-
+.owl-carousel div.owl-nav button{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+}
 .owl-carousel div.owl-nav button.owl-prev{
   position:absolute;
   left:-4rem;
@@ -144,13 +150,11 @@ button.owl-next:before{
 .owl-prev:hover,
 .owl-prev:focus,
 .owl-next:hover,
-.owl-next:focus
-{
+.owl-next:focus{
     opacity: .75;
 }
 .owl-prev.disabled,
-.owl-next.disabled
-{
+.owl-next.disabled{
     opacity: .25;
 }
 .owl-carousel.owl-loaded {
