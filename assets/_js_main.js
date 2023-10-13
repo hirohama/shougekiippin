@@ -54,6 +54,7 @@ const SVGPath=[
 
 if($('.clipNum_fromScript').length){
     $('.clipNum_fromScript').each(function(){
+      console.log("clip");
     var r=Math.round(Math.random()*(SVGPath.length-1));/*ランダム*/
         $(this).find("path").attr("d",SVGPath[r]);
     })
