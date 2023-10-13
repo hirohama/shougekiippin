@@ -142,6 +142,17 @@ button.owl-next:before{
   border: none;
   outline: none;
 }
+
+.owl-next:hover,
+.owl-next:focus,
+.owl-prev:hover,
+.owl-prev:focus{
+  opacity:.75;
+}
+.owl-prev.disabled,
+.owl-next.disabled{
+  opacity:.25;
+}
   .owl-carousel.owl-loaded {
     display: block; }
   .owl-carousel.owl-loading {
