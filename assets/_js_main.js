@@ -123,9 +123,9 @@ $(window).on('load', function() {
         $('.feature_list').delay(5000).slick({
           autoplay:false,
           arrows:true,
-          infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 3
+          infinite: false,
+          slidesToShow: 4,
+          slidesToScroll: 4
         });
     }
   //--------------SVGのパスをランダムで返す関数
