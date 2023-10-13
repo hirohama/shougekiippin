@@ -120,15 +120,12 @@ if($('#slider').length){
   
 $(window).on('load', function() {
     if($('.feature_list').length){
-        $('.feature_list').delay(5000).slick({
+        $('.feature_list').slick({
           autoplay:false,
           arrows:true,
           infinite: false,
           slidesToShow: 4,
-          slidesToScroll: 4,
-          touchMove:false,
-          draggable:false,
-          lazyLoad:"progressive"
+          slidesToScroll: 4
         });
     }
   //--------------SVGのパスをランダムで返す関数
