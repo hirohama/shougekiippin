@@ -83,18 +83,10 @@
 }
 
 button.owl-prev:before{
-    content: '\025c0';
 }
 button.owl-next:before{
-    content: "\025b6";
 }
-.owl-carousel div.owl-nav button{
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0 !important;
-  font: inherit;
-}
+
 .owl-carousel div.owl-nav button.owl-prev{
   position:absolute;
   left:-4rem;
@@ -111,11 +103,14 @@ button.owl-next:before{
   height: 3rem;
 }
 button.owl-prev:before{
+    content: '\025c0';
   padding-left:0.7rem;
 }
 button.owl-next:before{
+    content: "\025b6";
   padding-left:0.7rem;
 }
+
 button.owl-prev:before,
 button.owl-next:before{
   font-size: 1.5rem;
@@ -123,6 +118,10 @@ button.owl-next:before{
   opacity: 1;
   color: #FFF;
   font-weight:900;
+  background:#000;
+  border-radius:100%;
+  width: 3rem;
+  height: 3rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -145,7 +144,7 @@ button.owl-next:before{
   color: transparent;
   border: none;
   outline: none;
-  background:#000;
+  background:transparent;
 }
 .owl-prev:hover,
 .owl-prev:focus,
@@ -154,7 +153,8 @@ button.owl-next:before{
     opacity: .75;
 }
 .owl-prev.disabled,
-.owl-next.disabled{
+.owl-next.disabled
+{
     opacity: .25;
 }
 .owl-carousel.owl-loaded {
