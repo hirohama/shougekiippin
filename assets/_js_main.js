@@ -118,7 +118,7 @@ if($('#slider').length){
 
 //----------特集商品リストスライダー
   
-$(window).on('load', function() {
+$(window).on('scroll', function() {
     if($('.feature_list').length){
       $('.feature_list').slick({
           autoplay:false,
