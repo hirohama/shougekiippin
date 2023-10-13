@@ -18,6 +18,25 @@ function submitContactForm(event) {
       }
 }
 
+$(function(){
+//--------------グローバルメニュー（メガメニュー）
+    var target=$('menu');
+    var megamenu=$('#mega_menu');
+    var trigger=$('#menu_btn');
+    var menuIsOpen = false;
+    trigger.click(function(){
+        if(menuIsOpen){//メニューが開いていたら
+            target.addClass("close");
+            trigger.removeClass("active");
+        }else{//メニューが閉まっていたら
+            target.removeClass("close");
+            trigger.addClass("active");
+        }
+        console.log(menuIsOpen);
+        menuIsOpen = !menuIsOpen;
+    });
+//--------------グローバルメニュー（メガメニュー）ここまで
+
 //--------------SVGのパスをランダムで返す関数
 const SVGPath=[
     "M44.6,-76.8C58.6,-69.2,71.3,-58.9,78.6,-45.6C85.8,-32.4,87.4,-16.2,87.4,0C87.5,16.2,85.8,32.4,78.6,45.6C71.3,58.8,58.5,69,44.5,75.8C30.5,82.5,15.2,85.9,0.3,85.4C-14.6,84.8,-29.2,80.3,-42,72.8C-54.8,65.3,-65.9,54.9,-74.1,42.3C-82.3,29.6,-87.5,14.8,-88.4,-0.5C-89.3,-15.8,-85.7,-31.6,-78.5,-45.9C-71.3,-60.1,-60.3,-72.8,-46.6,-80.5C-32.9,-88.3,-16.4,-91.2,-0.6,-90.2C15.3,-89.2,30.6,-84.3,44.6,-76.8Z",
@@ -40,25 +59,6 @@ if($('.clipNum_fromScript').length){
     })
 }
 //--------------SVGのパスをランダムで返す関数ここまで
-$(function(){
-//--------------グローバルメニュー（メガメニュー）
-    var target=$('menu');
-    var megamenu=$('#mega_menu');
-    var trigger=$('#menu_btn');
-    var menuIsOpen = false;
-    trigger.click(function(){
-        if(menuIsOpen){//メニューが開いていたら
-            target.addClass("close");
-            trigger.removeClass("active");
-        }else{//メニューが閉まっていたら
-            target.removeClass("close");
-            trigger.addClass("active");
-        }
-        console.log(menuIsOpen);
-        menuIsOpen = !menuIsOpen;
-    });
-//--------------グローバルメニュー（メガメニュー）ここまで
-
 
 //---------------product時ヘッダードロワーメニュー
 
