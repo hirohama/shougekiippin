@@ -691,26 +691,61 @@ footer{
 footer a:hover{
     opacity:0.5;
 }
-footer nav{
-    width:85%;
-    max-width:1400px;
-    margin:auto;
-    position: relative;
+#footer_logo_box{
+  display: flex;
+    flex-direction: column;
+    width: 30rem;
 }
-footer nav ul#footer_nav {
-
+#footer_logo_box .logo{
+    /* background: #111; */
+    padding: 2rem;
+    /* border-radius: 1rem; */
+    border: 1px solid #222;
+    /* box-shadow: 0 0 2rem #000 inset;*/
 }
-    ul#footer_nav li#footer_menu{
-        float:left;
-    }
-        li#footer_menu ul{
-        }
-            li#footer_menu ul li{
-                font-size: 1.4rem;
-                display: inline-block;
-                padding:2rem 0;
-                margin-right:2rem;
-            }
+#footer_logo_box .cross{
+  width: 100%;
+    text-align: center;
+    padding: 0 0 0.5rem;
+}
+#footer_logo_box .cross svg{
+     width: 1.5rem;
+    fill: #ccc;
+}
+#footer_logo_box .city{
+    display: block;
+    font-size: 2.5rem;
+    letter-spacing: .05em;
+    vertical-align: 1rem;
+    text-align: center;
+    color: #ccc;
+}
+#footer_logo_box .city span{
+    display: block;
+    font-size: 1.2rem;
+    text-align: center;
+}
+#footer_logo_box .link_privacy{
+  font-size: 1.2rem;
+    padding: 2rem 0 0.5rem;
+    text-align: right;
+}
+#footer_logo_box .link_sct{
+  font-size: 1.2rem;
+    padding: 0 0 0.5rem;
+    text-align: right;
+}
+#footer_logo_box li:last-child{
+  text-align: right;
+    color: #ccc;
+    font-size: 1.4rem;
+}
+footer nav ul.main_nav li{
+    font-size: 1.7rem;
+    display: block;
+    padding: 0 3rem 1.5rem;
+    letter-spacing: .1rem;
+}
 
     ul#footer_nav li#footer_sns{
         float:right;
