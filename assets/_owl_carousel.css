@@ -6,6 +6,15 @@
 /*
  *  Owl Carousel - Core
  */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('_font_slick.eot');
+    src: url('_font_slick.eot?#iefix') format('embedded-opentype'), url('_font_slick.woff') format('woff'), url('_font_slick.ttf') format('truetype'), url('_font_slick.svg#slick') format('svg');
+}
 .owl-carousel {
   display: none;
   width: 100%;
@@ -79,36 +88,35 @@
 .owl-carousel div.owl-nav{
   position:absolute;
   left:0;
-  top:0;
+  top:50%;
   width: 100%;
-  height: 100%;
+  height:0;
+}
+.owl-carousel div.owl-nav button.owl-next{
+  position:absolute;
+  right:-3rem;
+  top:-1.5rem;
+  width: 3rem;
+  height: 3rem;
 }
 .owl-carousel div.owl-nav button.owl-prev{
   position:absolute;
   left:-3rem;
-  top:calc(50% - 1.5rem);
-  width: 3rem;
-  height: 3rem;
-}
-
-button.owl-prev:before{
-    content: '\03c';
-}
-
-.owl-carousel div.owl-nav button.owl-next{
-  position:absolute;
-  right:-3rem;
-  top:calc(50% - 1.5rem);
+  top:-1.5rem;
   width: 3rem;
   height: 3rem;
 }
 button.owl-next:before{
-    content: "\03e";
+    content: '→';
+}
+button.owl-prev:before{
+    content: '←';
 }
 button.owl-prev:before,
 button.owl-next:before{
-  font-size: 3rem;
-    line-height: 1;
+    font-family: 'slick';
+    font-size: 3rem;
+    line-height: 3rem;
 
     opacity: 1;
     color: #000;
@@ -129,13 +137,10 @@ button.owl-next:before{
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
-
   cursor: pointer;
-
   color: transparent;
   border: none;
   outline: none;
-  background:#CCC;
 }
   .owl-carousel.owl-loaded {
     display: block; }
