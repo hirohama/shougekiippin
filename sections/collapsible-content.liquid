@@ -26,7 +26,7 @@
 {% endcomment %}-->
         <div class="editor_content foJ_Thin">
         <div class="" style="text-align: {{ section.settings.heading_alignment }};">
-          {%- if section.settings.caption != blank -%}<!--見出し設定-->
+          {%- if section.settings.caption != blank -%} <!--見出し設定-->
             <h5 class="no-margin">
               {{ section.settings.caption | escape }}
             </h5>
@@ -39,7 +39,7 @@
             <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
           {% endif %}
         </div>
-        <div class="summary_block {%- if section.settings.caption == blank -%} no_margin {%endif%}<!--見出し設定-->">
+        <div class="summary_block {%- if section.settings.caption == blank -%} no_margin {%endif%} <!--見出し設定-->">
           <!--{% comment %}画像があるときの記述
           {%- if section.settings.image != blank -%}
             <div class="grid__item collapsible-content__grid-item">
