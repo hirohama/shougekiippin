@@ -120,7 +120,22 @@ if($('#slider').length){
   
 
 if($('.feature_list').length){
-      $('.feature_list').owlCarousel();
+      $('.feature_list').owlCarousel({
+        loop:false,
+        nav:true,
+        navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+        responsive:{
+            0:{
+                items:1
+            },
+            640:{
+                items:3
+            },
+            1024:{
+                items:4
+            }
+        }
+    });
 }
 //----------特集商品リストスライダーここまで
 
