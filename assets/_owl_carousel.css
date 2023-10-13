@@ -135,10 +135,7 @@ button.owl-next:before{
   position: absolute;
   top: 0;
   display: block;
-  width: 3rem;
-  height: 3rem;
   padding: 0;
-  border-radius:100%;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
