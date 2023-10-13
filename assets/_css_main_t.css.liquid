@@ -139,27 +139,27 @@ header nav{
 }
 header nav li{
     display: inline-block;
-    height: 3rem;
-    margin: 2.5rem 0.5rem 0;
+    height: 3.5rem;
+    margin: 2rem 0.5rem 0;
     font-size: 1.4rem;
-    line-height: 2.5rem;
-    color:#000;
+    line-height: 3.5rem;
+    color: #000;
 }
 header nav li:last-child{
     display: inline-block;
     height: 5rem;
-    margin: 0 2rem 0 0.5rem;
+    margin: 0 1rem 0 1rem;
     line-height: 2.5rem;
     color: #000;
-    vertical-align: -1.8rem;
+    vertical-align: -1.5rem;
 }
 header nav li #menu_btn{
     position: relative;
     z-index: 1102;
-    width:5rem;
-    height:5rem;
+    width: 5rem;
+    height: 5rem;
     background: #000;
-    border-radius:100%;
+    border-radius: 100%;
     cursor: pointer;
 }
 /* component-cart-count-bubble */
@@ -168,9 +168,8 @@ header nav li #menu_btn{
 }
 
 .cart-count-bubble {
-  position: absolute;
     position: absolute;
-    background-color: #CC0000;
+    background-color: #c00;
     color: #fff;
     height: 1.7rem;
     width: 1.7rem;
@@ -179,8 +178,8 @@ header nav li #menu_btn{
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    bottom: -0.2rem;
-    left: 1.2rem;
+    bottom: 0.3rem;
+    left: 1.9rem;
     line-height: 1.5rem;
   
 }
@@ -254,9 +253,9 @@ header nav li #menu_btn{
 }
 
 header nav li svg{
-    width:2.5rem;
-    height:2.5rem;
-    vertical-align: -.75rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    vertical-align: -0.75rem;
 }
 
 .min_menu_btn span.min_title{
@@ -281,8 +280,8 @@ menu #menu_back{
     transition: all 0.5s ease-out;
 }
 menu.close #menu_back{
-    top:calc(7.5rem - 110vh);
-    right:calc(17rem - 110vw)
+    top: calc(7.5rem - 110vh);
+    right: calc(19rem - 110vw);
 }
 
 menu #mega_menu{
@@ -729,30 +728,31 @@ footer nav ul#footer_nav {
                 fill:#FFF;
             }
 ul#footer_guide{
-    display: flex;
+    display: block;
     width:85%;
     max-width:1400px;
     margin:auto;
 }
     ul#footer_guide li{
-        width:32%;
+        width:100%;
     }
     ul#footer_guide li:nth-child(1),
     ul#footer_guide li:nth-child(2){
-        margin-right:2%;
+        margin-right:0;
     }
 
         ul#footer_guide li h5{
             display: block;
-            background: #111;
-            padding:0.2rem 0.3rem;
+            background: #252525;
+            padding: 0.5rem 1rem;
             font-size: 1.5rem;
+            border-radius: 0.5rem;
         }
         ul#footer_guide li span{
             display: block;
-            padding:0.5rem 0 0;
-            font-size:1.2rem;
-            line-height: 1.7rem;
+            padding: 1rem 0 1.5rem;
+            font-size: 1.3rem;
+            line-height: 2.4rem;
         }
 ul#footer_support_menu{
     width:85%;
@@ -2369,7 +2369,7 @@ h1.cart_empty_text{
     #cart_item_table .cart_item_photo_img{
         display: block;
         width:100%;
-        height:7vw;
+        height:10rem;
         background-color:#FFF;
         background-size: 120%;
         background-repeat: no-repeat;
@@ -2479,26 +2479,20 @@ feature list
   font-weight: 700;
 }
 
-ul.feature_list{
+div.feature_list{
     width:100%;
     margin:auto;
 }
-ul.feature_list li{
-    width:25%;
-
-}
-ul.feature_list li a{
+div.feature_list a{
     text-decoration: none;
     color:#000;
 }
-ul.feature_list li h3{
+div.feature_list h3{
     text-align: center;
-    padding:0 1.5rem;
-    font-size:1.8rem;
+    font-size:1.7rem;
 }
-ul.feature_list li h4{
+div.feature_list h4{
     text-align: center;
-    padding:0 1.5rem;
     font-size:1.4rem;
 }
 /*------------------------------------------------

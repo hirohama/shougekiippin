@@ -15,6 +15,7 @@
     src: url('_font_slick.eot');
     src: url('_font_slick.eot?#iefix') format('embedded-opentype'), url('_font_slick.woff') format('woff'), url('_font_slick.ttf') format('truetype'), url('_font_slick.svg#slick') format('svg');
 }
+
 .owl-carousel {
   display: none;
   width: 100%;
@@ -117,7 +118,6 @@ button.owl-next:before{
     font-family: 'slick';
     font-size: 3rem;
     line-height: 3rem;
-
     opacity: 1;
     color: #000;
 
@@ -142,7 +142,6 @@ button.owl-next:before{
   border: none;
   outline: none;
 }
-
 .owl-next:hover,
 .owl-next:focus,
 .owl-prev:hover,
