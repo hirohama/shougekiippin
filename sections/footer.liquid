@@ -5,38 +5,40 @@
     <li><h5>ご注文確認のメールについて</h5><span>お客様のご利用環境により、ご注文確認のメールが「迷惑メールフォルダ」に入ってしまうことがあります。届かない場合は一度ご確認ください、また「@shougeki.com」のメールが受け取れるよう、あらかじめご設定いただきますようお願いいたします。</span></li>
     <li><h5>お支払いについて</h5><span>以下をご利用いただけます。<br>各種クレジットカード(Visa / Mastercard / American Express)／Amazon Pay／代金引換</span></li>
   </ul>
-  <div id="footer_logo_box">
-    <a href="{{ routes.root_url }}"><div id="menu_logo"><img src="{{ '_img_logo_sub.svg' | asset_url }}"></div></a>
-    <div class="cross"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247.5 247.5"><path d="M237.5,242.5A5,5,0,0,1,234,241L-3.54,3.54a5,5,0,0,1,0-7.08,5,5,0,0,1,7.08,0L241,234a5,5,0,0,1-3.54,8.54Z" transform="translate(5 5)"/><path d="M0,242.5A5,5,0,0,1-3.54,241a5,5,0,0,1,0-7.08L234-3.54a5,5,0,0,1,7.08,0,5,5,0,0,1,0,7.08L3.54,241A5,5,0,0,1,0,242.5Z" transform="translate(5 5)"/></svg></div>
-    <div class="city foJ_Bld">大分県 佐伯市<span class="foE">Saiki city,Oita pref</span></div>
-  </div>
-  <nav>
-    <ul id="footer_nav" class="clearfix">
-      <li id="footer_menu">
-        <ul class="foJ_Thin">
-          <li><a href="{{ routes.root_url }}">トップページ</a></li>
-          <li><a href="/collections/all/">商品一覧</a></li>
-          <li><a href="#">衝撃一品とは？</a></li>
-          <li><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">マイページ</a></li>
-          <li><a href="{{ routes.cart_url }}">カートをみる</a></li>
-        </ul>
-      </li>
-      <li id="footer_sns">
-        <ul class="foJ_Thin">
-          <li><a href="#">{% render '_img_instagram_logo' %}</a></li>
-          <li><a href="#">{% render '_img_x_logo' %}</a></li>
-        </ul>
-      </li>
+  <div id="footer_box">
+    <div id="footer_logo_box">
+      <a href="{{ routes.root_url }}"><div id="menu_logo"><img src="{{ '_img_logo_sub.svg' | asset_url }}"></div></a>
+      <div class="cross"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247.5 247.5"><path d="M237.5,242.5A5,5,0,0,1,234,241L-3.54,3.54a5,5,0,0,1,0-7.08,5,5,0,0,1,7.08,0L241,234a5,5,0,0,1-3.54,8.54Z" transform="translate(5 5)"/><path d="M0,242.5A5,5,0,0,1-3.54,241a5,5,0,0,1,0-7.08L234-3.54a5,5,0,0,1,7.08,0,5,5,0,0,1,0,7.08L3.54,241A5,5,0,0,1,0,242.5Z" transform="translate(5 5)"/></svg></div>
+      <div class="city foJ_Bld">大分県 佐伯市<span class="foE">Saiki city,Oita pref</span></div>
+    </div>
+    <nav>
+      <ul id="footer_nav" class="clearfix">
+        <li id="footer_menu">
+          <ul class="foJ_Thin">
+            <li><a href="{{ routes.root_url }}">トップページ</a></li>
+            <li><a href="/collections/all/">商品一覧</a></li>
+            <li><a href="#">衝撃一品とは？</a></li>
+            <li><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">マイページ</a></li>
+            <li><a href="{{ routes.cart_url }}">カートをみる</a></li>
+          </ul>
+        </li>
+        <li id="footer_sns">
+          <ul class="foJ_Thin">
+            <li><a href="#">{% render '_img_instagram_logo' %}</a></li>
+            <li><a href="#">{% render '_img_x_logo' %}</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <ul id="footer_support_menu">
+      <li class="foJ_Thin"><a href="/pages/contact">お問い合わせはこちらから</a></li>
+      <li class="foJ_Thin"><a href="/pages/faq/">よくあるご質問</a></li>
+      <li class="foJ_Thin"><a href="/pages/shopping_guide/">お買い物ガイド</a></li>
+      <li class="foJ_Thin"><a href="/pages/privacy">プライバシーポリシー</a></li>
+      <li class="foJ_Thin"><a href="/pages/specified_commercial_transactions">特定商取引法に基づく表示</a></li>
+      <li class="foJ_Thin">copyright&copy;shougeki-ippin. All rights resserved.</li>
     </ul>
-  </nav>
-  <ul id="footer_support_menu">
-    <li class="foJ_Thin"><a href="/pages/contact">お問い合わせはこちらから</a></li>
-    <li class="foJ_Thin"><a href="/pages/faq/">よくあるご質問</a></li>
-    <li class="foJ_Thin"><a href="/pages/shopping_guide/">お買い物ガイド</a></li>
-    <li class="foJ_Thin"><a href="/pages/privacy">プライバシーポリシー</a></li>
-    <li class="foJ_Thin"><a href="/pages/specified_commercial_transactions">特定商取引法に基づく表示</a></li>
-    <li class="foJ_Thin">copyright&copy;shougeki-ippin. All rights resserved.</li>
-  </ul>
+  </div>
 </footer>
 
 {% comment %}
