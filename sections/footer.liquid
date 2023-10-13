@@ -9,21 +9,19 @@
     
     <nav>
       <ul id="footer_nav" class="clearfix">
-        <li id="footer_menu">
-          <ul class="foJ_Thin">
+        <ul class="foJ_Thin">
             <li><a href="{{ routes.root_url }}">トップページ</a></li>
             <li><a href="/collections/all/">商品一覧</a></li>
             <li><a href="#">衝撃一品とは？</a></li>
             <li><a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">マイページ</a></li>
             <li><a href="{{ routes.cart_url }}">カートをみる</a></li>
-          </ul>
-        </li>
-        <li id="footer_sns">
+        </ul>
+        <!--li id="footer_sns">
           <ul class="foJ_Thin">
             <li><a href="#">{% render '_img_instagram_logo' %}</a></li>
             <li><a href="#">{% render '_img_x_logo' %}</a></li>
           </ul>
-        </li>
+      </li-->
       </ul>
     </nav>
     <ul id="footer_support_menu">
