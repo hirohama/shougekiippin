@@ -138,14 +138,16 @@ if($('#slider').length){
 //---------------indexスライダーアニメーションここまで
 
 //----------特集商品リストスライダー
-if($('.feature_list').length){
-    $('.feature_list').slick({
-      arrows:true,
-      infinite: false,
-      slidesToShow: 4,
-      slidesToScroll: 4
-    });
-}
+$(window).on('load', function() {
+    if($('.feature_list').length){
+        $('.feature_list').slick({
+          arrows:true,
+          infinite: false,
+          slidesToShow: 4,
+          slidesToScroll: 4
+        });
+    }
+});
 //----------特集商品リストスライダーここまで
 
 //----------クリックしたら指定した要素に".active"を付与し、兄弟要素から".active"を削る
