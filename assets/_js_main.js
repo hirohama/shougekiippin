@@ -126,7 +126,6 @@ $(window).on('load', function() {
           infinite: false,
           slidesToShow: 4,
           slidesToScroll: 4,
-          fade:true,
           touchMove:false,
           draggable:false
         });
