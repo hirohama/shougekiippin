@@ -121,8 +121,8 @@ if($('#slider').length){
 $(window).on('load', function() {
     if($('.feature_list').length){
         $('.feature_list').delay(5000).slick({
-          autoplay:true,
-          arrows:true,
+          autoplay:false,
+          arrows:false,
           infinite: false,
           slidesToShow: 3,
           slidesToScroll: 3
