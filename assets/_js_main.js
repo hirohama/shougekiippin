@@ -120,13 +120,13 @@ if($('#slider').length){
   
 $(window).on('load', function() {
     if($('.feature_list').length){
-        /*$('.feature_list').slick({
+      $('.feature_list').slick({
           autoplay:false,
           arrows:true,
           infinite: false,
           slidesToShow: 4,
           slidesToScroll: 4
-        });*/
+        });
     }
 });
 //----------特集商品リストスライダーここまで
