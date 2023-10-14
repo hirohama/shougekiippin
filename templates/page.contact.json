@@ -20,7 +20,7 @@
           "type": "text",
           "settings": {
             "title": "おなまえ",
-            "placeholder": "例：山田　太郎",
+            "placeholder": "例：衝撃　太郎",
             "check": true,
             "label": true,
             "newline_pc": false,
@@ -34,7 +34,7 @@
           "type": "text",
           "settings": {
             "title": "お名前（ひらがな）",
-            "placeholder": "例：やまだ　たろう",
+            "placeholder": "例：しょうげき　たろう",
             "check": true,
             "label": true,
             "newline_pc": true,
