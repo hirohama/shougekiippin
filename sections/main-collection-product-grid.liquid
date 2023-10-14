@@ -190,17 +190,20 @@
 
                 <li class="store">
                   <a href="{{ product.url }}" class="box">
-                    <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
+                    <div class="ribbon_flow">
                       <div class="ribbon_box">
-                        <ul class="ribbon_in_img">
-                          <li>
-                            <img
-                              src="{{ product.images[7] | img_url:'original' }}"
-                              alt="{{ product.metafields.custom.storename }}"
-                            >
-                          </li>
-                        </ul>
+                          <ul class="ribbon_in_img">
+                            <li>
+                              <img
+                                src="{{ product.images[7] | img_url:'original' }}"
+                                alt="{{ product.metafields.custom.storename }}"
+                              >
+                            </li>
+                          </ul>
                       </div>
+                    </div>
+                    <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
+                      
                     </div>
                     <div class="ippin">
                       <div class="ippin_img">
