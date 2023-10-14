@@ -76,7 +76,7 @@
           "type": "email_verify",
           "settings": {
             "title": "メールアドレス（確認用）",
-            "placeholder": "ippin@shougeki.com",
+            "placeholder": "",
             "check": true,
             "label": true,
             "newline_pc": false,
