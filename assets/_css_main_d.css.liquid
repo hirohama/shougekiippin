@@ -1902,6 +1902,7 @@ form#RegisterForm textarea{
 #address_box
 {
     display: flex;
+    flex-direction: row;
     background: #F4F4F4;
     box-shadow: 0 0 1rem #DDD inset;
     border-radius: 1vw;
@@ -1922,15 +1923,15 @@ form#RegisterForm textarea{
     margin-bottom:1rem;
 }
 #addresses_details .account_address{
-    padding-left:2rem;
+    padding:0 0 0 2rem;
     text-align: right;
 }
 #addresses_details .account_address table{
     width:100%;
     border-collapse: separate;
-    font-size:1.3rem;
     text-align: left;
     margin-bottom:1rem;
+    font-size:1.3rem;
 }
 #addresses_details .account_address table th{
     border-left:1px solid #ccc;
@@ -1971,6 +1972,7 @@ form#RegisterForm textarea{
 #order_list_wrapper table.order-history{
     width:100%;
   margin-top:1rem;
+  font-size: 1.4rem;
 }
 #order_list_wrapper table.order-history th,
 #order_list_wrapper table.order-history td{
@@ -2024,6 +2026,12 @@ table.order_details{
 }
 table.order_price_details{
     width:100%;
+}
+.order .cart-discount {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 .order_price_details th,
 .order_price_details td{
