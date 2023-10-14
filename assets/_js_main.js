@@ -180,7 +180,7 @@ if($('.feature_list').length){
         nav:true,
         responsive:{
             0:{
-                items:1
+                items:2
             },
             640:{
                 items:3
