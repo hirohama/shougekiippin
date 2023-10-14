@@ -317,10 +317,12 @@
     </li>
       
     <li id="product_photo" style="background-image: url('{{ product.images[0] | img_url:"2000x1333" }}');">
-      <div class="ribbon_box">
-        <ul class="ribbon foJ_Bld">
-          <li>{{ product.content }}</li>
-        </ul>
+      <div class="ribbon_flow">
+        <div class="ribbon_box">
+          <ul class="ribbon foJ_Bld">
+            <li>{{ product.content }}</li>
+          </ul>
+        </div>
       </div>
     </li>
   </ul>
