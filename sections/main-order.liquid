@@ -260,7 +260,7 @@
                   {{ 'customer.order.subtotal' | t }}
                 </td>
                 <td headers="RowSubtotal" role="cell" data-label="{{ 'customer.order.subtotal' | t }}">
-                  {{ order.line_items_subtotal_price | money }}
+                  &yen;{{ order.line_items_subtotal_price | money }}
                 </td>
               </tr>
               <!-- /小計 -->
@@ -283,9 +283,9 @@
                           <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
                             <use href="#icon-discount" />
                           </svg>
-                          {{- discount_application.title -}}
+                          ({{- discount_application.title -}})
                         </span>
-                        <span>-{{ discount_application.total_allocated_amount | money }}</span>
+                        <span>-&yen;{{ discount_application.total_allocated_amount | money }}</span>
                       </div>
                     </td>
                   {%- endfor -%}
@@ -304,7 +304,7 @@
                     role="cell"
                     data-label="{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})"
                   >
-                    {{ shipping_method.price | money }}
+                    &yen;{{ shipping_method.price | money }}
                   </td>
                 </tr>
               {%- endfor -%}
