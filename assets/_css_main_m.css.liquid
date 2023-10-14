@@ -139,34 +139,41 @@ header nav{
 header nav ul{
     display: flex;
     flex-direction: row;
-    width: 15rem;
+    width: auto;
 }
+/*
 header nav li{
     display: block;
     width: 3.5rem;
     height: 3.5rem;
     margin: 1rem 1rem 0 0;
     color: #000;
-}
+}*/
 header nav li:first-child{
     visibility: hidden;
     pointer-events: none;
 }
 
-header nav li:last-child{
-        display: block;
-    height: 5rem;
-    width: 5rem;
+header nav li{
+    display: block;
+    height: 7rem;
+    width: 7rem;
     margin: 0 1rem 1rem 0;
     color: #000;
     vertical-align: 0;
+    background: #FC0;
+    border-radius: 100%;
+}
+
+header nav li:last-child{
+    margin: 0 2rem 1rem 0;
 }
 header nav li #menu_btn{
     position: relative;
     z-index: 1102;
-    width: 5rem;
-    height: 5rem;
-    background: #000;
+    width: 7rem;
+    height: 7rem;
+    background: none;
     border-radius: 100%;
     cursor: pointer;
 }
@@ -179,23 +186,22 @@ header nav li #menu_btn{
     position: absolute;
     background-color: #c00;
     color: #fff;
-    height: 1.7rem;
-    width: 1.7rem;
+    height: 2rem;
+    width: 2rem;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    bottom: 0.3rem;
-    left: 1.9rem;
-    line-height: 1.5rem;
-  
+    bottom: 1.5rem;
+    left: 4rem;
+    line-height: 2rem;
 }
 #menu_btn span{
     display: inline-block;
     transition: all .4s;/*アニメーションの設定*/
     position: absolute;
-    left: 1.5rem;
+    left: 2.5rem;
     height: 2px;
     border-radius: 5px;
     background: #fff;
@@ -203,8 +209,8 @@ header nav li #menu_btn{
 
 #menu_btn .lantern{
     position: absolute;
-    left:0;
-    top:0;
+    left:1rem;
+    top:1rem;
     width:5rem;
     height:5rem;
     background-image: url({{ '_img_lantern.svg' | asset_url }});
@@ -213,18 +219,18 @@ header nav li #menu_btn{
     background-repeat: no-repeat;
 }
 #menu_btn span:nth-of-type(1) {
-  top:1.3rem; 
-  width: 2rem;
+    top: 2.3rem;
+    width: 2rem;
 }
 
 #menu_btn span:nth-of-type(2) {
-  top:1.9rem;
-  width: 1.6rem;
+    top: 2.9rem;
+    width: 1.6rem;
 }
 
 #menu_btn span:nth-of-type(3) {
-  top:2.5rem;
-  width: 1.2rem;
+    top: 3.5rem;
+    width: 1.2rem;
 }
 #menu_btn span:nth-of-type(3)::after {
     content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
@@ -237,8 +243,8 @@ header nav li #menu_btn{
     line-height: 1rem;
 }
 #menu_btn.active span:nth-of-type(1) {
-    top: 1.25rem;
-    left: 1.75rem;
+    top: 2.25rem;
+    left: 2.45rem;
     transform: translateY(0.5rem) rotate(-45deg);
     width: 30%;
 }
@@ -248,8 +254,8 @@ header nav li #menu_btn{
 }
 
 #menu_btn.active span:nth-of-type(3){
-    top: 2.25rem;
-    left: 1.75rem;
+    top: 3.25rem;
+    left: 2.45rem;
     transform: translateY(-0.5rem) rotate(45deg);
     width: 30%;
 }
@@ -261,9 +267,10 @@ header nav li #menu_btn{
 }
 
 header nav li svg{
-    width: 3.5rem;
-    height: 3.5rem;
-    vertical-align: -0.75rem;
+    width: 5rem;
+    height: 5rem;
+    vertical-align: 0;
+    margin: 1rem;
 }
 
 .min_menu_btn span.min_title{
@@ -288,8 +295,8 @@ menu #menu_back{
     transition: all 0.5s ease-out;
 }
 menu.close #menu_back{
-    top: calc(100vh - 7rem);
-    right: calc(12.5rem - 110vw);
+    top: 100vh;
+    right: 0;
 }
 
 menu #mega_menu{
