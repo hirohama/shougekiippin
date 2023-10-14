@@ -133,31 +133,10 @@
               </div>
               <!-- 国 -->
               <input type="hidden" id="AddressCountryNew" name="address[country]" value="Japan">
-              <!--
-                {% comment %}
-                <div>
-                  <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
-                  <div class="select">
-                    <select
-                      id="AddressCountryNew"
-                      name="address[country]"
-                      data-default="{{ form.country }}"
-                      autocomplete="country"
-                    >
-                      {{ all_country_option_tags }}
-                    </select>
-                    <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                      <use href="#icon-caret" />
-                    </svg>
-                  </div>
-                </div>
-                {% endcomment %}
-              -->
               <!-- 都道府県 -->
               <div class="field w_3col no-margin" id="AddressProvinceContainerNew">
                 <label for="AddressProvinceNew" class="selectbox">
                   {% comment %}{{ 'customer.addresses.province' | t }}{% endcomment %}
-                  <div class="select">
                     <select
                       id="AddressProvinceNew"
                       name="address[province]"
@@ -170,17 +149,6 @@
                     <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
                       <use href="#icon-caret" />
                     </svg>
-                    <!--
-                      {% comment %}
-                      <select
-                        id="AddressProvinceNew"
-                        name="address[province]"
-                        data-default="{{ form.province }}"
-                        autocomplete="address-level1"
-                      ></select>
-                      {% endcomment %}
-                    -->
-                  </div>
                 </label>
               </div>
               <!-- 市町区村 -->
