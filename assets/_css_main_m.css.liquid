@@ -346,6 +346,11 @@ menu.close #mega_menu{
     height: 100vh;
 }
 /*大メニュー*/
+#mega_menu #head_menu_box{
+    flex-grow: 1;
+    height: 45vh;
+    width: 100vw;
+}
 #head_menu_box div.bubble_box{
     margin: 10vh auto 0;
     background-size: 100%;
@@ -363,16 +368,8 @@ menu.close #mega_menu{
     letter-spacing: .2vw;
     vertical-align: top;
 }
+
 /*大メニューと中メニュー共通*/
-#mega_menu #head_menu_box,
-#mega_menu #sub_menu_box{
-    flex-grow: 0;
-    width: 100vw;
-}
-#mega_menu #sub_menu_box{
-    flex-grow: 1;
-    width: 100vw;
-}
 #mega_menu div.margin_box{
     width: 100%;
     padding: 0;
@@ -395,6 +392,10 @@ menu.close #mega_menu{
 /*中央キャッチコピー　- ここまで*/
 
 /*中メニュー*/
+#mega_menu #sub_menu_box{
+    flex-grow: 1;
+    width: 100vw;
+}
 #sub_menu_box div.bubble_box{
     margin: 0 auto;
     background-size: 95%;
