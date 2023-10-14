@@ -7,20 +7,26 @@ body,html{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
-@media screen and (max-width: 639px) {
-    /*スマホ縦向き（639px以下）のスタイル*/
+/*タブレット縦向き、スマホ横向き（640px以上）のスタイル*/
 
+html {
+    font-size: 50%;
+}
+div#wrap{
+    border-top:10px solid #FC0;
+    border-bottom:10px solid #FC0;
+}
+.content{
+    border-left:10px solid #FC0;
+    border-right:10px solid #FC0;
+}
+ul#slider{
+    border-bottom:10px solid #FC0;
 }
 
-@media screen and (min-width: 640px) {
-    /*タブレット縦向き、スマホ横向き（640px以上）のスタイル*/
-
-}
-@media screen and (min-width: 1024px) {
-    /*ノートPC、タブレット横向き（1024px以上）のスタイル*/
-
+/*@media screen and (min-width: 640px) {
     html {
-        font-size: 62.5%;
+        font-size: 80%;
     }
     div#wrap{
         border-top:10px solid #FC0;
@@ -33,33 +39,7 @@ body,html{
     ul#slider{
         border-bottom:10px solid #FC0;
     }
-}
-@media screen and (min-width: 1280px) {
-    /*デスクトップ（1280px以上）のスタイル*/
-
-    html {
-        font-size: 68%;
-    }
-    div#wrap{
-        border-top:20px solid #FC0;
-        border-bottom:20px solid #FC0;
-    }
-    .content{
-        border-left:20px solid #FC0;
-        border-right:20px solid #FC0;
-    }
-    ul#slider{
-        border-bottom:20px solid #FC0;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    /*デスクトップ（1400px以上）のスタイル*/
-
-    html {
-        font-size: 75%;
-    }
-}
+}*/
 /*------------------------------------------------
 
 common
@@ -89,7 +69,7 @@ div#wrap{
     padding-top:12rem;
 }
 .content.add_spacer{
-    padding-top:7rem;
+    padding-top:4rem;
 }
 .content.add_spacer2{
     padding-top:2rem;
@@ -109,8 +89,8 @@ header{
 }
 header #logo_box{
     position: absolute;
-    top: 3rem;
-    left: 3rem;
+    top: 2rem;
+    left: 2rem;
     height: auto;
     z-index: 1096;
 }
@@ -119,34 +99,34 @@ header#menu_index #logo_box{
 }
 #mega_menu #mega_menu_logo_box{
     position:fixed;
-    top: 3rem;
-    left: 3rem;
+    top: 2rem;
+    left: 2rem;
     height: auto;
 }
 #logo_box #menu_logo,
 #mega_menu_logo_box #menu_logo{
-    width:20rem;
+    width: 22rem;
     height: auto;
-    display:inline-block;
+    display: inline-block;
 }
 #logo_box .cross,
 #mega_menu_logo_box .cross{
     display: inline-block;
-    width: 2rem;
-    vertical-align: 1.5rem;
-    margin: 0 1rem;
+    width: 1.5rem;
+    vertical-align: 1.7rem;
+    margin: 0 0.5rem;
 }
 #logo_box .city,
 #mega_menu_logo_box .city{
     display: inline-block;
-    font-size: 1.8rem;
-    letter-spacing: 0.05em;
-    vertical-align: 1rem;
+    font-size: 2.2rem;
+    letter-spacing: .05em;
+    vertical-align: 0.9rem;
 }
 #logo_box .city span,
 #mega_menu_logo_box .city span{
     display: block;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -156,32 +136,29 @@ header nav{
     right: 0;
     z-index: 1100;
 }
-header nav ul{
-    display:block;
-}
 header nav li{
     display: inline-block;
-    height: 3rem;
-    margin: 2.5rem 0.5rem 0;
+    height: 3.5rem;
+    margin: 2rem 0.5rem 0;
     font-size: 1.4rem;
-    line-height: 2.5rem;
-    color:#000;
+    line-height: 3.5rem;
+    color: #000;
 }
 header nav li:last-child{
     display: inline-block;
     height: 5rem;
-    margin: 0 2rem 0 0.5rem;
+    margin: 0 1rem 0 1rem;
     line-height: 2.5rem;
     color: #000;
-    vertical-align: -1.8rem;
+    vertical-align: -1.5rem;
 }
 header nav li #menu_btn{
     position: relative;
     z-index: 1102;
-    width:5rem;
-    height:5rem;
+    width: 5rem;
+    height: 5rem;
     background: #000;
-    border-radius:100%;
+    border-radius: 100%;
     cursor: pointer;
 }
 /* component-cart-count-bubble */
@@ -190,9 +167,8 @@ header nav li #menu_btn{
 }
 
 .cart-count-bubble {
-  position: absolute;
     position: absolute;
-    background-color: #CC0000;
+    background-color: #c00;
     color: #fff;
     height: 1.7rem;
     width: 1.7rem;
@@ -201,8 +177,8 @@ header nav li #menu_btn{
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    bottom: -0.2rem;
-    left: 1.2rem;
+    bottom: 0.3rem;
+    left: 1.9rem;
     line-height: 1.5rem;
   
 }
@@ -274,70 +250,21 @@ header nav li #menu_btn{
     top: 0.6rem;
     left: 0.1rem;
 }
-#mega_menu ul.menu_bottom li:first-child:after{
-    content:"／";
-    font-size:1.6rem;
-}
-@media screen and (min-width: 1280px){
-    #menu_btn span:nth-of-type(1) {
-      top:1.3rem; 
-      width: 2rem;
-    }
-
-    #menu_btn span:nth-of-type(2) {
-      top:1.95rem;
-      width: 1.6rem;
-    }
-
-    #menu_btn span:nth-of-type(3) {
-      top:2.6rem;
-      width: 1.2rem;
-    }
-    #menu_btn span:nth-of-type(3)::after {
-        content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
-        position: absolute;
-        top: 0.5rem;
-        left: -0.3rem;
-        color: #fff;
-        font-size: .9rem;
-        text-transform: uppercase;
-        line-height: 1rem;
-    }
-    #menu_btn.active span:nth-of-type(1) {
-        top: 1.25rem;
-        left: 1.7rem;
-        transform: translateY(0.5rem) rotate(-45deg);
-        width: 30%;
-    }
-
-    #menu_btn.active span:nth-of-type(2) {
-      opacity: 0;
-    }
-
-    #menu_btn.active span:nth-of-type(3){
-        top: 2.25rem;
-        left: 1.7rem;
-        transform: translateY(-0.5rem) rotate(45deg);
-        width: 30%;
-    }
-    #menu_btn.active span:nth-of-type(3)::after {
-        content:"Close";/*3つ目の要素のafterにClose表示を指定*/
-        transform: translateY(0) rotate(-45deg);
-        top: 0.7rem;
-        left: 0.4rem;
-    }
-}
 
 header nav li svg{
-    width:2.5rem;
-    height:2.5rem;
-    vertical-align: -.75rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    vertical-align: -0.75rem;
 }
+
 .min_menu_btn span.min_title{
-    display:inline;
+    display:none;
 }
+
 /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
 /*--------------------------mega menu-------------------------*/
+
+
 /*メガメニュー本体と背景*/
 menu #menu_back{
     position:fixed;
@@ -352,8 +279,8 @@ menu #menu_back{
     transition: all 0.5s ease-out;
 }
 menu.close #menu_back{
-    top:calc(7.5rem - 110vh);
-    right:calc(33rem - 110vw);
+    top: calc(7.5rem - 110vh);
+    right: calc(19rem - 110vw);
 }
 
 menu #mega_menu{
@@ -368,9 +295,10 @@ menu #mega_menu{
     transition: all 0.5s ease-out;
     background-image: url({{ '_img_menu_bg_illust1.svg' | asset_url }}),url({{ '_img_menu_bg_illust2.svg' | asset_url }});
     background-repeat: no-repeat,no-repeat;
-    background-position: right 8rem,left 8rem;
-    background-size: auto calc(100vh - 8rem),auto calc(100vh - 8rem);
+    background-position: right 10rem,left 10rem;
+    background-size: auto calc(100vh - 10rem),auto calc(100vh - 10rem);
 }
+
 menu.close #mega_menu{
     opacity:0;
     pointer-events: none
@@ -388,124 +316,265 @@ menu.close #mega_menu{
 }
 #mega_menu ul.menu_bottom li{
     display: inline-block;
-    font-size:1.3rem;
+    font-size:2vw;
 }
 #mega_menu ul.menu_bottom li:first-child:after{
     content:"／";
-    font-size:1.3rem;
+    font-size:2vw;
 }
 /*メガメニュー下、小メニュー - ここまで*/
 
-#mega_menu_box{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-}
+@media (orientation: landscape){/*横向き*/
+    #mega_menu_box{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+    }
+    /*大メニューと中メニュー共通*/
+    #mega_menu #head_menu_box,
+    #mega_menu #sub_menu_box{
+        flex-grow: 1;
+        width: 40vw;
+        height: 100%;
+    }
 
-/*大メニューと中メニュー共通*/
-#mega_menu div.margin_box{
-    width: 45vw;
-    padding: 0;
-    height: 100%;
-    margin: auto;
-}
-#mega_menu div.bubble_box{
-    width: 40vw;
-    text-align: center;
-    padding-top: calc(50vh - 10vw);
-    height: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-#mega_menu #head_menu_box,
-#mega_menu #sub_menu_box{
-    flex-grow: 1;
-    width: 45vw;
-    height: 100vh;
-}
-/*大メニューと中メニュー共通 - ここまで*/
+    #mega_menu div.margin_box{
+        width: 40vw;
+        padding: 0;
+        margin: auto;
+        height: 100%;
+    }
+    #mega_menu div.bubble_box{
+        width: 40vw;
+        text-align: center;
+        padding-top: calc(50vh - 10.5vw);
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    /*大メニューと中メニュー共通 - ここまで*/
 
-/*大メニュー*/
-#head_menu_box div.bubble_box{
-    margin: 0 0 0 5vw;
-    background-size: 100%;
-    background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
-}
-#head_menu_box ul{
-    height:20vw;
-    margin:auto;
-}
-#head_menu_box ul li{
-    display: inline-block;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    font-size: 2.2vw;
-    line-height: 4vw;
-    letter-spacing: .2vw;
-    vertical-align: top;
-}
-/*大メニュー - ここまで*/
+    /*大メニュー*/
+    #head_menu_box div.bubble_box{
+        margin: 0 0 0 5vw;
+        background-size: 107%;
+        background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
+    }
+    #head_menu_box ul{
+        margin:auto;
+        height: 21vw;
+    }
+    #head_menu_box ul li{
+        display: inline-block;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        font-size: 2.5vw;
+        line-height: 4vw;
+        letter-spacing: .1vw;
+        vertical-align: top;
+    }
+    /*大メニュー - ここまで*/
 
-/*中央キャッチコピー*/
-#mega_menu #head_text{
-    flex-grow: 0;
-    width: 5vw;
-    color: #4e3e00;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    font-size: 1.85vw;
-    line-height: 2.3vw;
-    letter-spacing: 0.1vw;
-    height: 42vw;
-    display: block;
-}
-/*中央キャッチコピー - ここまで*/
+    /*中央キャッチコピー*/
+    #mega_menu #head_text{
+        flex-grow: 0;
+        width: 10vw;
+        color: #4e3e00;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        font-size: 1.7vw;
+        line-height: 2.5vw;
+        letter-spacing: 0.2vw;
+        height: 40vw;
+        display: block;
+        white-space: nowrap;
+        padding: 0 0 0 5vw;
+    }
+    /*中央キャッチコピー　- ここまで*/
 
-/*中メニュー*/
-#sub_menu_box div.bubble_box{
-    margin: 0 5vw 0 0;
-    background-size: 90%;
-    background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
+    /*中メニュー*/
+    #sub_menu_box div.bubble_box{
+        margin: 0 5vw 0 0;
+        background-size: 95%;
+        background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
+    }
+    #sub_menu_box div{
+        text-align: left;
+        width: 20vw;
+        margin: auto;
+    }
+    #sub_menu_box .sns_head{
+        font-size: 1.3vw;
+        height: 2.5vw;
+    }
+    #sub_menu_box .sns_link{
+        height: 7vw;
+        border-bottom: 1px solid #000;
+    }
+    #sub_menu_box .sns_link a{
+        display: inline-block;
+        width: 4vw;
+        height: 4vw;
+        padding: 0 0.5vw 0 0;
+    }
+    #sub_menu_box .sns_link a svg{
+        width: 100%;
+        height: 100%;
+        fill:#000000;
+    }
+    #sub_menu_box ul{
+        margin:auto;
+    }
+    #sub_menu_box ul li{
+        text-align: left;
+        display: block;
+        font-size: 1.7vw;
+        line-height: 1.7vw;
+        padding-top: 1.2vw;
+        letter-spacing: .1vw;
+    }
+    /*中メニュー - ここまで*/
 }
-#sub_menu_box div{
-    text-align: left;
-    width: 20vw;
-    margin: auto;
-}
-#sub_menu_box .sns_head{
-    font-size: 1.2vw;
-    height: 2.2vw;
-}
-#sub_menu_box .sns_link{
-    height: 6vw;
-    border-bottom: 1px solid #000;
-}
-#sub_menu_box .sns_link a{
-    display: inline-block;
-    width: 3vw;
-    height: 3vw;
-    padding: 0 0.3vw 0 0;
-}
-#sub_menu_box .sns_link a svg{
-    width: 100%;
-    height: 100%;
-    fill:#000000;
-}
-#sub_menu_box ul{
-    margin:auto;
-}
-#sub_menu_box ul li{
-    text-align: left;
-    display: block;
-    font-size: 1.5vw;
-    line-height: 1.5vw;
-    padding-top: 1vw;
-    letter-spacing: .1vw;
-}
+@media (orientation: portrait){/*縦向き*/
+    #mega_menu_box{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    /*大メニュー*/
+    #head_menu_box div.bubble_box{
+        margin: 15vh 0 0 7rem;
+        background-size: 100%;
+        background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
+    }
+    #head_menu_box ul{
+        margin:auto;
+    }
+    #head_menu_box ul li{/**/
+        display: inline-block;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        font-size: 2.2vh;
+        line-height: 4vh;
+        letter-spacing: .1vw;
+        vertical-align: top;
+    }
+    /*大メニューと中メニュー共通*/
+    #mega_menu #head_menu_box,
+    #mega_menu #sub_menu_box{
+        flex-grow: 1;
+        width: 100vw;
+    }
+    #mega_menu div.margin_box{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #mega_menu div.bubble_box{/**/
+        width: 40vh;
+        text-align: center;
+        padding: 11.5vh 5rem 0;
+        height: 40vh;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    /*大メニューと中メニュー共通 - ここまで*/
 
-/*中メニュー - ここまで*/
+    /*中央キャッチコピー*/
+    #mega_menu #head_text{
+        display: none;
+    }
+    /*中央キャッチコピー　- ここまで*/
 
+    /*中メニュー*/
+    #sub_menu_box div.bubble_box{
+        margin: -15vh 0 0 42vw;
+        background-size: 95%;
+        background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
+    }
+    #sub_menu_box div{
+        text-align: left;
+        width: 22vh;
+        margin: auto;
+    }
+    #sub_menu_box .sns_head{
+        font-size: 1.2vh;
+        height: 2.2vh;
+    }
+    #sub_menu_box .sns_link{
+        height: 5rem;
+        border-bottom: 1px solid #000;
+    }
+    #sub_menu_box .sns_link a{
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0 0.3rem 0 0;
+    }
+    #sub_menu_box .sns_link a svg{
+        width: 100%;
+        height: 100%;
+        fill:#000000;
+    }
+    #sub_menu_box ul{
+        margin:auto;
+    }
+    #sub_menu_box ul li{
+            text-align: left;
+            display: block;
+            font-size: 1.6vh;
+            line-height: 1.8vh;
+            padding-top: 1vh;
+            letter-spacing: .1vh;
+    }
+    /*中メニュー - ここまで*/
+
+    @media screen and (min-width: 840px) {/*横840px以上(1023px以下)*/
+        /*大メニューと中メニュー共通*/
+        #mega_menu div.bubble_box{
+            width: 38rem;
+            text-align: center;
+            padding: 11rem 5rem 0;
+            height: 38rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        /*大メニューと中メニュー共通 - ここまで*/
+
+        /*大メニュー*/
+        #head_menu_box div.bubble_box{
+            margin: 8rem 0 0 7rem;
+            background-size: 100%;
+            background-image: url({{ '_img_menu_bg_circle_1.svg' | asset_url }});background-repeat: no-repeat;
+        }
+        #head_menu_box ul{
+            margin:auto;
+        }
+        #head_menu_box ul li{
+            display: inline-block;
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            font-size: 2rem;
+            line-height: 4.5rem;
+            letter-spacing: .2rem;
+            vertical-align: top;
+        }
+        /*大メニュー - ここまで*/
+        /*中メニュー*/
+        #sub_menu_box div.bubble_box{
+            margin: -12rem 0 0 40vw;
+            background-size: 90%;
+            background-image: url({{ '_img_menu_bg_circle_2.svg' | asset_url }});background-repeat: no-repeat;
+        }
+        #sub_menu_box div{
+            text-align: left;
+            width: 20rem;
+            margin: auto;
+        }
+        /*中メニュー - ここまで*/
+    }
+}
 
 /*productのページで出てくるドロワーメニュー。*/
 
@@ -632,32 +701,35 @@ footer nav{
     padding-top: 2rem;
 }
 #footer_logo_box{
-    width: 25rem;
+    width: 100%;
 }
 #footer_logo_box .logo{
-    padding: 2rem;
+    padding: 2rem 0 4rem;
+    text-align: center;
 }
 #footer_logo_box .logo img{
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 18rem;
 }
 #footer_logo_box .cross{
-    display:block;
-    width: 100%;
+        display: inline-block;
+    width: 3.5rem;
     text-align: center;
-    padding: 1rem 0 0.5rem;
+    padding: 0 1rem;
+    vertical-align: 1rem;
 }
 #footer_logo_box .cross svg{
-     width: 1.5rem;
+    width: 1.5rem;
     fill: #ccc;
 }
 #footer_logo_box .city{
-    display: block;
-    font-size: 3rem;
+    display: inline-block;
+    font-size: 2rem;
     letter-spacing: .05em;
     text-align: center;
-    color: #FFF;
-    width: 100%;
+    color: #fff;
+    width: auto;
+    vertical-align: 0.3rem;
 }
 #footer_logo_box .city span{
     display: block;
@@ -675,44 +747,35 @@ footer nav{
     text-align: right;
 }
         
-footer nav ul.main_nav{
-    width: 20rem;
+footer nav ul.main_nav,
+ul#footer_support_menu{
+    width: 50%;
     text-align: left;
-    margin-top: 3.5rem;
-    margin-left: 5rem;
+    margin-top: 0;
+    margin-left: 0;
 }
 footer nav ul.main_nav li{
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     display: block;
-    padding: 0 3rem 1.5rem;
+    padding: 1rem 0 1rem 10rem;
     letter-spacing: .1rem;
+
+    color:#FFF;
+}
+ul#footer_support_menu li,
+ul#footer_support_menu li.min1,
+ul#footer_support_menu li.min2{
+    font-size: 1.7rem;
+    display: block;
+    padding: 1rem 0 1rem 5rem;
+    letter-spacing: .1rem;
+
+    color:#FFF;
 }
 
-ul#footer_support_menu{
-    flex-grow: 2;
-    text-align: left;
-    margin-top: 3.5rem;
-}
-ul#footer_support_menu li{
-    font-size: 1.4rem;
-    display: block;
-    padding: 0 3rem 1.5rem;
-    letter-spacing: .1rem;
-}
-ul#footer_support_menu li.min1{
-    font-size: 1.2rem;
-    display: block;
-    padding: 1.5rem 3rem 1rem;
-    color:#CCC;
-}
-ul#footer_support_menu li.min2{
-    font-size: 1.2rem;
-    display: block;
-    padding: 0rem 3rem 0;
-    color:#CCC;
-}
 ul#footer_sns{
-    width:auto;
+    width:50%;
+    text-align: left;
 }
 ul#footer_sns li{
     display: inline-block;
@@ -727,28 +790,28 @@ ul#footer_sns li svg{
     fill:#FFF;
 }
 ul.copyright{
-    height: auto;
-    width: 100%;
+    height: 7rem;
+    width: 50%;
 }
 
 ul.copyright li{
     text-align: right;
     font-size: 1.3rem;
-    padding:3rem 0 4rem;
+    padding: 6rem 0 0;
 }
 ul#footer_guide{
-    display: flex;
-    width: 85%;
-    max-width: 1400px;
-    margin: auto;
-    padding: 3rem 0 1rem;
+    display: block;
+    width:85%;
+    max-width:1400px;
+    margin:auto;
+    padding-top:5rem;
 }
     ul#footer_guide li{
-        width:32%;
+        width:100%;
     }
     ul#footer_guide li:nth-child(1),
     ul#footer_guide li:nth-child(2){
-        margin-right:2%;
+        margin-right:0;
     }
 
         ul#footer_guide li h5{
@@ -760,15 +823,13 @@ ul#footer_guide{
         }
         ul#footer_guide li span{
             display: block;
-            padding: 1rem 0 0;
-          color:#AAA;
+            padding: 1rem 0 1.5rem;
             font-size: 1.3rem;
-            line-height: 2.2rem;
+            color: #AAA;
+            line-height: 2.4rem;
         }
-
-
 #information .count{
-    font-size:1vw;
+    font-size:1.3rem;
     padding:1vw 0;
 }
     .count button.plus,
@@ -800,7 +861,7 @@ index
 
 -------------------------------------------------*/
 div#main_visual{
-    padding-top:0;
+    padding-top:0rem;
 }
 div#mv{
     position:relative;
@@ -819,6 +880,7 @@ div#slider_box{
     width:100%;
     background:#FC0;
     position:relative;
+    overflow: hidden;
 }
 div#slider_box::before{
     content:"";
@@ -829,7 +891,8 @@ div#slider_box::before{
     background:#FFF;
 }
 ul#slider{
-    width:100%;
+    width: 160%;
+    margin-left: -30%;
 }
     ul#slider li.slide_clip{
         position:relative;
@@ -860,161 +923,165 @@ ul#slider{
 
 /*---------------ippin_list-----------------*/
 .ttl_index_01{
-    width:calc(44vw - 20px);
-    position: absolute;
-    margin:0 0 0 5vw;
-    padding-bottom:0;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom:5rem;
 }
-    .ttl_index_01 h2.read{
-        display:inline-block;
-        font-size:3rem;
-        padding-bottom:1rem;
-        letter-spacing: 0.05rem;
-    }
-    .ttl_index_01 h2.read span{
-        display:block;
-        font-size:0.8rem;
-    }
-    .ttl_index_01 p.description{
-        display:block;
-    }
+.ttl_index_01 h2.read{
+    display:inline-block;
+    font-size:3rem;
+    padding-bottom:1rem;
+    letter-spacing: 0.05rem;
+}
+.ttl_index_01 h2.read span{
+    display:block;
+    font-size:0.8rem;
+}
+.ttl_index_01 p.description{
+    display:block;
+}
 
 #ippin{
-    width:90%;
-    margin:0 auto 0;
+width: 80%;
+margin: 0 auto;
 }
-    #ippin li.store{
-        position: relative;
-        display:inline-block;
-        width:50%;
-        height:32vw;
-    }
-    #ippin li.store:nth-child(even){
-        float:left;
-    }
-    #ippin li.store:nth-child(odd){
-        float:right;
-    }
-    #ippin li.store:nth-child(2){;
-        margin-top:15vw;
-    }
-        #ippin li.store div.chef{
-            float:left;
-            width:57%;
-            height:24vw;
-            background-repeat:no-repeat;
-            background-position:center;
-            background-size:100% auto;
-            border-radius:1vw;
-        }
-        div.ribbon_box{
-            position: relative;
-            width: 3.55rem;
-            margin: -4% 0 0 5%;
-            padding-bottom: 2rem;
-            border-top: 1px solid #000;
-            border-left: 1px solid #000;
-            border-right: 1px solid #000;
-            overflow: hidden;
-        }
-            div.ribbon_box ul.ribbon_in_img,
-            div.ribbon_box ul.ribbon{
-                width: 100%;
-                background: #f5c520;
-                padding-top: 1rem;
-                padding-bottom: 1.25rem;
-                text-align: left;
-            }
-                div.ribbon_box ul.ribbon li{
-                    width:100%;
-                    min-height:20rem;
-                    -ms-writing-mode: tb-rl;
-                    writing-mode: vertical-rl;
-                    font-size: 2.2rem;
-                    line-height: 3.5rem;
-                    letter-spacing: .1rem;
-                    white-space: nowrap;
-                }
-                div.ribbon_box ul.ribbon_in_img li{
-                    width: 100%;
-                    min-height: 18rem;
-                }
-                    div.ribbon_box ul.ribbon_in_img li img{
-                        width:100%;
-                    }
-            div.ribbon_box ul.ribbon_in_img::before,
-            div.ribbon_box ul.ribbon::before{
-                    content: "";
-                    display: block;
-                    left: -1.45rem;
-                    bottom: 0.54rem;
-                    position: absolute;
-                    background: #f5c520;
-                    width: 2.65rem;
-                    height: 2.65rem;
-                    -webkit-transform: rotate(-48deg);
-                    transform: rotate(-48deg);
-                    border-bottom: 1px solid #000;
-            }
-            div.ribbon_box ul.ribbon_in_img::after,
-            div.ribbon_box ul.ribbon::after{
-                content: "";
-                display: block;
-                right: -1.5rem;
-                bottom: 0.54rem;
-                position: absolute;
-                background: #f5c520;
-                width: 2.65rem;
-                height: 2.65rem;
-                -webkit-transform: rotate(-42deg);
-                transform: rotate(-42deg);
-                border-left: 1px solid #000;
-            }
 
-        #ippin li.store div.ippin{
-            float:right;
-            width:43%;
-            height:25vw;
-            background-repeat:no-repeat;
-            background-position:center;
-            background-size:100% auto;
-        }
-        #ippin li.store div.ippin_img{
-            width:85%;
-            height:62%;
-            margin:-10% auto 0;
-        }
-            .mask {
-                -webkit-clip-path: url(#svgPath);
-                clip-path: url(#svgPath);
-            }
-        #ippin li.store div.ippin_text{
-            display: table;
-            width:100%;
-            height:30%;
-        }
-            div.ippin_text div.ippin_text_rayout{
-                display: table-cell;
-                width:100%;
-                height:100%;
-                text-align: center;
-                vertical-align: middle;
-                color:#000;
-            }
-                div.ippin_text_rayout span{
-                    font-size:0.9vw;
-                    line-height:1vw;
-                    padding:0.2vw 0.5vw;
-                }
-                div.ippin_text_rayout p{
-                    display:block;
-                    padding:0.2vw 0.5vw;
-                    font-size:1.5vw;
-                    line-height:2vw;
-                    text-decoration: underline #000 1px;
-                    text-underline-offset: 0.25vw;
-                }
+#ippin li.store{
+    position: relative;
+    display:inline-block;
+    width:100%;
+    margin-bottom: 7.5rem;
+}
+#ippin li.store a.box{
+    display: flex;
+    align-items: stretch;
+    flex-direction : row;
+}
+#ippin li.store:nth-child(even) a.box{
+    flex-direction : row-reverse;
+}
+#ippin li.store:nth-child(even),
+#ippin li.store:nth-child(odd){
+    float:none;
+}
+#ippin li.store div.chef{
+    width: 57%;
+    aspect-ratio: 1.05 / 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+}
 
+div.ribbon_box{
+    position: relative;
+    width: 3.55rem;
+    margin: -4% 0 0 5%;
+    padding-bottom: 2rem;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    overflow: hidden;
+}
+#ippin li.store:nth-child(even) div.ribbon_box{
+    margin: -4% 0 0 83%;
+}
+div.ribbon_box ul.ribbon_in_img,
+div.ribbon_box ul.ribbon{
+    width: 100%;
+    background: #f5c520;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+    text-align: left;
+}
+div.ribbon_box ul.ribbon li{
+    width: 100%;
+    min-height: 20rem;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    font-size: 1.7rem;
+    line-height: 3.5rem;
+    letter-spacing: .1rem;
+    white-space: nowrap;
+}
+div.ribbon_box ul.ribbon_in_img li{
+    width: 100%;
+    min-height: 18rem;
+}
+div.ribbon_box ul.ribbon_in_img li img{
+    width:100%;
+}
+div.ribbon_box ul.ribbon_in_img::before,
+div.ribbon_box ul.ribbon::before{
+        content: "";
+        display: block;
+        left: -1.45rem;
+        bottom: 0.54rem;
+        position: absolute;
+        background: #f5c520;
+        width: 2.65rem;
+        height: 2.65rem;
+        -webkit-transform: rotate(-48deg);
+        transform: rotate(-48deg);
+        border-bottom: 1px solid #000;
+}
+div.ribbon_box ul.ribbon_in_img::after,
+div.ribbon_box ul.ribbon::after{
+    content: "";
+    display: block;
+    right: -1.5rem;
+    bottom: 0.54rem;
+    position: absolute;
+    background: #f5c520;
+    width: 2.65rem;
+    height: 2.65rem;
+    -webkit-transform: rotate(-42deg);
+    transform: rotate(-42deg);
+    border-left: 1px solid #000;
+}
+
+#ippin li.store div.ippin{
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+}
+#ippin li.store div.ippin_img{
+    width: 100%;
+    height: 65%;
+    margin: -10% auto 0;
+}
+.mask {
+    -webkit-clip-path: url(#svgPath);
+    clip-path: url(#svgPath);
+}
+#ippin li.store div.ippin_text{
+    display: table;
+    width: 100%;
+    flex-grow: 1;
+    margin-top: -4rem;
+}
+div.ippin_text div.ippin_text_rayout{
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: #000;
+    text-decoration: none;
+}
+div.ippin_text_rayout span{
+    font-size: 1.25rem;
+    line-height: 2rem;
+    padding: 0.5rem 0;
+}
+div.ippin_text_rayout p{
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-decoration: underline #000 1px;
+    text-underline-offset: 0.5rem;
+}
 
 
 
@@ -1114,14 +1181,13 @@ product,store
 -------------------------------------------------*/
 ul#product{
     width: 100%;
-    max-width: 1500px;
     margin: auto;
 }
 ul#product li#product_introduce{
     float: left;
     position: relative;
-    width: 30%;
-    height: 40rem;
+    width: 37%;
+    height: 32rem;
 }
     li#product_introduce #information{
         display: inline;
@@ -1135,10 +1201,10 @@ ul#product li#product_introduce{
         #information .item_name{
         }
             #information .item_name h1{
-                display: block;
-                font-size: 2.5rem;
-                line-height: 3rem;
-                padding: 0 0 4rem;
+                    display: block;
+                    font-size: 2.4rem;
+                    line-height: 2.8rem;
+                    padding: 0 0 1rem;
             }
             #information .item_name span{
                 display: block;
@@ -1149,9 +1215,9 @@ ul#product li#product_introduce{
     }
 ul#product li#product_photo{
     float: right;
-    width: 70%;
-    height: 40rem;
-    background-size: 100%;
+    width: 63%;
+    height: 32rem;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -1162,17 +1228,20 @@ ul#product_introduce_col1{
     max-width: 1400px;
     margin:auto;
     padding-top:10rem;
+    position:relative;
 }
 
 ul#product_introduce_col1 #chef_photo{
-    float:left;
-    width:35%;
+    position: absolute;
+    top: 10rem;
+    left: 5rem;
+    width: 50%;
 }
 #chef_photo .chef_photobox{
-    position:relative;
-    width:100%;
+    position: relative;
+    width: 100%;
     aspect-ratio: 1 / 1.2;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
 }
@@ -1182,25 +1251,22 @@ ul#product_introduce_col1 #chef_photo{
     display: inline-block;
     writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
-    top:-3.5rem;
-    right:-2rem;
+    top: -3.5rem;
+    left: -2rem;
 }
 
 ul#product_introduce_col1 #product_outline_1{
     position: relative;
-    width:48%;
-    float:right;
-    margin-right:10%;
-    padding-top:10rem;
+    padding-top: 39rem;
 }
 #product_outline_1 .outline_1_title{
-    position:absolute;
-    top:3rem;
-    right:0;
+    position: absolute;
+    top: 9.5rem;
+    right: 16vw;
 }
 #product_outline_1 .outline_1_title h2{
     padding-top: 0rem;
-    margin-top: -3rem;
+    margin-top: 0rem;
     display: inline-block;
     writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
@@ -1208,38 +1274,38 @@ ul#product_introduce_col1 #product_outline_1{
     white-space: nowrap;
     width:7rem;
 }
-#product_outline_1 .outline_1_text{
-    width:78%;
-}
+#product_outline_1 .outline_1_text,
 #product_outline_1 .outline_1_2_text{
     width:100%;
+    padding-left:2rem;
+    padding-right:2rem;
 }
 
 
 ul#product_introduce_col2{
-    width:100%;
-    max-width: 1400px;
-    margin:auto;
-    padding: 7rem 0 14rem;
+    width: 100%;
+    margin: auto;
+    padding: 2rem 0 8rem;
 }
 #product_outline_2_1{
-    margin-top:7rem;
-    width:64%;
-    float:left;
+    margin-top: 9rem;
+    width: 68%;
+    float: left;
 }
 #product_outline_2_2{
-    width:36%;
-    float:right;
+    width: 32%;
+    float: right;
 }
 #product_outline_2_1 .chef_photo2{
-    width:83%;
+    width: 90%;
     aspect-ratio: 1.5 / 1;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
 }
 #product_outline_2_1 .outline_2_text{
-    padding:7rem 1rem 0 7rem;
+    padding-top:2rem;
+    padding-left:2rem;
 }
 #product_outline_2_2 .image_photo{
     width:100%;
@@ -1262,24 +1328,31 @@ ul#product_introduce_col2{
 }
 .chef_photobox .chef_name h5{
     display: block;
-    width: 2rem;
+    width: 2.5rem;
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.5rem;
 }
 .chef_photobox .chef_name h4{
     display: block;
-    width: 3rem;
-    font-size: 3rem;
-    line-height: 3rem;
+    width: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
 }
 
 ul#outline_1_textbox{
-    width: auto;
-    margin-left: 0;
+    width: 70%;
+    margin-left: 30%;
+}
+ul#outline_1_textbox li:first-child{
+    padding-top:2rem;
+}
+
+ul#outline_1_textbox li:last-child{
+    padding-bottom:2rem;
 }
 #product_outline_1 .outline_1_title h2,
 #product_outline_2_2 h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 3.5rem;
     letter-spacing: .2rem;
 }
@@ -1289,23 +1362,13 @@ ul#outline_1_textbox{
 #product_outline_2_2 h2{
     display:inline-block;
 }
-
 #product_outline_1 .outline_1_text,
 #product_outline_1 .outline_1_2_text,
 #product_outline_2_1 .outline_2_text{
-    font-size:1.4rem;
-    line-height:2.5rem;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
     letter-spacing: .1rem;
-}
-@media screen and (min-width: 1280px){
-    /* PCで中くらいのディスプレイ以上 */
-    #product_outline_1 .outline_1_text,
-    #product_outline_1 .outline_1_2_text,
-    #product_outline_2_1 .outline_2_text{
-        font-size:1.5rem;
-        line-height:2.8rem;
-        letter-spacing: .1rem;
-    }
+    background: #FFF;
 }
 /*----------------branch moniter size-----------------*/
 
@@ -1353,23 +1416,6 @@ div#product_spec_box .image_box a{
     color:#000;
     text-decoration: none;
 }
-
-div#product_spec_box .text_field{
-    font-size: 1.5rem;
-    line-height: 2.4rem;
-}
-
-div#product_spec_box .text_field h4{
-    display: block;
-    font-size:1.6rem;
-    line-height: 2.2rem;
-    padding:0 0 1.5rem;
-}
-div#product_spec_box .text_field h4 span{
-    display: block;
-    font-size:1.5rem;
-    line-height: 2.2rem;
-}
 @media screen and (min-width: 1280px){
     /* PCで中くらいのディスプレイ以上 */
     div#product_spec_box .info_box{
@@ -1415,16 +1461,6 @@ div#product_spec_box .text_field h4 span{
         color:#000;
         text-decoration: none;
     }
-    div#product_spec_box .text_field{
-        font-size: 1.5rem;
-        line-height: 2.4rem;
-    }
-
-    div#product_spec_box .text_field h4 span{
-        display: block;
-        font-size:1.4rem;
-        line-height: 2.2rem;
-    }
 
 }
 div#product_spec_box{
@@ -1455,7 +1491,22 @@ div#product_spec_box .image_box a.active{
     text-decoration: underline 0.25px #000;
     text-underline-offset: 0.25rem;
 }
+div#product_spec_box .text_field{
+    font-size:1.3rem;
+    line-height: 1.8rem;
+}
 
+div#product_spec_box .text_field h4{
+    display: block;
+    font-size:1.6rem;
+    line-height: 2.2rem;
+    padding:0 0 1.5rem;
+}
+div#product_spec_box .text_field h4 span{
+    display: block;
+    font-size:1.4rem;
+    line-height: 2.2rem;
+}
 div#product_spec_box .text_field ul{
     height:100%;
 }
@@ -1505,8 +1556,8 @@ pages
 
 -------------------------------------------------*/
 .innerpage_wrapper{
-  width:80%;
-  max-width: 1200px;
+  width:90%;
+  max-width: none;
   margin:auto;
   padding-bottom:0vw;
 }
@@ -1521,7 +1572,7 @@ pages
 }
 h1.page_title_head{
   display:block;
-  padding-bottom:4rem;
+  padding-bottom:5rem;
   font-size:3rem;
 }
 .editor_content{
@@ -1593,13 +1644,13 @@ pages - FAQ
   display: block;
 }
 h3.accordion_title{
-    display:inline-block;
-    width:100%;
-    padding:1rem;
-    font-size:1.8rem;
-    line-height:2.8rem;
-    height:4.8rem;
-    border-bottom:1px dotted #333;
+   display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    height: 4rem;
+    border-bottom: 1px dotted #333;
 }
 h3.accordion_title:before{
     content:"Q.";
@@ -1608,12 +1659,12 @@ h3.accordion_title:before{
     width:2.2rem;
 }
 .summary_block summary .icon {
-    display:block;
-        position: absolute;
-        top: 0.9rem;
-        right: 0.9rem;
-        width:3rem;
-        height:3rem;
+    display: block;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    width: 2.8rem;
+    height: 2.8rem;
         background-color: #FC0;
         border-radius: 9999px;
         background-size: 90%;
@@ -1755,7 +1806,7 @@ form#ContactForm,
     #ContactForm_wrapper,
     #order_list_wrapper,
     #order_detail_wrapper{
-        width:80%;
+        width:90%;
         padding:3vw 0;
         margin:auto;
     }
@@ -1776,15 +1827,15 @@ form#ContactForm textarea{
 div#customer_login_form_box,
 div#recover_customer_password_form_box{
     display: block;
-    width:50%;
-    min-height: 20vw;
+    width: 80%;
+    min-height: 20rem;
     background: #F4F4F4;
-    box-shadow: 0 0 1rem #FFF inset;
+    box-shadow: 0 0 1rem #fff inset;
     border-radius: 1vw;
-    margin:0 auto 3vw;
-    padding: 2vw 0 2vw;
-    border:5px solid #FC0;
-    text-align:center;
+    margin: 0 auto 3vw;
+    padding: 2rem 0;
+    border: 5px solid #FC0;
+    text-align: center;
 }
 
 div#customer_login_form_box label,
@@ -1905,14 +1956,14 @@ form#RegisterForm textarea{
 #address_box
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: #F4F4F4;
     box-shadow: 0 0 1rem #DDD inset;
     border-radius: 1vw;
     padding:2vw;
 }
 #addresses_details .account_name{
-    width:30%;
+    width:100%;
 }
 #addresses_details .account_name h2{
     font-size:2.5rem;
@@ -1926,7 +1977,7 @@ form#RegisterForm textarea{
     margin-bottom:1rem;
 }
 #addresses_details .account_address{
-    padding:0 0 0 2rem;
+    padding:2rem;
     text-align: right;
 }
 #addresses_details .account_address table{
@@ -1934,14 +1985,14 @@ form#RegisterForm textarea{
     border-collapse: separate;
     text-align: left;
     margin-bottom:1rem;
-    font-size:1.3rem;
+    font-size:1.5rem;
 }
 #addresses_details .account_address table th{
     border-left:1px solid #ccc;
     border-top:1px solid #ccc;
     padding:0.75rem;
     white-space: nowrap;
-    width:10rem;
+    width:15rem;
 }
 #addresses_details .account_address table tr:first-child th{
     border-radius: 1rem 0 0 0;
@@ -1974,8 +2025,8 @@ form#RegisterForm textarea{
 }
 #order_list_wrapper table.order-history{
     width:100%;
-  margin-top:1rem;
-  font-size: 1.4rem;
+    margin-top:1rem;
+    font-size:1.5rem;
 }
 #order_list_wrapper table.order-history th,
 #order_list_wrapper table.order-history td{
@@ -2030,7 +2081,6 @@ table.order_details{
 table.order_price_details{
     width:100%;
 }
-
 .order_price_details th,
 .order_price_details td{
     text-align: right;
@@ -2043,7 +2093,7 @@ table.order_price_details{
     border-bottom:1px dotted #999;
 }
 #address_box{
-  display:flex;
+  flex-direction: row;
 }
 #address_box h2{
   font-size:1.8rem;
@@ -2117,7 +2167,7 @@ table.order_price_details{
 .addresses form,
 form#address_form_new{
     display:block;
-    width:80%;
+    width:90%;
     margin:auto;
     text-align: left;
 }
@@ -2495,7 +2545,7 @@ div.feature_list a{
 }
 div.feature_list h3{
     text-align: center;
-    font-size:1.8rem;
+    font-size:1.7rem;
 }
 div.feature_list h4{
     text-align: center;
@@ -2508,8 +2558,8 @@ button
 -------------------------------------------------*/
 .btn_box{/*indexのみ*/
     position: absolute;
-    left:calc(22vw - 12.5rem);
-    top:calc(24vw - 2.5rem);
+    left: calc(50% - 10rem);
+    top: calc(100% - 2rem);
 }
 
 .btn,
@@ -2517,8 +2567,8 @@ a.btn{
     cursor: pointer;
     position: relative;
     display: block;
-    width: 25rem;
-    height: 5rem;
+    width: 20rem;
+    height: 4rem;
     border: 1px solid #000;
     background: #FFF;
     text-align: center;
@@ -2535,36 +2585,36 @@ a.btn:hover{
     }
     .btn span.info{
         display: table-cell;
-        width: calc(22rem - 2px);
-        height: calc(5rem - 2px);
+        width: calc(16.5rem - 2px);
+        height: calc(4rem - 2px);
         vertical-align: middle;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: #000;
     }
         /*.btn span.info */span.quantity_str{
-            font-size:1.5rem;
+            font-size: 1.3rem;
         }
         /*.btn span.info */span.quantity_str::after{
             content:'\0a5';
             letter-spacing: -.3rem;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         /*.btn span.info */span.price_str{
-            font-size:2.2rem;
+            font-size:1.8rem;
         }
         /*.btn span.info */span.tax_str{
-            font-size:1.5rem;
+            font-size:1.3rem;
         }
         /*.btn span.info */span.cart_count{
-            font-size:0.8vw;
+            font-size: 1.1rem
         }
     .btn .icon{
         display: block;
         position: absolute;
         top: 0.3rem;
         right: 0.3rem;
-        width: calc(4.4rem - 2px);
-        height: calc(4.4rem - 2px);
+        width: calc(3.4rem - 2px);
+        height: calc(3.4rem - 2px);
         background-color: #fc0;
         border-radius: 9999px;
         background-size: 90%;
@@ -2681,10 +2731,10 @@ utility
 
 /*-------------------br-----------------------*/
 br.d{
-    display:inline;
+    display:none;
 }
 br.t{
-    display:none;
+    display:inline;
 }
 br.m{
     display:none;
@@ -2695,10 +2745,9 @@ br.m{
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
-  width:12rem;
+  width:9rem;
   display: flex;
-  border-radius: ;
-  height:4.5rem;
+  height:3.5rem;
 }
 
 .quantity:after {
@@ -2744,7 +2793,7 @@ br.m{
 }
 
 .quantity__button {
-  width:4rem;
+  width:3rem;
   flex-shrink: 0;
   font-size:1vw;
   border: 0;
@@ -2837,13 +2886,11 @@ br.m{
 price-per-item .loading-overlay {
   position: relative;
 }
-
 .loading-overlay {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
-
 .loading-overlay__spinner {
   width: 2rem;
   display: inline-block;
@@ -2971,10 +3018,11 @@ product-info .loading-overlay:not(.hidden) ~ *,
     visibility: visible;
   }
 
-  .modal-display-wrapper > .image-wrapper {
-    position: relative;
-    height: 70%;
-  }
+    .modal-display-wrapper > .image-wrapper {
+      height: unset;
+        position: relative;
+      width: 85%;
+    }
 
   .modal-display-wrapper > .image-wrapper > img {
     width: 100%;
@@ -2996,4 +3044,4 @@ product-info .loading-overlay:not(.hidden) ~ *,
     text-align: center;
     cursor: pointer;
     font-size: 2rem;
-  }
+}
