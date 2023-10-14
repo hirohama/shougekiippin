@@ -568,13 +568,10 @@
 }
 */
 .order .cart-discount {
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  display: inline-block;
+  font-size: 1.4rem;
 }
-
-@media screen and (min-width: 750px) {
+/*@media screen and (min-width: 750px) {
   .order td .cart-discount {
     display: none;
   }
