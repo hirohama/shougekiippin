@@ -566,7 +566,7 @@
 .order .fulfillment span {
   display: block;
 }
-
+*/
 .order .cart-discount {
   display: block;
   margin-top: 1rem;
@@ -579,7 +579,7 @@
     display: none;
   }
 }
-
+/*
 .order tbody ul {
   list-style: none;
   font-size: 1.2rem;
@@ -620,13 +620,13 @@
   display: block;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
 }
-
+*/
 .order svg {
   width: 1.1rem;
   color: rgb(var(--color-foreground));
   margin-right: 0.5rem;
 }
-
+/*
 .order dl {
   margin: 0;
 }
