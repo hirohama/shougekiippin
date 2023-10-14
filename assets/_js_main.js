@@ -81,6 +81,9 @@ if($('#draw_product_menu').length){
     /*------------------レイアウト調整-----------------------*/
     function layout_tablet(){
         console.log("タブレット");
+
+        var read_block_cross_padding_per=7;/*写真にかかる部分の高さ(%)*/
+        var chef_photo_left_per=7;/*シェフ写真左余白(%)*/
         var winsize=$("#product_outline_1").width();
         var chef_photo=$("#chef_photo");
         var chef_photo_box={
@@ -95,12 +98,12 @@ if($('#draw_product_menu').length){
         }
         var one_percent=winsize/100;
 
-        var chef_photo_left=one_percent*5;
+        var chef_photo_left=one_percent*chef_photo_left_per;
             chef_photo.css("left",chef_photo_left+"px");//シェフ写真の位置決定
 
         var chef_photo_right=winsize-chef_photo_left-chef_photo_box.w;/*写真の横の余白*/
 
-        var read_block_cross_padding=one_percent*7;/*写真にかかる部分の高さ*/
+        var read_block_cross_padding=one_percent*read_block_cross_padding_per;/*写真にかかる部分の高さ*/
         var read_top;
             read_top=((chef_photo_box.h-read_box.h)/2-read_block_cross_padding);
         
