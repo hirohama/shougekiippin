@@ -55,7 +55,7 @@ div#wrap{
     opacity:0.5;
 }
 .content.innerpage_content{
-    padding-top:12rem;
+    padding-top:calc(9rem - 10px)
 }
 .content.add_spacer{
     padding-top:4rem;
@@ -94,27 +94,28 @@ header#menu_index #logo_box{
 }
 #logo_box #menu_logo,
 #mega_menu_logo_box #menu_logo{
-    width: 30vw;
+    width: 15rem;
     height: auto;
     display: inline-block;
 }
 #logo_box .cross,
 #mega_menu_logo_box .cross{
     display: inline-block;
-    width: 2.5vw;
-    vertical-align: 1.9vw;
-    margin: 0 0.75vw;
+    width: 2rem;
+    vertical-align: 0.7rem;
+    margin: 0 0.5rem;
 }
 #logo_box .city,
 #mega_menu_logo_box .city{
     display: inline-block;
-    font-size: 3.5vw;
-    letter-spacing: .1vw;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    vertical-align: 0.2rem;
 }
 #logo_box .city span,
 #mega_menu_logo_box .city span{
     display: block;
-    font-size: 0.8vw;
+    font-size: 0.6rem;
     text-align: center;
 }
 
@@ -299,7 +300,7 @@ menu #mega_menu{
     transition: all 0.5s ease-out;
     background-image: url({{ '_img_menu_bg_illust1.svg' | asset_url }}),url({{ '_img_menu_bg_illust2.svg' | asset_url }});
     background-repeat: no-repeat,no-repeat;
-    background-position: right 19vw,left 35rem;
+    background-position: right 9rem,left 35rem;
     background-size: auto calc(100vh - 35rem),auto calc(100vh - 35rem);
 }
 
@@ -1106,18 +1107,20 @@ div#product #product_photo{
 /*-----------------text section------------------*/
 
 #product_introduce_col1{
-    width:100%;
+    width: 100%;
     max-width: 1400px;
-    margin:auto;
-    padding-top:10rem;
-    position:relative;
+    margin: auto;
+    padding-top: 10rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 #product_introduce_col1 #chef_photo{
-    position: absolute;
-    top: 10rem;
-    left: 5rem;
-    width: 50%;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 90%;
 }
 #chef_photo .chef_photobox{
     position: relative;
@@ -1134,33 +1137,37 @@ div#product #product_photo{
     writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
     top: -3.5rem;
-    left: -2rem;
+    left: auto;
+    right: -2rem;
 }
 
 #product_introduce_col1 #product_outline_1{
     position: relative;
-    padding-top: 39rem;
+    padding-top: 0;
+    float:none;
+    width:90%;
+    margin:0 auto;
 }
 #product_outline_1 .outline_1_title{
-    position: absolute;
-    top: 9.5rem;
-    right: 16vw;
+    position: static;
+    top: auto;
+    right: auto;
 }
 #product_outline_1 .outline_1_title h2{
-    padding-top: 0rem;
+    padding: 1rem 0 1rem;
     margin-top: 0rem;
     display: inline-block;
-    writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: ltr;
     text-align: left;
-    white-space: nowrap;
-    width:7rem;
+    white-space: normal;
+    width: auto;
 }
 #product_outline_1 .outline_1_text,
 #product_outline_1 .outline_1_2_text{
     width:100%;
-    padding-left:2rem;
-    padding-right:2rem;
+    padding-left:0;
+    padding-right:0;
 }
 
 
@@ -1216,21 +1223,21 @@ div#product #product_photo{
 }
 .chef_photobox .chef_name h4{
     display: block;
-    width: 2.5rem;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+    width: 3rem;
+    font-size: 3rem;
+    line-height: 3rem;
 }
 
-ul#outline_1_textbox{
-    width: 70%;
-    margin-left: 30%;
+#outline_1_textbox{
+    width: 100%;
+    margin: 0 auto 0;
 }
-ul#outline_1_textbox li:first-child{
-    padding-top:2rem;
+#outline_1_textbox li:first-child{
+    padding-top:0;
 }
 
-ul#outline_1_textbox li:last-child{
-    padding-bottom:2rem;
+#outline_1_textbox li:last-child{
+    padding-bottom:0;
 }
 #product_outline_1 .outline_1_title h2,
 #product_outline_2_2 h2{

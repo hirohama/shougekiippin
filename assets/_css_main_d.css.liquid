@@ -1197,6 +1197,9 @@ product,store
     max-width: 1400px;
     margin:auto;
     padding-top:10rem;
+    position:relative;
+    display: block;
+    flex-direction: row;
 }
 
 #product_introduce_col1 #chef_photo{
@@ -1219,13 +1222,14 @@ product,store
     -ms-writing-mode: tb-rl;
     top:-3.5rem;
     right:-2rem;
+    left: auto;
 }
 
 #product_introduce_col1 #product_outline_1{
     position: relative;
     width:48%;
     float:right;
-    margin-right:10%;
+    margin:0 10% 0 0;
     padding-top:10rem;
 }
 #product_outline_1 .outline_1_title{
@@ -1234,7 +1238,7 @@ product,store
     right:0;
 }
 #product_outline_1 .outline_1_title h2{
-    padding-top: 0rem;
+    padding: 1rem 0 0 1rem;
     margin-top: -3rem;
     display: inline-block;
     writing-mode: vertical-rl;
@@ -1308,9 +1312,9 @@ product,store
     line-height: 3rem;
 }
 
-ul#outline_1_textbox{
+#outline_1_textbox{
     width: auto;
-    margin-left: 0;
+    margin: 0 0 0 0;
 }
 #product_outline_1 .outline_1_title h2,
 #product_outline_2_2 h2{

@@ -7,12 +7,12 @@
     </div><!--余白7%-->
     <div id="product_outline_1" >
       <div class="outline_1_title fadein"><h2 class="foJ_Bld">{{ product.metafields.custom.title_1 }}</h2></div><!--absolute right0-->
-      <ul id="outline_1_textbox" class="clearfix fadein">
-        <li class="outline_1_text foJ_Thin">{{ product.metafields.custom.text_1 }}</li><!--block,width指定-->
+      <div id="outline_1_textbox" class="clearfix fadein">
+        <div class="outline_1_text foJ_Thin">{{ product.metafields.custom.text_1 }}</div><!--block,width指定-->
         {% if product.metafields.custom.text_1_2 != blank%}
-        <li class="outline_1_2_text foJ_Thin">{{ product.metafields.custom.text_1_2 }}</li><!--block,width大き目指定-->
+        <div class="outline_1_2_text foJ_Thin">{{ product.metafields.custom.text_1_2 }}</div><!--block,width大き目指定-->
         {% endif %}
-      </ul>
+      </div>
     </div>
   </div>
   <div id="product_introduce_col2" class="clearfix">
