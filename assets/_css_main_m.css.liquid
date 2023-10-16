@@ -796,7 +796,8 @@ ul#slider{
     font-size:0.8rem;
 }
 .ttl_index_01 p.description{
-    display:block;
+    display: block;
+    font-size: 1.7rem;
 }
 
 #ippin{
@@ -951,8 +952,8 @@ div.ippin_text_layout span{
 }
 div.ippin_text_layout p{
     display: block;
-    padding: 0.5rem 0 1rem;
-    font-size: 2rem;
+    padding: 0.5rem 0 1.5rem;
+    font-size: 2.2rem;
     line-height: 2.5rem;
     text-decoration: none;
     text-underline-offset: 0;
@@ -1685,9 +1686,13 @@ form#ContactForm,
         padding:3vw 0;
         margin:auto;
     }
-
 form#ContactForm label{
     display:block;
+    padding: 0 0 0 0;
+}
+form#ContactForm label:has(span){
+    display:block;
+    padding: 0 0 1rem 0;
 }
 
 form#ContactForm input[type="text"],
@@ -2064,21 +2069,24 @@ form#address_form_new{
 span.require{
     display: inline-block;
     background: #C00;
-    font-size: .9rem;
-    padding: 0.1rem 0.8rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.8rem;
     margin: 0 0 0.2rem 0.5rem;
     border-radius: 0.3rem;
     vertical-align: 0.2rem;
     line-height: 1.3rem;
-    color:#FFF;
+    color: #fff;
 }
 label.subset{
     font-size:2rem;
     color:#666;
 }
-form .field,
+form .field{
+    margin-top:2rem;
+}
 form .min_head{
     margin-top:2rem;
+    padding:0 0 1rem 0;
 }
 form .field{
     display:inline-block;
@@ -2115,15 +2123,16 @@ input[type="email"],
 input[type="tel"],
 input[type="password"],
 select{
-    height:4rem;
+    height:6rem;
 }
 textarea{
-    height:10vw;
+    height:20rem;
 }
 
 input[type=checkbox]{
-  min-width:1.1vw;
-  min-height:1.1vw;
+    min-width: 2rem;
+    min-height: 2rem;
+    vertical-align: -0.5rem;
 }
 
 .selectbox {
@@ -2140,8 +2149,8 @@ input[type=checkbox]{
     .selectbox::before {
         display: inline-block;
         right: 0;
-        width: 4rem;
-        height: 4rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: 0 3px 3px 0;
         background-color: #BBB;
     }
@@ -2149,7 +2158,7 @@ input[type=checkbox]{
     .selectbox::after {
         position: absolute;
         top: 50%;
-        right: 2rem;
+        right: 3rem;
         transform: translate(50%, -50%) rotate(45deg);
         width: 0.75rem;
         height: 0.75rem;
@@ -2159,7 +2168,7 @@ input[type=checkbox]{
 
     .selectbox select {
         appearance: none;
-        height: 4rem;
+        height: 6rem;
         border: none;
         cursor: pointer;
     }
@@ -2231,18 +2240,19 @@ select:focus {
         line-height: 1.1vw;
     }
 .field.w_1col{
-    width:97.3%;
+    width: 100%;
 }
 .field.w_2col{
-    width:48.3%;/*見た目の大きさを揃えるために小数点以下をつけた*/
+    width: 100%;/*見た目の大きさを揃えるために小数点以下をつけた*/
 }
 .field.w_3col{
-    width:32%;
+    width: 100%;
 }
 .privacy_check{
     text-align: center;
-    line-height: 2.5vw;
-    padding:2vw;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    padding: 2rem;
 }
 
 /*------------------------------------------------
