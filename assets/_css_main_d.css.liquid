@@ -7,15 +7,6 @@ body,html{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
-@media screen and (max-width: 639px) {
-    /*スマホ縦向き（639px以下）のスタイル*/
-
-}
-
-@media screen and (min-width: 640px) {
-    /*タブレット縦向き、スマホ横向き（640px以上）のスタイル*/
-
-}
 @media screen and (min-width: 1024px) {
     /*ノートPC、タブレット横向き（1024px以上）のスタイル*/
 
@@ -1341,6 +1332,13 @@ product,store
 #outline_1_textbox{
     width: auto;
     margin: 0 0 0 0;
+}
+#outline_1_textbox div:first-child{
+    padding-top:0;
+}
+
+#outline_1_textbox div:last-child{
+    padding-bottom:0;
 }
 #product_outline_1 .outline_1_title h2,
 #product_outline_2_2 h2{
