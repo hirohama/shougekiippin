@@ -17,13 +17,14 @@
   </div>
   <div id="product_introduce_col2" class="clearfix">
     <div id="product_outline_2_1">
-      <div class="chef_photo2 fadein" style="background-image: url('{{ product.images[4] | img_url:"original" }}');"></div>
-      <p class="outline_2_text fadein foJ_Thin">{{ product.metafields.custom.text_2 }}</p>
+      <div id="chef_photo2" class="fadein" style="background-image: url('{{ product.images[4] | img_url:"original" }}');"></div>
+      <p id="outline_2_text" class="fadein foJ_Thin">{{ product.metafields.custom.text_2 }}</p>
     </div><!--w64%-->
     <div id="product_outline_2_2">
-      <div class="image_photo fadein" style="background-image: url('{{ product.images[3] | img_url:"original" }}');"></div>
+      <div id="image_photo" class="fadein" style="background-image: url('{{ product.images[3] | img_url:"original" }}');"></div>
       <h2 class="foJ_Bld fadein">{{ product.metafields.custom.title_2 }}</h2>
     </div><!--w36%-->
+    <div id="product_outline_whitebox"></div><!--スマホ用スペーサー-->
   </div>
   <!--ul id="product_introduce_col2" class="clearfix fadein">
 

@@ -1154,7 +1154,7 @@ div#product #product_photo{
     right: auto;
 }
 #product_outline_1 .outline_1_title h2{
-    padding: 1rem 0 1rem;
+    padding: 3rem 0 2rem;
     margin-top: 0rem;
     display: inline-block;
     writing-mode: horizontal-tb;
@@ -1172,43 +1172,67 @@ div#product #product_photo{
 
 
 #product_introduce_col2{
+    position: relative;
     width: 100%;
-    margin: auto;
-    padding: 2rem 0 8rem;
+    margin: 8rem auto 0;
+    padding: 0;
 }
 #product_outline_2_1{
-    margin-top: 9rem;
-    width: 68%;
-    float: left;
+    position:absolute;
+    top: 0;
+    left: 0;
+    margin-top: auto;
+    width: 100%;
+    float: none;
 }
 #product_outline_2_2{
-    width: 32%;
+    position:absolute;
+    width: 100%;
     float: right;
+
 }
-#product_outline_2_1 .chef_photo2{
+#product_outline_2_1 #chef_photo2{
+    position: absolute;
+    top: 22rem;
+    left: 0;
     width: 90%;
     aspect-ratio: 1.5 / 1;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
 }
-#product_outline_2_1 .outline_2_text{
-    padding-top:2rem;
-    padding-left:2rem;
+#product_outline_2_1 #outline_2_text{
+    position: absolute;
+    top: 62rem;
+    left: 0;
+    width: 90%;
+    margin-left: 5%;
+    padding: 0 0 10rem 0;
 }
-#product_outline_2_2 .image_photo{
-    width:100%;
-    aspect-ratio: 1.5 / 1;
-    background-repeat:no-repeat;
+#product_outline_2_2 #image_photo{
+    position:absolute;
+    top: 0;
+    left: auto;
+    right:0;
+    aspect-ratio: auto;
+    width: 26rem;
+    height: 17rem;
+    background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
+    margin: 0 0 4rem 0;
 }
 #product_outline_2_2 h2{
-    padding: 7rem 0 0;
-    writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
+    padding: 3rem 0 2rem 5%;
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: ltr;
     text-align: left;
     white-space: nowrap;
+}
+#product_outline_whitebox{
+    display: block;
+    height: 100rem;
+    pointer-events:none;
 }
 /*----------------branch moniter size-----------------*/
 .chef_photobox .chef_name{
@@ -1246,18 +1270,24 @@ div#product #product_photo{
     letter-spacing: .2rem;
 }
 #product_outline_2_2{
-    text-align: center;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 #product_outline_2_2 h2{
-    display:inline-block;
+    display: block;
+    position: absolute;
+    top: 52.5rem;
+    left: 0;
 }
 #product_outline_1 .outline_1_text,
 #product_outline_1 .outline_1_2_text,
-#product_outline_2_1 .outline_2_text{
+#product_outline_2_1 #outline_2_text{
     font-size: 1.6rem;
     line-height: 2.8rem;
     letter-spacing: .1rem;
-    background: #FFF;
+    background: none;
 }
 /*----------------branch moniter size-----------------*/
 
@@ -1305,53 +1335,7 @@ div#product_spec_box .image_box a{
     color:#000;
     text-decoration: none;
 }
-@media screen and (min-width: 1280px){
-    /* PCで中くらいのディスプレイ以上 */
-    div#product_spec_box .info_box{
-        height:100%;
-        display:block;
-    }
-    div#product_spec_box .image_box{
-        width:45%;
-        float: left;
-    }
-    div#product_spec_box .text_field{
-        width:calc(55% - 1.5rem);
-        height:100%;
-        margin-left:1.5rem;
-        background: #FFF;
-        border-radius: 1rem;
-        padding:1rem;
-        float: right;
-    }
-    div#product_spec_box .image_box .photo{
-        width:100%;
-        aspect-ratio: 1.4 / 1;
-        background-size:cover;
-        background-repeat:no-repeat;
-        background-position:center;
-        border-radius: 0.5rem 0.5rem 0 0;
-        margin-top:-5rem;
-        box-shadow: 0 1rem 1.5rem -1rem #FFF;
-        border-bottom: 1px solid #FFF;
-        float:none;
-    }
-    div#product_spec_box .image_box h3{
-        display: block;
-        font-size:2.2rem;
-        line-height: 2.2rem;
-        padding:1rem 0;
-    }
-    div#product_spec_box .image_box a{
-        display: block;
-        font-size:1.5rem;
-        line-height: 1.5rem;
-        padding:0.5rem 0 0.5rem 1.5rem;
-        color:#000;
-        text-decoration: none;
-    }
 
-}
 div#product_spec_box{
     width: 100%;
     max-width: 1400px;

@@ -121,10 +121,40 @@ if($('#draw_product_menu').length){
         read_block.attr("style","");
         read.attr("style","");
     }
+
+    function layout_smp(){
+        console.log("スマホ");
+
+        var img_photo=$("#image_photo");
+        var chef_photo2=$("#chef_photo2");
+        var section_title=$("#product_outline_2_2").find("h2");
+        var section_text=$("#outline_2_text");
+        var spacer=$("#product_outline_whitebox");
+        var h;
+
+        var img_photo_height=img_photo.outerHeight(true);
+        chef_photo2.css("top",img_photo_height+"px");/*chef_photo2*/
+        var chef_photo2_height=chef_photo2.outerHeight(true);
+        h=img_photo_height+chef_photo2_height;
+        section_title.css("top",h+"px");
+        var section_title_height=section_title.outerHeight(true);
+        h+=section_title_height;
+        section_text.css("top",h+"px");
+        var section_text_height=section_text.outerHeight(true);
+        h+=section_text_height;
+        spacer.css("height",h+"px");
+    }
+    function layout_smp_clear(){
+
+    }
+
     $(window).on('load resize', function () {
         if(window.matchMedia("(max-width:1023px)").matches&&window.matchMedia("(min-width:640px)").matches){
             layout_tablet();
+        }else if(window.matchMedia("(max-width:639px)").matches){
+            layout_smp();
         }else{
+            layout_smp_clear();
             layout_tablet_clear();
         }
     });
