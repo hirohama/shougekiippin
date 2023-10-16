@@ -655,12 +655,14 @@ menu.close #mega_menu{
             height:4rem;
             padding:0.5rem;
             text-align: center;
-            font-size:1.3rem;
-            line-height: 3rem;
             background: #FC0;
             border-radius: 0.5rem;
             margin:1rem 0 0 0;
             cursor: pointer;
+        }
+
+        #draw_product_menu .draw_product_btn span{
+            line-height:3rem!important;
         }
             #draw_product_menu .draw_product_btn .down,
             #draw_product_menu.active .draw_product_btn .up{
@@ -1542,6 +1544,7 @@ div#product_spec_box{
     margin: auto;
     display: flex;
     align-items: stretch;
+    flex-direction: row;
     justify-content: center;
     padding-bottom: 3rem;
     border-bottom: 3px dotted #666;

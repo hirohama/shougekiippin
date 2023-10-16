@@ -145,13 +145,22 @@ if($('#draw_product_menu').length){
         spacer.css("height",h+"px");
     }
     function layout_smp_clear(){
+        var chef_photo2=$("#chef_photo2");
+        var style_onload=chef_photo2.attr("style");
+        var section_title=$("#product_outline_2_2").find("h2");
+        var section_text=$("#outline_2_text");
+        chef_photo2.attr("style",style_onload);//背景画像なので、保管したものを出す
+        section_title.attr("style","");
+        section_text.attr("style","");
 
     }
 
     $(window).on('load resize', function () {
         if(window.matchMedia("(max-width:1023px)").matches&&window.matchMedia("(min-width:640px)").matches){
+            layout_smp_clear();
             layout_tablet();
         }else if(window.matchMedia("(max-width:639px)").matches){
+            layout_tablet_clear();
             layout_smp();
         }else{
             layout_smp_clear();

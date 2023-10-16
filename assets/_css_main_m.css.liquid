@@ -42,7 +42,7 @@ div#wrap{
 .content{
     display: block;
     position:relative;
-    font-size:1.4rem;
+    font-size:1.6rem;
     text-align:left;
     width:100%;
     height:auto;
@@ -441,7 +441,7 @@ menu.close #mega_menu{
         position: fixed;
         z-index: 1097;
         left: 3rem;
-        width: 30rem;
+        width: calc(100vw - 6rem);
         height: auto;
         overflow: visible;
         transition : top 0.8s;
@@ -449,7 +449,7 @@ menu.close #mega_menu{
         #draw_product_menu .draw_product_content{
             opacity : 0;
             margin:1rem 0 0;
-            width:30rem;
+            width:100%;
             background: #FFF;
             border:1px solid #000;
             border-radius:1.5rem;
@@ -460,14 +460,14 @@ menu.close #mega_menu{
             opacity : 1;
         }
         #draw_product_menu .draw_product_content .img{
-            display:block;
-            width:100%;
-            height:19rem;
-            margin:auto;
+            display: block;
+            width: 100%;
+            height: 25rem;
+            margin: auto;
             border-radius: 1rem 1rem 0 0;
-            background-repeat:no-repeat;
-            background-position:center;
-            background-size:100% auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% auto;
         }
         #draw_product_menu .item_name{
             text-align:left;
@@ -480,28 +480,29 @@ menu.close #mega_menu{
         }
         #draw_product_menu .item_name span{
             display: block;
-            font-size: 1.4vw;
+            font-size: 1.6rem;
         }
         #draw_product_menu .quantities{
             text-align: right;
             adding: 0.5rem 0 0;
         }
         #draw_product_menu .count{
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             padding: 0.5rem 0 0.5rem;
             text-align: right;
         }
         #draw_product_menu .draw_product_btn{
-            width:30rem;
+            width:100%;
             height:4rem;
             padding:0.5rem;
             text-align: center;
-            font-size:1.3rem;
-            line-height: 3rem;
             background: #FC0;
             border-radius: 0.5rem;
             margin:1rem 0 0 0;
             cursor: pointer;
+        }
+        #draw_product_menu .draw_product_btn span{
+            line-height:3rem!important;
         }
             #draw_product_menu .draw_product_btn .down,
             #draw_product_menu.active .draw_product_btn .up{
@@ -1329,8 +1330,8 @@ div#product_spec_box .image_box h3{
 }
 div#product_spec_box .image_box a{
     display: block;
-    font-size:1.5rem;
-    line-height: 1.5rem;
+    font-size:1.6rem;
+    line-height: 1.6rem;
     padding:0.5rem 0 0.5rem 1.5rem;
     color:#000;
     text-decoration: none;
@@ -1342,21 +1343,22 @@ div#product_spec_box{
     margin: auto;
     display: flex;
     align-items: stretch;
+    flex-direction: column;
     justify-content: center;
     padding-bottom: 3rem;
     border-bottom: 3px dotted #666;
 }
 #product_info_box{
     background:#f5efdb;
-    margin:0 0.5rem 0 1rem;
+    margin: 0 auto 5rem;
 }
 #store_info_box{
     background:#e7ebec;
-    margin:0 1rem 0 0.5rem;
+    margin: 0 auto 5rem;
 }
 #product_info_box,
 #store_info_box{
-    width:50%;
+    width:100%;
     padding:1.5rem;
 }
 div#product_spec_box .image_box a.active{
@@ -1365,8 +1367,8 @@ div#product_spec_box .image_box a.active{
     text-underline-offset: 0.25rem;
 }
 div#product_spec_box .text_field{
-    font-size:1.3rem;
-    line-height: 1.8rem;
+    font-size:1.6rem;
+    line-height: 2.2rem;
 }
 
 div#product_spec_box .text_field h4{
@@ -1377,7 +1379,7 @@ div#product_spec_box .text_field h4{
 }
 div#product_spec_box .text_field h4 span{
     display: block;
-    font-size:1.4rem;
+    font-size:1.6rem;
     line-height: 2.2rem;
 }
 div#product_spec_box .text_field ul{
@@ -1858,7 +1860,7 @@ form#RegisterForm textarea{
     border-collapse: separate;
     text-align: left;
     margin-bottom:1rem;
-    font-size:1.5rem;
+    font-size:1.6rem;
 }
 #addresses_details .account_address table th{
     border-left:1px solid #ccc;
@@ -1899,7 +1901,7 @@ form#RegisterForm textarea{
 #order_list_wrapper table.order-history{
     width:100%;
     margin-top:1rem;
-    font-size:1.5rem;
+    font-size:1.6rem;
 }
 #order_list_wrapper table.order-history th,
 #order_list_wrapper table.order-history td{
@@ -2017,7 +2019,7 @@ table.order_price_details{
 .addresses_list li h5.default_address{
     display: inline-block;
     background: #FC0;
-    font-size:1.3rem;
+    font-size:1.6rem;
     padding:0.5rem;
     margin-bottom:0.5rem;
     border-radius:0.3rem;
@@ -2071,7 +2073,7 @@ span.require{
     color:#FFF;
 }
 label.subset{
-    font-size:1.3rem;
+    font-size:1.6rem;
     color:#666;
 }
 form .field,
@@ -2101,7 +2103,7 @@ textarea{
     padding: 0 1rem;
     border-radius: 0.3rem;
     border: none;
-    font-size:1.4rem;
+    font-size:1.6rem;
     color:#666;
     box-shadow: 0 0 0 1px #ccc inset;
     appearance: none;
@@ -2204,7 +2206,7 @@ select:focus {
     .alert_content{
         display: block;
         padding-top: 0.5rem;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         line-height: 1.8rem;
     }
     .alert_content a{
@@ -2278,7 +2280,6 @@ h1.cart_empty_text{
 
 #cart_item_table th{
     padding:0 0.5rem 0.5rem;
-    font-size:1.8rem;
     font-size:1.6rem;
     line-height: 2.5rem;
     border-bottom:1px solid #666;
@@ -2342,7 +2343,7 @@ td.cart_item_quantity cart-remove-button a{
 .cart_item_price_wrapper span:before{
     content:'\0a5';
     letter-spacing: 0vw;
-    font-size:1.5rem;
+    font-size:1.6rem;
 }
 #cart_item_table .cart_item_totals{
     width:15%;
@@ -2381,7 +2382,7 @@ td.cart_item_quantity cart-remove-button a{
     font-size:1.7rem;
 }
 .tax-note{
-  font-size:1.2rem;
+  font-size:1.6rem;
   margin: 1rem 0 1.6rem auto;
   text-align: right;
   display: block;
@@ -2422,7 +2423,7 @@ div.feature_list h3{
 }
 div.feature_list h4{
     text-align: center;
-    font-size:1.4rem;
+    font-size:1.6rem;
 }
 /*------------------------------------------------
 
@@ -2479,7 +2480,7 @@ a.btn:hover{
             font-size:1.7rem;
         }
         /*.btn span.info */span.cart_count{
-            font-size: 1.3rem
+            font-size: 1.6rem;
         }
     .btn .icon{
         display: block;
@@ -2497,8 +2498,8 @@ a.btn:hover{
 .t_link,
 a.t_link{
     display:inline-block;
-    font-size:1.4rem;
-    line-height:1.5rem;
+    font-size:1.6rem;
+    line-height:1.6rem;
     text-decoration: underline #000 1px;
     color:#000;
     text-underline-offset: 0.25rem;
@@ -2508,9 +2509,9 @@ a.t_link:hover{
     opacity: 0.5;
 }
 .t_link.no_deco{
-    display:inline-block;
-    font-size:1.4rem;
-    line-height:1.5rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
     text-decoration: none;
 }
 .t_link.no_deco.button_mode{
