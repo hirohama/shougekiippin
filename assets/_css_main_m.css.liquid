@@ -7,10 +7,10 @@ body,html{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
-/*タブレット縦向き、スマホ横向き（640px以上）のスタイル*/
+/*スマホ縦向き（640px以下）のスタイル*/
 
 html {
-    font-size: 50%;
+    font-size: 74%;
 }
 div#wrap{
     border-top:10px solid #FC0;
@@ -24,22 +24,11 @@ ul#slider{
     border-bottom:10px solid #FC0;
 }
 
-/*@media screen and (min-width: 640px) {
+@media screen and (max-width: 480px) {
     html {
-        font-size: 80%;
+        font-size: 50%;
     }
-    div#wrap{
-        border-top:10px solid #FC0;
-        border-bottom:10px solid #FC0;
-    }
-    .content{
-        border-left:10px solid #FC0;
-        border-right:10px solid #FC0;
-    }
-    ul#slider{
-        border-bottom:10px solid #FC0;
-    }
-}*/
+}
 /*------------------------------------------------
 
 common
@@ -1065,6 +1054,8 @@ product,store
 ul#product{
     width: 100%;
     margin: auto;
+    display: flex;
+    flex-direction: column-reverse;
 }
 ul#product li#product_introduce{
     float: left;
@@ -1099,8 +1090,8 @@ ul#product li#product_introduce{
 ul#product li#product_photo{
   position:relative;
     float: right;
-    width: 63%;
-    height: 32rem;
+    width: 100%;
+    aspect-ratio: 1/0.65;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

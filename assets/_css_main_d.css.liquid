@@ -1141,12 +1141,13 @@ ul#product{
     width: 100%;
     max-width: 1500px;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }
 ul#product li#product_introduce{
-    float: left;
     position: relative;
     width: 30%;
-    height: 40rem;
 }
     li#product_introduce #information{
         display: inline;
@@ -1173,11 +1174,11 @@ ul#product li#product_introduce{
         position:relative;
     }
 ul#product li#product_photo{
-  position:relative;
-    float: right;
+    position:relative;
     width: 70%;
-    height: 40rem;
-    background-size: 100%;
+    max-height: 35rem;
+    aspect-ratio: 1.5/1;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
