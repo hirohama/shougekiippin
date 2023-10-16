@@ -116,9 +116,14 @@
 }
 
 .cart-notification__links > * {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
+@media screen and (min-width: 640px){/*tablet and pc*/
+  .cart-notification__links > * {
+    margin-top: 1rem;
+  }
+}
 .cart-notification-product {
     display: table;
     width: 100%;
@@ -153,6 +158,10 @@
   background: #FFF;
   display: table-cell;
   vertical-align: middle;
+}
+.cart-notification-product__name {
+  font-size:2rem;
+  margin-top: 0;
 }
 @media screen and (min-width: 640px){/*tablet and pc*/
 .cart-notification-product__name {
