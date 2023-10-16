@@ -192,13 +192,13 @@
 
               <!-- デフォルトの住所 -->
               <div class="default_address_check">
-                {{ form.set_as_default_checkbox }}
+                
                 <label for="address_default_address_new">
-                  {{ 'customer.addresses.set_default' | t }}
+                  {{ form.set_as_default_checkbox }}{{ 'customer.addresses.set_default' | t }}
                 </label>
               </div>
               <div class="addresses_edit_btn">
-                <button class="t_link no_deco button_mode">
+                <button class="t_link no_deco button_mode customer_addresses_add">
                   <div class="icon submit"></div>
                   {{ 'customer.addresses.add' | t }}
                 </button>

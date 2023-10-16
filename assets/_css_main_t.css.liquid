@@ -1881,15 +1881,15 @@ form#ContactForm,
     width:100%;
     background: #F4F4F4;
     box-shadow: 0 0 1rem #FFF inset;
-    border-radius: 1vw;
-    margin:3vw auto;
+    border-radius: 2rem;
+    margin:3rem auto;
     border:5px solid #FC0;
 }
     #ContactForm_wrapper,
     #order_list_wrapper,
     #order_detail_wrapper{
         width:90%;
-        padding:3vw 0;
+        padding:3rem 0;
         margin:auto;
     }
 
@@ -1915,8 +1915,8 @@ div#recover_customer_password_form_box{
     min-height: 20rem;
     background: #F4F4F4;
     box-shadow: 0 0 1rem #fff inset;
-    border-radius: 1vw;
-    margin: 0 auto 3vw;
+    border-radius: 1rem;
+    margin: 0 auto 3rem;
     padding: 2rem 0;
     border: 5px solid #FC0;
     text-align: center;
@@ -1927,6 +1927,7 @@ div#recover_customer_password_form_box label{
     display:inline-block;
     width:35%;
     text-align: left;
+    padding-bottom:0rem;
 }
 div#customer_login_form_box input[type="text"],
 div#customer_login_form_box input[type="email"],
@@ -2036,6 +2037,14 @@ form#RegisterForm textarea{
     width:100%;
 }
 /*-----------account addresses------------*/
+form#address_form_new label{
+    display:block;
+    padding: 0 0 0 0;
+}
+form#address_form_new label:has(span){
+    display:block;
+    padding: 0 0 0.5rem 0;
+}
 #addresses_details,
 #address_box
 {
@@ -2043,8 +2052,8 @@ form#RegisterForm textarea{
     flex-direction: column;
     background: #F4F4F4;
     box-shadow: 0 0 1rem #DDD inset;
-    border-radius: 1vw;
-    padding:2vw;
+    border-radius: 2rem;
+    padding:2rem;
 }
 #addresses_details .account_name{
     width:100%;
