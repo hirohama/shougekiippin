@@ -61,7 +61,7 @@ div#wrap{
     word-break: break-word;
 }
 .content a{
-    color:#ffba00;
+    color:#000;
 }
 .content a:hover{
     opacity:0.5;
@@ -993,10 +993,12 @@ margin: 0 auto;
 div.ribbon_flow{
     position:absolute;
     left:1rem;
+    right:auto;
     top:-1rem;
 }
 #ippin li.store:nth-child(even) div.ribbon_flow{
-    margin: 0 0 0 89%;
+    left:auto;
+    right:1rem;
 }
 div.ribbon_box{
     position: relative;
@@ -1020,10 +1022,16 @@ div.ribbon_box ul.ribbon li{
     min-height: 20rem;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     line-height: 3.5rem;
     letter-spacing: .1rem;
     white-space: nowrap;
+}
+@-moz-document url-prefix(){
+    .store div.ribbon_box ul.ribbon li{
+        /* 一覧表示の際、文字ずれがあるのでfirefoxのみ対応 */
+        line-height: 2.9rem;
+    }
 }
 div.ribbon_box ul.ribbon_in_img li{
     width: 100%;
@@ -1071,9 +1079,11 @@ div.ribbon_box ul.ribbon::after{
     height: 65%;
     margin: -10% auto 0;
 }
-.mask {
-    -webkit-clip-path: url(#svgPath);
-    clip-path: url(#svgPath);
+#ippin li.store div.ippin_img img{
+    display:none;
+}
+#ippin li.store div.ippin_img svg{
+    display:inline;
 }
 #ippin li.store div.ippin_text{
     display: table;
@@ -1081,20 +1091,21 @@ div.ribbon_box ul.ribbon::after{
     flex-grow: 1;
     margin-top: -4rem;
 }
-div.ippin_text div.ippin_text_rayout{
+div.ippin_text div.ippin_text_layout{
     display: table-cell;
     width: 100%;
     text-align: center;
+    padding:0rem 0 0;
     vertical-align: middle;
     color: #000;
     text-decoration: none;
 }
-div.ippin_text_rayout span{
+div.ippin_text_layout span{
     font-size: 1.25rem;
     line-height: 2rem;
     padding: 0.5rem 0;
 }
-div.ippin_text_rayout p{
+div.ippin_text_layout p{
     display: block;
     padding: 0.5rem 0;
     font-size: 2rem;

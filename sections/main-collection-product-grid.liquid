@@ -192,12 +192,12 @@
                   <a href="{{ product.url }}" class="box">
                     <div class="ribbon_flow">
                       <div class="ribbon_box">
-                          <ul class="ribbon_in_img">
-                            <li>
-                              <img
+                          <ul class="ribbon">
+                            <li class="foJ_Bld">{{ product.metafields.custom.storename }}
+                              <!--img
                                 src="{{ product.images[7] | img_url:'original' }}"
                                 alt="{{ product.metafields.custom.storename }}"
-                              >
+                              -->
                             </li>
                           </ul>
                       </div>
@@ -205,7 +205,7 @@
                     <div class="chef clear" style="background-image: url('{{ product.images[1] | img_url:"original" }}')">
                       
                     </div>
-                    <div class="ippin">
+                    <div class="ippin clearfix">
                       <div class="ippin_img">
                         <svg width="100%" height="100%" viewBox="0 0 200 200" class="">
                         <image xlink:href="{{ product.images[2] | img_url:'original' }}" width="100%" height="100%" clip-path="url(#clip{{ product.id }})" />
@@ -217,7 +217,7 @@
                         </svg>
                       </div>
                       <div class="ippin_text">
-                        <div class="ippin_text_rayout">
+                        <div class="ippin_text_layout">
                           <span class="foJ_Thin">{{ product.description }}</span>
                           <p class="foJ_Bld">{{ product.title }}</p>
                         </div>

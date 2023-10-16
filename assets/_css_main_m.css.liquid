@@ -60,7 +60,7 @@ div#wrap{
     word-break: break-word;
 }
 .content a{
-    color:#ffba00;
+    color:#000;
 }
 .content a:hover{
     opacity:0.5;
@@ -822,18 +822,17 @@ margin: 0 auto;
 }
 #ippin li.store a.box{
     display: flex;
-    align-items: stretch;
-    flex-direction : row;
+    flex-direction: column;
 }
 #ippin li.store:nth-child(even) a.box{
-    flex-direction : row-reverse;
+    flex-direction : column;
 }
 #ippin li.store:nth-child(even),
 #ippin li.store:nth-child(odd){
     float:none;
 }
 #ippin li.store div.chef{
-    width: 57%;
+    width: 100%;
     aspect-ratio: 1.05 / 1;
     background-repeat: no-repeat;
     background-position: center;
@@ -847,7 +846,7 @@ div.ribbon_flow{
     top:-1rem;
 }
 #ippin li.store:nth-child(even) div.ribbon_flow{
-    margin: 0 0 0 89%;
+    margin: 0 0 0 0;
 }
 div.ribbon_box{
     position: relative;
@@ -857,9 +856,6 @@ div.ribbon_box{
     border-left: 1px solid #000;
     border-right: 1px solid #000;
     overflow: hidden;
-}
-#ippin li.store:nth-child(even) div.ribbon_box{
-    margin: -4% 0 0 83%;
 }
 div.ribbon_box ul.ribbon_in_img,
 div.ribbon_box ul.ribbon{
@@ -878,6 +874,13 @@ div.ribbon_box ul.ribbon li{
     line-height: 3.5rem;
     letter-spacing: .1rem;
     white-space: nowrap;
+}
+
+@-moz-document url-prefix(){
+    .store div.ribbon_box ul.ribbon li{
+        /* 一覧表示の際、文字ずれがあるのでfirefoxのみ対応 */
+        line-height: 3rem;
+    }
 }
 div.ribbon_box ul.ribbon_in_img li{
     width: 100%;
@@ -916,45 +919,51 @@ div.ribbon_box ul.ribbon::after{
 }
 
 #ippin li.store div.ippin{
-    width: 43%;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    display: block;
+    flex-direction: none;
 }
 #ippin li.store div.ippin_img{
-    width: 100%;
-    height: 65%;
-    margin: -10% auto 0;
+    float: right;
+    width: 37%;
+    aspect-ratio: 1/1;
+    margin: -20% 3% 0 0;
 }
-.mask {
-    -webkit-clip-path: url(#svgPath);
-    clip-path: url(#svgPath);
+#ippin li.store div.ippin_img img{
+    border-radius:100%;
+    border:0.5rem solid rgba(255,255,255,0.7);
+    display:block;
+}
+#ippin li.store div.ippin_img svg{
+    display:none;
 }
 #ippin li.store div.ippin_text{
-    display: table;
+    display: block;
     width: 100%;
-    flex-grow: 1;
-    margin-top: -4rem;
+    flex-grow: none;
+    margin-top: ;
 }
-div.ippin_text div.ippin_text_rayout{
-    display: table-cell;
+div.ippin_text div.ippin_text_layout{
+    display: block;
     width: 100%;
-    text-align: center;
-    vertical-align: middle;
+    text-align: left;
+    padding:1rem 0 0;
+    vertical-align: top;
     color: #000;
     text-decoration: none;
 }
-div.ippin_text_rayout span{
-    font-size: 1.25rem;
-    line-height: 2rem;
+div.ippin_text_layout span{
+    font-size: 1.3rem;
+    line-height: 1.3rem;
     padding: 0.5rem 0;
 }
-div.ippin_text_rayout p{
+div.ippin_text_layout p{
     display: block;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 1rem;
     font-size: 2rem;
     line-height: 2.5rem;
-    text-decoration: underline #000 1px;
-    text-underline-offset: 0.5rem;
+    text-decoration: none;
+    text-underline-offset: 0;
 }
 
 
@@ -2432,9 +2441,9 @@ button
 
 -------------------------------------------------*/
 .btn_box{/*indexのみ*/
-    position: absolute;
-    left: calc(50% - 10rem);
-    top: calc(100% - 2rem);
+    position: relative;
+    left: auto;
+    top: auto;
 }
 
 .btn,
