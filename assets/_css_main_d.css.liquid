@@ -921,8 +921,14 @@ ul#slider{
         }
         div.ribbon_flow{
             position:absolute;
-            left:1rem;
+            left:2rem;
+            right:auto;
             top:-1rem;
+        }
+
+        #product_photo div.ribbon_flow{
+            left:2rem;
+            right:auto;
         }
         div.ribbon_box{
             position: relative;
@@ -1137,7 +1143,7 @@ products collection
 product,store
 
 -------------------------------------------------*/
-ul#product{
+#product{
     width: 100%;
     max-width: 1500px;
     margin: auto;
@@ -1145,16 +1151,17 @@ ul#product{
     flex-direction: row;
     align-items: stretch;
 }
-ul#product li#product_introduce{
+#product #product_introduce{
     position: relative;
     width: 30%;
 }
-    li#product_introduce #information{
+    #product_introduce #information{
         display: inline;
         position: absolute;
         width:100%;
         left: 50%;
         top: 50%;
+        padding: 0;
         transform: translate(-50%, -50%);
         text-align: center;
     }
@@ -1173,7 +1180,7 @@ ul#product li#product_introduce{
     .product_form_button_box{
         position:relative;
     }
-ul#product li#product_photo{
+#product #product_photo{
     position:relative;
     width: 70%;
     max-height: 35rem;

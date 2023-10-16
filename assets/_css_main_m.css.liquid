@@ -832,10 +832,12 @@ margin: 0 auto;
 div.ribbon_flow{
     position:absolute;
     left:1rem;
+    right:auto;
     top:-1rem;
 }
-#ippin li.store:nth-child(even) div.ribbon_flow{
-    margin: 0 0 0 0;
+#product_photo div.ribbon_flow{
+    left:auto;
+    right:2rem;
 }
 div.ribbon_box{
     position: relative;
@@ -1051,26 +1053,27 @@ products collection
 product,store
 
 -------------------------------------------------*/
-ul#product{
+div#product{
     width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column-reverse;
 }
-ul#product li#product_introduce{
-    float: left;
+div#product #product_introduce{
+    float: none;
     position: relative;
-    width: 37%;
-    height: 32rem;
+    width: 100%;
+    height: auto;
 }
-    li#product_introduce #information{
-        display: inline;
-        position: absolute;
+    #product_introduce #information{
+        display: block;
+        position: static;
         width:100%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+        left: auto;
+        top: auto;
+        padding: 2rem;
+        transform: none;
+        text-align: left;
     }
         #information .item_name{
         }
@@ -1084,12 +1087,16 @@ ul#product li#product_introduce{
                 display: block;
                 font-size: 1.5rem;
             }
+            #information .quantities,
+            #information .count{
+                text-align:right;
+            }
     .product_form_button_box{
         position:relative;
     }
-ul#product li#product_photo{
+div#product #product_photo{
   position:relative;
-    float: right;
+    float: none;
     width: 100%;
     aspect-ratio: 1/0.65;
     background-size: cover;
