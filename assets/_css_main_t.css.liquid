@@ -846,7 +846,7 @@ ul#footer_guide{
         }
 #information .count{
     font-size:1.3rem;
-    padding:1vw 0;
+    padding:1rem 0;
 }
     .count button.plus,
     .count button.minus,
@@ -1234,6 +1234,7 @@ div#product #product_introduce{
         padding: 0;
         transform: translate(-50%, -50%);
         text-align: center;
+        border-bottom: none;
     }
         #information .item_name{
         }
@@ -1260,7 +1261,7 @@ div#product #product_photo{
 }
 /*-----------------text section------------------*/
 
-ul#product_introduce_col1{
+#product_introduce_col1{
     width:100%;
     max-width: 1400px;
     margin:auto;
@@ -1268,7 +1269,7 @@ ul#product_introduce_col1{
     position:relative;
 }
 
-ul#product_introduce_col1 #chef_photo{
+#product_introduce_col1 #chef_photo{
     position: absolute;
     top: 10rem;
     left: 5rem;
@@ -1292,7 +1293,7 @@ ul#product_introduce_col1 #chef_photo{
     left: -2rem;
 }
 
-ul#product_introduce_col1 #product_outline_1{
+#product_introduce_col1 #product_outline_1{
     position: relative;
     padding-top: 39rem;
 }
@@ -1319,7 +1320,7 @@ ul#product_introduce_col1 #product_outline_1{
 }
 
 
-ul#product_introduce_col2{
+#product_introduce_col2{
     width: 100%;
     margin: auto;
     padding: 2rem 0 8rem;
@@ -2780,7 +2781,7 @@ br.m{
 /* component-quantity */
 
 .quantity {
-  color: rgba(var(--color-foreground));
+  color: #000;
   position: relative;
   width:9rem;
   display: flex;
@@ -2800,18 +2801,17 @@ br.m{
 }
 
 .quantity:before {
-  background: rgb(var(--color-background));
-  pointer-events: none;
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: var(--inputs-radius-outset);
-  box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset)
-    var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
-  z-index: -1;
+    background: #FFF;
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    box-shadow:none;
+    z-index: -1;
 }
 
 .quantity__input {
