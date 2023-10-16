@@ -104,12 +104,19 @@
 .cart-item__final-price {
   font-weight: 400;
 }
-
 .product-option {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     word-break: break-word;
     line-height: 2rem;
     padding-left: 0.2rem;
+}
+@media screen and (min-width: 640px){/*tablet and pc*/
+  .product-option {
+      font-size: 1.4rem;
+      word-break: break-word;
+      line-height: 2rem;
+      padding-left: 0.2rem;
+  }
 }
 
 .cart-item cart-remove-button {
