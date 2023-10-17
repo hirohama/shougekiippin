@@ -88,7 +88,11 @@
                       </div>
                       <div class="oh_th_total" id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</div>
                   </div>
-                    {%- for order in customer.orders -%}  
+                    {%- for order in customer.orders -%}
+                    <a
+                            href="{{ order.customer_url }}"
+                            aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                          >
                       <div class="order-history_td_group clearfix">
                         <div
                           class="oh_td_number"
@@ -97,12 +101,8 @@
                           headers="ColumnOrder"
                           data-label="{{ 'customer.orders.order_number' | t }}"
                         >
-                          <a
-                            href="{{ order.customer_url }}"
-                            aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
-                          >
+                          
                             {{ order.name }}
-                          </a>
                         </div>
                         <div class="oh_td_date" headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
                           {{ order.created_at | time_tag: format: 'date' }}
@@ -127,6 +127,8 @@
                           &yen;{{ order.total_net_amount | money }}
                         </div>
                       </div>
+                    
+                          </a>
                     {%- endfor -%}
 
                 </div>
