@@ -2098,7 +2098,7 @@ form#address_form_new label:has(span){
     flex-direction:row;
     flex-flow: row wrap;
 }
-.order_details .td{
+.od_td_product{
     border-bottom:1px dotted #999;
 }
 .order_details .th{
@@ -2115,7 +2115,6 @@ form#address_form_new label:has(span){
     padding:1rem;
     border-top:1px solid #666;
     background:#E4E4E4;
-    border-bottom:none;
 }
 .od_th_sku,
 .od_td_sku{
@@ -2124,20 +2123,18 @@ form#address_form_new label:has(span){
 .od_th_price,
 .od_td_price{
     width:50%;
-    text-align:center;
+    text-align:right;
     font-size:1.8rem;
     margin:0;
     padding:1rem;
-    border-bottom:none;
 }
 .od_th_quantity,
 .od_td_quantity{
     width:50%;
-    text-align:center;
+    text-align:right;
     font-size:1.8rem;
     margin:0;
     padding:1rem;
-    border-bottom:none;
 }
 .od_th_total,
 .od_td_total{
@@ -2146,9 +2143,10 @@ form#address_form_new label:has(span){
     font-size:1.8rem;
     margin:0;
     padding:1rem;
-    border-bottom:none;
 }
-
+.od_td_total:last-child .td{
+    border-bottom:1px solid #333;
+}
 
 
 div.order_price_details{
