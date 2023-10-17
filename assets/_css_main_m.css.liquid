@@ -1047,25 +1047,27 @@ div#concept #concept_box .concept_wrap{
 }
 .concept_wrap .concept_t{
     position: relative;
-    width: 100%;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
+    width: 90%;
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: ltr;
+    height: auto;
 
-    height: 40rem;
+    margin:auto;
 }
 .concept_t p{
-    display: inline;
-    position: absolute;
-    writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
-    left: 50%;
-    top: 59%;
-    transform: translate(-50%,-50%);
-    font-size: 1.25rem;
+    display: block;
+    position: static;
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: ltr;
+    left: auto;
+    top: auto;
+    transform: 0;
+    font-size: 1.5rem;
     line-height: 2.5rem;
     letter-spacing: .1rem;
     white-space: nowrap;
-
+    text-align:center;
+    padding: 9rem 0 5rem;
 }
     
 /*------------------------------------------------
