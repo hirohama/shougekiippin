@@ -1887,9 +1887,6 @@ form#address_form_new label:has(span){
     display:block;
     padding: 0 0 0.5rem 0;
 }
-.customer_addresses_add{
-    margin-bottom:1rem;
-}
 #addresses_details,
 #address_box
 {
@@ -2246,6 +2243,9 @@ div.order_price_details_group .td{
 #AddAddress{
     padding:2rem 2rem;
 }
+.add_new_address{
+    padding-top: 2rem;
+}
 .addresses_list li{
     width: calc(100% - 2rem);
     margin-left: 1rem;
@@ -2274,10 +2274,11 @@ div.order_price_details_group .td{
 .addresses_list li.default{
     border:0.5rem solid #FC0;
 }
-.addresses_list li button{
-    margin:2rem 1rem 0;
+.addresses_edit_btn button{
+    margin-bottom:2rem 1rem 1rem;
 }
 .btn_form_box{
+    padding:1.5rem 0 0;
     text-align: right;
 }
 .addresses form,
@@ -2761,7 +2762,7 @@ a.t_link:hover{
     text-decoration: none;
 }
 .t_link.no_deco.button_mode{
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 2.5rem;
     border: 1px solid #333;
     border-radius: 0.3rem;
 }
