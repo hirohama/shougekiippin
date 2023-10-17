@@ -1139,75 +1139,85 @@ div#concept #concept_box {
     width:100%;
     border-top:1px solid #000;
 }
-    div#concept #concept_box .concept_wrap{
-        width: 100%;
-        display:flex;
-        justify-content: center;
-    }
-        .concept_wrap .concept_h{
-            position: relative;
-            width:19%;
-            -ms-writing-mode: tb-rl;
-            writing-mode: vertical-rl;
-        }
-           .concept_h h1{
-                display: inline;
-                position: absolute;
-                writing-mode: vertical-rl;
-                -ms-writing-mode: tb-rl;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                font-size:1.8vw;
-                line-height: 3vw;
-                letter-spacing: 0.2vw;
-                white-space:nowrap;
-            }
-        .concept_wrap #mov_box{
-            width:48%;
-            padding:1vw 0;
-        }
-            #mov_box #mov{
-                position: relative;
-                    width:100%;
-                    height: 27vw;
-            }
-                #mov #yt_player{
-                    top:0;left:0;
-                    z-index: 1;
-                    width:100%;
-                    height: 100%;
-                    aspect-ratio: 16 / 9;
-                }
-                #yt_overlay{
-                    position: absolute;
-                    top:0; left:0;
-                    z-index: 2;
-                    width:100%;
-                    height:100%;
-                    background: #000 url("{{ '_img_yt_overlay.svg' | asset_url }}") no-repeat center center;
-                    background-size: 80%;
-                    opacity: 0.3;
-                }
-        .concept_wrap .concept_t{
-            position: relative;
-            width:33%;
-            -ms-writing-mode: tb-rl;
-            writing-mode: vertical-rl;
-        }
-            .concept_t p{
-                display: inline;
-                position: absolute;
-                writing-mode: vertical-rl;
-                -ms-writing-mode: tb-rl;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                font-size:1vw;
-                line-height: 1.7vw;
-                letter-spacing: 0.05vw;
-                white-space:nowrap;
-            }
+div#concept #concept_box .concept_wrap{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    position: static;
+}
+.concept_wrap .concept_h{
+    position: relative;
+    width:19%;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    top: auto;
+    left: auto;
+}
+.concept_h h1{
+    display: inline;
+    position: absolute;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size:1.8vw;
+    line-height: 3vw;
+    letter-spacing: 0.2vw;
+    white-space:nowrap;
+    width:auto;
+    text-align:start;
+}
+.concept_wrap #mov_box{
+    width:48%;
+    padding:1vw 0;
+    aspect-ratio: 2/1;
+}
+#mov_box #mov{
+    position: relative;
+    width:100%;
+    height: auto;
+    overflow:hidden;
+    aspect-ratio: 2/1;
+}
+#mov #yt_player{
+    position: absolute;
+    top:-20%;left:-20%;
+    z-index: 1;
+    width: 140%;
+    height: auto;
+    aspect-ratio: 2/1;
+}
+#yt_overlay{
+    position: absolute;
+    top:0; left:0;
+    z-index: 2;
+    width:100%;
+    height:100%;
+    background: #000 url("{{ '_img_yt_overlay.svg' | asset_url }}") no-repeat center center;
+    background-size: 80%;
+    opacity: 0.3;
+}
+.concept_wrap .concept_t{
+    position: relative;
+    width:33%;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    height: auto;
+}
+.concept_t p{
+    display: inline;
+    position: absolute;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size:1vw;
+    line-height: 1.7vw;
+    letter-spacing: 0.05vw;
+    white-space:nowrap;
+}
             
 /*------------------------------------------------
 
@@ -2834,10 +2844,12 @@ utility
 }
 
 /*-------------------br-----------------------*/
-br.d_t{
+br.d_t,
+span.d_t{
     display:inline;
 }
-br.m{
+br.m,
+span.m{
     display:none;
 }
 /*---------------quantity button----------------*/
