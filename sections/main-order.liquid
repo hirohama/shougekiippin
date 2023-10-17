@@ -208,7 +208,7 @@
               <!-- /商品価格 -->
               <!-- 数量 -->
               <div
-                class="od_td_quantity"
+                class="od_td_quantity td"
                 headers="Row{{ line_item.key }} ColumnQuantity"
                 role="cell"
                 data-label="{{ 'customer.order.quantity' | t }}"
@@ -249,23 +249,22 @@
           <!-- /商品数で繰り返し -->
           </div>
 
-          <table role="table" class="order_price_details">
-            <tfoot role="rowgroup">
+          <div class="order_price_details">
               <!-- 小計 -->
-              <tr role="row">
-                <td id="RowSubtotal" role="rowheader" scope="row" colspan="4">
+              <div class="order_price_details_group">
+                <div class="opd_th_subtotal th" id="RowSubtotal" role="rowheader">
                   {{ 'customer.order.subtotal' | t }}
-                </td>
-                <td headers="RowSubtotal" role="cell" data-label="{{ 'customer.order.subtotal' | t }}">
+                </div>
+                <div class="opd_td_subtotal td" headers="RowSubtotal" role="cell" data-label="{{ 'customer.order.subtotal' | t }}">
                   &yen;{{ order.line_items_subtotal_price | money }}
                 </td>
-              </tr>
+              </div>
               <!-- /小計 -->
               <!-- ディスカウント -->
               {%- if order.cart_level_discount_applications != blank -%}
-                <tr role="row">
+                <div class="order_price_details_group">
                   {%- for discount_application in order.cart_level_discount_applications -%}
-                    <td id="RowDiscount" role="rowheader" scope="row" colspan="4">
+                    <div class="opd_th_discount th" id="RowDiscount" role="rowheader" scope="row">
                       {{ 'customer.order.discount' | t }}
                       <!--span class="cart-discount">
                         <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
@@ -273,8 +272,8 @@
                         </svg>
                         {{- discount_application.title -}}
                       </span-->
-                    </td>
-                    <td headers="RowDiscount" role="cell" data-label="{{ 'customer.order.discount' | t }}">
+                    </div>
+                    <div class="opd_td_discount td" headers="RowDiscount" role="cell" data-label="{{ 'customer.order.discount' | t }}">
                       <div>
                         <span class="cart-discount">
                           <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
@@ -284,83 +283,83 @@
                         </span>
                         <span>-&yen;{{ discount_application.total_allocated_amount | money }}</span>
                       </div>
-                    </td>
+                    </div>
                   {%- endfor -%}
-                </tr>
+                </div>
               {%- endif -%}
               <!-- /ディスカウント -->
 
               <!-- 配送 -->
               {%- for shipping_method in order.shipping_methods -%}
-                <tr role="row">
-                  <td id="RowShipping" role="rowheader" scope="row" colspan="4">
+                <div class="order_price_details_group">
+                  <div class="opd_th_shipping th" id="RowShipping" role="rowheader">
                     {{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})
-                  </td>
-                  <td
+                  </div>
+                  <div class="opd_td_shipping td"
                     headers="RowShipping"
                     role="cell"
                     data-label="{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})"
                   >
                     &yen;{{ shipping_method.price | money }}
-                  </td>
-                </tr>
+                  </div>
+                </div>
               {%- endfor -%}
               <!-- /配送 -->
               <!-- 税 -->
               {%- for tax_line in order.tax_lines -%}
-                <tr role="row">
-                  <td id="RowTax" role="rowheader" scope="row" colspan="4">
+                <div  class="order_price_details_group">
+                  <div class="opd_th_tax th" id="RowTax" role="rowheader">
                     {{ 'customer.order.tax' | t }} (
                     {% comment %}
                       {{ tax_line.title }}
                     {% endcomment %}
                     {{- tax_line.rate | times: 100 }}%)
-                  </td>
-                  <td
+                  </div>
+                  <div class="opd_td_tax td"
                     headers="RowTax"
                     role="cell"
                     data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)"
                   >
                     &yen;{{ tax_line.price | money }}
-                  </td>
-                </tr>
+                  </div>
+                </div>
               {%- endfor -%}
               <!-- 税 -->
               <!-- 関税 -->
               {%- if order.total_duties -%}
-                <tr role="row">
-                  <td id="RowDuties" role="rowheader" scope="row" colspan="4">
+                <div class="order_price_details_group">
+                  <div class="opd_th_duties th"id="RowDuties" role="rowheader">
                     {{ 'customer.order.total_duties' | t }}
-                  </td>
-                  <td headers="RowDuties" role="cell" data-label="{{ 'customer.order.total_duties' | t }}">
+                  </div>
+                  <div class="opd_td_duties td" headers="RowDuties" role="cell" data-label="{{ 'customer.order.total_duties' | t }}">
                     &yen;{{ order.total_duties | money }}
-                  </td>
-                </tr>
+                  </div>
+                </div>
               {%- endif -%}
               <!-- /関税 -->
               <!-- 返金 -->
               {%- if order.total_refunded_amount > 0 -%}
-                <tr role="row">
-                  <td id="RowTotalRefund" role="rowheader" scope="row" colspan="3">
+                <div class="order_price_details_group">
+                  <div class="opd_th_refunded th" id="RowTotalRefund" role="rowheader">
                     {{ 'customer.order.total_refunded' | t }}
-                  </td>
-                  <td
+                  </div>
+                  <div class="opd_td_refund td"
                     headers="RowTotalRefund"
                     role="cell"
                     colspan="2"
                     data-label="{{ 'customer.order.total_refunded' | t }}"
                   >
                     -&yen;{{ order.total_refunded_amount | money_with_currency }}
-                  </td>
-                </tr>
+                  </div>
+                </div>
               {%- endif -%}
               <!-- /返金 -->
               <!-- 合計 -->
-              <tr role="row">
-                <td id="RowTotal" role="rowheader" scope="row" colspan="3" class="foJ_Mid">
+              <div class="order_price_details_group">
+                <div class="opd_th_total th" id="RowTotal" role="rowheader" class="foJ_Mid">
                   {{ 'customer.order.total' | t }}
-                </td>
-                <td
+                </div>
+                <div class="opd_td_total th"
                   headers="RowTotal"
                   role="cell"
                   colspan="2"
@@ -368,11 +367,10 @@
                   class="foJ_Mid"
                 >
                   &yen;{{ order.total_net_amount | money_with_currency }}
-                </td>
-              </tr>
+                </div>
+              </div>
               <!-- /合計 -->
-            </tfoot>
-          </table>
+          </div>
         </div>
         <!-- //order_detail_wrapper -->
       </div>
