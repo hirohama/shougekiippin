@@ -2194,9 +2194,17 @@ form#address_form_new label:has(span){
 #order_detail_wrapper {
 }
 .order_details{
-    width:100%;
-    margin-top:1rem;
+    width: 100%;
+    margin-top: 1rem;
 
+    display: flex;
+    flex-direction: column;
+
+}
+.order_details_th_group,
+.order_details_td_group{
+    display:flex;
+    flex-direction:row;
 }
 .order_details .th,
 .order_details .td{
