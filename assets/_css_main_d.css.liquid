@@ -2260,12 +2260,24 @@ form#address_form_new label:has(span){
 
 div.order_price_details{
     width:100%;
+    display:flex;
+    flex-direction:column;
 }
-
-.order_price_details .th,
-.order_price_details .td{
+div.order_price_details_group{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+div.order_price_details_group .th,
+div.order_price_details_group .td{
     text-align: right;
     padding:0.2rem 1rem;
+}
+div.order_price_details_group .th{
+    width:70%;
+}
+div.order_price_details_group .td{
+    width:30%;
 }
 .opd_th_subtotal,
 .opd_td_subtotal{
@@ -2293,7 +2305,7 @@ div.order_price_details{
 }
 .opd_th_total,
 .opd_td_total{
-    
+
 }
 
 #address_box{
