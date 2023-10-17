@@ -2196,7 +2196,6 @@ form#address_form_new label:has(span){
 .order_details{
     width: 100%;
     margin-top: 1rem;
-
     display: flex;
     flex-direction: column;
 
@@ -2204,7 +2203,7 @@ form#address_form_new label:has(span){
 .order_details_th_group,
 .order_details_td_group{
     display:flex;
-    flex-direction:row;
+    flex-flow: row nowrap;
 }
 .order_details .th,
 .order_details .td{
@@ -2256,6 +2255,18 @@ form#address_form_new label:has(span){
     border-bottom:none;
 }
 
+.od_td_price:before{
+    content:"";
+    font-size:1.3rem;
+}
+.od_td_quantity:before{
+    content:"";
+    font-size:1.3rem;
+}
+.od_td_total:before{
+    content:"";
+    font-size:1.3rem;
+}
 
 
 div.order_price_details{
@@ -2305,7 +2316,7 @@ div.order_price_details_group .td{
 }
 .opd_th_total,
 .opd_td_total{
-    font-size:1.5rem;
+    font-size:1.8rem;
     font-weight: 700;
     border-bottom:1px solid #666;
 }
