@@ -2082,47 +2082,122 @@ form#address_form_new label:has(span){
 }
 #order_detail_wrapper {
 }
-table.order_details{
-    width:100%;
-  margin-top:1rem;
+.order_details{
+    width: 100%;
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
 }
-.order_details th,
-.order_details td{
-    text-align: center;
-    padding:1rem;
+.order_details_th_group,
+.order_details_td_group{
+    display:flex;
+    flex-direction:row;
+}
+.order_details .th,
+.order_details .td{
     border-bottom:1px dotted #999;
 }
-.order_details th{
+.order_details .th{
     border-top:1px solid #666;
-  background:#E4E4E4;
+    background:#E4E4E4;
 }
-.order_details tr:last-child td{
+
+.od_th_product,
+.od_td_product{
+    width:45%;
+    text-align:left;
+    font-size:1.8rem;
+    margin:0;
+    padding:1rem;
+    border-bottom:none;
 }
-.order_details th:first-child,
-.order_details td:first-child{
-    text-align: left;
+.od_th_sku,
+.od_td_sku{
+    display:none;
 }
-.order_details th:last-child,
-.order_details td:last-child{
-    text-align: right;
+.od_th_price,
+.od_td_price{
+    width:15%;
+    text-align:center;
+    font-size:1.8rem;
+    margin:0;
+    padding:1rem;
+    border-bottom:none;
 }
-.order_details a{
-  color:#000;
+.od_th_quantity,
+.od_td_quantity{
+    width:15%;
+    text-align:center;
+    font-size:1.8rem;
+    margin:0;
+    padding:1rem;
+    border-bottom:none;
 }
-table.order_price_details{
+.od_th_total,
+.od_td_total{
+    width:25%;
+    text-align:right;
+    font-size:1.8rem;
+    margin:0;
+    padding:1rem;
+    border-bottom:none;
+}
+
+
+
+div.order_price_details{
     width:100%;
+    display:flex;
+    flex-direction:column;
 }
-.order_price_details th,
-.order_price_details td{
+div.order_price_details_group{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+div.order_price_details_group .th,
+div.order_price_details_group .td{
     text-align: right;
-    padding:0.2rem 1rem;
+    padding:0.3rem 1rem;
 }
-.order_price_details tr:first-child td{
+div.order_price_details_group .th{
+    width:70%;
 }
-.order_price_details tr:last-child td{
-  font-size:1.8rem;
-    border-bottom:1px dotted #999;
+div.order_price_details_group .td{
+    width:30%;
 }
+.opd_th_subtotal,
+.opd_td_subtotal{
+    font-size:1.8rem;
+}
+.opd_th_discount,
+.opd_td_discount{
+    font-size:1.8rem;
+}
+.opd_th_shipping,
+.opd_td_shipping{
+    font-size:1.8rem;
+}
+.opd_th_tax,
+.opd_td_tax{
+    font-size:1.8rem;
+}
+.opd_th_duties,
+.opd_td_duties{
+    font-size:1.8rem;
+}
+.opd_th_refunded,
+.opd_td_refunded{
+    font-size:1.8rem;
+}
+.opd_th_total,
+.opd_td_total{
+    font-size:1.8rem;
+    border-bottom:1px solid #666;
+}
+
 #address_box{
   flex-direction: row;
 }
