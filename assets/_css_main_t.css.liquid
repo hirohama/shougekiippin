@@ -1137,56 +1137,60 @@ div.ippin_text_layout p{
 /*-----------concept-----------*/
 div#concept #concept_box {
     width:100%;
-    border-top:1px solid #000;
+    border-top:3px dotted #999;
 }
 div#concept #concept_box .concept_wrap{
     width: 100%;
-    display:flex;
-    justify-content: center;
-    position: static;
+    display: block;
+    justify-content: normal;
+
+    position: relative;
 }
 .concept_wrap .concept_h{
-    position: relative;
-    width:19%;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    top: auto;
-    left: auto;
+    position: absolute;
+    width: 100%;
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: ltr;
+    top: 4rem;
+    left: 0;
 }
 .concept_h h1{
-    display: inline;
-    position: absolute;
-    writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size:1.8vw;
-    line-height: 3vw;
-    letter-spacing: 0.2vw;
-    white-space:nowrap;
-    width:auto;
-    text-align:start;
+    display: block;
+    position: static;
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: ltr;
+    left: auto;
+    top: auto;
+    transform: none;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: .1rem;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
 }
 .concept_wrap #mov_box{
-    width:48%;
-    padding:1vw 0;
+    width: 100%;
+    padding: 0;
     aspect-ratio: 2/1;
 }
 #mov_box #mov{
     position: relative;
-    width:100%;
+    width: 100%;
     height: auto;
+
     overflow:hidden;
     aspect-ratio: 2/1;
 }
 #mov #yt_player{
-    position: absolute;
-    top:-20%;left:-20%;
+    top: -20%;
+    left: -20%;
     z-index: 1;
     width: 140%;
     height: auto;
     aspect-ratio: 2/1;
+
+    position: absolute;
 }
 #yt_overlay{
     position: absolute;
@@ -1200,25 +1204,27 @@ div#concept #concept_box .concept_wrap{
 }
 .concept_wrap .concept_t{
     position: relative;
-    width:33%;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
+    width: 90%;
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: ltr;
     height: auto;
+
+    margin:auto;
 }
 .concept_t p{
-    display: inline;
-    position: absolute;
-    writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size:1vw;
-    line-height: 1.7vw;
-    letter-spacing: 0.05vw;
-    white-space:nowrap;
-    text-align:start;
-    padding: 0;
+    display: block;
+    position: static;
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: ltr;
+    left: auto;
+    top: auto;
+    transform: none;
+    font-size: 1.9rem;
+    line-height: 4rem;
+    letter-spacing: .2rem;
+    white-space: nowrap;
+    text-align: center;
+    padding: 10rem 0 5rem;
 }
             
 /*------------------------------------------------
@@ -2849,6 +2855,10 @@ utility
 br.d_t,
 span.d_t{
     display:inline;
+}
+br.d,
+span.d{
+    display:none;
 }
 br.m,
 span.m{
