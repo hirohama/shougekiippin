@@ -2021,8 +2021,10 @@ form#address_form_new label:has(span){
 }
 #addresses_details .account_name{
     width:30%;
+    text-align:start;
 }
 #addresses_details .account_name h2{
+    text-align: start;
     font-size:2.5rem;
     display: inline;
 }
@@ -2037,42 +2039,48 @@ form#address_form_new label:has(span){
     padding:0 0 0 2rem;
     text-align: right;
 }
-#addresses_details .account_address table{
+#addresses_details .account_address .account_table{
     width:100%;
-    border-collapse: separate;
+    display:flex;
+    flex-flow:row wrap;
     text-align: left;
     margin-bottom:1rem;
     font-size:1.3rem;
 }
-#addresses_details .account_address table th{
+.account_table .account_table_head{
+    font-weight:500;
     border-left:1px solid #ccc;
+    border-right:none;
     border-top:1px solid #ccc;
     padding:0.75rem;
     white-space: nowrap;
-    width:10rem;
+    width:30%;
 }
-#addresses_details .account_address table tr:first-child th{
-    border-radius: 1rem 0 0 0;
-}
-#addresses_details .account_address table tr:last-child th{
-    border-bottom:1px solid #ccc;
-    border-radius: 0 0 0 1rem;
-}
-
-#addresses_details .account_address table td{
+.account_table .account_table_content{
+    width:70%;
     border-left:1px solid #ccc;
     border-top:1px solid #ccc;
     border-right:1px solid #ccc;
     padding:0.75rem;
-    width:auto;
 }
-#addresses_details .account_address table tr:first-child td{
-    border-radius: 0 1rem 0 0;
-}
-#addresses_details .account_address table tr:last-child td{
+
+.account_table div:nth-last-child(1),
+.account_table div:nth-last-child(2){
     border-bottom:1px solid #ccc;
-    border-radius: 0 0 1rem 0;
 }
+.account_table div:nth-child(1){
+    border-radius:1rem 0 0 0;
+}
+.account_table div:nth-child(2){
+    border-radius:0 1rem 0 0;
+}
+.account_table div:nth-last-child(1){
+    border-radius:0 0 1rem 0;
+}
+.account_table div:nth-last-child(2){
+    border-radius:0 0 0 1rem;
+}
+
 /*-----------account orders------------*/
 /*#order_list -> form#ContactFormに並べて記入*/
 #order_list #order_list_wrapper{
@@ -2080,24 +2088,92 @@ form#address_form_new label:has(span){
 #order_list_wrapper h3{
     font-size:1.8rem;
 }
-#order_list_wrapper table.order-history{
+#order_list_wrapper .order-history{
+    display:flex;
+    flex-direction: column;
     width:100%;
-  margin-top:1rem;
-  font-size: 1.4rem;
+    margin-top:1rem;
 }
-#order_list_wrapper table.order-history th,
-#order_list_wrapper table.order-history td{
-    text-align: left;
+.order-history_th_group,
+.order-history_td_group{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    flex-flow:row;
+    background:none;
+    border-radius:0;
+    padding:0;
+    margin:0;
+}
+.order-history_th_group div,
+.order-history_td_group div{
     padding:1rem;
     border-bottom:1px dotted #999;
 }
-#order_list_wrapper table.order-history th{
+.order-history_th_group div{
   background:#E4E4E4;
     border-top:1px solid #666;
 }
-#order_list_wrapper table.order-history th:last-child,
-#order_list_wrapper table.order-history td:last-child{
-    text-align: right;
+
+.oh_th_number,
+.oh_th_date,
+.oh_th_payment,
+.oh_th_fulfillment,
+.oh_th_total,
+.oh_td_number,
+.oh_td_date,
+.oh_td_payment,
+.oh_td_fulfillment,
+.oh_td_total{
+    font-size:inherit;
+}
+.oh_th_number,
+.oh_td_number{
+    width:15%;
+    text-align:center;
+    font-size: 1.5rem;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    border-bottom: none;
+    margin-right: 0;
+    font-weight: normal;
+}
+.oh_th_date,
+.oh_td_date{
+    width:30%;
+    text-align:center;
+    font-size: 1.5rem;
+    padding: 0;
+    border-bottom: none;
+}
+.oh_th_payment,
+.oh_td_payment{
+    width:15%;
+    text-align:center;
+    padding:0;
+    font-size:1.5rem;
+    margin:none;
+    border-bottom:none;
+}
+.oh_th_fulfillment,
+.oh_td_fulfillment{
+    width:15%;
+    text-align:center;
+    font-size:1.6rem;
+    padding:1rem 0 0;
+    margin:none;
+    border-bottom:none;
+}
+.oh_th_total,
+.oh_td_total{
+    width:25%;
+    text-align:right;
+    display: block;
+    float: none;
+    font-size: 1.6rem;
+    padding: 0;
+    border-bottom: none;
 }
 /*-----------order detail------------*/
 /*#order_detail -> form#ContactFormに並べて記入*/

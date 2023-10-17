@@ -29,7 +29,7 @@
         <!--アカウント詳細-->
           <div id="addresses_details">
             <div class="account_name">
-              <h2 class="foJ_Mid">{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}様</h2><br>
+              <h2 class="foJ_Mid">{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}様</h2><br class="d_t">
               <!--{% comment %}
                 {{ 'customer.account.details' | t }}
               {% endcomment %}-->
@@ -48,33 +48,20 @@
             {% endcomment %}-->
 
             <div class="account_address">
-              <table>
-                <tr>
-                  <th>お名前</th>
-                  <td>{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}</td>
-                </tr>
+              <div class="account_table">
+                <div class="account_table_head">お名前</div>
+                <div class="account_table_content">{{ customer.default_address.last_name }}&nbsp;{{ customer.default_address.first_name }}</div>
                 {% if customer.default_address.company != blank %}
-                <tr>
-                  <th>会社・法人名</th>
-                  <td>{{ customer.default_address.company }}</td>
-                </tr>
+                <div class="account_table_head">会社・法人名</div>
+                <div class="account_table_content">{{ customer.default_address.company }}</div>
                 {% endif %}
-                <tr>
-                  <th>ご住所</th>
-                  <td>
-                    〒{{ customer.default_address.zip }}<br>{{ customer.default_address.province }} {{ customer.default_address.city }} {{ customer.default_address.street }}</td>
-                </tr>
-                <tr>
-                  <th>TEL</th>
-                  <td>
-                    {{ customer.default_address.phone }}
-                  </td>
-                </tr>
-                <tr>
-                  <th>E-MAIL</th>
-                  <td>{{ customer.email }}</td>
-                </tr>
-              </table>
+                <div class="account_table_head">ご住所</div>
+                <div class="account_table_content">〒{{ customer.default_address.zip }}<br>{{ customer.default_address.province }} {{ customer.default_address.city }} {{ customer.default_address.street }}</div>
+                <div class="account_table_head">TEL</div>
+                <div class="account_table_content">{{ customer.default_address.phone }}</div>
+                <div class="account_table_head">E-MAIL</div>
+                <div class="account_table_content">{{ customer.email }}</div>
+              </div>
             <a class="t_link no_deco" href="{{ routes.account_addresses_url }}">
               <div class="icon edit"></div>{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
             </a>
@@ -88,25 +75,23 @@
             <h3 class="foJ_Mid">{{ 'customer.orders.title' | t }}</h3>
             {% paginate customer.orders by 10 %}
               {%- if customer.orders.size > 0 -%}
-                <table role="table" class="order-history">
-                  <caption class="visually-hidden">
+                <div class="order-history">
+                  <!--caption class="visually-hidden">
                     {{ 'customer.orders.title' | t }}
-                  </caption>
-                  <thead role="rowgroup">
-                    <tr role="row">
-                      <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
-                      <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
-                      <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
-                      <th id="ColumnFulfillment" scope="col" role="columnheader">
+                  </caption-->
+                  <div class="order-history_th_group">
+                      <div class="oh_th_number" id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</div>
+                      <div class="oh_th_date" id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</div>
+                      <div class="oh_th_payment" id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</div>
+                      <div class="oh_th_fulfillment" id="ColumnFulfillment" scope="col" role="columnheader">
                         {{ 'customer.orders.fulfillment_status' | t }}
-                      </th>
-                      <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
-                    </tr>
-                  </thead>
-                  <tbody role="rowgroup">
-                    {%- for order in customer.orders -%}
-                      <tr role="row">
-                        <td
+                      </div>
+                      <div class="oh_th_total" id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</div>
+                  </div>
+                    {%- for order in customer.orders -%}  
+                      <div class="order-history_td_group clearfix">
+                        <div
+                          class="oh_td_number"
                           id="RowOrder"
                           role="cell"
                           headers="ColumnOrder"
@@ -118,31 +103,33 @@
                           >
                             {{ order.name }}
                           </a>
-                        </td>
-                        <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                        </div>
+                        <div class="oh_td_date" headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
                           {{ order.created_at | time_tag: format: 'date' }}
-                        </td>
-                        <td
+                        </div>
+                        <div
+                          class="oh_td_payment"
                           headers="RowOrder ColumnPayment"
                           role="cell"
                           data-label="{{ 'customer.orders.payment_status' | t }}"
                         >
                           {{ order.financial_status_label }}
-                        </td>
-                        <td
+                        </div>
+                        <div
+                          class="oh_td_fulfillment"
                           headers="RowOrder ColumnFulfillment"
                           role="cell"
                           data-label="{{ 'customer.orders.fulfillment_status' | t }}"
                         >
                           {{ order.fulfillment_status_label }}
-                        </td>
-                        <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                        </div>
+                        <div class="oh_td_total" headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
                           &yen;{{ order.total_net_amount | money }}
-                        </td>
-                      </tr>
+                        </div>
+                      </div>
                     {%- endfor -%}
-                  </tbody>
-                </table>
+
+                </div>
               {%- else -%}
                 <p>{{ 'customer.orders.none' | t }}</p><!--カートにないとき-->
               {%- endif -%}
@@ -159,6 +146,11 @@
 
   </div>
 </div>
+<script>
+window.addEventListener('DOMContentLoaded', function(){
+  if
+});
+</script>
 {% schema %}
 {
   "name": "t:sections.main-account.name",
