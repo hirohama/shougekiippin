@@ -18,17 +18,17 @@
 }
 
 .discounts__discount--position {
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 640px) {
   .discounts__discount--position {
     justify-content: flex-end;
   }
 }
 
 .discounts__discount > .icon {
-  color: rgb(var(--color-foreground));
+  color: #000;
   width: 1.2rem;
   height: 1.2rem;
   margin-right: 0.7rem;
