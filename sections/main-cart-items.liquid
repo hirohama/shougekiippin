@@ -101,7 +101,7 @@
 
                         <a href="{{ item.url }}" class="cart_item_name foJ_Mid">{{ item.product.title | escape }}</a><br>
                         {%- for option in item.options_with_values -%}
-                          {{ option.value }}<br>
+                          {{ option.value }}<br class="d_t">
                         {%- endfor -%}
                         {%- if item.original_price != item.final_price -%}
                           <div class="cart-item__discounted-prices">
@@ -115,13 +115,13 @@
                               {{ 'products.product.price.sale_price' | t }}
                             </span>
                             <strong class="cart-item__final-price product-option">
-                              {{ item.final_price | money }}
+                              &yen;{{ item.final_price | money }}
                             </strong>
                           </div>
                         {%- else -%}
-                          <div class="product_option">
-                            {{ item.original_price | money }}
-                          </div>
+                          <span class="product_option">
+                            &yen;{{ item.original_price | money }}
+                          </span>
                         {%- endif -%}
 
 {% comment %}
