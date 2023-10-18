@@ -2105,7 +2105,7 @@ form#address_form_new label:has(span){
 }
 .order_details_td_group{
     display:flex;
-    flex-flow: row wrap;
+    flex-flow: row-reverse wrap;
 }
 .order_details .th{
     border-top:1px solid #666;
@@ -2121,6 +2121,7 @@ form#address_form_new label:has(span){
     padding:1rem;
     border-top:1px solid #666;
     background:#E4E4E4;
+    order: 1;
 }
 .od_th_sku,
 .od_td_sku{
@@ -2133,6 +2134,7 @@ form#address_form_new label:has(span){
     font-size:1.8rem;
     margin:0;
     padding:1rem;
+    order: 4;
 }
 .od_th_quantity,
 .od_td_quantity{
@@ -2141,6 +2143,7 @@ form#address_form_new label:has(span){
     font-size:1.8rem;
     margin:0;
     padding:1rem;
+    order: 3;
 }
 .od_th_total,
 .od_td_total{
@@ -2150,18 +2153,19 @@ form#address_form_new label:has(span){
     margin:0;
     padding:1rem;
     border-bottom:none;
+    order: 2;
 }
 
 .od_td_price:before{
-    content:"商品価格：";
+    content:"価格";
     font-size:1.3rem;
 }
 .od_td_quantity:before{
-    content:"個数：";
+    content:"個数";
     font-size:1.3rem;
 }
 .od_td_total:before{
-    content:"小計：";
+    content:"小計";
     font-size:1.3rem;
 }
 
@@ -2249,7 +2253,7 @@ div.order_price_details_group .td{
 .addresses_list_box,
 #AddAddress{
     background: #F4F4F4;
-    box-shadow: 0 0 1rem #DDD inset;
+    box-shadow: none;
     border-radius: 2rem;
     padding: 1rem 0;
     margin-top:2rem;
