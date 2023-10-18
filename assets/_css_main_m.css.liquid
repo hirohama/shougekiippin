@@ -84,13 +84,13 @@ header{
 header #logo_box{
     position: absolute;
     top: 3rem;
-    left: 0;
+    left: 2rem;
     height: auto;
     z-index: 1096;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    justify-content: start;
+    width: calc(100% - 4rem);
 }
 header#menu_index #logo_box{
     display:none;
@@ -98,12 +98,13 @@ header#menu_index #logo_box{
 #mega_menu #mega_menu_logo_box{
     position:fixed;
     top: 3rem;
-    left: 0;
+    left: 2rem;
     height: auto;
+    z-index: 1096;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    justify-content: start;
+    width: calc(100% - 4rem);
 }
 #logo_box #menu_logo,
 #mega_menu_logo_box #menu_logo{
@@ -1144,7 +1145,7 @@ div#product #product_photo{
   position:relative;
     float: none;
     width: 100%;
-    aspect-ratio: 1/0.65;
+    aspect-ratio: 1/1.5;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
