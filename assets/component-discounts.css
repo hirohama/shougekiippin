@@ -1,11 +1,17 @@
 .discounts {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   padding: 1rem;
-  background: #EDEDED;
   margin: 0 0;
-  border-radius: 0 0 1rem 1rem;
 }
-
+@media screen and (min-width: 640px) {
+  .discounts {
+    font-size: 1.4rem;
+    padding: 1rem;
+    background: #EDEDED;
+    margin: 0 0;
+    border-radius: 0 0 1rem 1rem;
+  }
+}
 .discounts__discount {
   display: flex;
   align-items: center;
@@ -14,7 +20,7 @@
 }
 
 .discounts__discount svg {
-  color: rgba(var(--color-button), var(--alpha-button-background));
+  color: #000;
 }
 
 .discounts__discount--position {
