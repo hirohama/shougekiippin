@@ -869,8 +869,8 @@ div.ribbon_flow{
 }
 div.ribbon_box{
     position: relative;
-    width: 3.55rem;
-    padding-bottom: 2rem;
+    width: 5rem;
+    padding-bottom: 2.4rem;
     border-top: 1px solid #000;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
@@ -889,51 +889,41 @@ div.ribbon_box ul.ribbon li{
     min-height: 20rem;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-    font-size: 1.7rem;
-    line-height: 3.5rem;
+    font-size: 2.2rem;
+    line-height: 5rem;
     letter-spacing: .1rem;
     white-space: nowrap;
 }
-
 @-moz-document url-prefix(){
     .store div.ribbon_box ul.ribbon li{
         /* 一覧表示の際、文字ずれがあるのでfirefoxのみ対応 */
         line-height: 3rem;
     }
 }
-div.ribbon_box ul.ribbon_in_img li{
-    width: 100%;
-    min-height: 18rem;
-}
-div.ribbon_box ul.ribbon_in_img li img{
-    width:100%;
-}
-div.ribbon_box ul.ribbon_in_img::before,
 div.ribbon_box ul.ribbon::before{
     content: "";
     display: block;
-    left: -1.85rem;
-    bottom: 0.8rem;
-    position: absolute;
-    background: #f5c520;
-    width: 3.65rem;
-    height: 3.65rem;
-    -webkit-transform: rotate(-48deg);
-    transform: rotate(-48deg);
-    border-bottom: 1px solid #000;
-}
-div.ribbon_box ul.ribbon_in_img::after,
-div.ribbon_box ul.ribbon::after{
-    content: "";
-    display: block;
-    right: -2.2rem;
+    left: -1.78rem;
     bottom: 0.7rem;
     position: absolute;
     background: #f5c520;
-    width: 3.7rem;
-    height: 3.7rem;
+    width: 3.5355rem;
+    height: 3.5355rem;
+    -webkit-transform: rotate(-48deg);
+    transform: rotate(-45deg);
+    border-bottom: 1px solid #000;
+}
+div.ribbon_box ul.ribbon::after{
+        content: "";
+    display: block;
+    right: -1.85rem;
+    bottom: 0.6rem;
+    position: absolute;
+    background: #f5c520;
+    width: 3.5355rem;
+    height: 3.5355rem;
     -webkit-transform: rotate(48deg);
-    transform: rotate(48deg);
+    transform: rotate(45deg);
     border-bottom: 1px solid #000;
 }
 
