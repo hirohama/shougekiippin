@@ -22,7 +22,7 @@
     font-size: 0;
     line-height: 0;
     position: absolute;
-    top: 50%;
+    top: 52%;
     z-index: 10;
     display: block;
     width: 5rem;
@@ -33,21 +33,19 @@
     transform: translateY(-50%);
     cursor: pointer;
     color: transparent;
-    border: none;
+    border: 0.3rem solid #FFF;
     outline: none;
-    background-color: #FC0;
+    background-color: #fc0;
     border-radius: 100%;
+    box-shadow: 0 0.2rem 0.1rem #333;
+
 }
 .slick-prev:hover,
-.slick-prev:focus,
-.slick-next:hover,
-.slick-next:focus
+.slick-next:hover
 {
-    color: transparent;
-    outline: none;
-    background: transparent;
+    opacity: .75;
 }
-.slick-prev:hover:before,
+/*.slick-prev:hover:before,
 .slick-prev:focus:before,
 .slick-next:hover:before,
 .slick-next:focus:before
@@ -71,11 +69,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+*/
 .slick-prev
 {
-    background-image: url("{{ '_img_slider_prev.png' | asset_url }}");
-    left: 3rem;
+    
 }
 [dir='rtl'] .slick-prev/*dir='rtl'右から左の場合*/
 {
@@ -93,8 +90,7 @@
 
 .slick-next
 {
-    background-image: url("{{ '_img_slider_next.png' | asset_url }}");
-    right: 3rem;
+    
 }
 [dir='rtl'] .slick-next/*dir='rtl'右から左の場合*/
 {
