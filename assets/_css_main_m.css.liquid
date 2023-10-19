@@ -1366,7 +1366,7 @@ div#product_spec_box .info_box{
 }
 div#product_spec_box .image_box{
     width:100%;/**/
-    margin-bottom:1.5rem;
+    margin-bottom:0.5rem;
 }
 div#product_spec_box .text_field{
     width:100%;/**/
@@ -1376,30 +1376,29 @@ div#product_spec_box .text_field{
     padding:1rem;
 }
 div#product_spec_box .image_box .photo{
-    width:55%;/**/
-    float:right;
+    width: 45%;
+    float: right;
     aspect-ratio: 1.4 / 1;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-    border-radius: 0.5rem 0.5rem 0 0;
-    margin-top:-5rem;
-    box-shadow: 0 1rem 1.5rem -1rem #FFF;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.5rem;
+    margin-top: 0;
+    box-shadow: none;
     border-bottom: 1px solid #FFF;
 }
 div#product_spec_box .image_box h3{
-    display: block;/**/
-    font-size:2.6rem;
+    display: block;
+    font-size: 2.6rem;
     line-height: 2.6rem;
-    padding:0rem 0 2.5rem;
+    padding: 0rem 0 1.5rem;
 }
 div#product_spec_box .image_box a{
     display: block;
-    font-size: 2rem;
+    font-size: 1.7rem;
     line-height: 1.6rem;
-    padding: 0.5rem 0 0.5rem 0.5rem;
-    color: #000;
     text-decoration: none;
+    margin: 0 0 1rem;
 }
 
 div#product_spec_box{
@@ -1429,15 +1428,33 @@ div#product_spec_box{
 }
 #product_info_box,
 #store_info_box{
-    width:100%;
-    padding:1.5rem;
+    width: 94%;
+    padding: 5%;
+    margin: 3%;
 }
-div#product_spec_box .image_box a.active{
-    color:#000;
-    text-decoration-line: underline;
-    text-decoration-color:#000;
-    text-decoration-thickness:1px;
-    text-underline-offset: 0.5rem;
+div#product_spec_box .image_box a .icon{
+    background-image: url("{{ '_img_draw_down.svg' | asset_url }}");
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    background-size: 140%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    vertical-align: -0.4rem;
+}
+div#product_spec_box .image_box a{
+    color: #000;
+    padding: 1rem;
+    background: #FFF;
+    width: 50%;
+    border-radius: 0.5rem;
+}
+div#product_spec_box #product_info_box a.active{
+    background:#c99a00;
+}
+
+div#product_spec_box #store_info_box a.active{
+    background:#99c5d0;
 }
 div#product_spec_box .text_field{
     font-size:2rem;
