@@ -765,13 +765,14 @@ div#slider_box{
     position:relative;
     overflow: hidden;
 }
-div#slider_box::before{
-    content:"";
-    position:absolute;
-    left:0;top:1.5vw;
-    width:100%;
-    height:2.5vw;
-    background:#FFF;
+div#slider_box::before{/*のれん白バック*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7%;
+    width: 100%;
+    height: 15%;
+    background: #FFF;
 }
 ul#slider{
     width: 230%;
@@ -786,20 +787,21 @@ ul#slider{
         position:absolute;
         left:0;top:0;
         background:url("{{ '_img_slider_chichi.png' | asset_url }}") 0 0 repeat-x;
-        background-position:-0.75vw 0;
+        background-position: -0.75rem 0;
         background-size: contain;
         width:100%;
         height:14%;
     }
         ul#slider li.slide_clip a{
-            display: block;
-            position: relative;
-            padding: 2rem 1.3rem 1.3rem;
+            display:block;
+            position:relative;
+            padding: 7.5% 3% 3%
         }
 
         ul#slider li.slide_clip div.noren{
-            position:absolute;
-            top:1.5vw;left:0;
+            position: absolute;
+            top: 7%;
+            left: 0;
             width: 100%;
             height: 100%;
         }

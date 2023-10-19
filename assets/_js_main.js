@@ -1,7 +1,3 @@
-
-
-
-
 function submitContactForm(event) {
       event.preventDefault()
       const form = document.getElementById("ContactForm")
@@ -79,8 +75,7 @@ if($('#draw_product_menu').length){
     });
     /*------------------ヘッダードロワーメニューここまで-----------------------*/
     /*------------------レイアウト調整-----------------------*/
-    function layout_tablet(){
-        console.log("タブレット");
+    function layout_tablet(){/*タブレットサイト用レイアウト*/
 
         var read_block_cross_padding_per=7;/*写真にかかる部分の高さ(%)*/
         var chef_photo_left_per=7;/*シェフ写真左余白(%)*/
@@ -107,7 +102,7 @@ if($('#draw_product_menu').length){
         var read_top;
             read_top=((chef_photo_box.h-read_box.h)/2-read_block_cross_padding);
         
-        console.log("read_top"+read_top);
+        //console.log("read_top"+read_top);
         var read_right=(chef_photo_right-read_box.w)/2;
             read.css({"top":read_top+"px","right":read_right+"px"});
         var read_block_top_padding=chef_photo_box.h-read_block_cross_padding;
@@ -122,8 +117,7 @@ if($('#draw_product_menu').length){
         read.attr("style","");
     }
 
-    function layout_smp(){
-        console.log("スマホ");
+    function layout_smp(){/*スマホサイト用レイアウト*/
 
         var img_photo=$("#image_photo");
         var chef_photo2=$("#chef_photo2");
@@ -184,7 +178,7 @@ if($('#slider').length){
       slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
       slidesToScroll: 1,
       arrows:false,
-      autoplay: true,
+      autoplay: false,
       dots: true,
       autoplaySpeed: 4000,
       speed:600,
