@@ -14,3 +14,7 @@
   closeBtn.addEventListener('click', () => {
     targetmodal.classList.remove('active');
   });
+  
+  targetmodal.addEventListener('click', () => {
+    targetmodal.classList.remove('active');
+  });

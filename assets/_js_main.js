@@ -178,9 +178,9 @@ if($('#slider').length){
       slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
       slidesToScroll: 1,
       arrows:true,
-      autoplay: false,
+      autoplay: true,
       dots: false,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 6000,
       speed:600,
       centerMode: "true" });
     const tl = gsap.timeline()
@@ -249,6 +249,7 @@ if($('.clipNum_fromScript').length){
     })
 }
 //--------------SVGのパスをランダムで返す関数ここまで
+
 //----------クリックしたら指定した要素に".active"を付与し、兄弟要素から".active"を削る
 if($('a.click_to_active').length){
     console.log("click");
@@ -267,7 +268,7 @@ if($('a.click_to_active').length){
     });
 }
 //----------クリックしたら指定した要素に".active"を付与し、兄弟要素から".active"を削るここまで
-//--------------グローバルメニュー（メガメニュー）
+
 
     //フェードインアニメーション
     $(window).scroll(function (){
