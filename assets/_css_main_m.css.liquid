@@ -158,21 +158,22 @@ header nav li:first-child{
     pointer-events: none;
 }
 
-header nav li{
+header nav li {
+    position: relative;
     display: block;
-    height: 7rem;
-    width: 7rem;
+    height: 7.6rem;
+    width: 7.6rem;
     margin: 0 1rem 1rem 0;
     color: #000;
     vertical-align: 0;
-    background: #FC0;
     border-radius: 100%;
 }
 
 header nav li:last-child{
     margin: 0 2rem 1rem 0;
 }
-header nav li #menu_btn{
+header nav li #menu_btn,
+header nav li a{
     position: relative;
     z-index: 1102;
     width: 7rem;
@@ -180,6 +181,20 @@ header nav li #menu_btn{
     background: none;
     border-radius: 100%;
     cursor: pointer;
+    background: #FC0;
+}
+header nav li:before{
+    content: "";
+    position: absolute;
+    width: 7.6rem;
+    height: 7.6rem;
+    background: #FFF;
+    border-radius: 100%;
+    cursor: pointer;
+    display: block;
+    top: -0.3rem;
+    left: -0.3rem;
+    box-shadow: 0 0.2rem 0.1rem #333;
 }
 /* component-cart-count-bubble */
 .cart-count-bubble:empty {
@@ -1575,6 +1590,7 @@ pages - FAQ
   position: relative;
   display: block;
 }
+
 h3.accordion_title{
     display: inline-block;
     width: 100%;
@@ -1583,6 +1599,9 @@ h3.accordion_title{
     line-height: 2rem;
     min-height: 4rem;
     border-bottom: 1px dotted #333;
+}
+.summary_block summary[aria-expanded="true"] h3.accordion_title{
+    border-bottom: none;
 }
 h3.accordion_title:before{
     content:"Q.";
@@ -1624,15 +1643,14 @@ h3.accordion_title:before{
     margin-bottom:1.4rem;
 }
 .accordion_content:before{
-    content:"A.";
-    font-weight:700;
-    display:block;
+    content: "A.";
+    font-weight: 700;
+    display: block;
     position: absolute;
-    left:1rem;
-    top:1rem;
-    font-size:1.8rem;
-    line-height:2.8rem;
-
+    left: 1rem;
+    top: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
 }
 .disclosure-has-popup[open] > summary::before {
   position: fixed;
@@ -1874,7 +1892,7 @@ form#RegisterForm{
 }
     #RegisterForm_wrapper{
         width:80%;
-        padding:5vw 0;
+        padding:0;
         margin:auto;
     }
 
@@ -1883,10 +1901,10 @@ form#RegisterForm label{
 }
 .register .field {
     display:inline-block;
-    margin-top:2vw;
+    margin-top:2rem;
 }
 .register .field.no-margin {
-    margin-top:0.2vw;
+    margin-top:0.2rem;
 }
 form#RegisterForm input[type="text"],
 form#RegisterForm input[type="email"],

@@ -156,6 +156,7 @@ header nav li:first-child{
     pointer-events: auto;
 }
 header nav li:last-child{
+    position: relative;
     display: inline-block;
     height: 5rem;
     margin: 0 1rem 0 1rem;
@@ -168,9 +169,22 @@ header nav li #menu_btn{
     z-index: 1102;
     width: 5rem;
     height: 5rem;
-    background: #000;
+    background: #FC0;
     border-radius: 100%;
     cursor: pointer;
+}
+header nav li:last-child:before{
+    content: "";
+    position: absolute;
+    width: 5.6rem;
+    height: 5.6rem;
+    background: #FFF;
+    border-radius: 100%;
+    cursor: pointer;
+    display: block;
+    top: -0.3rem;
+    left: -0.3rem;
+    box-shadow: 0 0.2rem 0.1rem #333;
 }
 /* component-cart-count-bubble */
 .cart-count-bubble:empty {
@@ -1761,6 +1775,9 @@ h3.accordion_title{
     height: 4rem;
     border-bottom: 1px dotted #333;
 }
+.summary_block summary[aria-expanded="true"] h3.accordion_title{
+    border-bottom: none;
+}
 h3.accordion_title:before{
     content:"Q.";
     display:inline-block;
@@ -2038,13 +2055,13 @@ form#RegisterForm{
     display: block;
     width:80%;
     background: #F4F4F4;
-    border-radius: 1vw;
-    margin:3vw auto;
+    border-radius: 1rem;
+    margin:3rem auto;
     border:5px solid #FC0;
 }
     #RegisterForm_wrapper{
         width:80%;
-        padding:5vw 0;
+        padding:5rem 0;
         margin:auto;
     }
 
@@ -2053,10 +2070,10 @@ form#RegisterForm label{
 }
 .register .field {
     display:inline-block;
-    margin-top:2vw;
+    margin-top:2rem;
 }
 .register .field.no-margin {
-    margin-top:0.2vw;
+    margin-top:0.2rem;
 }
 form#RegisterForm input[type="text"],
 form#RegisterForm input[type="email"],
