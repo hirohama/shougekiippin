@@ -45,7 +45,8 @@ if($('#draw_product_menu').length){
     var scrollNum = 500;
     var draw_height=0;
     var btn_height=0;
-    var draw_menu_height=0
+    var draw_menu_height=0;
+    var top_padding=16;/*上部に片付いているときの余白*/
     var draw_menu = false;
     if(draw_menu_container.length){//もし#draw_product_menu_boxがあれば
         draw_menu=true;//あるよと判定
@@ -54,8 +55,8 @@ if($('#draw_product_menu').length){
 
     function drawer_menu_check(){
         draw_menu_active = draw_menu_container.hasClass("active");
-        draw_height=draw_menu_container.outerHeight(true);/*全体の高さ*/
-        btn_height=draw_menu_btn.outerHeight(true);/*ボタンのみの高さ*/
+        draw_height=draw_menu_container.outerHeight(true)+top_padding;/*全体の高さ*/
+        btn_height=draw_menu_btn.outerHeight(true)+top_padding;/*ボタンのみの高さと、余白分を足す*/
         draw_menu_height=draw_height-btn_height;
         console.log(draw_height);
 
