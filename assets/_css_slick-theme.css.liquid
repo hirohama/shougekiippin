@@ -40,10 +40,28 @@
     box-shadow: 0 0.2rem 0.1rem #333;
 
 }
+.slick-prev:active,
+.slick-next:active
+{
+    opacity: .50;
+}
 .slick-prev:hover,
 .slick-next:hover
 {
-    opacity: .75;
+    opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+    .slick-prev:active,
+    .slick-next:active
+    {
+        opacity: .50;
+    }
+    .slick-prev:hover,
+    .slick-next:hover
+    {
+        opacity: .75;
+    }
 }
 /*.slick-prev:hover:before,
 .slick-prev:focus:before,
