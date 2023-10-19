@@ -21,25 +21,22 @@
 {
     font-size: 0;
     line-height: 0;
-
     position: absolute;
     top: 50%;
-
+    z-index: 10;
     display: block;
-
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
     padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translateY(-50%);
     cursor: pointer;
-
     color: transparent;
     border: none;
     outline: none;
-    background: transparent;
+    background-color: #FC0;
+    border-radius: 100%;
 }
 .slick-prev:hover,
 .slick-prev:focus,
@@ -69,17 +66,16 @@
     font-family: 'slick';
     font-size: 3rem;
     line-height: 1;
-
     opacity: 1;
     color: #000;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .slick-prev
 {
-    left: -3rem;
+    background-image: url("{{ '_img_slider_prev.png' | asset_url }}");
+    left: 3rem;
 }
 [dir='rtl'] .slick-prev/*dir='rtl'右から左の場合*/
 {
@@ -88,16 +84,17 @@
 }
 .slick-prev:before
 {
-    content: '←';
+    content: '';
 }
 [dir='rtl'] .slick-prev:before/*dir='rtl'右から左の場合*/
 {
-    content: '→';
+    content: '';
 }
 
 .slick-next
 {
-    right: -3rem;
+    background-image: url("{{ '_img_slider_next.png' | asset_url }}");
+    right: 3rem;
 }
 [dir='rtl'] .slick-next/*dir='rtl'右から左の場合*/
 {
@@ -106,11 +103,11 @@
 }
 .slick-next:before
 {
-    content: '→';
+    content: '';
 }
 [dir='rtl'] .slick-next:before/*dir='rtl'右から左の場合*/
 {
-    content: '←';
+    content: '';
 }
 
 /* Dots */

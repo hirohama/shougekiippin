@@ -177,9 +177,9 @@ if($('#slider').length){
     $('#slider').slick({
       slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
       slidesToScroll: 1,
-      arrows:false,
+      arrows:true,
       autoplay: false,
-      dots: true,
+      dots: false,
       autoplaySpeed: 4000,
       speed:600,
       centerMode: "true" });
