@@ -33,14 +33,14 @@
           "type": "image",
           "settings": {
             "image_box": "shopify:\/\/shop_images\/img_banner004.jpg",
-            "link": "shopify:\/\/collections\/ippin_top_list"
+            "link": "shopify:\/\/products\/oita_saiki_004"
           }
         },
         "d6d0a92d-bfe9-4e5c-af91-09ed408af0ad": {
           "type": "image",
           "settings": {
-            "image_box": "shopify:\/\/shop_images\/img_banner005.jpg",
-            "link": "shopify:\/\/collections\/ippin_top_list"
+            "image_box": "shopify:\/\/shop_images\/img_banner005_e890122b-748f-45c6-8d73-a80b3ada0a58.jpg",
+            "link": "shopify:\/\/products\/oita_saiki_005"
           }
         }
       },
