@@ -180,7 +180,7 @@ if($('#slider').length){
       slidesToScroll: 1,
       initialSlide:-1,
       arrows:true,
-      autoplay: false,
+      autoplay: true,
       dots: false,
       autoplaySpeed: 6000,
       speed:600,
