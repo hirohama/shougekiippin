@@ -177,6 +177,7 @@ if($('#draw_product_menu').length){
 if($('#slider').length){
     $('#slider').slick({
       slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
+      initialSlide:1,
       slidesToScroll: 1,
       arrows:true,
       autoplay: true,
