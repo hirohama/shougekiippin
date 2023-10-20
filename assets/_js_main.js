@@ -177,10 +177,9 @@ if($('#draw_product_menu').length){
 if($('#slider').length){
     $('#slider').slick({
       slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
-      initialSlide:-1,
       slidesToScroll: 1,
       arrows:true,
-      autoplay: true,
+      autoplay: false,
       dots: false,
       autoplaySpeed: 6000,
       speed:600,
@@ -189,15 +188,15 @@ if($('#slider').length){
         .to(".pNoren", {
             duration: 0.5,
             ease: "power3.in",
-            attr:{d:"M0,0V30.85c0,116,13,259,13,259H492.1c-10.1-72-9.45-134,0-258.9V.2H0"}
+            attr:{d:"M0,0V132.89c0,116,13,363,13,363h479.1c-10.1-72-11.64-125.12,0-372.18V.2H0"}
         }).to(".pNoren", {
             duration: 0.2,
             ease: "power1.out",
-            attr:{d:"M0,0V30.85c-5,178,0,259,0,259H480c8.72-39,7-76,12.1-258.85V.2H0"}
+            attr:{d:"M2.45,0V52.78c-5,304.53,0,443.11,0,443.11h480c8.72-66.72,7-130,12.1-442.85V.34H2.45"}
         }).to(".pNoren", {
             duration: 1,
             ease:"elastic.out",
-            attr:{d:"M0,0V30.8c0-4.6,1.8,259.1,1.8,259.1H489.2c3.3-75.7,2.9-210.5,2.9-258.9V.2H0"}
+            attr:{d:"M0,0V235.69c0-4.6,1.8,260.2,1.8,260.2H489.2c3.3-75.7,2.9-253.6,2.9-302V.2H0"}
         });
     $("a").click(function(){
         tl.restart();
