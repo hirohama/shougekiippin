@@ -19,26 +19,13 @@
 .slick-prev,
 .slick-next
 {
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 52%;
-    z-index: 10;
+    width: 10rem;
+    height: 100%;
     display: block;
-    width: 5rem;
-    height: 5rem;
-    padding: 0;
-    -webkit-transform: translate(0,-50%);
-    -ms-transform: translate(0,-50%);
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: transparent;
-    border: 0.3rem solid #FFF;
-    outline: none;
-    background-color: #fc0;
-    border-radius: 100%;
-    box-shadow: 0 0.2rem 0.1rem #333;
-
+    background: none;
+    position: absolute;
+    top: 0;
+    z-index: 10;
 }
 .slick-prev:active,
 .slick-next:active
@@ -83,27 +70,43 @@
     -moz-osx-font-smoothing: grayscale;
 }
 */
-.slick-prev
-{
-    
-}
 [dir='rtl'] .slick-prev/*dir='rtl'右から左の場合*/
 {
     right: -25px;
     left: auto;
 }
-.slick-prev:before
+.slick-prev:before,
+.slick-next:before
 {
     content: '';
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 52%;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: transparent;
+    border: 0.3rem solid #FFF;
+    outline: none;
+    background-color: #fc0;
+    border-radius: 100%;
+    box-shadow: 0 0.2rem 0.1rem #333;
 }
 [dir='rtl'] .slick-prev:before/*dir='rtl'右から左の場合*/
 {
     content: '';
 }
-
+.slick-prev
+{
+}
 .slick-next
 {
-    
 }
 [dir='rtl'] .slick-next/*dir='rtl'右から左の場合*/
 {

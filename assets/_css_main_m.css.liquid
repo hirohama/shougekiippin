@@ -823,13 +823,21 @@ ul#slider{
             height: 96%;
         }
 
-        .slick-prev{
-            background-image: url("{{ '_img_slide_prev.svg' | asset_url }}");
-            left:31%;
+        .slick-prev
+        {
+            left:calc(31% - 5rem);
         }
-        .slick-next{
+        .slick-next
+        {
+            right:calc(31% - 5rem);
+        }
+        .slick-prev:before{
+            background-image: url("{{ '_img_slide_prev.svg' | asset_url }}");
+            left: 5rem;
+        }
+        .slick-next:before{
             background-image: url("{{ '_img_slide_next.svg' | asset_url }}");
-            right:31%;
+            left:0;
         }
 /*---------------ippin_list-----------------*/
 .ttl_index_01{
