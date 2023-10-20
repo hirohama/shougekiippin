@@ -98,6 +98,20 @@
     border-radius: 100%;
     box-shadow: 0 0.2rem 0.1rem #333;
 }
+@media screen and (min-width: 640px) {
+    .slick-prev:before,
+    .slick-next:before{
+        width: 5rem;
+        height: 5rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .slick-prev:before,
+    .slick-next:before{
+        width: 7rem;
+        height: 7rem;
+    }
+}
 [dir='rtl'] .slick-prev:before/*dir='rtl'右から左の場合*/
 {
     content: '';
