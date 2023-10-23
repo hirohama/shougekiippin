@@ -208,19 +208,26 @@ if($('#slider').length){
 }
 //---------------indexスライダーアニメーションここまで
 //--------------conceptスライダー
-  console.log("cccc");
 if($('#concept_slider').length){
   console.log("a");
   $('#concept_slider_box').slick({
-      slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
-      slidesToScroll: 1,
-      initialSlide:-1,
-      arrows:false,
-      autoplay: true,
-      dots: false,
-      autoplaySpeed: 6000,
-      speed:600,
-      centerMode: "false"
+    autoplay: true, // 自動でスクロール
+    autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
+    speed: 5000, // スライドが流れる速度を設定
+    cssEase: "linear", // スライドの流れ方を等速に設定
+    slidesToShow: 3, // 表示するスライドの数
+    swipe: false, // 操作による切り替えはさせない
+    arrows: false, // 矢印非表示
+    pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
+    pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
+    responsive: [
+      {
+        breakpoint: 639,
+        settings: {
+          slidesToShow: 2, // 画面幅750px以下でスライド3枚表示
+        }
+      }
+    ]
   });
 }
 
