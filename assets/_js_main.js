@@ -207,7 +207,22 @@ if($('#slider').length){
     });
 }
 //---------------indexスライダーアニメーションここまで
+//--------------conceptスライダー
 
+if($('＃concept_slider_box').length){
+  $('#concept_slider_box').slick({
+      slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
+      slidesToScroll: 1,
+      initialSlide:-1,
+      arrows:true,
+      autoplay: true,
+      dots: false,
+      autoplaySpeed: 6000,
+      speed:600,
+      centerMode: "false" });
+}
+
+//--------------conceptスライダーここまで
 //----------特集商品リストスライダー
 if($('.feature_list').length){
       $('.feature_list').owlCarousel({
