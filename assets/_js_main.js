@@ -214,7 +214,7 @@ if($('＃concept_slider_box').length){
       slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
       slidesToScroll: 1,
       initialSlide:-1,
-      arrows:true,
+      arrows:false,
       autoplay: true,
       dots: false,
       autoplaySpeed: 6000,
