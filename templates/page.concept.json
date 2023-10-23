@@ -8,6 +8,11 @@
         "width": "innerpage_wrapper"
       }
     },
+    "db6c8f61-c85e-45dc-a0d9-78ab144411d1": {
+      "type": "concept_slider",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -16,6 +21,7 @@
   },
   "order": [
     "title",
+    "db6c8f61-c85e-45dc-a0d9-78ab144411d1",
     "main"
   ]
 }
