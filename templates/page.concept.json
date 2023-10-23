@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "title": {
+      "type": "title-page",
+      "settings": {
+        "text_content": "タイトル",
+        "pageTitle": "{{ page.title }}",
+        "width": "innerpage_wrapper"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "title",
+    "main"
+  ]
+}
