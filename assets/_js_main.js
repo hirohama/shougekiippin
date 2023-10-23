@@ -208,7 +208,7 @@ if($('#slider').length){
 }
 //---------------indexスライダーアニメーションここまで
 //--------------conceptスライダー
-
+  console.log("cccc");
 if($('＃concept_slider').length){
   console.log("a");
   $('#concept_slider_box').slick({
