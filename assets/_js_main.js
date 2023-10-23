@@ -219,7 +219,8 @@ if($('＃concept_slider_box').length){
       dots: false,
       autoplaySpeed: 6000,
       speed:600,
-      centerMode: "false" });
+      centerMode: "false"
+  });
 }
 
 //--------------conceptスライダーここまで
