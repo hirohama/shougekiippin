@@ -3,8 +3,8 @@
     "title": {
       "type": "title-page",
       "settings": {
-        "text_content": "タイトル",
-        "pageTitle": "{{ page.title }}",
+        "text_content": "衝撃一品とは",
+        "pageTitle": "衝撃一品とは",
         "width": "innerpage_wrapper"
       }
     },
