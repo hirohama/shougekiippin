@@ -209,8 +209,19 @@ if($('#slider').length){
 //---------------indexスライダーアニメーションここまで
 //--------------conceptスライダー
   console.log("cccc");
-if($('＃concept_slider').length){
+if($('#concept_slider').length){
   console.log("a");
+  $('#concept_slider_box').slick({
+      slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
+      slidesToScroll: 1,
+      initialSlide:-1,
+      arrows:false,
+      autoplay: true,
+      dots: false,
+      autoplaySpeed: 6000,
+      speed:600,
+      centerMode: "false"
+  });
 }
 
 //--------------conceptスライダーここまで
