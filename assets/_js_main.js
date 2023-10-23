@@ -209,7 +209,7 @@ if($('#slider').length){
 //---------------indexスライダーアニメーションここまで
 //--------------conceptスライダー
 
-if($('＃concept_slider_box').length){
+if($('＃concept_slider').length){
   $('#concept_slider_box').slick({
       slidesToShow: 3,/*centerModeの場合は、奇数で整数を指定する*/
       slidesToScroll: 1,
