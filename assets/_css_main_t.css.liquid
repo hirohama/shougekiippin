@@ -1252,7 +1252,101 @@ div#concept #concept_box .concept_wrap{
     text-align: center;
     padding: 10rem 0 5rem;
 }
-            
+
+/*------------------------------------------------
+
+concept_page
+
+-------------------------------------------------*/
+#concept_slider_box{
+  height:50rem;
+  width:100%;
+}
+#concept_slider_box .slick-list,
+#concept_slider_box .slick-track,
+#concept_slider_box .slider_slide{
+  height:100%;
+}
+#concept_slider_box .slider_slide{
+  margin:0.1rem;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+.concept_table{
+  display:flex;
+  flex-flow:row nowrap;
+  padding-top:5rem;
+}
+.concept_title{
+  width:32%;
+}
+.concept_title h3{
+  font-size:1.8rem;
+}
+.concept_text{
+  width:68%;
+  font-size:1.5rem;
+  line-height:2.8rem;
+  letter-spacing:.1rem;
+}
+.concept_text2{
+  padding-top:5rem;
+  font-size:1.5rem;
+  line-height:2.8rem;
+  letter-spacing:.1rem;
+  text-align:center;
+}
+.concept_text .foJ_Mid{
+  text-decoration-line: underline;
+  text-decoration-color: #000;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.5rem;
+}
+.concept_text2 span{
+  font-size:2.2rem;
+  display:block;
+  padding:0 0 5rem;
+}
+.concept_illust_container{
+  width:100%;
+  display:flex;
+  flex-flow:row nowrap;
+}
+.concept_illust_container .illust1,
+.concept_illust_container .illust2,
+.concept_illust_container .illust3{
+  width:33%;
+  aspect-ratio:1/1;
+  position:relative;
+  overflow:visible;
+}
+.concept_illust_container .illust1 img,
+.concept_illust_container .illust2 img,
+.concept_illust_container .illust3 img{
+  width:100%;
+  aspect-ratio:1/1;
+}
+.concept_illust_container span{
+  font-size:1.5rem;
+  position:absolute;
+  bottom:7%;
+  width:100%;
+  display:block;
+  text-align:center;
+}
+.concept_illust_container .illust1:after,
+.concept_illust_container .illust2:after{
+  content:"";
+  display:block;
+  position:absolute;
+  top:calc(50% - 1rem);
+  right:-1rem;
+  background: #ffcc00;
+  height: calc(tan(60deg) * 3rem / 2);
+  width: 2rem;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
 /*------------------------------------------------
 
 products collection
