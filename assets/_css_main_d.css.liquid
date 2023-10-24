@@ -1236,10 +1236,17 @@ concept_page
 }
 .concept_illust_container span{
   position:absolute;
-  bottom:20%;
+  bottom:10%;
   width:100%;
   display:block;
   text-align:center;
+}
+.concept_illust_container .illust1:after{
+  content:"";
+  background: #ffcc00;
+  height: calc(tan(60deg) * 60px / 2);
+  width: 60px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 /*------------------------------------------------
 
