@@ -64,7 +64,7 @@
         "8a818461-c268-4a72-91b3-9826896aaec7": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "領収書の発行はできますか？",
+            "heading": "領収書の発行はできますか",
             "icon": "check_mark",
             "row_content": "<p>代金引換・後払い決済をご利用の場合、お届け時の伝票や請求書を領収書に代えさせていただきます。<br\/>別途領収書が必要な場合はお問い合わせください。<a href=\"\/pages\/contact\" title=\"お問い合わせ\">お問い合わせページ<\/a><\/p>",
             "page": ""
