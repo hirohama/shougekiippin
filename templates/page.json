@@ -4,7 +4,7 @@
       "type": "title-page",
       "settings": {
         "text_content": "衝撃一品とは",
-        "pageTitle": "プライバシーポリシー",
+        "pageTitle": "{{ page.title }}",
         "width": "innerpage_wrapper"
       }
     },
