@@ -1958,6 +1958,14 @@ h3.accordion_title{
     line-height:2.8rem;
     height:4.8rem;
     border-bottom:1px dotted #333;
+    transition: 0.3s;
+    color:#000;
+}
+h3.accordion_title:hover{
+    color:#FC0;
+}
+h3.accordion_title:active{
+    transform: scale(0.8);
 }
 .summary_block summary[aria-expanded="true"] h3.accordion_title{
     border-bottom: none;
@@ -1967,6 +1975,14 @@ h3.accordion_title:before{
     display:inline-block;
     font-size:1.8rem;
     width:2.2rem;
+    color:#000;
+    transition:.3s;
+}
+h3.accordion_title:hover:before{
+    color:#FC0;
+}
+h3.accordion_title:active:before{
+    transform: scale(0.8);
 }
 .summary_block summary .icon {
     display:block;
