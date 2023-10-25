@@ -24,17 +24,19 @@
           {%- render 'icon-checkmark' -%}
           {{ 'general.cart.item_added' | t }}
         </h2>
-        <!--{% comment %}
-        <button
-          type="button"
-          class="cart-notification__close modal__close-button link link--text focus-inset"
-          aria-label="{{ 'accessibility.close' | t }}"
-        >
-          <svg class="icon icon-close" aria-hidden="true" focusable="false">
-            <use href="#icon-close">
-          </svg>
-        </button>
-        {% endcomment %}-->
+        <!--
+          {% comment %}
+          <button
+            type="button"
+            class="cart-notification__close modal__close-button link link--text focus-inset"
+            aria-label="{{ 'accessibility.close' | t }}"
+          >
+            <svg class="icon icon-close" aria-hidden="true" focusable="false">
+              <use href="#icon-close">
+            </svg>
+          </button>
+          {% endcomment %}
+        -->
       </div>
       <div id="cart-notification-product" class="cart-notification-product"></div>
       <div class="cart-notification__links">
@@ -42,7 +44,9 @@
           href="{{ routes.cart_url }}"
           id="cart-notification-button"
           class="button button--secondary button--full-width"
-        >{{ 'general.cart.view_empty_cart' | t }}</a>
+        >
+          {{- 'general.cart.view_empty_cart' | t -}}
+        </a>
         <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
           <button class="button button--primary button--full-width" name="checkout">
             <div class="btn">
@@ -52,7 +56,10 @@
           </button>
         </form>
         <button type="button" class="link button-label foJ_Thin">
-          <span class="t_link"><div class="icon back"></div>{{ 'general.continue_shopping' | t }}</span>
+          <span class="t_link l_line">
+            <div class="icon back"></div>
+            {{ 'general.continue_shopping' | t -}}
+          </span>
         </button>
       </div>
     </div>
@@ -61,6 +68,5 @@
 {% style %}
   .cart-notification {
     display: none;
-    transition: all .5s;
   }
 {% endstyle %}
