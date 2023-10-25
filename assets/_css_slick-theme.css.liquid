@@ -26,23 +26,25 @@
     position: absolute;
     top: 0;
     z-index: 10;
+    transition:0.3s;
 }
 .slick-prev:active,
 .slick-next:active
 {
-    opacity: .50;
+    transform:scale(0.8);
 }
 
 @media screen and (min-width: 1024px) {
-    .slick-prev:active,
-    .slick-next:active
-    {
-        opacity: .50;
-    }
+    
     .slick-prev:hover,
     .slick-next:hover
     {
-        opacity: .75;
+        transform:scale(1.1);
+    }
+    .slick-prev:active,
+    .slick-next:active
+    {
+        transform:scale(0.8);
     }
 }
 /*.slick-prev:hover:before,
