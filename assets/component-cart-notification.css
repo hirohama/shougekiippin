@@ -113,6 +113,7 @@
 
 .cart-notification__links {
   text-align: center;
+  padding-bottom:1rem;
 }
 
 .cart-notification__links > * {
