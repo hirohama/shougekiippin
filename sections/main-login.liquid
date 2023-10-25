@@ -1,33 +1,33 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 {% comment %}
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
+  {%- style -%}
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
-  }
-{%- endstyle -%}
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
 {% endcomment %}
 <div class="content innerpage_content">
-    <div class="innerpage_wrapper btm">
-      <div class="customer login foJ_Thin section-{{ section.id }}-padding">
-<!--recover-->
-        <h1 id="recover" class="page_title_head foJ_Bld">
-          {{ 'customer.recover_password.title' | t }}
-        </h1>
-          <div>
-            <p class="recover_subtext">{{ 'customer.recover_password.subtext' | t }}</p>
-          {%- form 'recover_customer_password' -%}
+  <div class="innerpage_wrapper btm">
+    <div class="customer login foJ_Thin section-{{ section.id }}-padding">
+      <!-- recover -->
+      <h1 id="recover" class="page_title_head foJ_Bld">
+        {{ 'customer.recover_password.title' | t }}
+      </h1>
+      <div>
+        <p class="recover_subtext">{{ 'customer.recover_password.subtext' | t }}</p>
+        {%- form 'recover_customer_password' -%}
           <div id="recover_customer_password_form_box">
             {% assign recover_success = form.posted_successfully? %}
             {%- if form.errors -%}
-            <div class="form_alert error">
+              <div class="form_alert error">
                 <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
                 <div>
                   <span class="form_alert_icon">{% render 'icon-error' %}</span>
@@ -36,8 +36,7 @@
                 <span class="alert_content">
                   {{ form.errors.messages.form }}
                 </span>
-            </div>
-              
+              </div>
             {%- endif -%}
             <div class="field">
               <label for="RecoverEmail">
@@ -58,153 +57,152 @@
                 placeholder="{{ 'customer.login_page.email' | t }}"
                 required
               >
-            </div><!--field-->
+            </div>
+            <!-- field -->
             {% comment %}
-            {%- if form.errors -%}
-              <small id="RecoverEmail-email-error" class="form__message">
-                <svg aria-hidden="true" focusable="false" viewBox="0 0 13 13">
-                  <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
-                  <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
-                  <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
-                  <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
-                </svg>
-                {{ form.errors.messages.form }}
-              </small>
-            {%- endif -%}
+              {%- if form.errors -%}
+                <small id="RecoverEmail-email-error" class="form__message">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 13 13">
+                    <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+                    <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+                    <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+                    <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+                  </svg>
+                  {{ form.errors.messages.form }}
+                </small>
+              {%- endif -%}
             {% endcomment %}
 
-              <div id="recover_btn_box" class="clearfix">
-                
+            <div id="recover_btn_box" class="clearfix">
+              <button class="btn">
+                <span class="info foJ_Mid">
+                  {{ 'customer.login_page.submit' | t }}
+                </span>
+                <div class="icon submit"></div>
+              </button>
 
-                <button class="btn">
-                  <span class="info foJ_Mid">
-                    {{ 'customer.login_page.submit' | t }}
-                    </span>
-                    <div class="icon submit"></div>
-                </button>
+              <a class="t_link backbtn" href="#login">
+                <div class="icon back"></div>
+                {{ 'customer.login_page.cancel' | t }}
+              </a>
+            </div>
+          </div>
+          <!-- #recover_customer_password_form_box -->
+        {%- endform -%}
+      </div>
+      <!-- login -->
+      <h1 id="login" class="page_title_head foJ_Bld">
+        {{ 'customer.login_page.title' | t }}
+      </h1>
+      <div>
+        {%- if recover_success == true -%}
+          <div class="form_alert success">
+            <div>
+              <span class="form_alert_icon">{% render 'icon-success' %}</span>
+              <p class="foJ_Mid">送信が成功しました。</p>
+            </div>
+            <span class="alert_content"> {{ 'customer.recover_password.success' | t }}</span>
+          </div>
+        {%- endif -%}
+        {% form 'customer_login' %}
+          <div id="customer_login_form_box">
+            {%- if form.errors -%}
+              <div class="form_alert error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
+                <div>
+                  <span class="form_alert_icon">{% render 'icon-error' %}</span>
+                  <p class="foJ_Mid">ログインできませんでした。</p>
+                </div>
+                <span class="alert_content">
+                  {{ form.errors | default_errors }}
+                </span>
+              </div>
+            {%- endif -%}
 
-                <a class="t_link backbtn"href="#login">
-                  <div class="icon back"></div>{{ 'customer.login_page.cancel' | t }}
+            <div class="field">
+              <label for="CustomerEmail">
+                {{ 'customer.login_page.email' | t }}
+              </label>
+              <input
+                type="email"
+                name="customer[email]"
+                id="CustomerEmail"
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                {% if form.errors contains 'form' %}
+                  aria-invalid="true"
+                {% endif %}
+                placeholder="{{ 'customer.login_page.email' | t }}"
+                required
+              >
+            </div>
+            {% comment %}
+              {- if form.password_needed -}
+            {% endcomment %}
+            <div class="field">
+              <label for="CustomerPassword">
+                {{ 'customer.login_page.password' | t }}
+              </label>
+              <input
+                type="password"
+                value=""
+                name="customer[password]"
+                id="CustomerPassword"
+                autocomplete="current-password"
+                {% if form.errors contains 'form' %}
+                  aria-invalid="true"
+                {% endif %}
+                placeholder="{{ 'customer.login_page.password' | t }}"
+                required
+              >
+              <div id="recover_box">
+                <a class="l_line" href="#recover">
+                  {{ 'customer.login_page.forgot_password' | t }}
                 </a>
               </div>
             </div>
-            <!--#recover_customer_password_form_box-->
-          {%- endform -%}
-        </div>
-<!--login-->
-    <h1 id="login" class="page_title_head foJ_Bld">
-      {{ 'customer.login_page.title' | t }}
-    </h1>
-    <div>
-      {%- if recover_success == true -%}
-      <div class="form_alert success">
-              <div>
-              <span class="form_alert_icon">{% render 'icon-success' %}</span>
-                <p class="foJ_Mid">送信が成功しました。</p>
-              </div>
-                <span class="alert_content">
-          {{ 'customer.recover_password.success' | t }}</span>
-            </div>
-      {%- endif -%}
-      {% form 'customer_login' %}
 
-          <div id="customer_login_form_box">
-        {%- if form.errors -%}
-        <div class="form_alert error">
-            <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
-              <div>
-                <span class="form_alert_icon">{% render 'icon-error' %}</span>
-                <p class="foJ_Mid">ログインできませんでした。</p>
-              </div>
-                <span class="alert_content">
-                {{ form.errors | default_errors }}
-                </span>
-            </div>
-          
-        {%- endif -%}
+            {% comment %}
+              {- endif -}
+            {% endcomment %}
 
-        <div class="field">
-          <label for="CustomerEmail">
-            {{ 'customer.login_page.email' | t }}
-          </label>
-          <input
-            type="email"
-            name="customer[email]"
-            id="CustomerEmail"
-            autocomplete="email"
-            autocorrect="off"
-            autocapitalize="off"
-            {% if form.errors contains 'form' %}
-              aria-invalid="true"
-            {% endif %}
-            placeholder="{{ 'customer.login_page.email' | t }}"
-            required
-          >
-        </div>
-{% comment %}
-        {- if form.password_needed -}
-{% endcomment %}
-          <div class="field">
-            <label for="CustomerPassword">
-              {{ 'customer.login_page.password' | t }}
-            </label>
-            <input
-              type="password"
-              value=""
-              name="customer[password]"
-              id="CustomerPassword"
-              autocomplete="current-password"
-              {% if form.errors contains 'form' %}
-                aria-invalid="true"
-              {% endif %}
-              placeholder="{{ 'customer.login_page.password' | t }}"
-              required
-            >
-            <div id="recover_box">
-              <a href="#recover">
-                {{ 'customer.login_page.forgot_password' | t }}
-              </a>
-            </div> 
+            <button class="btn">
+              <span class="info foJ_Mid">
+                {{ 'customer.login_page.sign_in' | t }}
+              </span>
+              <div class="icon login"></div>
+            </button>
           </div>
- 
-{% comment %}
-        {- endif -}
-{% endcomment %}
+          <!-- #customer_login_form_box -->
 
-        <button class="btn">
-          <span class="info foJ_Mid">
-            {{ 'customer.login_page.sign_in' | t }}
+          <a class="make_account_btn btn" href="{{ routes.account_register_url }}">
+            <span class="info foJ_Mid">
+              {{ 'customer.login_page.create_account' | t }}
             </span>
-            <div class="icon login"></div>
-        </button>
-      </div>
-      <!--#customer_login_form_box-->
-
-      <a class="make_account_btn btn" href="{{ routes.account_register_url }}">
-        <span class="info foJ_Mid">
-            {{ 'customer.login_page.create_account' | t }}
-          </span>
-        <div class="icon make_account"></div>
-      </a>  
-      {%- endform -%}
-      
-    </div>
-
-    {%- if shop.checkout.guest_login -%}
-      <div>
-        <hr>
-        <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
-
-        {%- form 'guest_login' -%}
-          <button>
-            {{ 'customer.login_page.guest_continue' | t }}
-          </button>
+            <div class="icon make_account"></div>
+          </a>
         {%- endform -%}
       </div>
-    {%- endif -%}
-  </div><!--.customer login-->
-  </div><!--innerpage_wrapper-->
-</div><!--content-->
+
+      {%- if shop.checkout.guest_login -%}
+        <div>
+          <hr>
+          <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+
+          {%- form 'guest_login' -%}
+            <button>
+              {{ 'customer.login_page.guest_continue' | t }}
+            </button>
+          {%- endform -%}
+        </div>
+      {%- endif -%}
+    </div>
+    <!-- .customer login -->
+  </div>
+  <!-- innerpage_wrapper -->
+</div>
+<!-- content -->
 {% schema %}
 {
   "name": "t:sections.main-login.name",
