@@ -1515,6 +1515,7 @@ div#product_spec_box .text_field{
     border-radius: 1rem;
     padding:1rem;
 }
+
 div#product_spec_box .image_box .photo{
     width: 100%;
     float: none;
@@ -1599,6 +1600,7 @@ div#product_spec_box .image_box a.txt_c{
     margin-right:2%;
 }
 div#product_spec_box #product_info_box a{
+  transition:0.3s;
     box-shadow: 0 0.1rem 0.1rem #84774d;
 }
 div#product_spec_box #product_info_box a.active{
@@ -1606,6 +1608,7 @@ div#product_spec_box #product_info_box a.active{
     box-shadow: 0 -0.1rem 0.1rem #84774d;
 }
 div#product_spec_box #store_info_box a{
+  transition:0.3s;
     box-shadow: 0 0.1rem 0.1rem #6b99a4; 
 }
 div#product_spec_box #store_info_box a.active{
@@ -1616,7 +1619,10 @@ div#product_spec_box .text_field{
     font-size: 1.8rem;
     line-height: 2.8rem;
 }
-
+div#product_spec_box #product_info_box a:active,
+div#product_spec_box #store_info_box a:active{
+    transform:scale(0.8);
+}
 div#product_spec_box .text_field h4{
     display: block;
     font-size:2rem;
