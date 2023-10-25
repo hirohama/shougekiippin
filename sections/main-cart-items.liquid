@@ -42,7 +42,7 @@
         <!--a href="{{ routes.all_products_collection_url }}" class="button">
           {{ 'general.continue_shopping' | t }}
       </a-->
-        <a href="{{ routes.all_products_collection_url }}" class="t_link backbtn"><div class="icon back"></div>{{ 'general.continue_shopping' | t }}</a>
+        <a href="{{ routes.all_products_collection_url }}" class="t_link backbtn l_line"><div class="icon back"></div>{{ 'general.continue_shopping' | t }}</a>
         
         {%- if shop.customer_accounts_enabled and customer == null -%}<!--購入にログインが必要な設定になっており、なおかつログアウトしていたら-->
           <h2 class="cart__login-title">{{ 'sections.cart.login.title' | t }}</h2>
@@ -82,13 +82,6 @@
                         {% if item.image %}
                           {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                           <a href="{{ item.url }}" class="cart_item_photo_img" aria-hidden="true" tabindex="-1" style="background-image:url('{{ item.image | image_url: width: 450 }}') ;">
-                            <!--img
-                              src="{{ item.image | image_url: width: 450 }}"
-                              class="cart_item_image"
-                              alt="{{ item.image.alt | escape }}"
-                              loading="lazy"
-                              height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
-                            -->
                           </a>
                         {% endif %}
                       </div>
@@ -99,7 +92,7 @@
                           <p class="">{{ item.product.vendor }}</p>
                         {%- endif -%}
 
-                        <a href="{{ item.url }}" class="cart_item_name foJ_Mid">{{ item.product.title | escape }}</a><br>
+                        <a href="{{ item.url }}" class="cart_item_name foJ_Mid l_line">{{ item.product.title | escape }}</a><br>
                         {%- for option in item.options_with_values -%}
                           {{ option.value }}<br class="d_t">
                         {%- endfor -%}
