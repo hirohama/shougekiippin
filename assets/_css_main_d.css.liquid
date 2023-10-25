@@ -1954,20 +1954,24 @@ h3.accordion_title{
     display:inline-block;
     width:100%;
     padding:1rem;
-    font-size:1.8rem;
-    line-height:2.8rem;
     height:4.8rem;
     border-bottom:1px dotted #333;
+}
+h3.accordion_title p{
+    display:inline-block;
+    width:auto;
+    font-size:1.8rem;
+    line-height:2.8rem;
     transition: 0.3s;
     color:#000;
 }
-h3.accordion_title:hover{
+h3.accordion_title:hover p{
     color:#FC0;
 }
 .summary_block summary[aria-expanded="true"] h3.accordion_title{
     border-bottom: none;
 }
-h3.accordion_title:before{
+h3.accordion_title p:before{
     content:"Q.";
     display:inline-block;
     font-size:1.8rem;
@@ -1975,8 +1979,12 @@ h3.accordion_title:before{
     color:#000;
     transition:.3s;
 }
-h3.accordion_title:hover:before{
+h3.accordion_title:hover p:before{
     color:#FC0;
+}
+h3.accordion_title:active p,
+h3.accordion_title:active p:before{
+    transform: scale(0.8);
 }
 .summary_block summary .icon {
     display:block;

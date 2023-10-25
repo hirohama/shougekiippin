@@ -91,7 +91,7 @@
                     {% render 'icon-accordion', icon: block.settings.icon %}
               {% endcomment %}
                     <h3 class="accordion_title foJ_Mid">
-                      {{ block.settings.heading | default: block.settings.page.title }}
+                      <p>{{ block.settings.heading | default: block.settings.page.title }}</p>
                     </h3>
                     <div class="icon"></div>
                   </summary>

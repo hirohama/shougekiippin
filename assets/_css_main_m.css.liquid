@@ -1741,15 +1741,21 @@ h3.accordion_title{
     display: inline-block;
     width: 100%;
     padding: 1rem 4rem 1rem 1rem;
-    font-size: 1.7rem;
-    line-height: 2rem;
     min-height: 4rem;
     border-bottom: 1px dotted #333;
+}
+h3.accordion_title p{
+    display:inline-block;
+    width:auto;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    transition: 0.3s;
+    color:#000;
 }
 .summary_block summary[aria-expanded="true"] h3.accordion_title{
     border-bottom: none;
 }
-h3.accordion_title:before{
+h3.accordion_title p:before{
     content:"Q.";
     display:inline-block;
     font-size:1.8rem;
