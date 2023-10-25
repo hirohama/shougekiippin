@@ -31,10 +31,7 @@
           {% endcomment %}
         -->
         <h1 class="page_title_head foJ_Bld">{{ 'customer.addresses.title' | t }}</h1>
-        <a class="t_link" href="{{ routes.account_url }}">
-          <div class="icon back"></div>
-          {{ 'customer.account.return' | t }}
-        </a>
+        <a class="t_link" href="{{ routes.account_url }}"><div class="icon back"><div></div></div>{{ 'customer.account.return' | t }}</a>
 
         <!-- 新しい住所の追加 -->
         <div class="add_new_address" data-address>
@@ -199,11 +196,11 @@
               </div>
               <div class="addresses_edit_btn">
                 <button class="t_link no_deco button_mode customer_addresses_add">
-                  <div class="icon submit"></div>
+                  <div class="icon submit"><div></div></div>
                   {{ 'customer.addresses.add' | t }}
                 </button>
                 <button class="t_link no_deco button_mode" type="reset">
-                  <div class="icon close"></div>
+                  <div class="icon close"><div></div></div>
                   {{ 'customer.addresses.cancel' | t }}
                 </button>
               </div>

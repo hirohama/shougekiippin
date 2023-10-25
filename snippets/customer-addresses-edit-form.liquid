@@ -18,7 +18,7 @@
     data-address-id="{{ address.id }}"
     class="t_link no_deco button_mode"
   >
-    <div class="icon edit"></div>
+    <div class="icon edit"><div></div></div>
     {{ 'customer.addresses.edit' | t }}
   </button>
   <!-- /編集ボタン -->
@@ -30,7 +30,7 @@
     data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
     class="t_link no_deco button_mode"
   >
-    <div class="icon delete"></div>
+    <div class="icon delete"><div></div></div>
     {{ 'customer.addresses.delete' | t }}
   </button>
   <!-- /削除ボタン -->
@@ -232,11 +232,11 @@
       </div>
       <div class="addresses_edit_btn">
         <button class="t_link no_deco button_mode customer_addresses_add">
-          <div class="icon submit"></div>
+          <div class="icon submit"><div></div></div>
           {{ 'customer.addresses.update' | t }}
         </button>
         <button class="t_link no_deco button_mode" type="reset">
-          <div class="icon close"></div>
+          <div class="icon close"><div></div></div>
           {{ 'customer.addresses.cancel' | t }}
         </button>
       </div>
