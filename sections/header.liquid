@@ -115,9 +115,9 @@
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {% if template == 'index' %} 
-<header id="menu_index">
+<header id="menu_index" ontouchstart="">
 {% else %}
-<header id="menu">
+<header id="menu" ontouchstart="">
 {% endif %}
 {% if template == 'product' %} 
   {%- if settings.cart_type == "notification" -%}
