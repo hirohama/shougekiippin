@@ -2943,10 +2943,12 @@ a.btn{
     margin: auto;
     text-decoration: none;
     box-shadow: 0 0.1rem 0rem #333;
+    transition: all 0.3s;
 }
+.store:active .btn,
 .btn:active,
 a.btn:active{
-    opacity: 0.5;
+    transform:scale(0.9);
 }
     .btn.inline-block{
         display:inline-block;
