@@ -92,7 +92,7 @@
                           <p class="">{{ item.product.vendor }}</p>
                         {%- endif -%}
 
-                        <a href="{{ item.url }}" class="cart_item_name foJ_Mid t_link">{{ item.product.title | escape }}</a><br>
+                        <a href="{{ item.url }}" class="cart_item_name foJ_Mid l_color1">{{ item.product.title | escape }}</a><br>
                         {%- for option in item.options_with_values -%}
                           {{ option.value }}<br class="d_t">
                         {%- endfor -%}
