@@ -7,7 +7,7 @@
   display: block;
 }
 .cart-notification {
-    padding-bottom: 2.5vw;
+    padding-bottom: 2rem;
     position: fixed;
     left: 50%;
     top: 50%;
