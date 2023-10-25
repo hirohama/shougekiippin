@@ -56,6 +56,75 @@ body,html{
 common
 
 -------------------------------------------------*/
+
+/*-----------------link_variation------------------*/
+.l_line{
+    display: inline-block;
+    position:relative;
+    cursor: pointer;
+    transition: all .3s;
+}
+.l_line:after {
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color: #000;
+  transition: all .3s;
+  opacity: 1;
+  /*transform: translateX(-50%);*/
+}
+.l_line:hover{
+}
+.l_line:hover:after{
+  width: 100%;
+  opacity: 0.75;
+}
+.l_line:active{
+    transform: scale(0.8);
+}
+.l_opacity{
+    opacity:1;
+    transition: all .3s;
+}
+.l_opacity{
+    opacity: 0.75;
+}
+
+.l_bg{
+    transition: all 0.3s;
+}
+.l_bg:hover{
+    background-size:120% auto;
+}
+.l_scale{
+    display: inline-block;
+    transition:0.3s;
+}
+.l_scale:hover{
+    transform:scale(1.1);
+}
+.l_scale:active{
+    transform:scale(0.8);
+}
+.l_color1,
+.l_color2{
+    display: inline-block;
+    transition:0.3s;
+    color:#000;
+}
+.l_color1:hover{
+    color:#FC0;
+}
+.l_color2:hover{
+    color:#FFF;
+}
+.l_color1:active,
+.l_color2:active{
+    transform: scale(0.8);
+}
 div#wrap{
     background:#FFF;
     width:100%;
@@ -71,10 +140,10 @@ div#wrap{
     word-break: break-word;
 }
 .content a{
-    color:#000;
+    /*color:#000;*/
 }
 .content a:hover{
-    opacity:0.5;
+    /*opacity:0.5;*/
 }
 .content.innerpage_content{
     padding-top:12rem;
@@ -181,6 +250,13 @@ header nav li #menu_btn{
     background: #FC0;
     border-radius:100%;
     cursor: pointer;
+    transition: 0.3s;
+}
+header nav li #menu_btn:hover{
+    transform: scale(1.1);
+}
+header nav li #menu_btn:active{
+    transform: scale(0.8);
 }
 header nav li:last-child:before{
     content: "";
@@ -194,6 +270,13 @@ header nav li:last-child:before{
     top: -0.3rem;
     left: -0.3rem;
     box-shadow: 0 0.2rem 0.1rem #333;
+    transition: 0.3s;
+}
+header nav li:last-child:hover:before{
+     transform: scale(1.1);
+}
+header nav li:last-child:hover:before{
+     transform: scale(1.1);
 }
 /* component-cart-count-bubble */
 .cart-count-bubble:empty {
@@ -593,6 +676,13 @@ menu.close #mega_menu{
             margin:1rem 0 0 0;
             cursor: pointer;
             box-shadow:0 0.2rem 0.1rem #333;
+            transition:.3s;
+        }
+        #draw_product_menu .draw_product_btn:hover{
+            transform:scale(1.1);
+        }
+        #draw_product_menu .draw_product_btn:active{
+            transform:scale(0.8);
         }
         #draw_product_menu .draw_product_btn span{
             line-height:3rem!important;
@@ -879,7 +969,7 @@ ul#slider{
         ul#slider li.slide_clip a{
             display:block;
             position:relative;
-            padding: 9% 5% 5%;
+            padding: 7.5% 3% 3%
         }
 
         ul#slider li.slide_clip div.noren{
@@ -947,13 +1037,23 @@ ul#slider{
         margin-top:15vw;
     }
         #ippin li.store div.chef{
+            overflow: hidden;
+            position: relative;
             float:left;
             width:57%;
             height:24vw;
+            border-radius:1vw;
+        }
+        #ippin li.store div.chef_bg{
+            width:100%;
+            height:100%;
             background-repeat:no-repeat;
             background-position:center;
             background-size:100% auto;
-            border-radius:1vw;
+            transition: all .3s ease-out;
+        }
+        #ippin li.store:hover div.chef_bg{
+            transform: scale(1.1);
         }
         div.ribbon_flow{
             position:absolute;
@@ -1037,6 +1137,12 @@ ul#slider{
             width:85%;
             height:62%;
             margin:-10% auto 0;
+        }
+        #ippin li.store div.ippin_img .photo{
+            transition: .3s;
+        }
+        #ippin li.store:hover div.ippin_img .photo{
+            transform: scale(1.1);
         }
         #ippin li.store div.ippin_img img{
             display:none;
@@ -1165,101 +1271,7 @@ div#concept #concept_box .concept_wrap{
     text-align:start;
     padding: 0;
 }
-
-/*------------------------------------------------
-
-concept_page
-
--------------------------------------------------*/
-#concept_slider_box{
-  height:50rem;
-  width:100%;
-}
-#concept_slider_box .slick-list,
-#concept_slider_box .slick-track,
-#concept_slider_box .slider_slide{
-  height:100%;
-}
-#concept_slider_box .slider_slide{
-  margin:0.1rem;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center center;
-}
-.concept_table{
-  display:flex;
-  flex-flow:row nowrap;
-  padding-top:5rem;
-}
-.concept_title{
-  width:32%;
-}
-.concept_title h3{
-  font-size:1.8rem;
-}
-.concept_text{
-  width:68%;
-  font-size:1.5rem;
-  line-height:2.8rem;
-  letter-spacing:.1rem;
-}
-.concept_text2{
-  padding-top:5rem;
-  font-size:1.5rem;
-  line-height:2.8rem;
-  letter-spacing:.1rem;
-  text-align:center;
-}
-.concept_text .foJ_Mid{
-  text-decoration-line: underline;
-  text-decoration-color: #000;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.5rem;
-}
-.concept_text2 span{
-  font-size:2.2rem;
-  display:block;
-  padding:0 0 5rem;
-}
-.concept_illust_container{
-  width:100%;
-  display:flex;
-  flex-flow:row nowrap;
-}
-.concept_illust_container .illust1,
-.concept_illust_container .illust2,
-.concept_illust_container .illust3{
-  width:33%;
-  aspect-ratio:1/1;
-  position:relative;
-  overflow:visible;
-}
-.concept_illust_container .illust1 img,
-.concept_illust_container .illust2 img,
-.concept_illust_container .illust3 img{
-  width:100%;
-  aspect-ratio:1/1;
-}
-.concept_illust_container span{
-  font-size:1.5rem;
-  position:absolute;
-  bottom:7%;
-  width:100%;
-  display:block;
-  text-align:center;
-}
-.concept_illust_container .illust1:after,
-.concept_illust_container .illust2:after{
-  content:"";
-  display:block;
-  position:absolute;
-  top:calc(50% - 1rem);
-  right:-1rem;
-  background: #ffcc00;
-  height: calc(tan(60deg) * 3rem / 2);
-  width: 2rem;
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
+            
 /*------------------------------------------------
 
 products collection
@@ -1581,6 +1593,7 @@ div#product_spec_box .image_box a{
     background: #FFF;
     margin: 0.75rem 0 0;
     border-radius: 0.5rem;
+    transition: .3s;
 }
 div#product_spec_box #product_info_box a{
     box-shadow: 0 0.1rem 0.1rem #84774d;
@@ -1600,7 +1613,13 @@ div#product_spec_box .text_field{
     font-size: 1.5rem;
     line-height: 2.4rem;
 }
-
+div#product_spec_box #product_info_box a:not(.active):hover,
+div#product_spec_box #store_info_box a:not(.active):hover{
+}
+div#product_spec_box #product_info_box a:active,
+div#product_spec_box #store_info_box a:active{
+    transform:scale(0.8);
+}
 div#product_spec_box .text_field h4{
     display: block;
     font-size:1.6rem;
@@ -1969,14 +1988,21 @@ ol.shopping_guide_flow li::before {
 }
 ol.shopping_guide_flow li img{
     float:right;
+    display:block;
     border:5px solid #F4F4F4;
     border-radius: 1rem;
     margin:0 0 1rem 1rem;
     width:35%;
     height:auto;
+    transition: .3s;
 }
 ol.shopping_guide_flow li img:hover{
     border:5px solid #FC0;
+    transform: scale(1.1);
+}
+
+ol.shopping_guide_flow li img:active{
+    transform: scale(0.8);
 }
 ol.shopping_guide_flow li::after {/*clear*/
     content: "";
@@ -2295,7 +2321,6 @@ form#address_form_new label:has(span){
     border-radius: 0;
     border-bottom: none;
     margin-right: 0;
-    font-weight: normal;
 }
 .oh_th_date,
 .oh_td_date{
@@ -2988,10 +3013,18 @@ a.btn{
     margin: auto;
     text-decoration: none;
     box-shadow: 0 0.1rem 0rem #333;
+    transition: all 0.3s;
 }
+.store:hover .btn,
 .btn:hover,
 a.btn:hover{
-    opacity: 0.5;
+    background: #FC0;
+    transform:scale(1.05);
+}
+.store:active .btn,
+.btn:active,
+a.btn:active{
+    transform:scale(0.9);
 }
     .btn.inline-block{
         display:inline-block;
@@ -3039,15 +3072,15 @@ a.t_link{
     display:inline-block;
     font-size:1.4rem;
     line-height:1.5rem;
-    text-decoration-line: underline;
+    /*text-decoration-line: underline;
     text-decoration-color: #000;
     text-decoration-thickness: 1px;
-    text-underline-offset: 0.5rem;
+    text-underline-offset: 0.5rem;*/
     color:#000;
 }
 .t_link:hover, 
 a.t_link:hover{
-    opacity: 0.5;
+    /*opacity: 0.5;*/
 }
 .t_link.no_deco{
     display:inline-block;
@@ -3154,12 +3187,6 @@ a.d,
 br.d,
 span.d{
     display:inline;
-}
-a.t_m,
-br.t_m,
-span.t_m{
-    display:none;
-  
 }
 a.m,
 br.m,
