@@ -65,7 +65,6 @@ div#wrap{
 
 }
 .content a:active{
-    opacity:0.5;
 }
 .content.innerpage_content{
     padding-top:12rem;
@@ -3125,10 +3124,11 @@ a.t_link{
     text-decoration-color: #000;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.5rem;
+  transition:0.3s;
 }
 .t_link:active, 
 a.t_link:active{
-    opacity: 0.5;
+    transform:scale(0.8);
 }
 .t_link.no_deco{
     display:inline-block;
