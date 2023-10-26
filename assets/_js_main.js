@@ -295,7 +295,6 @@ if($('a.click_to_active').length){
 }
 //----------クリックしたら指定した要素に".active"を付与し、兄弟要素から".active"を削るここまで
 
-
     //フェードインアニメーション
     $(window).scroll(function (){
         $('.fadein').each(function(){
