@@ -1,11 +1,15 @@
 <div class="content">
   <div id="notfound">
-    <p>ページは見つかりませんでしたが、代わりの何かを見つけて頂きたく、<br>
-    佐伯市の豆知識をご用意しました。</p>
+    <p></p>
     <div id="episode">
-      <h3 id="ep_title">佐伯市ちょっと豆知識①</h3>
+      <h3 id="ep_title"></h3>
       <p id="ep_inner"></p>
-      
+      {%- assign min = 0 -%}
+{%- assign max = 9 -%}
+{%- assign diff = max | minus: min -%}
+{%- assign random_number = "now" | date: "%N" | modulo: diff | plus: min -%}
+
+{{ random_number }}
     </div>
     <a href="{{ routes.all_products_collection_url }}" class="t_link">
         <div class="icon back"><div></div></div>
@@ -13,6 +17,7 @@
       </a>
   </div>
 </div>
+
 <script>
 console.log("test");
 </script>
