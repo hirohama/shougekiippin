@@ -1980,7 +1980,8 @@ form#ContactForm select,
 form#ContactForm textarea{
     width:100%;
 }
-/*-----------customer_login,recover------------*/
+/*-----------customer_login,recover,reset------------*/
+.reset-password form,
 div#customer_login_form_box,
 div#recover_customer_password_form_box{
     display: block;
@@ -1993,7 +1994,7 @@ div#recover_customer_password_form_box{
     border: none;
     text-align: center;
 }
-
+.reset-password form label,
 div#customer_login_form_box label,
 div#recover_customer_password_form_box label{
     display:block;
@@ -2007,14 +2008,19 @@ div#customer_login_form_box input[type="tel"],
 div#customer_login_form_box input[type="password"],
 div#customer_login_form_box select,
 div#customer_login_form_box textarea,
-div#recover_customer_password_form_box input[type="email"]{
+div#recover_customer_password_form_box input[type="email"],
+.reset-password form input[type="password"]{
     width:100%;
 }
+.reset-password form .field,
 div#customer_login_form_box .field,
 div#recover_customer_password_form_box .field{
     width:90%;
     margin:auto;
     padding:1.5vw 0 0.5vw;
+}
+.reset-password button{
+  margin-top:3rem;
 }
 .make_account_btn{
     margin-bottom:3rem!important;
@@ -2049,10 +2055,12 @@ div#recover_btn_box button{
     display:block;
     margin:auto;
 }
+.customer.login .form__message,
 .customer.login .form__message{
     text-align: center;
     padding:2rem 0;
 }
+.reset-password .form_alert.error,
 .customer.login .form_alert.error{
     width:90%;
     margin:auto;
