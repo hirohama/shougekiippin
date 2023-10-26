@@ -275,7 +275,8 @@ if($('#notfound').length){
   var min = 0 ;
   var max = episodes.length-1 ;
   var epnum = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-  
+  $("#ep_title").html(episodes[epnum].t);
+  $("#ep_inner").html(episodes[epnum].e);
 }    
 //--------------404の文章ここまで
 //--------------SVGのパスをランダムで返す関数
