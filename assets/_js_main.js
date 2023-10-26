@@ -273,7 +273,7 @@ if($('#notfound').length){
   if(episodes[epnum].i!="" && episodes[epnum].i!=undefined){
     $("#ep_image").html("<img src='"+episodes[epnum].i+"'>").css("display","block");
   }
-}    
+}
 //--------------404の文章ここまで
 //--------------SVGのパスをランダムで返す関数
 const SVGPath=[
