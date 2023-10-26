@@ -58,41 +58,6 @@ common
 -------------------------------------------------*/
 
 /*-----------------link_variation------------------*/
-.l_line{
-    display: inline-block;
-    position:relative;
-    cursor: pointer;
-    transition: all .3s;
-}
-.l_line:after {
-  position: absolute;
-  bottom: -10%;
-  left: 0;
-  content: '';
-  width: 0;
-  height: 1px;
-  background-color: #000;
-  transition: all .3s;
-  opacity: 1;
-  /*transform: translateX(-50%);*/
-}
-.l_line:hover{
-}
-.l_line:hover:after{
-  width: 100%;
-  opacity: 0.75;
-}
-.l_line:active{
-    transform: scale(0.8);
-}
-.l_opacity{
-    opacity:1;
-    transition: all .3s;
-}
-.l_opacity{
-    opacity: 0.75;
-}
-
 .l_bg{
     transition: all 0.3s;
 }
