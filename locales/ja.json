@@ -454,11 +454,11 @@
       "submit": "送信する"
     },
     "reset_password": {
-      "title": "アカウントのパスワードをリセットする",
+      "title": "パスワードのリセット",
       "subtext": "新しいパスワードを入力してください",
       "password": "パスワード",
-      "password_confirm": "パスワードを確認する",
-      "submit": "パスワードをリセットする"
+      "password_confirm": "パスワード（確認用）",
+      "submit": "リセットする"
     },
     "order": {
       "title": "ご注文({{ name }})",
