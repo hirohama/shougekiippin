@@ -1,19 +1,19 @@
 <div class="content">
   <div class="innerpage_wrapper btm">
     <div class="editor_content">
-    <div id="notfound" class="clearfix">
-      ページは見つかりませんでしたが、何かを見つけてほしい。<br>
-      ということで佐伯市の豆知識や、観光のご案内です。
-      <div id="episode">
-        <h3 id="ep_title" class="foJ_Mid"></h3>
-        <div id="ep_image"></div>
-        <p id="ep_inner" class="foJ_Thin"></p>
+      <div id="notfound">
+        ページは見つかりませんでしたが、何かを見つけてほしい。<br>
+        ということで佐伯市の豆知識や、観光のご案内です。
+        <div id="episode" class="clearfix">
+          <h3 id="ep_title" class="foJ_Mid"></h3>
+          <div id="ep_image"></div>
+          <p id="ep_inner" class="foJ_Thin"></p>
+        </div>
+        <a href="{{ routes.all_products_collection_url }}" class="t_link">
+            <div class="icon back"><div></div></div>
+            {{ 'general.continue_shopping' | t }}
+          </a>
       </div>
-      <a href="{{ routes.all_products_collection_url }}" class="t_link">
-          <div class="icon back"><div></div></div>
-          {{ 'general.continue_shopping' | t }}
-        </a>
-    </div>
     </div>
   </div>
 </div>
