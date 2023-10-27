@@ -9,38 +9,23 @@ body,html{
 
 @media screen and (min-width: 1024px) {
     /*ノートPC、タブレット横向き（1024px以上）のスタイル*/
-
+    :root {
+      --content-border: 10px;
+      --content-allborder: 20px;
+    }
     html {
         font-size: 62.5%;
     }
-    div#wrap{
-        border-top:10px solid #FC0;
-        border-bottom:10px solid #FC0;
-    }
-    .content{
-        border-left:10px solid #FC0;
-        border-right:10px solid #FC0;
-    }
-    ul#slider{
-        border-bottom:10px solid #FC0;
-    }
+
 }
 @media screen and (min-width: 1280px) {
     /*デスクトップ（1280px以上）のスタイル*/
-
+    :root {
+      --content-border: 20px;
+      --content-allborder: 40px;
+    }
     html {
         font-size: 68%;
-    }
-    div#wrap{
-        border-top:20px solid #FC0;
-        border-bottom:20px solid #FC0;
-    }
-    .content{
-        border-left:20px solid #FC0;
-        border-right:20px solid #FC0;
-    }
-    ul#slider{
-        border-bottom:20px solid #FC0;
     }
 }
 
@@ -50,6 +35,17 @@ body,html{
     html {
         font-size: 75%;
     }
+}
+div#wrap{
+    border-top:var(--content-border) solid #FC0;
+    border-bottom:var(--content-border) solid #FC0;
+}
+.content{
+    border-left:var(--content-border) solid #FC0;
+    border-right:var(--content-border) solid #FC0;
+}
+ul#slider{
+    border-bottom:var(--content-border) solid #FC0;
 }
 /*------------------------------------------------
 
@@ -413,10 +409,15 @@ menu #menu_back{
     border-radius: 0 0 0 2rem;
     background: #FC0;
     transition: all 0.5s ease-out;
+    opacity:1;
 }
+/*menu.close.opec #menu_back{
+    opacity:1;
+}*/
 menu.close #menu_back{
     top:calc(7.5rem - 110vh);
     right:calc(33rem - 110vw);
+    opacity:1;
 }
 
 menu #mega_menu{
@@ -885,15 +886,106 @@ div#mv{
     position:relative;
 }
 
-#mv_mobile{
-    display:none;
-}
-#mv_tablet{
-    display:none;
-}
-#mv_pc{
+#mv_box{
+    position: relative;
+    overflow:hidden;
     display:block;
+    width:100%;
+    aspect-ratio: 2.4 / 1;
 }
+img#food_01{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 25vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 24vw;
+    left: calc(58vw - var(--content-border));
+
+}
+img#food_02{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 23vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 14vw;
+    left: calc(-2vw - var(--content-border));
+}
+img#food_03{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 30vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -15vw;
+    left: calc(55vw - var(--content-border));
+}
+img#food_04{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 20vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -5vw;
+    left: calc(-5vw - var(--content-border));
+}
+img#food_05{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 22vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 24vw;
+    left: calc(20vw - var(--content-border));
+}
+img#food_06{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 28vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -13vw;
+    left: calc(16vw - var(--content-border));
+}
+img#food_07{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 28vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 13vw;
+    left: calc(79vw - var(--content-border));
+}
+#mv_copy{
+    transition: scale 1s;
+    position: absolute;
+    width: 8vw;
+    top: 15vw;
+    left: calc(28vw - var(--content-border));
+}
+#mv_logo{
+    transition: scale 1s;
+    position: absolute;
+    width: 18vw;
+    top: 9.5vw;
+    left: calc(41vw - var(--content-border));
+}
+#mv_city{
+    transition: scale 1s;
+    position: absolute;
+    width: 18vw;
+    top: 15vw;
+    left: calc(62vw - var(--content-border));
+}
+
 div#mv_town{
     position:absolute;
     bottom:0;left:0;

@@ -32,9 +32,21 @@ $(function(){
         menuIsOpen = !menuIsOpen;
     });
 //--------------グローバルメニュー（メガメニュー）ここまで
-
-
-
+/*if($('#mv').length){
+    function menu_back_check(){
+        var mvheight=$("#mv").outerHeight();
+        var scroll = $(window).scrollTop();
+        if(scroll>mvheight){
+            $("menu").addClass("opec");
+        }else{
+            $("menu").removeClass("opec");
+        }
+    }
+    $(window).on('load scroll resize', function () {
+        //現在の位置が"scrollNum"以上
+        menu_back_check();
+    });
+}*/
 //---------------product時ヘッダードロワーメニュー、レイアウト調整など
 
 if($('#draw_product_menu').length){
@@ -250,8 +262,26 @@ if($('.feature_list').length){
     });
 }
 //----------特集商品リストスライダーここまで
-
-
+//---------------topアニメーション
+if($('#mv').length){
+ $(window).on('load', function () {
+    gsap.fromTo('.animemv', {
+       opacity: 0,
+       scale:0.1
+    },
+    {
+       opacity: 1,
+       scale:1,
+       stagger: {
+           each: .25,
+           from:"random"
+       },
+       ease: "elastic.out(1.0,0.3)",
+       duration: 1.5
+    })
+ });
+}
+//---------------topアニメーションここまで
 //--------------404の文章
 if($('#notfound').length){
   const episodes=[

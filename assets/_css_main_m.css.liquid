@@ -6,7 +6,10 @@ body,html{
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
-
+:root {
+  --content-border: 10px;
+  --content-allborder: 20px;
+}
 /*スマホ縦向き（640px以下）のスタイル*/
 
 html {
@@ -23,15 +26,15 @@ html {
     }
 }
 div#wrap{
-    border-top:10px solid #FC0;
-    border-bottom:10px solid #FC0;
+    border-top:var(--content-border) solid #FC0;
+    border-bottom:var(--content-border) solid #FC0;
 }
 .content{
-    border-left:10px solid #FC0;
-    border-right:10px solid #FC0;
+    border-left:var(--content-border) solid #FC0;
+    border-right:var(--content-border) solid #FC0;
 }
 ul#slider{
-    border-bottom:10px solid #FC0;
+    border-bottom:var(--content-border) solid #FC0;
 }
 
 /*------------------------------------------------
@@ -794,15 +797,103 @@ div#main_visual{
 div#mv{
     position:relative;
 }
-
-#mv_mobile{
+#mv_box{
+    position: relative;
+    overflow:hidden;
     display:block;
+    width:100%;
+    aspect-ratio: 1 / 1.7;
 }
-#mv_tablet{
-    display:none;
+img#food_01{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 55vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 110vw;
+    left: calc(-8vw - var(--content-border));
 }
-#mv_pc{
-    display:none;
+img#food_02{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 37vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -12vw;
+    left: calc(9vw - var(--content-border));
+}
+img#food_03{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 50vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 19vw;
+    left: calc(-20vw - var(--content-border));
+}
+img#food_04{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 40vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 70vw;
+    left: calc(-15vw - var(--content-border));
+}
+img#food_05{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 55vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: -15vw;
+    left: calc(62vw - var(--content-border));
+}
+img#food_06{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 52vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 45vw;
+    left: calc(71vw - var(--content-border));
+}
+img#food_07{
+    opacity:0;
+    transition: opacity .3s,scale 1s;
+    width: 55vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 103vw;
+    left: calc(50vw - var(--content-border));
+}
+#mv_copy{
+    transition: scale 1s;
+    position: absolute;
+    width: 24vw;
+    top: 12vw;
+    left: calc(38vw - var(--content-border));
+}
+#mv_logo{
+    transition: scale 1s;
+    position: absolute;
+    width: 50vw;
+    top: 50vw;
+    left: calc(25vw - var(--content-border));
+}
+#mv_city{
+    transition: scale 1s;
+    position: absolute;
+    width: 45vw;
+    top: 129vw;
+    left: calc(50vw - var(--content-border));
 }
 div#mv_town{
     position:absolute;
