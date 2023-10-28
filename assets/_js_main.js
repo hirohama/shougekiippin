@@ -274,19 +274,18 @@ if($('#mv').length){
     $img.each(function(){
         var this_src = $(this).attr('src');
         // src属性を空に
-         $(this).attr('src', '');
+        $(this).attr('src', '');
         // 読み込みを監視
-         $(this).on('load', function() {
-         console.log('画像の読み込みが完了しました');
-        });
-        // パスを再設定
-         $(this).attr('src', this_src);
 
-         loaded+=1;
-         if($imglength==loaded){
-            console.log("よみこまれました");
-            mv_animation();
-         }
+        $(this).on('load', function() {
+            loaded+=1;
+            if($imglength==loaded){
+                mv_animation();
+            }
+        });
+
+        $(this).attr('src', this_src);
+        // パスを再設定
     });
     function mv_animation_start(){
         timel.fromTo('#mv_loader',{
