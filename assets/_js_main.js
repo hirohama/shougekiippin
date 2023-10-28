@@ -264,29 +264,39 @@ if($('.feature_list').length){
 //----------特集商品リストスライダーここまで
 //---------------topアニメーション
 if($('#mv').length){
-    var timel=gsap.timeline({ repeat: 0});
-    mv_animation_start();
-    let $img = $('.mv_instance');
-    $imglength=$('.mv_instance').length;
-    var loaded=0;
-    // パスを取得
+    //cookieの確認
+    if (document.cookie.indexOf('visited=yes') === -1) {
+        document.cookie = 'visited=yes path=/';
+        console.log('初回のアクセスです');
+        var timel=gsap.timeline({ repeat: 0});
+        mv_animation_start();
+        let $img = $('.mv_instance');
+        $imglength=$('.mv_instance').length;
+        var loaded=0;
+        // パスを取得
 
-    $img.each(function(){
-        var this_src = $(this).attr('src');
-        // src属性を空に
-        $(this).attr('src', '');
-        // 読み込みを監視
+        $img.each(function(){
+            var this_src = $(this).attr('src');
+            // src属性を空に
+            $(this).attr('src', '');
+            // 読み込みを監視
 
-        $(this).on('load', function() {
-            loaded+=1;
-            if($imglength==loaded){
-                mv_animation();
-            }
+            $(this).on('load', function() {
+                loaded+=1;
+                if($imglength==loaded){
+                    mv_animation();
+                }
+            });
+
+            $(this).attr('src', this_src);
+            // パスを再設定
         });
-
-        $(this).attr('src', this_src);
-        // パスを再設定
-    });
+    } else {
+        // 2回目以降のアクセス
+        console.log('2回目以降のアクセスです');
+        $(".logomv").css("opacity",1);
+        $(".mv_instance").css("opacity",1);
+    }
     function mv_animation_start(){
         timel.fromTo('#mv_loader',{
             x:"110vw"
