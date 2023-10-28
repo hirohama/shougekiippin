@@ -1,17 +1,73 @@
 <div id="main_visual" class="content">
     <!--メインビジュアル部分-->
+    <style>
+      img#food_01,
+      img#food_02,
+      img#food_03,
+      img#food_04,
+      img#food_05,
+      img#food_06,
+      img#food_07,
+      #mv_copy,
+      #mv_logo,
+      #mv_city
+      {
+        opacity:0;
+      }
+      #mv_loader{
+        opacity:0;
+        position: absolute;
+      }
+      #loading_txtbox{
+        position: relative;
+        width: 100%;
+        height:2rem;
+        overflow: hidden;
+      }
+      #tx_loading,#tx_done{
+        transition: 0.3s;
+        position: absolute;
+        width:100%;
+        text-align:center;
+        left:0;
+      }
+      #tx_loading{
+          opacity:1;
+          top:0rem;
+      }
+      #tx_done{
+          opacity:0;
+          top:0rem;
+      }
+    </style>
     <div id="mv">
         <div id="mv_box">
-          <img src="{{ '_img_food_01.png' | asset_url }}" alt="" class="animemv" id="food_01">
-          <img src="{{ '_img_food_02.png' | asset_url }}" alt="" class="animemv" id="food_02">
-          <img src="{{ '_img_food_03.png' | asset_url }}" alt="" class="animemv" id="food_03">
-          <img src="{{ '_img_food_04.png' | asset_url }}" alt="" class="animemv" id="food_04">
-          <img src="{{ '_img_food_05.png' | asset_url }}" alt="" class="animemv" id="food_05">
-          <img src="{{ '_img_food_06.png' | asset_url }}" alt="" class="animemv" id="food_06">
-          <img src="{{ '_img_food_07.png' | asset_url }}" alt="" class="animemv" id="food_07">
-          <div id="mv_copy"><img src="{{ '_img_mv_copy.svg' | asset_url }}" alt=""></div>
-          <div id="mv_logo"><img src="{{ '_img_mv_logo.svg' | asset_url }}" alt=""></div>
-          <div id="mv_city"><img src="{{ '_img_mv_city.svg' | asset_url }}" alt=""></div>
+          <div id="mv_loader">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.5 140"><defs><style>.bg{fill:#fff;fill-opacity:0}.truck{fill:#FC0;}</style></defs>
+              <g id="truck">
+                <rect class="bg" width="137.5" height="140"/>
+                <circle class="truck" cx="39.66" cy="126.16" r="10.15"/>
+                <circle class="truck" cx="103.31" cy="126.16" r="10.15"/>
+                <path class="truck" d="M50.1,53.19H121a4.35,4.35,0,0,1,4.35,4.35v44.55a2.26,2.26,0,0,1-2.26,2.26H48a2.26,2.26,0,0,1-2.26-2.26V57.59A4.4,4.4,0,0,1,50.1,53.19Z"/>
+                <path class="truck" d="M273.11,437.44V395.72H259.53a1.94,1.94,0,0,0-1.8,1.23l-14.07,27.77a2,2,0,0,0-.14.72v25.89a1.94,1.94,0,0,0,2,1.94l12.88-.13a12.59,12.59,0,0,1,24.84-.36l20.62-.3a2.06,2.06,0,0,0,.26,0h18.38a12.6,12.6,0,0,1,24.68,0h8.73a.85.85,0,0,0,.85-.85V437.44Zm-6.48-14.69c0,.45-.27.82-.61.82h-13c-.43,0-.73-.57-.57-1.11L259.33,405a.65.65,0,0,1,.57-.52H266c.34,0,.61.36.61.81Z" transform="translate(-231.37 -329.87)"/>
+              </g>
+              <animateTransform attributeName="transform" dur="0.5s" type="translate" values="0 2 ; 0 -2; 0 2" repeatCount="indefinite" begin="0.3"></animateTransform>
+            </svg>
+            <div id="loading_txtbox">
+              <span id="tx_loading" class="foE">LOADING...</span>
+              <span id="tx_done" class="foE">DONE!</span>
+            </div>
+          </div>
+          <img src="{{ '_img_food_01.png' | asset_url }}" alt="" class="animemv mv_instance" id="food_01">
+          <img src="{{ '_img_food_02.png' | asset_url }}" alt="" class="animemv mv_instance" id="food_02">
+          <img src="{{ '_img_food_03.png' | asset_url }}" alt="" class="animemv mv_instance" id="food_03">
+          <img src="{{ '_img_food_04.png' | asset_url }}" alt="" class="animemv mv_instance" id="food_04">
+          <img src="{{ '_img_food_05.png' | asset_url }}" alt="" class="animemv mv_instance" id="food_05">
+          <img src="{{ '_img_food_06.png' | asset_url }}" alt="" class="animemv mv_instance" id="food_06">
+          <img src="{{ '_img_food_07.png' | asset_url }}" alt="" class="animemv mv_instance" id="food_07">
+          <div id="mv_copy" class="logomv"><img src="{{ '_img_mv_copy.svg' | asset_url }}" class="mv_instance"alt="" ></div>
+          <div id="mv_logo" class="logomv"><img src="{{ '_img_mv_logo.svg' | asset_url }}" class="mv_instance"alt=""></div>
+          <div id="mv_city" class="logomv"><img src="{{ '_img_mv_city.svg' | asset_url }}" class="mv_instance"alt=""></div>
         </div>
         <div id="mv_town"></div>
     </div>

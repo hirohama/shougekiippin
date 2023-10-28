@@ -885,6 +885,15 @@ div#main_visual{
 div#mv{
     position:relative;
 }
+#mv_loader{
+    position: relative;
+    width:7rem;
+    left:calc(50% - 3.5rem);
+    top:calc(50% - 5rem);
+}
+#mv_loader svg{
+    width:100%;
+}
 
 #mv_box{
     position: relative;
@@ -965,6 +974,7 @@ img#food_07{
     left: calc(79vw - var(--content-border));
 }
 #mv_copy{
+    opacity:0;
     transition: scale 1s;
     position: absolute;
     width: 8vw;
@@ -972,6 +982,7 @@ img#food_07{
     left: calc(28vw - var(--content-border));
 }
 #mv_logo{
+    opacity:0;
     transition: scale 1s;
     position: absolute;
     width: 18vw;
@@ -979,6 +990,7 @@ img#food_07{
     left: calc(41vw - var(--content-border));
 }
 #mv_city{
+    opacity:0;
     transition: scale 1s;
     position: absolute;
     width: 18vw;

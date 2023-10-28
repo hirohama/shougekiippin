@@ -264,22 +264,93 @@ if($('.feature_list').length){
 //----------特集商品リストスライダーここまで
 //---------------topアニメーション
 if($('#mv').length){
- $(window).on('load', function () {
-    gsap.fromTo('.animemv', {
-       opacity: 0,
-       scale:0.1
-    },
-    {
-       opacity: 1,
-       scale:1,
-       stagger: {
-           each: .25,
-           from:"random"
-       },
-       ease: "elastic.out(1.0,0.3)",
-       duration: 1.5
-    })
- });
+    var timel=gsap.timeline({ repeat: 0});
+    mv_animation_start();
+    let $img = $('.mv_instance');
+    $imglength=$('.mv_instance').length;
+    var loaded=0;
+    // パスを取得
+
+    $img.each(function(){
+        var this_src = $(this).attr('src');
+        // src属性を空に
+         $(this).attr('src', '');
+        // 読み込みを監視
+         $(this).on('load', function() {
+         console.log('画像の読み込みが完了しました');
+        });
+        // パスを再設定
+         $(this).attr('src', this_src);
+
+         loaded+=1;
+         if($imglength==loaded){
+            console.log("よみこまれました");
+            mv_animation();
+         }
+    });
+    function mv_animation_start(){
+        timel.fromTo('#mv_loader',{
+            x:"110vw"
+            },{
+            keyframes: [
+                { duration: 0, opacity: 1 },
+                { duration: 1, x: 0 }
+            ],
+            ease: "circ.out"
+            }
+        );
+    }
+    function mv_animation(){
+        timel.to('#tx_loading',{
+                delay:1,
+                y:-20,
+                duration: 0.3,
+                ease: "sine.in"
+            })
+            .fromTo('#tx_done',{
+                y:20
+            },
+            {
+                keyframes: [
+                    { duration: 0, opacity: 1 },
+                    { duration: 0.3, y: 0 }
+                ],
+                ease: "sine.in"
+            },"<")
+            .to('#mv_loader',{
+                duration: 1,
+                x: "-60vw",
+                ease: "expo.in"
+            },">0.5")
+            .fromTo('.logomv', {
+               opacity: 0,
+               scale:0.1
+            },
+            {
+               opacity: 1,
+               scale:1,
+               stagger: {
+                   each: .25,
+                   from:"center"
+               },
+               ease: "elastic.out(1.0,0.3)",
+               duration: 1.5
+            },">")
+            .fromTo('.animemv', {
+               opacity: 0,
+               scale:0.1
+            },
+            {
+               opacity: 1,
+               scale:1,
+               stagger: {
+                   each: .25,
+                   from:"random"
+               },
+               ease: "elastic.out(1.0,0.3)",
+               duration: 1.5
+            },">")
+     }//mv_animation
 }
 //---------------topアニメーションここまで
 //--------------404の文章
