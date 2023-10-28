@@ -277,13 +277,16 @@ if($('#mv').length){
          $(this).attr('src', '');
         // 読み込みを監視
          $(this).on('load', function() {
-             console.log('画像の読み込みが完了しました');
-             $(this).attr('src', this_src);
-             loaded+=1;
-             if($imglength==loaded){
-                mv_animation();
-             }
+         console.log('画像の読み込みが完了しました');
         });
+        // パスを再設定
+         $(this).attr('src', this_src);
+
+         loaded+=1;
+         if($imglength==loaded){
+            console.log("よみこまれました");
+            mv_animation();
+         }
     });
     function mv_animation_start(){
         timel.fromTo('#mv_loader',{
