@@ -267,7 +267,6 @@ if($('#mv').length){
     //cookieの確認
     if (document.cookie.indexOf('visited=yes') === -1) {
         document.cookie = 'visited=yes path=/';
-        console.log('初回のアクセスです');
         var timel=gsap.timeline({ repeat: 0});
         mv_animation_start();
         let $img = $('.mv_instance');
