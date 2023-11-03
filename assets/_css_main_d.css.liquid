@@ -3404,7 +3404,7 @@ a.t_link:active{
         background-repeat: no-repeat;
         background-position: 50% 50%;
     }
-    .t_link .icon:before{
+    .t_link:not(.down,.up) .icon:before{
         content:"";
         position:absolute;
         top:0.25rem;left:0;
@@ -3416,10 +3416,10 @@ a.t_link:active{
         background-repeat: no-repeat;
         background-position: 50% 50%;
     }
-    .t_link:hover .icon div{
+    .t_link:not(.down,.up):hover .icon div{
         opacity:0;
     }
-    .t_link:hover .icon:before{
+    .t_link:not(.down,.up):hover .icon:before{
         opacity:1;
     }
 .btn .icon.blank,
