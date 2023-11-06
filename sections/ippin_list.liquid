@@ -53,7 +53,7 @@
                 <div class="btn">
                   <span class="info foJ_Mid">
                     {% for variant in product.variants %}
-                      {% if variant.option1 == "no_sell" %}
+                      {% if variant.option1 == "no_sell" or variant.option1 == false %}
                       <span class="tax_str foJ_Mid">商品情報をみる</span>
                       {% else %}
                       <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
