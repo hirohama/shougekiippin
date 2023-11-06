@@ -84,7 +84,9 @@
             <span class="tax_str foJ_Mid">(税別)</span>
           {% endfor %}
         </div>
-                    {{ product.variants.options }}
+           {% for variant in product.variants %}
+            <p>{{ variant.title }}</p>
+            {% endfor %}
           {% if product.variant.option1=="no_sell" %}
             aaa
             {% else %}
