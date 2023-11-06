@@ -308,7 +308,10 @@
           <!-- 数量セレクタここまで -->
         </div>
         {% endif %}
-
+          
+        {% if variant.option1=="no_sell" or variant.option1== false %}
+          現在販売しておりません。
+          {% else %}
         <!-- カートに入れるボタンここから -->
         {%- render 'buy-buttons',
           block: block,
@@ -318,6 +321,7 @@
           show_pickup_availability: true
         -%}
         <!-- カートに入れるボタンここまで -->
+          {% endif %}
         {% endfor %}
         </product-info>
       </div>
