@@ -307,6 +307,7 @@
         </div>
           <!-- 数量セレクタここまで -->
         </div>
+        {% endif %}
 
         <!-- カートに入れるボタンここから -->
         {%- render 'buy-buttons',
@@ -317,7 +318,6 @@
           show_pickup_availability: true
         -%}
         <!-- カートに入れるボタンここまで -->
-        {% endif %}
         {% endfor %}
         </product-info>
       </div>
