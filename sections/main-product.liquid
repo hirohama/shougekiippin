@@ -84,14 +84,15 @@
             <span class="tax_str foJ_Mid">(税別)</span>
           {% endfor %}
         </div>
-        <div class="count foJ_Bld">
-          <!-- 数量セレクタ -->
-          {{ variant.option1 }}
+                    {{ variant.option1 }}
           {% if product.variant.option1=="no_sell" %}
             aaa
             {% else %}
             bbb
             {% endif %}
+        <div class="count foJ_Bld">
+          <!-- 数量セレクタ -->
+
           <div
             id="Quantity-Form-{{ section.id }}"
             class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
