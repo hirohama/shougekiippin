@@ -221,7 +221,6 @@ if($('#slider').length){
 //---------------indexスライダーアニメーションここまで
 //--------------conceptスライダー
 if($('#concept_slider').length){
-  console.log("a");
   $('#concept_slider_box').slick({
     autoplay: true, // 自動でスクロール
     autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
