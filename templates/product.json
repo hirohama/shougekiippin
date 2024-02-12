@@ -2,17 +2,6 @@
   "sections": {
     "c79a481a-6218-4098-9826-5de5aa6e069b": {
       "type": "main-product",
-      "blocks": {
-        "variant_picker_4QncXP": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        }
-      },
-      "block_order": [
-        "variant_picker_4QncXP"
-      ],
       "settings": {
         "enable_sticky_info": true,
         "media_size": "large",
