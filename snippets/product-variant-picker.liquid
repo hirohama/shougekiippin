@@ -12,6 +12,7 @@
 {%- unless product.has_only_default_variant -%}
   test
   {%- if block.settings.picker_type == 'button' -%}
+    test2
     <variant-radios
       id="variant-radios-{{ section.id }}"
       class="no-js-hidden"
@@ -33,6 +34,7 @@
       </script>
     </variant-radios>
   {%- else -%}
+    test3
     <variant-selects
       id="variant-selects-{{ section.id }}"
       class="no-js-hidden"
