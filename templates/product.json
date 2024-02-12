@@ -3,7 +3,7 @@
     "c79a481a-6218-4098-9826-5de5aa6e069b": {
       "type": "main-product",
       "blocks": {
-        "variant_picker_pF6HmE": {
+        "variant_picker_6j8GVC": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button"
@@ -11,7 +11,7 @@
         }
       },
       "block_order": [
-        "variant_picker_pF6HmE"
+        "variant_picker_6j8GVC"
       ],
       "settings": {
         "enable_sticky_info": true,
