@@ -86,6 +86,7 @@
             <span class="tax_str foJ_Mid">(税別)</span-->
         </div>
         {% endif %}
+        {% endfor %}
         {% if variant.option1=="no_sell" or variant.option1== false %}
           
         {% else %}
@@ -322,7 +323,6 @@
         -%}
         <!-- カートに入れるボタンここまで -->
         {% endif %}
-        {% endfor %}
         </product-info>
       </div>
     </div>
