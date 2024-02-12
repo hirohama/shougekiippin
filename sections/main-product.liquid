@@ -73,16 +73,22 @@
 
         {%- for block in section.blocks -%}
           {%- case block.type -%}
+
             {%- when '@app' -%}
+{% comment %}
               {% render block %}
+{% endcomment %}
             {%- when 'text' -%}
+{% comment %}
               <p
                 class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                 {{ block.shopify_attributes }}
               >
                 {{- block.settings.text -}}
               </p>
+{% endcomment %}
             {%- when 'title' -%}
+{% comment %}
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
                 <a href="{{ product.url }}" class="product__title">
@@ -91,7 +97,9 @@
                   </h2>
                 </a>
               </div>
+{% endcomment %}
             {%- when 'price' -%}
+{% comment %}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
                   product: product,
@@ -120,7 +128,9 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
+{% endcomment %}
             {%- when 'inventory' -%}
+{% comment %}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
                 {{ block.shopify_attributes }}
@@ -167,13 +177,17 @@
                   {%- endif -%}
                 {%- endif -%}
               </p>
+{% endcomment %}
             {%- when 'description' -%}
+{% comment %}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                   {{ product.description }}
                 </div>
               {%- endif -%}
+{% endcomment %}
             {%- when 'sku' -%}
+{% comment %}
               <p
                 class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
                 id="Sku-{{ section.id }}"
@@ -182,9 +196,13 @@
               >
                 <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span> {{- product.selected_or_first_available_variant.sku -}}
               </p>
+{% endcomment %}
             {%- when 'custom_liquid' -%}
+{% comment %}
               {{ block.settings.custom_liquid }}
+{% endcomment %}
             {%- when 'collapsible_tab' -%}
+{% comment %}
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
                   <summary>
@@ -202,13 +220,14 @@
                   </div>
                 </details>
               </div>
+{% endcomment %}
             {%- when 'quantity_selector' -%}
+{% comment %}
               <div
                 id="Quantity-Form-{{ section.id }}"
                 class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                 {{ block.shopify_attributes }}
               >
-                {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
                 {% # theme-check-disable %}
                 {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
                 {% # theme-check-enable %}
@@ -390,7 +409,10 @@
                   </volume-pricing>
                 {%- endif -%}
               </div>
+{% endcomment %}
             {%- when 'popup' -%}
+
+{% comment %}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
                 data-modal="#PopupModal-{{ block.id }}"
@@ -408,18 +430,23 @@
               <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
                 {{- block.settings.text -}}
               </a>
+{% endcomment %}
             {%- when 'share' -%}
+{% comment %}
               {% assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin %}
               {% render 'share-button',
                 block: block,
                 share_link: share_url
               %}
-
+{% endcomment %}
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
+{% comment %}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+{% endcomment %}
             {%- when 'rating' -%}
+{% comment %}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
                   assign rating_decimal = 0
@@ -455,7 +482,9 @@
                   </span>
                 </p>
               {%- endif -%}
+{% endcomment %}
             {%- when 'complementary' -%}
+{% comment %}
               <product-recommendations class="complementary-products quick-add-hidden no-js-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ block.settings.product_list_limit }}&intent=complementary">
                 {%- if recommendations.performed and recommendations.products_count > 0 -%}
                   <aside aria-label="{{ 'accessibility.complementary_products' | t }}" {{ block.shopify_attributes }}{% if block.settings.make_collapsible_row %} class="product__accordion accordion"{% endif %}>
@@ -536,10 +565,13 @@
                   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                 {%- endif -%}
               </product-recommendations>
+{% endcomment %}
+{% comment %}
             {%- when 'icon-with-text' -%}
               {% render 'icon-with-text',
                 block: block
               %}
+{% endcomment %}
           {%- endcase -%}
         {%- endfor -%}
 
