@@ -2,7 +2,30 @@
   "sections": {
     "c79a481a-6218-4098-9826-5de5aa6e069b": {
       "type": "main-product",
+      "blocks": {
+        "variant_picker_pF6HmE": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        }
+      },
+      "block_order": [
+        "variant_picker_pF6HmE"
+      ],
       "settings": {
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "related-products": {
