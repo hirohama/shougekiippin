@@ -79,8 +79,7 @@
           {% if variant.option1 == 'no_sell' or variant.option1 == false %}
           {% else %}
             <div class="quantities">
-            {%- liquid assign product = product -%}
-            {%- liquid assign block = block -%}
+            
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 
               <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
