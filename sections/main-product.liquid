@@ -77,7 +77,7 @@
             <span>{{ product.metafields.custom.storename }}</span>
           </h1>
         </div>
-        {% for variant in product.variants %}
+
         {% if variant.option1=="no_sell" or variant.option1== false %}
         {% else %}
         <div class="quantities">
@@ -87,7 +87,6 @@
             <span class="tax_str foJ_Mid">(税別)</span-->
         </div>
         {% endif %}
-        {% endfor %}
         {% if variant.option1=="no_sell" or variant.option1== false %}
           
         {% else %}
