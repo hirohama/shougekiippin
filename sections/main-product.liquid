@@ -71,13 +71,7 @@
 
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'variant_picker' -%}
-              {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-            {%- when 'buy_buttons' -%}
-          {%- endcase -%}
-        {%- endfor -%}
+
 
           
           <div class="item_name">
@@ -90,7 +84,13 @@
           {% if variant.option1 == 'no_sell' or variant.option1 == false %}
           {% else %}
             <div class="quantities">
-
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'variant_picker' -%}
+                    {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                  {%- when 'buy_buttons' -%}
+                {%- endcase -%}
+              {%- endfor -%}
               <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
               <!--
                 span class="price_str foE">{{ variant.price | money }}</span>
