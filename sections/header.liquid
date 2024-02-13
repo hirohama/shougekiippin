@@ -254,7 +254,7 @@
             </h1>
           </div>
           <!--//item_name-->
-        {% if variant.option1=="no_sell" or variant.option1== false %}
+        {% if product.variants[0].option1 == 'no_sell' %}
         {% else %}
           <div class="quantities">
               <span class="quantity_str foJ_Mid">{{ product.metafields.custom.num }}</span>
@@ -269,7 +269,7 @@
             {%- endcase -%}
           {%- endfor -%}
         {% endif %}
-        {% if variant.option1=="no_sell" or variant.option1== false %}
+        {% if product.variants[0].option1 == 'no_sell' %}
           
         {% else %}
           <div class="count foJ_Bld">
@@ -495,7 +495,7 @@
           <!--//.count-->
         {% endif %}
           
-        {% if variant.option1=="no_sell" or variant.option1== false %}
+        {% if product.variants[0].option1 == 'no_sell' %}
           <span class="info foJ_Mid">現在販売しておりません</span>
         {% else %}
         <!-- カートに入れるボタンここから -->

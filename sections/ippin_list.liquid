@@ -52,7 +52,7 @@
               <div class="btn_box">
                 <div class="btn">
                   <span class="info foJ_Mid">
-                      {% if product.variants[0].id == "no_sell" or variant.option1 == false %}
+                      {% if product.variants[0].option1 == "no_sell" %}
                       <span class="info foJ_Mid">商品情報をみる</span>
                       {% else %}
                       <span class="quantity_str foJ_Mid">{{ product.metafields.custom.num }}</span>
