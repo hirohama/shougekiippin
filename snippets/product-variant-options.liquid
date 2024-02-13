@@ -59,9 +59,10 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="foJ_Bld">
       {{ value -}}
-      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+      <span>(売り切れ)</span>
+      <!--span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span-->
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option

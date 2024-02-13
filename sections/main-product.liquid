@@ -84,6 +84,10 @@
           {% if variant.option1 == 'no_sell' or variant.option1 == false %}
           {% else %}
             <div class="quantities">
+              <span class="quantity_str foJ_Mid">{{ product.metafields.custom.num }}</span>
+              <span class="price_str foE">{{ product.price_min | money }}</span>
+                <span class="tax_str foJ_Mid">(税別)</span>
+            </div>
               {%- for block in section.blocks -%}
                 {%- case block.type -%}
                   {%- when 'variant_picker' -%}
@@ -91,12 +95,6 @@
                   {%- when 'buy_buttons' -%}
                 {%- endcase -%}
               {%- endfor -%}
-              <span class="quantity_str foJ_Mid">{{ variant.option1 }}</span>
-              <!--
-                span class="price_str foE">{{ variant.price | money }}</span>
-                <span class="tax_str foJ_Mid">(税別)</span
-              -->
-            </div>
           {% endif %}
           {% if variant.option1 == 'no_sell' or variant.option1 == false %}
           {% else %}

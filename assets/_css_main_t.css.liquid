@@ -1529,7 +1529,7 @@ div#product #product_introduce{
                     display: block;
                     font-size: 2.4rem;
                     line-height: 2.8rem;
-                    padding: 0 0 1rem;
+                    padding: 0 0 0;
             }
             #information .item_name span{
                 display: block;
@@ -2949,7 +2949,63 @@ select:focus {
     line-height: 2.8rem;
     padding: 2rem;
 }
-
+/*product label*/
+.product-form__input input[type='radio'] {
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+.product-form__input input[type='radio'] + label{
+    display: block;
+    background-color: #dedede;
+    width: calc(22rem - 2px);
+    margin: 0.5rem auto;
+    padding: 0.75rem 0.5rem 0.75rem 3rem;
+    cursor: pointer;
+    border-radius: 9999px;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    text-align: left;
+}
+.product-form__input input[type='radio'] + label::before{
+    content:"●";
+    width:1.4rem;
+    height: 1.4rem;
+    background-color: #FFF;
+    color:#FFF;
+    display:block;
+    position: absolute;
+    margin: 0rem -2rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    text-align: center;
+}
+.product-form__input input[type='radio']:checked + label{
+    background-color: #FFCC00;
+    cursor: pointer;
+}
+.product-form__input input[type='radio']:checked + label::before{
+    content:"●";
+    color:#333;
+}
+.product-form__input input[type='radio']:disabled + label,
+.product-form__input input[type='radio'].disabled + label{
+    color:#666;
+    background-color: #F5F5F5;
+    cursor: default;
+    pointer-events: none;
+    border:none;
+}
+.product-form__input input[type='radio'] + label > span{
+    display:none;
+}
+.product-form__input input[type='radio'].disabled + label > span{
+    font-size:1.2rem;
+    display:inline;
+}
 /*------------------------------------------------
 
 cart
@@ -3238,6 +3294,9 @@ a.btn:active{
         vertical-align: middle;
         font-size: 1.3rem;
         color: #000;
+    }
+    #information .quantities{
+        padding-bottom:1rem;
     }
         /*.btn span.info */span.quantity_str{
             font-size: 1.3rem;
