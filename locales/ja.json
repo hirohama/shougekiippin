@@ -518,5 +518,12 @@
       "expanded": "ギフトカードカードの受取人フォームを展開しました",
       "collapsed": "ギフトカードカードの受取人フォームを折りたたみました"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "payment": {
+        "same_billing_address_checkbox_label": "お届け先とご注文者が異なる場合はこちらのチェックを外しご注文者の情報をご記入ください。"
+      }
+    }
   }
 }
