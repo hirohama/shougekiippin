@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "mainvisual": {
@@ -11,36 +20,36 @@
         "template--21057494450492__316d22bc-b962-4cd4-bea0-6469d7777d48-image-1": {
           "type": "image",
           "settings": {
-            "image_box": "shopify:\/\/shop_images\/img_banner001_square.jpg",
-            "link": "shopify:\/\/products\/oita_saiki_001"
+            "image_box": "shopify://shop_images/img_banner001_square.jpg",
+            "link": "shopify://products/oita_saiki_001"
           }
         },
         "template--21057494450492__316d22bc-b962-4cd4-bea0-6469d7777d48-image-2": {
           "type": "image",
           "settings": {
-            "image_box": "shopify:\/\/shop_images\/img_banner002_square.jpg",
-            "link": "shopify:\/\/products\/oita_saiki_002"
+            "image_box": "shopify://shop_images/img_banner002_square.jpg",
+            "link": "shopify://products/oita_saiki_002"
           }
         },
         "d7bd9aa4-4928-47df-8a3f-8c8f32ee347e": {
           "type": "image",
           "settings": {
-            "image_box": "shopify:\/\/shop_images\/img_banner003_square.jpg",
-            "link": "shopify:\/\/products\/oita_saiki_003"
+            "image_box": "shopify://shop_images/img_banner003_square.jpg",
+            "link": "shopify://products/oita_saiki_003"
           }
         },
         "db613b53-c825-4a2e-a4c8-92eaa35c157b": {
           "type": "image",
           "settings": {
-            "image_box": "shopify:\/\/shop_images\/img_banner004_square.jpg",
-            "link": "shopify:\/\/products\/oita_saiki_004"
+            "image_box": "shopify://shop_images/img_banner004_square.jpg",
+            "link": "shopify://products/oita_saiki_004"
           }
         },
         "d6d0a92d-bfe9-4e5c-af91-09ed408af0ad": {
           "type": "image",
           "settings": {
-            "image_box": "shopify:\/\/shop_images\/img_banner005_square.jpg",
-            "link": "shopify:\/\/products\/oita_saiki_005"
+            "image_box": "shopify://shop_images/img_banner005_square.jpg",
+            "link": "shopify://products/oita_saiki_005"
           }
         }
       },
@@ -63,12 +72,36 @@
       "type": "index_movie",
       "settings": {
       }
+    },
+    "rich_text_KtGWrh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WFBjTz": {
+          "type": "heading",
+          "settings": {
+            "heading": "<a href=\"https://shougeki.com/pages/%E3%83%86%E3%82%B9%E3%83%88%E8%B2%A9%E5%A3%B2%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B\" target=\"_blank\" title=\"テスト販売終了のお知らせ\"><strong>テスト販売終了のお知らせ</strong></a>",
+            "heading_size": "hxl"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WFBjTz"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "mainvisual",
     "slider",
     "body",
-    "movie_and_concept"
+    "movie_and_concept",
+    "rich_text_KtGWrh"
   ]
 }
