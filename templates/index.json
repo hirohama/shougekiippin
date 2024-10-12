@@ -14,6 +14,16 @@
       "settings": {
       }
     },
+    "page_GjEWDd": {
+      "type": "page",
+      "settings": {
+        "page": "テスト販売終了のお知らせ",
+        "heading_size": "h0",
+        "color_scheme": "background-1",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
     "slider": {
       "type": "index_slider",
       "blocks": {
@@ -72,23 +82,13 @@
       "type": "index_movie",
       "settings": {
       }
-    },
-    "page_GjEWDd": {
-      "type": "page",
-      "settings": {
-        "page": "テスト販売終了のお知らせ",
-        "heading_size": "h1",
-        "color_scheme": "background-1",
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
     }
   },
   "order": [
     "mainvisual",
+    "page_GjEWDd",
     "slider",
     "body",
-    "movie_and_concept",
-    "page_GjEWDd"
+    "movie_and_concept"
   ]
 }
