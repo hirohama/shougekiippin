@@ -14,6 +14,33 @@
       "settings": {
       }
     },
+    "rich_text_KtGWrh": {
+      "type": "rich-text",
+      "blocks": {
+        "button_KnwQNV": {
+          "type": "button",
+          "settings": {
+            "button_label": "テスト販売終了のお知らせ",
+            "button_link": "shopify://pages/テスト販売終了のお知らせ",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_KnwQNV"
+      ],
+      "settings": {
+        "desktop_content_position": "right",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "slider": {
       "type": "index_slider",
       "blocks": {
@@ -72,40 +99,13 @@
       "type": "index_movie",
       "settings": {
       }
-    },
-    "rich_text_KtGWrh": {
-      "type": "rich-text",
-      "blocks": {
-        "button_KnwQNV": {
-          "type": "button",
-          "settings": {
-            "button_label": "テスト販売終了のお知らせ",
-            "button_link": "shopify://pages/テスト販売終了のお知らせ",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "button_KnwQNV"
-      ],
-      "settings": {
-        "desktop_content_position": "right",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "mainvisual",
+    "rich_text_KtGWrh",
     "slider",
     "body",
-    "movie_and_concept",
-    "rich_text_KtGWrh"
+    "movie_and_concept"
   ]
 }
